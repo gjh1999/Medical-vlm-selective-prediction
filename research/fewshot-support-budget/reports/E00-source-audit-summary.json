@@ -1,0 +1,109 @@
+﻿{
+    "purpose":  "Environment and official source audit; no model inference",
+    "attempts":  [
+                     {
+                         "utc":  "2026-11-17T08:28:11.748240+00:00",
+                         "python":  "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+                         "platform":  "Windows-11-10.0.26100-SP0",
+                         "modules":  {
+                                         "torch":  false,
+                                         "numpy":  false,
+                                         "PIL":  false
+                                     },
+                         "sources":  {
+                                         "universeg_commit.json":  {
+                                                                       "url":  "https://api.github.com/repos/JJGO/UniverSeg/commits/main",
+                                                                       "error":  "HTTP Error 403: rate limit exceeded",
+                                                                       "seconds":  0.379
+                                                                   },
+                                         "context_matters.html":  {
+                                                                      "url":  "https://arxiv.org/html/2608.05333v1",
+                                                                      "error":  "\u003curlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)\u003e",
+                                                                      "seconds":  0.162
+                                                                  }
+                                     },
+                         "model_inference_run":  false,
+                         "gpu":  {
+                                     "exit_code":  0,
+                                     "stdout":  "Tue Nov 17 16:28:11 2026       \n+-----------------------------------------------------------------------------+\n| NVIDIA-SMI 456.71       Driver Version: 456.71       CUDA Version: 11.1     |\n|-------------------------------+----------------------+----------------------+\n| GPU  Name            TCC/WDDM | Bus-Id        Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |\n|===============================+======================+======================|\n|   0  GeForce GT 710     WDDM  | 00000000:01:00.0 N/A |                  N/A |\n| 40%   41C    P0    N/A /  N/A |   1181MiB /  2048MiB |     N/A      Default |\n+-------------------------------+----------------------+----------------------+\n                                                                               \n+-----------------------------------------------------------------------------+\n| Processes:                                                                  |\n|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |\n|        ID   ID                                                   Usage      |\n|=============================================================================|\n|  No running processes found                                                 |\n+-----------------------------------------------------------------------------+\n",
+                                     "stderr":  ""
+                                 },
+                         "elapsed_seconds":  0.601,
+                         "status":  "partial_failure"
+                     },
+                     {
+                         "utc":  "2026-11-17T08:36:32.963762+00:00",
+                         "python":  "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+                         "platform":  "Windows-11-10.0.26100-SP0",
+                         "modules":  {
+                                         "torch":  false,
+                                         "numpy":  false,
+                                         "PIL":  false
+                                     },
+                         "sources":  {
+                                         "universeg_commit.json":  {
+                                                                       "url":  "https://api.github.com/repos/JJGO/UniverSeg/commits/main",
+                                                                       "status":  200,
+                                                                       "final_url":  "https://api.github.com/repos/JJGO/UniverSeg/commits/main",
+                                                                       "bytes":  4687,
+                                                                       "sha256":  "9440211a0dd9628135219ed6ec983dd50d689e5d0fafa0e993baec592fe41015",
+                                                                       "seconds":  0.558
+                                                                   },
+                                         "README.md":  {
+                                                           "url":  "https://raw.githubusercontent.com/JJGO/UniverSeg/833a0c34c65e38d675e21bd48ddec6797cc03259/README.md",
+                                                           "status":  200,
+                                                           "final_url":  "https://raw.githubusercontent.com/JJGO/UniverSeg/833a0c34c65e38d675e21bd48ddec6797cc03259/README.md",
+                                                           "bytes":  3878,
+                                                           "sha256":  "524282f6df7ee1ad81f9bcc9014677f8aa04c902270c6aa10171f8fd3def3dc4",
+                                                           "seconds":  0.537
+                                                       },
+                                         "requirements.txt":  {
+                                                                  "url":  "https://raw.githubusercontent.com/JJGO/UniverSeg/833a0c34c65e38d675e21bd48ddec6797cc03259/requirements.txt",
+                                                                  "status":  200,
+                                                                  "final_url":  "https://raw.githubusercontent.com/JJGO/UniverSeg/833a0c34c65e38d675e21bd48ddec6797cc03259/requirements.txt",
+                                                                  "bytes":  43,
+                                                                  "sha256":  "93497bb2d53090992ef52a4a3246bb31fa1a19cc4e452d0724df9c9b6a5c6921",
+                                                                  "seconds":  0.551
+                                                              },
+                                         "LICENSE-model":  {
+                                                               "url":  "https://raw.githubusercontent.com/JJGO/UniverSeg/833a0c34c65e38d675e21bd48ddec6797cc03259/LICENSE-model",
+                                                               "status":  200,
+                                                               "final_url":  "https://raw.githubusercontent.com/JJGO/UniverSeg/833a0c34c65e38d675e21bd48ddec6797cc03259/LICENSE-model",
+                                                               "bytes":  10868,
+                                                               "sha256":  "df3a82cd54007e3523e70dc0feda19de7b06231ceea689658700569e5cf7c2ae",
+                                                               "seconds":  0.506
+                                                           },
+                                         "universeg_model.py":  {
+                                                                    "url":  "https://raw.githubusercontent.com/JJGO/UniverSeg/833a0c34c65e38d675e21bd48ddec6797cc03259/universeg/model.py",
+                                                                    "status":  200,
+                                                                    "final_url":  "https://raw.githubusercontent.com/JJGO/UniverSeg/833a0c34c65e38d675e21bd48ddec6797cc03259/universeg/model.py",
+                                                                    "bytes":  6622,
+                                                                    "sha256":  "6df2930a343aef0022975b20f572cf3f7cf1bfe1eb47992b7cff7d19940be7b9",
+                                                                    "seconds":  0.54
+                                                                },
+                                         "universeg_tree.json":  {
+                                                                     "url":  "https://api.github.com/repos/JJGO/UniverSeg/git/trees/833a0c34c65e38d675e21bd48ddec6797cc03259?recursive=1",
+                                                                     "status":  200,
+                                                                     "final_url":  "https://api.github.com/repos/JJGO/UniverSeg/git/trees/833a0c34c65e38d675e21bd48ddec6797cc03259?recursive=1",
+                                                                     "bytes":  4353,
+                                                                     "sha256":  "c75053575656cef631cd364a3acd8d168e1b0ad3ec0e20582f83a46416dac4fc",
+                                                                     "seconds":  0.468
+                                                                 },
+                                         "context_matters.html":  {
+                                                                      "url":  "https://arxiv.org/html/2608.05333v1",
+                                                                      "error":  "\u003curlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)\u003e",
+                                                                      "seconds":  0.154
+                                                                  }
+                                     },
+                         "model_inference_run":  false,
+                         "gpu":  {
+                                     "exit_code":  0,
+                                     "stdout":  "Tue Nov 17 16:36:33 2026       \n+-----------------------------------------------------------------------------+\n| NVIDIA-SMI 456.71       Driver Version: 456.71       CUDA Version: 11.1     |\n|-------------------------------+----------------------+----------------------+\n| GPU  Name            TCC/WDDM | Bus-Id        Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |\n|===============================+======================+======================|\n|   0  GeForce GT 710     WDDM  | 00000000:01:00.0 N/A |                  N/A |\n| 40%   42C    P0    N/A /  N/A |   1159MiB /  2048MiB |     N/A      Default |\n+-------------------------------+----------------------+----------------------+\n                                                                               \n+-----------------------------------------------------------------------------+\n| Processes:                                                                  |\n|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |\n|        ID   ID                                                   Usage      |\n|=============================================================================|\n|  No running processes found                                                 |\n+-----------------------------------------------------------------------------+\n",
+                                     "stderr":  ""
+                                 },
+                         "universeg_revision":  "833a0c34c65e38d675e21bd48ddec6797cc03259",
+                         "elapsed_seconds":  3.411,
+                         "status":  "partial_failure"
+                     }
+                 ]
+}
