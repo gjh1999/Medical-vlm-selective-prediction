@@ -1,0 +1,34 @@
+# Local environments and credentials
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.aws/
+.codex/
+.openai/
+**/.openai/
+**/.sites-*/
+# Original medical data, weights and sample-level caches never enter Git.
+data/
+**/data/
+**/datasets/
+**/weights/
+**/checkpoints/
+**/cache/
+**/outputs/
+**/manifests/
+**/splits/
+*.pt
+*.pth
+*.safetensors
+*.npy
+*.npz
+*.parquet
+*.zip
+*.tar
+*.tar.gz
+# Task-specific runtime state
+.sync-state/
+*.log
