@@ -10,6 +10,7 @@ $logPath=Join-Path $stateDir 'sync.log'
 Start-Transcript -Path $logPath -Append | Out-Null
 try {
 $env:GIT_TERMINAL_PROMPT='0'
+$env:GCM_INTERACTIVE='Never'
 $actualRoot=(& git rev-parse --show-toplevel 2>$null)
 if ($LASTEXITCODE -ne 0 -or [IO.Path]::GetFullPath($actualRoot) -ne $projectRoot) { throw 'Initialize and connect a dedicated MCCAI repository first. Parent repositories will not be used.' }
 $remote=(& git remote get-url origin)

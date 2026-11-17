@@ -106,7 +106,8 @@
   "execution": {
     "preparation_host": "Windows GT 710 2GB",
     "experiment_host": "User home RTX 5080; environment pending",
-    "github_sync": "authorized; target repository and authentication pending",
-    "sync_interval_minutes": 30
+    "github_sync": "enabled Windows task MCCAI-Research-GitHub-Sync; first push successful 2026-11-17 15:05 +08:00",
+    "sync_interval_minutes": 30,
+    "github_repository": "https://github.com/gjh1999/Medical-vlm-selective-prediction.git"
   }
 }
