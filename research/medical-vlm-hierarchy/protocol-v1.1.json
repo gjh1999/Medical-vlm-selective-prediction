@@ -1,0 +1,113 @@
+{
+  "version": "1.1",
+  "date": "2026-11-17",
+  "status": "e00_metadata_audited_baseline_core_implemented_no_model_inference",
+  "task": "closed_set_hierarchical_selective_prediction",
+  "primary_domain": "skin_lesion_classification",
+  "datasets": [
+    {
+      "name": "HAM10000",
+      "group_key": "lesion_id",
+      "patient_independence": "unverified",
+      "access": "verify_original_terms_and_download"
+    },
+    {
+      "name": "PAD-UFES-20",
+      "group_key": "patient_id",
+      "access": "verify_original_terms_and_download"
+    }
+  ],
+  "models": [
+    "OpenAI CLIP ViT-B/16",
+    "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224"
+  ],
+  "model_revisions": {
+    "biomedclip": "9f341de24bfb00180f1b847274256e9b65a3a32e",
+    "openai_clip": "pending_weight_acquisition"
+  },
+  "taxonomy": "draft_requires_review_before_execution",
+  "freeze_backbone": true,
+  "image_size": 224,
+  "initial_batch_size": 8,
+  "cache_dtype": "float32",
+  "split_seeds": [
+    17,
+    29,
+    43
+  ],
+  "group_split_ratios": {
+    "train": 0.4,
+    "dev": 0.1,
+    "calibration": 0.25,
+    "test": 0.25
+  },
+  "max_prompt_templates": 8,
+  "max_candidate_policies": 16,
+  "risk_targets": {
+    "leaf_conditional_error": 0.1,
+    "nonroot_set_conditional_error": 0.05
+  },
+  "risk_sensitivity": [
+    0.05,
+    0.1,
+    0.15
+  ],
+  "family_failure_probability": 0.05,
+  "simultaneous_constraints": 2,
+  "bound": "one_sided_clopper_pearson_for_fixed_candidates_under_iid_units",
+  "empty_acceptance": "undefined_risk_not_certifiable",
+  "patient_or_lesion_cluster_bootstrap_replicates": 2000,
+  "calibration_size_grid_independent_groups": [
+    50,
+    100,
+    200,
+    500,
+    "all_available"
+  ],
+  "primary_metrics": [
+    "correct_information_utility",
+    "leaf_output_coverage"
+  ],
+  "required_secondary_metrics": [
+    "nonroot_coverage",
+    "leaf_conditional_error",
+    "nonroot_set_conditional_error",
+    "cross_branch_error",
+    "per_class_coverage_and_risk",
+    "uncertifiable_rate",
+    "peak_gpu_memory",
+    "feature_extraction_seconds",
+    "postprocess_latency"
+  ],
+  "external_evaluation": {
+    "source_only_threshold": true,
+    "target_recalibration_separate": true,
+    "universal_shift_guarantee": false,
+    "exact_shared_leaf_candidates": [
+      "MEL",
+      "NEV",
+      "BCC"
+    ],
+    "label_mapping": "freeze_after_review_before_target_test"
+  },
+  "initial_gpu_hours_budget_estimate": 20,
+  "schedule_weeks_estimate": 8,
+  "decision_gates_weeks": [
+    2,
+    4
+  ],
+  "practical_improvement_targets": {
+    "utility_absolute": 0.02,
+    "leaf_coverage_percentage_points": 3,
+    "consistent_splits_minimum": 2
+  },
+  "targets_are": "research_management_criteria_not_observed_results_or_clinical_safety_thresholds",
+  "notes": "v1.1 records actual execution status and remote GPU target; scientific split/metric/risk design unchanged. E00 image audit incomplete; 5080 compatibility untested.",
+  "execution": {
+    "preparation_host": "Windows GT 710 2GB",
+    "experiment_host": "User home RTX 5080; environment pending",
+    "github_sync": "enabled Windows task MCCAI-Research-GitHub-Sync; first push successful 2026-11-17 15:05 +08:00",
+    "sync_interval_minutes": 30,
+    "github_repository": "https://github.com/gjh1999/Medical-vlm-selective-prediction.git"
+  }
+}

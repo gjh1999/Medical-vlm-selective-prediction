@@ -67,9 +67,10 @@ def main():
         report.update(version=f"{v['versionNumber']}.{v['versionMinorNumber']}",terms=v.get('termsOfUse'),file_inventory=files)
         f=next(f for f in files if f['filename'].startswith('HAM10000_metadata.'))
         original=out/'HAM10000_metadata.original'
-        # Dataverse tabular original export differs from its stored tab checksum.
+        # Preserve both checksum declarations; original exports need not match tab exports.
         report['metadata_download']=download(f"https://dataverse.harvard.edu/api/access/datafile/{f['id']}?format=original",original)
-        report['metadata_download']['stored_tab_md5_not_comparable']=f.get('checksum')
+        report['metadata_download']['official_checksum']=f.get('checksum')
+        report['metadata_download']['official_md5_matches']=(f.get('checksum',{}).get('type')=='MD5' and f['checksum']['value']==report['metadata_download']['md5'])
         text=original.read_text(encoding='utf-8-sig'); dialect=csv.Sniffer().sniff(text[:4096],delimiters=',\t')
         rows=list(csv.DictReader(io.StringIO(text),dialect=dialect))
         required={'lesion_id','image_id','dx'}

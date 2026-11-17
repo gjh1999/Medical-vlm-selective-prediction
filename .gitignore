@@ -23,6 +23,8 @@ data/
 *.pt
 *.pth
 *.safetensors
+*.bin
+.cache/
 *.npy
 *.npz
 *.parquet
@@ -32,3 +34,5 @@ data/
 # Task-specific runtime state
 .sync-state/
 *.log
+# Legacy Sites checkout contains its own Git metadata and hosting identity.
+/sites/

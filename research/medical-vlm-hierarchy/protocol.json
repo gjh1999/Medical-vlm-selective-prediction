@@ -1,7 +1,7 @@
 {
-  "version": "1.1",
+  "version": "1.2",
   "date": "2026-11-17",
-  "status": "e00_metadata_audited_baseline_core_implemented_no_model_inference",
+  "status": "ham_and_pad_metadata_audited_image_tools_tested_gpu_path_pending",
   "task": "closed_set_hierarchical_selective_prediction",
   "primary_domain": "skin_lesion_classification",
   "datasets": [
@@ -13,8 +13,10 @@
     },
     {
       "name": "PAD-UFES-20",
-      "group_key": "patient_id",
-      "access": "verify_original_terms_and_download"
+      "group_key": "conservative linked-patient component sharing raw lesion IDs",
+      "access": "official metadata acquired SHA256 verified; CC BY 4.0",
+      "split_algorithm": "shared-id-linked-relative-deficit-v3",
+      "identity_issue": "250 raw IDs span patients; 226 have multiple labels; 1891 compound processing keys are not verified biological lesions"
     }
   ],
   "models": [
@@ -102,12 +104,13 @@
     "consistent_splits_minimum": 2
   },
   "targets_are": "research_management_criteria_not_observed_results_or_clinical_safety_thresholds",
-  "notes": "v1.1 records actual execution status and remote GPU target; scientific split/metric/risk design unchanged. E00 image audit incomplete; 5080 compatibility untested.",
+  "notes": "v1.2 changes PAD identity/grouping after actual metadata audit; v1.1 retained. No image/model results yet. Feature extraction implemented but not exercised on 5080. Scientific metrics/risk targets unchanged.",
   "execution": {
     "preparation_host": "Windows GT 710 2GB",
     "experiment_host": "User home RTX 5080; environment pending",
     "github_sync": "enabled Windows task MCCAI-Research-GitHub-Sync; first push successful 2026-11-17 15:05 +08:00",
     "sync_interval_minutes": 30,
-    "github_repository": "https://github.com/gjh1999/Medical-vlm-selective-prediction.git"
+    "github_repository": "https://github.com/gjh1999/Medical-vlm-selective-prediction.git",
+    "global_daily_backup": "registered; Codex-Git-AutoSync-1700 Ready, 17:00 Asia/Shanghai"
   }
 }

@@ -30,7 +30,7 @@ foreach ($name in $files) {
 }
 & git diff --cached --quiet
 if ($LASTEXITCODE -eq 1) {
-    & git commit -m ('Research checkpoint '+(Get-Date -Format 'yyyy-MM-dd HH:mm'))
+    & git commit -m ('chore: WIP research auto backup '+(Get-Date -Format 'yyyy-MM-dd HH:mm')) -m 'Automatic backup only; this task does not run tests or certify completion.'
     if ($LASTEXITCODE -ne 0) { throw 'Commit failed; check Git identity and staged changes.' }
 } elseif ($LASTEXITCODE -ne 0) { throw 'Index inspection failed.' }
 & git push origin $branch

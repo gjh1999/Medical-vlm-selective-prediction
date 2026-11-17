@@ -15,7 +15,7 @@ from pathlib import Path
 
 SOURCES = {
     'ham_dataverse': 'https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/DBW86T',
-    'pad_mendeley': 'https://data.mendeley.com/public-api/datasets/zr7vgbcyr2/versions/1',
+    'pad_mendeley': 'https://data.mendeley.com/public-api/datasets/zr7vgbcyr2',
     'biomedclip_model': 'https://huggingface.co/api/models/microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224',
 }
 

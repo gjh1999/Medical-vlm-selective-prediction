@@ -1,0 +1,2 @@
+# Verified on preparation host Python 3.14.7; no GPU packages installed here.
+Pillow==13.0.0
