@@ -1,0 +1,388 @@
+{
+  "scope": "supplemental calibration-unit selection and exact conditional randomization distribution",
+  "salt": "pad-independent-group-v1",
+  "conditioning": "eligible representatives fixed; within-group uniform draw independent across groups",
+  "crosswalk_sha256": "d8f0bd34f2aac785e7272dc2acd77ef624821174b6b4fdeaf0c6f7ca0d7539d8",
+  "seeds": {
+    "17": {
+      "all": {
+        "source_representatives": 473,
+        "group_draws": 283,
+        "selection_sha256": "3856591c4d9be0787b81c78bb087affc0ea886cbb17e2fb2bb931cca56f3616a",
+        "by_label": {
+          "ACK": {
+            "containing": 120,
+            "guaranteed": 76,
+            "expected_under_uniform_draw": 95.37878787878788,
+            "uniform_draw_central_95_count_interval": [
+              89,
+              102
+            ],
+            "selected_with_fixed_salt": 93
+          },
+          "BCC": {
+            "containing": 119,
+            "guaranteed": 72,
+            "expected_under_uniform_draw": 94.24015151515151,
+            "uniform_draw_central_95_count_interval": [
+              88,
+              101
+            ],
+            "selected_with_fixed_salt": 100
+          },
+          "MEL": {
+            "containing": 9,
+            "guaranteed": 4,
+            "expected_under_uniform_draw": 5.790909090909091,
+            "uniform_draw_central_95_count_interval": [
+              4,
+              8
+            ],
+            "selected_with_fixed_salt": 6
+          },
+          "NEV": {
+            "containing": 44,
+            "guaranteed": 32,
+            "expected_under_uniform_draw": 36.26590909090909,
+            "uniform_draw_central_95_count_interval": [
+              33,
+              39
+            ],
+            "selected_with_fixed_salt": 35
+          },
+          "SCC": {
+            "containing": 31,
+            "guaranteed": 16,
+            "expected_under_uniform_draw": 21.716666666666665,
+            "uniform_draw_central_95_count_interval": [
+              18,
+              25
+            ],
+            "selected_with_fixed_salt": 19
+          },
+          "SEK": {
+            "containing": 42,
+            "guaranteed": 23,
+            "expected_under_uniform_draw": 29.60757575757576,
+            "uniform_draw_central_95_count_interval": [
+              26,
+              34
+            ],
+            "selected_with_fixed_salt": 30
+          }
+        },
+        "any_shared": {
+          "containing": 161,
+          "guaranteed": 113,
+          "expected_under_uniform_draw": 136.29696969696968,
+          "uniform_draw_central_95_count_interval": [
+            130,
+            143
+          ],
+          "selected_with_fixed_salt": 141
+        }
+      },
+      "condition_on_shared_labels_first": {
+        "source_representatives": 226,
+        "group_draws": 161,
+        "selection_sha256": "d5cf9ecf487a7ee8e6e07ed243be02efa2faf7e3224010d94dfffd601c03ef89",
+        "by_label": {
+          "BCC": {
+            "containing": 119,
+            "guaranteed": 111,
+            "expected_under_uniform_draw": 115.58333333333333,
+            "uniform_draw_central_95_count_interval": [
+              113,
+              118
+            ],
+            "selected_with_fixed_salt": 116
+          },
+          "MEL": {
+            "containing": 9,
+            "guaranteed": 6,
+            "expected_under_uniform_draw": 7.25,
+            "uniform_draw_central_95_count_interval": [
+              6,
+              9
+            ],
+            "selected_with_fixed_salt": 8
+          },
+          "NEV": {
+            "containing": 44,
+            "guaranteed": 34,
+            "expected_under_uniform_draw": 38.166666666666664,
+            "uniform_draw_central_95_count_interval": [
+              35,
+              41
+            ],
+            "selected_with_fixed_salt": 37
+          }
+        },
+        "any_shared": {
+          "containing": 161,
+          "guaranteed": 161,
+          "expected_under_uniform_draw": 161.0,
+          "uniform_draw_central_95_count_interval": [
+            161,
+            161
+          ],
+          "selected_with_fixed_salt": 161
+        }
+      }
+    },
+    "29": {
+      "all": {
+        "source_representatives": 473,
+        "group_draws": 283,
+        "selection_sha256": "3aa6edad23a631ddb273c9a32caddf418bdd91d8d105ca1f9ce4c46bfaa85239",
+        "by_label": {
+          "ACK": {
+            "containing": 120,
+            "guaranteed": 76,
+            "expected_under_uniform_draw": 95.37878787878788,
+            "uniform_draw_central_95_count_interval": [
+              89,
+              102
+            ],
+            "selected_with_fixed_salt": 96
+          },
+          "BCC": {
+            "containing": 119,
+            "guaranteed": 72,
+            "expected_under_uniform_draw": 94.24015151515151,
+            "uniform_draw_central_95_count_interval": [
+              88,
+              101
+            ],
+            "selected_with_fixed_salt": 94
+          },
+          "MEL": {
+            "containing": 9,
+            "guaranteed": 4,
+            "expected_under_uniform_draw": 5.790909090909091,
+            "uniform_draw_central_95_count_interval": [
+              4,
+              8
+            ],
+            "selected_with_fixed_salt": 6
+          },
+          "NEV": {
+            "containing": 44,
+            "guaranteed": 32,
+            "expected_under_uniform_draw": 36.26590909090909,
+            "uniform_draw_central_95_count_interval": [
+              33,
+              39
+            ],
+            "selected_with_fixed_salt": 35
+          },
+          "SCC": {
+            "containing": 31,
+            "guaranteed": 16,
+            "expected_under_uniform_draw": 21.716666666666665,
+            "uniform_draw_central_95_count_interval": [
+              18,
+              25
+            ],
+            "selected_with_fixed_salt": 19
+          },
+          "SEK": {
+            "containing": 42,
+            "guaranteed": 23,
+            "expected_under_uniform_draw": 29.60757575757576,
+            "uniform_draw_central_95_count_interval": [
+              26,
+              34
+            ],
+            "selected_with_fixed_salt": 33
+          }
+        },
+        "any_shared": {
+          "containing": 161,
+          "guaranteed": 113,
+          "expected_under_uniform_draw": 136.29696969696968,
+          "uniform_draw_central_95_count_interval": [
+            130,
+            143
+          ],
+          "selected_with_fixed_salt": 135
+        }
+      },
+      "condition_on_shared_labels_first": {
+        "source_representatives": 226,
+        "group_draws": 161,
+        "selection_sha256": "0ff61baabee012ac1340cbad61e453269f60be2135e3e93de38c6baa0763421e",
+        "by_label": {
+          "BCC": {
+            "containing": 119,
+            "guaranteed": 111,
+            "expected_under_uniform_draw": 115.58333333333333,
+            "uniform_draw_central_95_count_interval": [
+              113,
+              118
+            ],
+            "selected_with_fixed_salt": 116
+          },
+          "MEL": {
+            "containing": 9,
+            "guaranteed": 6,
+            "expected_under_uniform_draw": 7.25,
+            "uniform_draw_central_95_count_interval": [
+              6,
+              9
+            ],
+            "selected_with_fixed_salt": 8
+          },
+          "NEV": {
+            "containing": 44,
+            "guaranteed": 34,
+            "expected_under_uniform_draw": 38.166666666666664,
+            "uniform_draw_central_95_count_interval": [
+              35,
+              41
+            ],
+            "selected_with_fixed_salt": 37
+          }
+        },
+        "any_shared": {
+          "containing": 161,
+          "guaranteed": 161,
+          "expected_under_uniform_draw": 161.0,
+          "uniform_draw_central_95_count_interval": [
+            161,
+            161
+          ],
+          "selected_with_fixed_salt": 161
+        }
+      }
+    },
+    "43": {
+      "all": {
+        "source_representatives": 473,
+        "group_draws": 283,
+        "selection_sha256": "28ef6af997ab3291d01bbfcf03e27f66bb3955fc56fad56fc2b9cad647b331d7",
+        "by_label": {
+          "ACK": {
+            "containing": 120,
+            "guaranteed": 76,
+            "expected_under_uniform_draw": 95.37878787878788,
+            "uniform_draw_central_95_count_interval": [
+              89,
+              102
+            ],
+            "selected_with_fixed_salt": 95
+          },
+          "BCC": {
+            "containing": 119,
+            "guaranteed": 72,
+            "expected_under_uniform_draw": 94.24015151515151,
+            "uniform_draw_central_95_count_interval": [
+              88,
+              101
+            ],
+            "selected_with_fixed_salt": 95
+          },
+          "MEL": {
+            "containing": 9,
+            "guaranteed": 4,
+            "expected_under_uniform_draw": 5.790909090909091,
+            "uniform_draw_central_95_count_interval": [
+              4,
+              8
+            ],
+            "selected_with_fixed_salt": 6
+          },
+          "NEV": {
+            "containing": 44,
+            "guaranteed": 32,
+            "expected_under_uniform_draw": 36.26590909090909,
+            "uniform_draw_central_95_count_interval": [
+              33,
+              39
+            ],
+            "selected_with_fixed_salt": 35
+          },
+          "SCC": {
+            "containing": 31,
+            "guaranteed": 16,
+            "expected_under_uniform_draw": 21.716666666666665,
+            "uniform_draw_central_95_count_interval": [
+              18,
+              25
+            ],
+            "selected_with_fixed_salt": 20
+          },
+          "SEK": {
+            "containing": 42,
+            "guaranteed": 23,
+            "expected_under_uniform_draw": 29.60757575757576,
+            "uniform_draw_central_95_count_interval": [
+              26,
+              34
+            ],
+            "selected_with_fixed_salt": 32
+          }
+        },
+        "any_shared": {
+          "containing": 161,
+          "guaranteed": 113,
+          "expected_under_uniform_draw": 136.29696969696968,
+          "uniform_draw_central_95_count_interval": [
+            130,
+            143
+          ],
+          "selected_with_fixed_salt": 136
+        }
+      },
+      "condition_on_shared_labels_first": {
+        "source_representatives": 226,
+        "group_draws": 161,
+        "selection_sha256": "f82b274c581a71bebcc2136c50fb49246c06b9243077c9d12ed4a1b79f001fb7",
+        "by_label": {
+          "BCC": {
+            "containing": 119,
+            "guaranteed": 111,
+            "expected_under_uniform_draw": 115.58333333333333,
+            "uniform_draw_central_95_count_interval": [
+              113,
+              118
+            ],
+            "selected_with_fixed_salt": 116
+          },
+          "MEL": {
+            "containing": 9,
+            "guaranteed": 6,
+            "expected_under_uniform_draw": 7.25,
+            "uniform_draw_central_95_count_interval": [
+              6,
+              9
+            ],
+            "selected_with_fixed_salt": 8
+          },
+          "NEV": {
+            "containing": 44,
+            "guaranteed": 34,
+            "expected_under_uniform_draw": 38.166666666666664,
+            "uniform_draw_central_95_count_interval": [
+              35,
+              41
+            ],
+            "selected_with_fixed_salt": 37
+          }
+        },
+        "any_shared": {
+          "containing": 161,
+          "guaranteed": 161,
+          "expected_under_uniform_draw": 161.0,
+          "uniform_draw_central_95_count_interval": [
+            161,
+            161
+          ],
+          "selected_with_fixed_salt": 161
+        }
+      }
+    }
+  },
+  "status": "complete",
+  "seconds": 0.107
+}

@@ -1,0 +1,32 @@
+{
+  "scope": "technical scene verification, no patient identity or diagnosis inferred",
+  "audit_manifest_sha256": "5bed1979d4ca0aff4e6f870429b65a9e76649632f128177c86e14b168f39ed1a",
+  "control_sha256": "679b67027ca2057d44b1daff0e18f1dad257b20ab91d8a5f79510d59754e6541",
+  "criteria": "mutual ORB ratio 0.8, >=12 affine inliers and >=4 cells, masked overlap >=0.20, registered detail correlation >=0.30",
+  "status": "complete",
+  "categories": {
+    "low_baseline_candidate": {
+      "pairs": 200,
+      "orb12_cells4": 0,
+      "all_pixel_and_geometry_criteria": 0
+    },
+    "published_confirmed": {
+      "pairs": 18,
+      "orb12_cells4": 13,
+      "all_pixel_and_geometry_criteria": 3
+    },
+    "published_uncertain": {
+      "pairs": 2,
+      "orb12_cells4": 0,
+      "all_pixel_and_geometry_criteria": 0
+    },
+    "previous_scene_candidate": {
+      "pairs": 5,
+      "orb12_cells4": 5,
+      "all_pixel_and_geometry_criteria": 3
+    }
+  },
+  "review_panels_pairs": 0,
+  "scores_sha256": "65394575c3c46d4d75c690ecf6317f7166acc9866ab7141b41c84bf0e76a49e6",
+  "seconds": 18.866
+}

@@ -1,0 +1,74 @@
+{
+  "scope": "method development on known pairs and a sample of unadjudicated candidates",
+  "baseline_scores_sha256": "e494f5147a9c6dcad6f249a1af1b020af5e06986e667edf6ae75a234a5a9396c",
+  "manifest_sha256": "870b971420b4b1b23f587834b59066d2ff6702af5896065b8c2c99bcb6bdc6ba",
+  "opencv": "5.1.0",
+  "numpy": "2.5.4",
+  "workers": 3,
+  "status": "complete",
+  "unique_images": 434,
+  "categories": {
+    "low_baseline_candidate": {
+      "pairs": 200,
+      "old": {
+        "at_least_8": 0,
+        "at_least_8_and_4_cells": 0,
+        "at_least_16_and_4_cells": 0,
+        "max_inliers": 0
+      },
+      "new": {
+        "at_least_8": 0,
+        "at_least_8_and_4_cells": 0,
+        "at_least_16_and_4_cells": 0,
+        "max_inliers": 3
+      }
+    },
+    "previous_scene_candidate": {
+      "pairs": 5,
+      "old": {
+        "at_least_8": 5,
+        "at_least_8_and_4_cells": 4,
+        "at_least_16_and_4_cells": 3,
+        "max_inliers": 78
+      },
+      "new": {
+        "at_least_8": 5,
+        "at_least_8_and_4_cells": 4,
+        "at_least_16_and_4_cells": 4,
+        "max_inliers": 517
+      }
+    },
+    "published_confirmed": {
+      "pairs": 18,
+      "old": {
+        "at_least_8": 6,
+        "at_least_8_and_4_cells": 3,
+        "at_least_16_and_4_cells": 2,
+        "max_inliers": 38
+      },
+      "new": {
+        "at_least_8": 17,
+        "at_least_8_and_4_cells": 14,
+        "at_least_16_and_4_cells": 14,
+        "max_inliers": 519
+      }
+    },
+    "published_uncertain": {
+      "pairs": 2,
+      "old": {
+        "at_least_8": 0,
+        "at_least_8_and_4_cells": 0,
+        "at_least_16_and_4_cells": 0,
+        "max_inliers": 0
+      },
+      "new": {
+        "at_least_8": 0,
+        "at_least_8_and_4_cells": 0,
+        "at_least_16_and_4_cells": 0,
+        "max_inliers": 0
+      }
+    }
+  },
+  "pairs_sha256": "679b67027ca2057d44b1daff0e18f1dad257b20ab91d8a5f79510d59754e6541",
+  "seconds": 31.814
+}
