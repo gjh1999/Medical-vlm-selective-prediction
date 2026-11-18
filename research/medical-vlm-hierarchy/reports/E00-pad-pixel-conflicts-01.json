@@ -1,0 +1,329 @@
+{
+  "manifest_sha256": "3112b6606fb992aec017717e7ab57c893429f10713d92c050613bddb109daaa5",
+  "unit": "deterministic function of decoded RGB pixels",
+  "all_views": {
+    "rows": 2298,
+    "distinct_pixels": 2282,
+    "duplicate_pixel_clusters": 16,
+    "conflicting_pixel_clusters": 13,
+    "conflicting_rows": 26,
+    "conflicting_pairs": 13,
+    "different_label_pairs": {
+      "ACK/BCC": 5,
+      "ACK/SCC": 1,
+      "BCC/NEV": 1,
+      "BCC/SCC": 6
+    },
+    "minimum_image_only_errors": 13,
+    "deterministic_image_only_accuracy_ceiling": 0.9943429068755439,
+    "affected_conservative_groups": 10
+  },
+  "representatives": {
+    "rows": 1891,
+    "distinct_pixels": 1881,
+    "duplicate_pixel_clusters": 10,
+    "conflicting_pixel_clusters": 7,
+    "conflicting_rows": 14,
+    "conflicting_pairs": 7,
+    "different_label_pairs": {
+      "ACK/BCC": 1,
+      "ACK/SCC": 1,
+      "BCC/NEV": 1,
+      "BCC/SCC": 4
+    },
+    "minimum_image_only_errors": 7,
+    "deterministic_image_only_accuracy_ceiling": 0.9962982548915917,
+    "affected_conservative_groups": 7
+  },
+  "shared_leaf_candidates_representatives": {
+    "rows": 904,
+    "distinct_pixels": 903,
+    "duplicate_pixel_clusters": 1,
+    "conflicting_pixel_clusters": 1,
+    "conflicting_rows": 2,
+    "conflicting_pairs": 1,
+    "different_label_pairs": {
+      "BCC/NEV": 1
+    },
+    "minimum_image_only_errors": 1,
+    "deterministic_image_only_accuracy_ceiling": 0.9988938053097345,
+    "affected_conservative_groups": 1
+  },
+  "all_duplicate_clusters_with_multiple_patient_ids": 0,
+  "all_duplicate_clusters_with_multiple_lesion_keys": 16,
+  "affected_groups": 10,
+  "splits": {
+    "17": {
+      "train": {
+        "representatives": 757,
+        "retained": 738,
+        "groups": 453,
+        "retained_groups": 450,
+        "original_class_counts": {
+          "SEK": 79,
+          "NEV": 87,
+          "ACK": 258,
+          "BCC": 261,
+          "MEL": 14,
+          "SCC": 58
+        },
+        "retained_class_counts": {
+          "SEK": 77,
+          "NEV": 86,
+          "ACK": 253,
+          "BCC": 254,
+          "MEL": 14,
+          "SCC": 54
+        }
+      },
+      "dev": {
+        "representatives": 189,
+        "retained": 183,
+        "groups": 114,
+        "retained_groups": 113,
+        "original_class_counts": {
+          "ACK": 64,
+          "BCC": 65,
+          "SCC": 15,
+          "NEV": 21,
+          "SEK": 20,
+          "MEL": 4
+        },
+        "retained_class_counts": {
+          "ACK": 62,
+          "BCC": 62,
+          "SCC": 14,
+          "NEV": 21,
+          "SEK": 20,
+          "MEL": 4
+        }
+      },
+      "calibration": {
+        "representatives": 473,
+        "retained": 448,
+        "groups": 283,
+        "retained_groups": 280,
+        "original_class_counts": {
+          "ACK": 161,
+          "SEK": 50,
+          "BCC": 163,
+          "NEV": 54,
+          "SCC": 36,
+          "MEL": 9
+        },
+        "retained_class_counts": {
+          "ACK": 150,
+          "SEK": 48,
+          "BCC": 154,
+          "NEV": 53,
+          "SCC": 35,
+          "MEL": 8
+        }
+      },
+      "test": {
+        "representatives": 472,
+        "retained": 459,
+        "groups": 282,
+        "retained_groups": 279,
+        "original_class_counts": {
+          "ACK": 161,
+          "BCC": 163,
+          "SEK": 49,
+          "NEV": 54,
+          "SCC": 36,
+          "MEL": 9
+        },
+        "retained_class_counts": {
+          "ACK": 157,
+          "BCC": 157,
+          "SEK": 49,
+          "NEV": 53,
+          "SCC": 35,
+          "MEL": 8
+        }
+      }
+    },
+    "29": {
+      "train": {
+        "representatives": 757,
+        "retained": 738,
+        "groups": 453,
+        "retained_groups": 450,
+        "original_class_counts": {
+          "SEK": 79,
+          "ACK": 258,
+          "BCC": 261,
+          "NEV": 87,
+          "MEL": 14,
+          "SCC": 58
+        },
+        "retained_class_counts": {
+          "SEK": 77,
+          "ACK": 253,
+          "BCC": 254,
+          "NEV": 86,
+          "MEL": 14,
+          "SCC": 54
+        }
+      },
+      "dev": {
+        "representatives": 189,
+        "retained": 183,
+        "groups": 114,
+        "retained_groups": 113,
+        "original_class_counts": {
+          "ACK": 64,
+          "BCC": 65,
+          "MEL": 4,
+          "SCC": 15,
+          "NEV": 21,
+          "SEK": 20
+        },
+        "retained_class_counts": {
+          "BCC": 62,
+          "ACK": 62,
+          "MEL": 4,
+          "SCC": 14,
+          "NEV": 21,
+          "SEK": 20
+        }
+      },
+      "calibration": {
+        "representatives": 473,
+        "retained": 447,
+        "groups": 283,
+        "retained_groups": 280,
+        "original_class_counts": {
+          "ACK": 161,
+          "SEK": 50,
+          "NEV": 54,
+          "BCC": 163,
+          "SCC": 36,
+          "MEL": 9
+        },
+        "retained_class_counts": {
+          "ACK": 149,
+          "SEK": 48,
+          "NEV": 53,
+          "BCC": 154,
+          "SCC": 35,
+          "MEL": 8
+        }
+      },
+      "test": {
+        "representatives": 472,
+        "retained": 460,
+        "groups": 282,
+        "retained_groups": 279,
+        "original_class_counts": {
+          "ACK": 161,
+          "SEK": 49,
+          "NEV": 54,
+          "BCC": 163,
+          "SCC": 36,
+          "MEL": 9
+        },
+        "retained_class_counts": {
+          "SEK": 49,
+          "NEV": 53,
+          "ACK": 158,
+          "BCC": 157,
+          "SCC": 35,
+          "MEL": 8
+        }
+      }
+    },
+    "43": {
+      "train": {
+        "representatives": 757,
+        "retained": 738,
+        "groups": 453,
+        "retained_groups": 450,
+        "original_class_counts": {
+          "SEK": 79,
+          "ACK": 258,
+          "NEV": 87,
+          "BCC": 261,
+          "MEL": 14,
+          "SCC": 58
+        },
+        "retained_class_counts": {
+          "SEK": 77,
+          "ACK": 253,
+          "NEV": 86,
+          "BCC": 254,
+          "MEL": 14,
+          "SCC": 54
+        }
+      },
+      "dev": {
+        "representatives": 189,
+        "retained": 183,
+        "groups": 114,
+        "retained_groups": 113,
+        "original_class_counts": {
+          "ACK": 64,
+          "SEK": 20,
+          "MEL": 4,
+          "SCC": 15,
+          "NEV": 21,
+          "BCC": 65
+        },
+        "retained_class_counts": {
+          "ACK": 62,
+          "SEK": 20,
+          "MEL": 4,
+          "SCC": 14,
+          "NEV": 21,
+          "BCC": 62
+        }
+      },
+      "calibration": {
+        "representatives": 473,
+        "retained": 447,
+        "groups": 283,
+        "retained_groups": 280,
+        "original_class_counts": {
+          "SEK": 50,
+          "ACK": 161,
+          "BCC": 163,
+          "NEV": 54,
+          "SCC": 36,
+          "MEL": 9
+        },
+        "retained_class_counts": {
+          "SEK": 48,
+          "ACK": 149,
+          "BCC": 154,
+          "NEV": 53,
+          "SCC": 35,
+          "MEL": 8
+        }
+      },
+      "test": {
+        "representatives": 472,
+        "retained": 460,
+        "groups": 282,
+        "retained_groups": 279,
+        "original_class_counts": {
+          "ACK": 161,
+          "NEV": 54,
+          "SEK": 49,
+          "BCC": 163,
+          "SCC": 36,
+          "MEL": 9
+        },
+        "retained_class_counts": {
+          "NEV": 53,
+          "ACK": 158,
+          "SEK": 49,
+          "BCC": 157,
+          "SCC": 35,
+          "MEL": 8
+        }
+      }
+    }
+  },
+  "groups_sha256": "a1be04c00a47aca095ec1500138940dc7094ba3f79ad1303eb52035f9d5ec570",
+  "seconds": 0.041
+}

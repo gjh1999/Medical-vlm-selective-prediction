@@ -86,6 +86,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("audit", "split-dir", "output"):
         parser.add_argument(f"--{name}", type=Path, required=True)
+    parser.add_argument("--appearance", type=Path, help="Review the first 512 unadjudicated cross-split pairs in a verified appearance ranking")
     args = parser.parse_args()
     start = time.perf_counter()
     args.output.mkdir(parents=True, exist_ok=False)
@@ -111,12 +112,28 @@ def main():
     for table, pairs in tables.items():
         for pair in pairs:
             kind[tuple(sorted(pair))] = "published_confirmed" if table == CONFIRMED else "published_uncertain"
-    candidates_path = args.audit / "duplicate_candidates.json"
-    for pair in json.loads(candidates_path.read_bytes()):
-        a, b = sorted((pair["first"], pair["second"]))
-        if rows[a]["representative"] == rows[b]["representative"] == "1" and any(
-                split[a] != split[b] for split in assignments.values()):
-            kind.setdefault((a, b), "cross_split_candidate")
+    if args.appearance:
+        source = json.loads((args.appearance / "summary.json").read_bytes())
+        candidates_path = args.appearance / "candidates.csv"
+        if (source["manifest_sha256"] != audit["manifest_sha256"]
+                or hashlib.sha256(candidates_path.read_bytes()).hexdigest() != source["candidate_sha256"]):
+            raise ValueError("Appearance candidates do not match the image audit")
+        count = 0
+        with candidates_path.open(encoding="utf-8", newline="") as f:
+            for item in csv.DictReader(f):
+                a, b = sorted((item["first"],item["second"]))
+                if (a,b) not in kind and any(v[a] != v[b] for v in assignments.values()):
+                    kind[a,b] = "cross_split_candidate"
+                    count += 1
+                if count == 512:
+                    break
+    else:
+        candidates_path = args.audit / "duplicate_candidates.json"
+        for pair in json.loads(candidates_path.read_bytes()):
+            a, b = sorted((pair["first"], pair["second"]))
+            if rows[a]["representative"] == rows[b]["representative"] == "1" and any(
+                    split[a] != split[b] for split in assignments.values()):
+                kind.setdefault((a, b), "cross_split_candidate")
     sift = cv2.SIFT_create(nfeatures=256)
     keys = sorted({key for pair in kind for key in pair})
     desc = {k: describe(Path(rows[k]["image_path"]), rows[k]["sha256"], sift) for k in keys}
@@ -142,7 +159,9 @@ def main():
         scores = [s for s, _, _, _, k in ranked if k == category]
         stats[category] = {"n":len(scores), "median_inliers":float(np.median(scores)), "max_inliers":max(scores),
                            "at_least_8":sum(i >= 8 for i in scores), "at_least_16":sum(i >= 16 for i in scores)}
-    report = {"opencv":cv2.__version__, "numpy":np.__version__, "radius":3,
+    report = {"opencv":cv2.__version__, "numpy":np.__version__, "radius":None if args.appearance else 3,
+              "candidate_source":"top_512_cross_split_appearance_pairs" if args.appearance else "representative_dhash_pairs",
+              "candidate_sha256":hashlib.sha256(candidates_path.read_bytes()).hexdigest(),
               "manifest_sha256":audit["manifest_sha256"], "unique_images":len(keys), "scores":stats,
               "visual_sample":dict(Counter(tag for tag, pair in items)),
               "panel_index_sha256":hashlib.sha256((args.output / "panel_index.csv").read_bytes()).hexdigest(),

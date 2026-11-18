@@ -1,0 +1,38 @@
+{
+  "workers": 3,
+  "opencv": "5.1.0",
+  "numpy": "2.5.4",
+  "manifest_sha256": "870b971420b4b1b23f587834b59066d2ff6702af5896065b8c2c99bcb6bdc6ba",
+  "candidate_sha256": "7512fae2aa95db17bbdb18e3405e714464936440ec8e25d0dd9e53b10a5677c2",
+  "shortlist_sha256": "1de10918b563f4dce6cabdb02dcbc808dcbe4628fde78798246a4f6c40605a98",
+  "pairs": 44789,
+  "unique_images": 10015,
+  "feature_seconds": 204.486,
+  "shortlist_identical": 532,
+  "by_source": {
+    "cross_split_candidate": {
+      "pairs": 44769,
+      "at_least_8": 5,
+      "at_least_16": 4,
+      "at_least_16_and_4_cells": 3,
+      "max_inliers": 78
+    },
+    "published_confirmed": {
+      "pairs": 18,
+      "at_least_8": 6,
+      "at_least_16": 3,
+      "at_least_16_and_4_cells": 2,
+      "max_inliers": 38
+    },
+    "published_uncertain": {
+      "pairs": 2,
+      "at_least_8": 0,
+      "at_least_16": 0,
+      "at_least_16_and_4_cells": 0,
+      "max_inliers": 0
+    }
+  },
+  "status": "complete",
+  "scores_sha256": "e494f5147a9c6dcad6f249a1af1b020af5e06986e667edf6ae75a234a5a9396c",
+  "seconds": 207.928
+}

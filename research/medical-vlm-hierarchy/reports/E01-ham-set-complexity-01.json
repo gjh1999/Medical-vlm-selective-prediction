@@ -1,0 +1,249 @@
+{
+  "source": "Mortier et al., AISTATS 2026, equation 8; exhaustive finite-tree reference",
+  "scope": "development probabilities only, before calibration, no evaluation labels",
+  "minimum_nodes_histogram": {
+    "0": 1,
+    "1": 10,
+    "2": 30,
+    "3": 46,
+    "4": 32,
+    "5": 9
+  },
+  "prior_config_sha256": "de04895cd0bdb141cd31a48c5d98107b729c5ebeb1642211bc1d579fd16237de",
+  "selection_sha256": "64760d4586734aa48eeaefa2558598533cf33716db191442d7f8fc2b7a2ec40e",
+  "models": {
+    "clip": {
+      "n": 128,
+      "budgets": {
+        "1": [
+          {
+            "rank": 1,
+            "mean_leaf_count": 1.0,
+            "root_count": 0
+          },
+          {
+            "rank": 2,
+            "mean_leaf_count": 6.828125,
+            "root_count": 123
+          },
+          {
+            "rank": 3,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          },
+          {
+            "rank": 4,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          },
+          {
+            "rank": 5,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          },
+          {
+            "rank": 6,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          },
+          {
+            "rank": 7,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          }
+        ],
+        "2": [
+          {
+            "rank": 1,
+            "mean_leaf_count": 1.0,
+            "root_count": 0
+          },
+          {
+            "rank": 2,
+            "mean_leaf_count": 2.0,
+            "root_count": 0
+          },
+          {
+            "rank": 3,
+            "mean_leaf_count": 5.0078125,
+            "root_count": 46
+          },
+          {
+            "rank": 4,
+            "mean_leaf_count": 5.5078125,
+            "root_count": 60
+          },
+          {
+            "rank": 5,
+            "mean_leaf_count": 6.234375,
+            "root_count": 79
+          },
+          {
+            "rank": 6,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          },
+          {
+            "rank": 7,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          }
+        ],
+        "7": [
+          {
+            "rank": 1,
+            "mean_leaf_count": 1.0,
+            "root_count": 0
+          },
+          {
+            "rank": 2,
+            "mean_leaf_count": 2.0,
+            "root_count": 0
+          },
+          {
+            "rank": 3,
+            "mean_leaf_count": 3.0,
+            "root_count": 0
+          },
+          {
+            "rank": 4,
+            "mean_leaf_count": 4.0,
+            "root_count": 0
+          },
+          {
+            "rank": 5,
+            "mean_leaf_count": 5.0,
+            "root_count": 0
+          },
+          {
+            "rank": 6,
+            "mean_leaf_count": 6.0,
+            "root_count": 0
+          },
+          {
+            "rank": 7,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          }
+        ]
+      }
+    },
+    "biomedclip": {
+      "n": 128,
+      "budgets": {
+        "1": [
+          {
+            "rank": 1,
+            "mean_leaf_count": 1.0,
+            "root_count": 0
+          },
+          {
+            "rank": 2,
+            "mean_leaf_count": 6.2265625,
+            "root_count": 108
+          },
+          {
+            "rank": 3,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          },
+          {
+            "rank": 4,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          },
+          {
+            "rank": 5,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          },
+          {
+            "rank": 6,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          },
+          {
+            "rank": 7,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          }
+        ],
+        "2": [
+          {
+            "rank": 1,
+            "mean_leaf_count": 1.0,
+            "root_count": 0
+          },
+          {
+            "rank": 2,
+            "mean_leaf_count": 2.0,
+            "root_count": 0
+          },
+          {
+            "rank": 3,
+            "mean_leaf_count": 5.5390625,
+            "root_count": 80
+          },
+          {
+            "rank": 4,
+            "mean_leaf_count": 6.90625,
+            "root_count": 123
+          },
+          {
+            "rank": 5,
+            "mean_leaf_count": 6.984375,
+            "root_count": 127
+          },
+          {
+            "rank": 6,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          },
+          {
+            "rank": 7,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          }
+        ],
+        "7": [
+          {
+            "rank": 1,
+            "mean_leaf_count": 1.0,
+            "root_count": 0
+          },
+          {
+            "rank": 2,
+            "mean_leaf_count": 2.0,
+            "root_count": 0
+          },
+          {
+            "rank": 3,
+            "mean_leaf_count": 3.0,
+            "root_count": 0
+          },
+          {
+            "rank": 4,
+            "mean_leaf_count": 4.0,
+            "root_count": 0
+          },
+          {
+            "rank": 5,
+            "mean_leaf_count": 5.0,
+            "root_count": 0
+          },
+          {
+            "rank": 6,
+            "mean_leaf_count": 6.0,
+            "root_count": 0
+          },
+          {
+            "rank": 7,
+            "mean_leaf_count": 7.0,
+            "root_count": 128
+          }
+        ]
+      }
+    }
+  },
+  "seconds": 0.096
+}

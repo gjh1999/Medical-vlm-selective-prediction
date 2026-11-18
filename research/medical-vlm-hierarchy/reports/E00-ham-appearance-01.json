@@ -1,0 +1,45 @@
+{
+  "protocol": "v1.3",
+  "images": 10015,
+  "size": 16,
+  "central_scales": [
+    1.0,
+    0.75
+  ],
+  "orientations": 8,
+  "top_k_per_image_distinct_raw_id": 5,
+  "pairs": 45942,
+  "overlap_with_dhash": 287,
+  "manifest_sha256": "870b971420b4b1b23f587834b59066d2ff6702af5896065b8c2c99bcb6bdc6ba",
+  "candidate_sha256": "7512fae2aa95db17bbdb18e3405e714464936440ec8e25d0dd9e53b10a5677c2",
+  "known_retrieval": {
+    "newly_discovered_duplicates.csv": {
+      "pairs": 18,
+      "dhash": 2,
+      "appearance": 6,
+      "either": 6
+    },
+    "near_duplicates_different_times.csv": {
+      "pairs": 2,
+      "dhash": 0,
+      "appearance": 0,
+      "either": 0
+    }
+  },
+  "cross_by_seed": {
+    "17": {
+      "all": 32220,
+      "both_representatives": 19255
+    },
+    "29": {
+      "all": 32334,
+      "both_representatives": 19327
+    },
+    "43": {
+      "all": 32605,
+      "both_representatives": 19575
+    }
+  },
+  "thumbnail_seconds": 55.93,
+  "seconds": 96.828
+}

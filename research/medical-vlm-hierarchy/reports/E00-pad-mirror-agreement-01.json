@@ -1,0 +1,69 @@
+{
+  "source_type": "two public mirrors; original publisher ZIP checksums not verified",
+  "parquet": [
+    "chehablab/PAD-UFES-20",
+    "db6a195e84dfbb7b8c9d7506882e42946bbcaa7d"
+  ],
+  "png_inventory": [
+    "SalmaneExploring/pad-ufes-20",
+    "086dd94836d7b2094132a21406a75dcb6bf7ec2c"
+  ],
+  "metadata_sha256": "14d145235cedb022548257acb0d84dcd949e2c916f65d2baa7c38ed5339e9527",
+  "pyarrow": "26.0.1",
+  "shards": {
+    "train-00000-of-00008.parquet": {
+      "bytes": 447454237,
+      "md5": "08458a86fe7f58ea14de8e5053b53822",
+      "sha256": "770091eb9f235ddaf8025a3f865dce7c34fc10e137b2ce4fb5a2fb799cefbc4d",
+      "url": "https://huggingface.co/datasets/chehablab/PAD-UFES-20/resolve/db6a195e84dfbb7b8c9d7506882e42946bbcaa7d/data/train-00000-of-00008.parquet"
+    },
+    "train-00001-of-00008.parquet": {
+      "bytes": 639796581,
+      "md5": "61b4d7de3e93a1ef8356d7ac8a666fdc",
+      "sha256": "1a780d96fb16f6003c2acc8f971ca8c94fd62418c959f57f08c98df78fc3ee51",
+      "url": "https://huggingface.co/datasets/chehablab/PAD-UFES-20/resolve/db6a195e84dfbb7b8c9d7506882e42946bbcaa7d/data/train-00001-of-00008.parquet"
+    },
+    "train-00002-of-00008.parquet": {
+      "bytes": 443614392,
+      "md5": "7d7bf74f56b73fea26878807a845a09b",
+      "sha256": "e542fc91081a0b0e2400aad29b9e502be1fabcdd64a67acd98cb1c485fe7415c",
+      "url": "https://huggingface.co/datasets/chehablab/PAD-UFES-20/resolve/db6a195e84dfbb7b8c9d7506882e42946bbcaa7d/data/train-00002-of-00008.parquet"
+    },
+    "train-00003-of-00008.parquet": {
+      "bytes": 385844439,
+      "md5": "6ac99092346b103808f4e342c7bff605",
+      "sha256": "7bd85cae233077dd6459336d292b44ec94530c08e704c20a4c1859bd4e01fdd7",
+      "url": "https://huggingface.co/datasets/chehablab/PAD-UFES-20/resolve/db6a195e84dfbb7b8c9d7506882e42946bbcaa7d/data/train-00003-of-00008.parquet"
+    },
+    "train-00004-of-00008.parquet": {
+      "bytes": 500684366,
+      "md5": "031448ad14e0d7593480e9eaf97bdfff",
+      "sha256": "20c7bec084979b86792f1faeccaca8ac76a27815c6b2995eaff9c84caba448a3",
+      "url": "https://huggingface.co/datasets/chehablab/PAD-UFES-20/resolve/db6a195e84dfbb7b8c9d7506882e42946bbcaa7d/data/train-00004-of-00008.parquet"
+    },
+    "train-00005-of-00008.parquet": {
+      "bytes": 441286172,
+      "md5": "7d4e1db61fe5f293766564eef0155143",
+      "sha256": "cb49557a8a1b7fdb77e1c1add86250c017c2628d51efb4b37a6511b12ff21f49",
+      "url": "https://huggingface.co/datasets/chehablab/PAD-UFES-20/resolve/db6a195e84dfbb7b8c9d7506882e42946bbcaa7d/data/train-00005-of-00008.parquet"
+    },
+    "train-00006-of-00008.parquet": {
+      "bytes": 366399010,
+      "md5": "5b85079549e2eb95d9ecc68f8c564d35",
+      "sha256": "2298acc843ba326d8f115509a55321c46978a4e52731fbe2f9af44f71f039b52",
+      "url": "https://huggingface.co/datasets/chehablab/PAD-UFES-20/resolve/db6a195e84dfbb7b8c9d7506882e42946bbcaa7d/data/train-00006-of-00008.parquet"
+    },
+    "train-00007-of-00008.parquet": {
+      "bytes": 381948070,
+      "md5": "5ecd326760438cc3ade779b4a8a3f2e6",
+      "sha256": "4a4d02cc7ec80bc51d297b4a1b1f258a7d0df643606258cce6378d8b9a87ae6e",
+      "url": "https://huggingface.co/datasets/chehablab/PAD-UFES-20/resolve/db6a195e84dfbb7b8c9d7506882e42946bbcaa7d/data/train-00007-of-00008.parquet"
+    }
+  },
+  "byte_identical": 2298,
+  "byte_disagreement": 0,
+  "metadata_rows_agree": 2298,
+  "png_inventory_sha256": "955d08a1e2982d9708254b55ef768232c3e6d2e210949ee5ab260d27957fe691",
+  "status": "mirror_agreement_verified",
+  "seconds": 991.8
+}

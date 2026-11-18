@@ -1,0 +1,18 @@
+{
+  "ham_manifest": "5bed1979d4ca0aff4e6f870429b65a9e76649632f128177c86e14b168f39ed1a",
+  "pad_manifest": "3112b6606fb992aec017717e7ab57c893429f10713d92c050613bddb109daaa5",
+  "ham_images": 10015,
+  "pad_images": 2298,
+  "comparisons": 23014470,
+  "shared_file_digests": 0,
+  "shared_pixel_digests": 0,
+  "candidate_pairs": 22,
+  "distance_histogram": {
+    "2": 6,
+    "3": 16
+  },
+  "ham_images_in_candidates": 22,
+  "pad_images_in_candidates": 6,
+  "candidate_pairs_both_representatives": 10,
+  "seconds": 1.514
+}

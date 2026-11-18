@@ -1,0 +1,233 @@
+{
+  "review_source_commit": "ac655ac5a5b93264c57d69d6d520778d915bfc89",
+  "review_source_hashes": {
+    "newly_discovered_duplicates.csv": "fafe916c6a97c4d6c6de3c7c93eae1f7eb601680692c25ea82c8ef595fca73c7",
+    "near_duplicates_different_times.csv": "6c4aff9e4b138c25765045783de8a47273051448da13670bad9087f87530492a"
+  },
+  "lesion_count": 7470,
+  "analysis_units": 7452,
+  "image_count": 10015,
+  "split_protocol": "v1.4",
+  "parent_protocol": "v1.3",
+  "eligible_geometry_pairs": 5,
+  "geometry_edges_sha256": "4dcd84dffab0a854097a6979989ca0025972336f66c37f8c76cd084e55d3335d",
+  "source_split_groups": 7450,
+  "splits": {
+    "17": {
+      "sha256": "138f18444ca71f815eed5c55edf94b89ab4cc9e2cd94335e3080f1fafaa99962",
+      "v1_3_sha256": "6e198d8f99eceb5fc9ec6033e7575308372e3ee1abdf20553e865d50da07fe5c",
+      "group_counts": {
+        "train": 2979,
+        "calibration": 1858,
+        "dev": 743,
+        "test": 1865
+      },
+      "analysis_unit_counts": {
+        "train": 2984,
+        "calibration": 1859,
+        "dev": 744,
+        "test": 1865
+      },
+      "moved_images": 3,
+      "moved_raw_lesions": 3,
+      "reviewed_pair_crossings": {
+        "confirmed": {
+          "before": 0,
+          "after": 0
+        },
+        "uncertain": {
+          "before": 0,
+          "after": 0
+        },
+        "geometry": {
+          "before": 3,
+          "after": 0
+        }
+      },
+      "group_leakage_count": 0,
+      "representative_labels": {
+        "train": {
+          "nv": 2158,
+          "mel": 246,
+          "bkl": 290,
+          "bcc": 131,
+          "vasc": 39,
+          "akiec": 91,
+          "df": 29
+        },
+        "dev": {
+          "mel": 61,
+          "nv": 538,
+          "df": 8,
+          "bcc": 32,
+          "bkl": 72,
+          "vasc": 10,
+          "akiec": 23
+        },
+        "calibration": {
+          "nv": 1345,
+          "bkl": 178,
+          "akiec": 57,
+          "bcc": 82,
+          "df": 18,
+          "vasc": 25,
+          "mel": 154
+        },
+        "test": {
+          "nv": 1350,
+          "df": 18,
+          "bcc": 82,
+          "mel": 153,
+          "bkl": 181,
+          "vasc": 24,
+          "akiec": 57
+        }
+      }
+    },
+    "29": {
+      "sha256": "1c9ef8c3dc3c5afc41084a90997e8a7b64957275697d0cf033de3c7f70c2bc28",
+      "v1_3_sha256": "9bf58fb52ac10d0668a121dd1e9b4e96c1c15f39c6571acf5e9f87941309c44f",
+      "group_counts": {
+        "calibration": 1862,
+        "test": 1860,
+        "train": 2980,
+        "dev": 743
+      },
+      "analysis_unit_counts": {
+        "calibration": 1864,
+        "test": 1861,
+        "train": 2983,
+        "dev": 744
+      },
+      "moved_images": 7,
+      "moved_raw_lesions": 5,
+      "reviewed_pair_crossings": {
+        "confirmed": {
+          "before": 0,
+          "after": 0
+        },
+        "uncertain": {
+          "before": 0,
+          "after": 0
+        },
+        "geometry": {
+          "before": 5,
+          "after": 0
+        }
+      },
+      "group_leakage_count": 0,
+      "representative_labels": {
+        "train": {
+          "mel": 246,
+          "nv": 2158,
+          "df": 29,
+          "bkl": 289,
+          "bcc": 131,
+          "vasc": 39,
+          "akiec": 91
+        },
+        "dev": {
+          "bkl": 71,
+          "akiec": 23,
+          "df": 8,
+          "nv": 539,
+          "mel": 61,
+          "bcc": 32,
+          "vasc": 10
+        },
+        "calibration": {
+          "nv": 1346,
+          "mel": 154,
+          "bkl": 182,
+          "bcc": 82,
+          "df": 18,
+          "vasc": 25,
+          "akiec": 57
+        },
+        "test": {
+          "nv": 1348,
+          "mel": 153,
+          "bcc": 82,
+          "bkl": 179,
+          "vasc": 24,
+          "akiec": 57,
+          "df": 18
+        }
+      }
+    },
+    "43": {
+      "sha256": "298cda8e983da6657dcd84ad259d90b6c06ef155d5f0894bf0fecd5cf476b0b5",
+      "v1_3_sha256": "7fef8f0c2c05fbec55d70adf854d6691740012740a432b28a004c237f8936f52",
+      "group_counts": {
+        "test": 1861,
+        "train": 2982,
+        "calibration": 1861,
+        "dev": 741
+      },
+      "analysis_unit_counts": {
+        "test": 1861,
+        "train": 2988,
+        "calibration": 1861,
+        "dev": 742
+      },
+      "moved_images": 5,
+      "moved_raw_lesions": 5,
+      "reviewed_pair_crossings": {
+        "confirmed": {
+          "before": 0,
+          "after": 0
+        },
+        "uncertain": {
+          "before": 0,
+          "after": 0
+        },
+        "geometry": {
+          "before": 5,
+          "after": 0
+        }
+      },
+      "group_leakage_count": 0,
+      "representative_labels": {
+        "train": {
+          "nv": 2159,
+          "mel": 246,
+          "akiec": 91,
+          "bcc": 131,
+          "vasc": 39,
+          "bkl": 293,
+          "df": 29
+        },
+        "dev": {
+          "mel": 61,
+          "nv": 539,
+          "bcc": 32,
+          "bkl": 69,
+          "akiec": 23,
+          "vasc": 10,
+          "df": 8
+        },
+        "calibration": {
+          "mel": 154,
+          "bkl": 178,
+          "nv": 1347,
+          "df": 18,
+          "akiec": 57,
+          "vasc": 25,
+          "bcc": 82
+        },
+        "test": {
+          "nv": 1346,
+          "mel": 153,
+          "bkl": 181,
+          "df": 18,
+          "bcc": 82,
+          "vasc": 24,
+          "akiec": 57
+        }
+      }
+    }
+  },
+  "split_groups": 7445,
+  "status": "geometry_split_binding_complete",
+  "elapsed_seconds": 0.334
+}

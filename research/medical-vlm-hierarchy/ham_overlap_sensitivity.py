@@ -19,8 +19,8 @@ def main():
     audit, records = read_inputs(args.audit)
     base = {r["image_id"]:r for r in records}
     prepared = json.loads((args.split_dir / "audit.json").read_bytes())
-    if prepared.get("split_protocol") != "v1.3":
-        raise ValueError("Expected reviewed HAM v1.3 splits")
+    if prepared.get("split_protocol") not in {"v1.3", "v1.4"}:
+        raise ValueError("Expected reviewed HAM splits")
     assignments = {}
     for seed, entry in prepared["splits"].items():
         path = args.split_dir / f"split_seed{seed}.csv"

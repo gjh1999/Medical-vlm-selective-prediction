@@ -1,7 +1,7 @@
 {
-  "version": "1.3",
-  "date": "2026-11-18",
-  "status": "ham_reviewed_pairs_grouped_additional_candidate_review_and_5080_pending",
+  "version": "1.4",
+  "date": "2026-11-19",
+  "status": "ham_reviewed_and_geometry_linked_development_pilots_complete_formal_gpu_evaluation_pending",
   "task": "closed_set_hierarchical_selective_prediction",
   "primary_domain": "skin_lesion_classification",
   "datasets": [
@@ -9,15 +9,18 @@
       "name": "HAM10000",
       "group_key": "split_group",
       "analysis_unit": "analysis_group, one lexicographically first image per published confirmed component",
-      "identity_review": "10.1038/s41597-025-04382-5; 18 confirmed edges join analysis units, two uncertain edges bind splits only",
-      "split_assignment": "original v1.2 seeded assignment of the smallest raw lesion ID in each connected split group",
+      "identity_review": "18 published confirmed edges join analysis units, two published uncertain edges and five additional geometry-supported scene pairs bind splits only",
+      "split_assignment": "prepare_ham.py reconstructs v1.3. prepare_ham_scene_splits.py binds five scene pairs into whole v1.3 groups, resolving conflicts in train, dev, calibration, test order",
+      "scene_edge_sha256": "4dcd84dffab0a854097a6979989ca0025972336f66c37f8c76cd084e55d3335d",
+      "split_groups": 7445,
+      "analysis_units": 7452,
       "patient_independence": "unverified",
       "access": "Harvard Dataverse v4.0 metadata and both original image archives verified"
     },
     {
       "name": "PAD-UFES-20",
       "group_key": "conservative linked-patient component sharing raw lesion IDs",
-      "access": "official metadata acquired SHA256 verified; CC BY 4.0",
+      "access": "official metadata verified, all 2298 PNGs agree byte-for-byte between two fixed public mirrors; publisher ZIP checksums unverified; CC BY 4.0",
       "split_algorithm": "shared-id-linked-relative-deficit-v3",
       "identity_issue": "250 raw IDs span patients; 226 have multiple labels; 1891 compound processing keys are not verified biological lesions"
     }
@@ -107,7 +110,7 @@
     "consistent_splits_minimum": 2
   },
   "targets_are": "research_management_criteria_not_observed_results_or_clinical_safety_thresholds",
-  "notes": "v1.3 updates HAM split membership and representatives using the published pair tables. v1.2 is archived. PAD and the risk budgets retain their previous definitions. HAM grouping cannot establish patient independence.",
+  "notes": "The 128-group and class-balanced CPU development pilots used archived v1.3. v1.4 changes HAM split grouping only. Five scene pairs are technical co-assignment constraints, not new diagnoses. PAD grouping and the risk budgets retain their former definitions. HAM patient independence is unverified.",
   "execution": {
     "preparation_host": "Windows GT 710 2GB",
     "experiment_host": "User home RTX 5080; environment pending",

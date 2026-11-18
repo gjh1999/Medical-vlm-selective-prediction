@@ -10,9 +10,20 @@ from prepare_pad import conservative_rows,patient_splits
 from audit_images import duplicate_candidates
 from extract_features import read_inputs
 from ham_reviewed_pairs import CONFIRMED, UNCERTAIN, reviewed_groups
+from prepare_ham_scene_splits import regroup
 
 
 class HamIdentityTests(unittest.TestCase):
+    def test_scene_links_keep_analysis_units_and_prior_training_exposure(self):
+        rows = [dict(image_id=k, analysis_group=k, split_group=k, split=role, label=k, representative="1")
+                for k,role in zip("abcd", ["test","dev","train","calibration"])]
+        actual = regroup(rows, [("a","b"),("b","c")])
+        self.assertEqual([r["split"] for r in actual], ["train","train","train","calibration"])
+        self.assertEqual([r["split_group"] for r in actual], ["a","a","a","d"])
+        for old,new in zip(rows,actual):
+            self.assertEqual([old[k] for k in ("analysis_group","label","representative")],
+                             [new[k] for k in ("analysis_group","label","representative")])
+
     def test_transitive_review_and_uncertain_followup(self):
         rows = [{'lesion_id': k, 'image_id': k + '1', 'dx': 'nv'} for k in 'edcba']
         pairs = {CONFIRMED: [('c1', 'b1'), ('b1', 'a1')], UNCERTAIN: [('d1', 'c1')]}

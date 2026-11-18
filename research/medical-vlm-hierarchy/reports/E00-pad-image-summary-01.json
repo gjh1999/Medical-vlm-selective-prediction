@@ -1,0 +1,53 @@
+{
+  "source": "agreement between two distribution mirrors; official ZIP content unverified",
+  "decoded": 2298,
+  "patient_groups": 1132,
+  "manifest_sha256": "3112b6606fb992aec017717e7ab57c893429f10713d92c050613bddb109daaa5",
+  "candidate_sha256": "5691a2d31612e6977406dd96f18b99e2beb66b45cb526bf13896c2f84f1a1848",
+  "all_unordered_pairs_checked": 2639253,
+  "dhash_pairs": 79,
+  "same_file_bytes": 15,
+  "same_pixels": 16,
+  "different_patients": 62,
+  "different_split_groups": 62,
+  "different_diagnoses": 49,
+  "width_range": [
+    147,
+    3474
+  ],
+  "height_range": [
+    147,
+    3476
+  ],
+  "class_images": {
+    "SEK": 235,
+    "ACK": 730,
+    "NEV": 244,
+    "BCC": 845,
+    "SCC": 192,
+    "MEL": 52
+  },
+  "pillow": "13.0.0",
+  "decode_seconds": 83.693,
+  "splits": {
+    "17": {
+      "split_sha256": "db68c9f56cac49811ac12f8ec0727809141c726ce9ad71e0d6800036bf0ced07",
+      "cross_candidates": 39,
+      "cross_both_representatives": 35,
+      "cross_exact_pixels": 0
+    },
+    "29": {
+      "split_sha256": "4d558f7b8daadd87a3f7b7d7dee9eb3460023b8c43aca161050c2ec5c113d87a",
+      "cross_candidates": 51,
+      "cross_both_representatives": 46,
+      "cross_exact_pixels": 0
+    },
+    "43": {
+      "split_sha256": "48c188a384184d609ae3a8909ad0e241b3035a7aae1b85a271a706aa02d33d1b",
+      "cross_candidates": 38,
+      "cross_both_representatives": 33,
+      "cross_exact_pixels": 0
+    }
+  },
+  "summary_seconds": 0.273
+}
