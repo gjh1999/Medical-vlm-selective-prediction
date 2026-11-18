@@ -8,6 +8,7 @@ from pathlib import Path
 import numpy as np
 
 from ham_dev_pilot import digest, error_auc
+from ham_error_increment import read_csv
 
 
 COVERAGE = (10,20,25,30,40,50,60,70,75,80,90,100)
@@ -40,6 +41,32 @@ def curve(errors, scores):
     if not np.isclose(risks[-1],errors.mean()):
         raise ValueError("Full coverage must recover the original leaf error rate")
     return {"empirical_aurc":float(np.mean(risks)),"distinct_scores":len(values),"coverage_points":points}
+
+
+def acceptance_changes(labels, leaves, errors, base, augmented):
+    result={}
+    for percent in (25,50,75):
+        i=math.ceil(len(errors)*percent/100)-1
+        old=base<=np.partition(base,i)[i]
+        new=augmented<=np.partition(augmented,i)[i]
+        by_label={}
+        for leaf in leaves:
+            row=labels==leaf
+            common=row & old & new
+            removed=row & old & ~new
+            added=row & new & ~old
+            by_label[leaf]={"eligible":int(row.sum()),"base_accepted":int((row&old).sum()),
+                            "augmented_accepted":int((row&new).sum()),"common":int(common.sum()),
+                            "removed":int(removed.sum()),"added":int(added.sum()),
+                            "removed_errors":int((removed&errors).sum()),"added_errors":int((added&errors).sum()),
+                            "base_errors":int((row&old&errors).sum()),"augmented_errors":int((row&new&errors).sum())}
+        if sum(v["eligible"] for v in by_label.values())!=len(labels) or any(
+                v["base_errors"]-v["removed_errors"]+v["added_errors"]!=v["augmented_errors"]
+                or v["common"]+v["removed"]!=v["base_accepted"] or v["common"]+v["added"]!=v["augmented_accepted"]
+                for v in by_label.values()):
+            raise ValueError("Case turnover or label attribution differs from the direct counts")
+        result[str(percent)]=by_label
+    return result
 
 
 def plot(report,directory):
@@ -82,6 +109,7 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     for k in ("increment","confirmation","output"):
         ap.add_argument("--"+k,type=Path,required=True)
+    ap.add_argument("--by-label",action="store_true",help="Decompose changes in acceptance by reference label")
     a=ap.parse_args()
     start=time.perf_counter()
     a.output.mkdir(parents=True,exist_ok=False)
@@ -94,6 +122,12 @@ def main():
                for p,r in zip((a.increment,a.confirmation),infos)):
             raise ValueError("Changed source cohorts")
         report["selection_sha256"]=[r["selection_sha256"] for r in infos]
+        if a.by_label:
+            selected=[read_csv(p/"selection.csv") for p in (a.increment,a.confirmation)]
+            labels=np.array([r["label"] for cohort in selected for r in cohort])
+            leaves=sorted(infos[0]["eval_class_counts"])
+            if any(r["role"]!="dev" for cohort in selected for r in cohort):
+                raise ValueError("Unexpected role in development attribution")
         first_n,second_n=infos[0]["n_eval"],infos[1]["selected"]
         rng=np.random.default_rng(17043)
         draws=np.hstack([rng.integers(0,first_n,(2000,first_n)),first_n+rng.integers(0,second_n,(2000,second_n))])
@@ -117,6 +151,9 @@ def main():
                     for batch,sl in (("first",slice(0,first_n)),("second",slice(first_n,None)),("pooled",slice(None))):
                         result[batch]={"n":len(wrong[sl]),"base":curve(wrong[sl],base[sl]),
                                        "augmented":curve(wrong[sl],augmented[sl])}
+                        if a.by_label:
+                            result[batch]["acceptance_by_label"]=acceptance_changes(
+                                labels[sl],leaves,wrong[sl],base[sl],augmented[sl])
                     diff=[error_auc(wrong[s],augmented[s])-error_auc(wrong[s],base[s]) for s in draws
                           if np.any(wrong[s]) and not np.all(wrong[s])]
                     result["pooled"]["fixed_detector_auroc_difference_interval"]=np.percentile(diff,[2.5,97.5]).tolist()

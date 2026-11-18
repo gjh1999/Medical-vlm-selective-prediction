@@ -1,0 +1,32 @@
+{
+  "scope": "development-only crossed replication of the leaf support and risk fitting cohorts; evaluation cohorts have already been examined",
+  "split_seed": 17,
+  "split_sha256": "0db64bc28463dbc89984b8be8dd912bd580fe88687f00bd84d6a13686db674e9",
+  "previous_selections": [
+    "64760d4586734aa48eeaefa2558598533cf33716db191442d7f8fc2b7a2ec40e",
+    "e68b8a3111c9ab421dd0c52ca746776fed6587e5160e2577fd098146f25aed37",
+    "8b6ac07f29b2df16e118c96c73b642fbb31381c1194e7a6c7a8940bf0e9f9954",
+    "5c7d3dccbc00074dbe08b5bb36a692e6a56f54828829dcb711fa364a94fa0262"
+  ],
+  "original_risk_parameters_sha256": "05987e7d15205d8f8854d54fb861f8f6575395dcbf98e984694ca35b44dbce94",
+  "groups_reserved": 432,
+  "new_support_per_leaf": 8,
+  "new_risk_fit": 128,
+  "support_salt": "ham-v15-independent-support-20261119",
+  "fit_salt": "ham-v15-independent-riskfit-20261119",
+  "selection": "one lexically first representative per current split_group; always exclude the current groups of all 432 old rows; rank SHA256(salt|group); within each of seven training labels for the support, unstratified dev only for risk fitting",
+  "cells": [
+    "original_support/original_fit",
+    "original_support/new_fit",
+    "new_support/original_fit",
+    "new_support/new_fit"
+  ],
+  "primary": "paired error AUROC increment with versus without parent JS for both image-centroid backbones on the original two natural evaluation batches combined (192); show each cohort separately and balanced dev (56)",
+  "secondary": [
+    "fixed text readouts, identical across support sets",
+    "leaf error counts, risk Brier",
+    "descriptive marginal effects and interaction across the four cells"
+  ],
+  "fitting": "use fixed E02 features, scaling procedure, logit scales and L2=1, one new draw per factor, no pooling original and alternative training groups, no threshold selection",
+  "interpretation": "factor sensitivity conditional on these alternate draws, not an independent evaluation cohort or a prospective risk certificate"
+}
