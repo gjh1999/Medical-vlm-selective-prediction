@@ -1,0 +1,122 @@
+{
+  "utc": "2026-11-18T11:00:33.917578+00:00",
+  "python": "3.14.7",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "sources": [
+    {
+      "name": "commit.json",
+      "url": "https://api.github.com/repos/halleewong/ScribblePrompt/commits/main",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/halleewong/ScribblePrompt/commits/main",
+      "bytes": 7160,
+      "sha256": "478706bd13082da5931d58afac7b20e6998481e2dec51869f2bef3aede6bec7c",
+      "seconds": 0.527
+    },
+    {
+      "name": "kvasir.html",
+      "url": "https://datasets.simula.no/kvasir-seg/",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
+      "seconds": 1.211
+    },
+    {
+      "name": "paper.html",
+      "url": "https://arxiv.org/html/2312.07381v3",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1082)>",
+      "seconds": 0.087
+    },
+    {
+      "name": "README.md",
+      "url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/README.md",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/README.md",
+      "bytes": 8908,
+      "sha256": "a920c89f614d51d4190ce5f251a994e729f85da9fb78b289b6dbb97a0ffa7972",
+      "seconds": 0.507
+    },
+    {
+      "name": "LICENSE",
+      "url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/LICENSE",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "seconds": 0.503
+    },
+    {
+      "name": "requirements.txt",
+      "url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/requirements.txt",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/requirements.txt",
+      "bytes": 49,
+      "sha256": "fad6e9972e76d16379bba10cabac4af18bdba0c6ea11ce9f41afb76e98bff622",
+      "seconds": 0.421
+    },
+    {
+      "name": "setup.py",
+      "url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/setup.py",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/setup.py",
+      "bytes": 459,
+      "sha256": "7860be0df5991ae6bf38371ff949ddbe689a382064a30db36f47027877ff35bd",
+      "seconds": 0.447
+    },
+    {
+      "name": "scribbleprompt_models_unet.py",
+      "url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/scribbleprompt/models/unet.py",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/scribbleprompt/models/unet.py",
+      "bytes": 9451,
+      "sha256": "7aca5e974cdba41883e732ef2702e583eb8cece64db667fef43a01deb201bb53",
+      "seconds": 0.532
+    },
+    {
+      "name": "scribbleprompt_models_network.py",
+      "url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/scribbleprompt/models/network.py",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/scribbleprompt/models/network.py",
+      "bytes": 3742,
+      "sha256": "a6a61433cc0179fadb95ece811a46ce75c89ac9fc097db3f852197b65b581fda",
+      "seconds": 0.435
+    },
+    {
+      "name": "MedScribble_README.md",
+      "url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/MedScribble/README.md",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/MedScribble/README.md",
+      "bytes": 10592,
+      "sha256": "d20bef0765ffa50c91bc35016e7c28eac2b84f094795e0caa199502e86120e96",
+      "seconds": 0.427
+    },
+    {
+      "name": "checkpoints_README.md",
+      "url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/checkpoints/README.md",
+      "status": 200,
+      "final_url": "https://raw.githubusercontent.com/halleewong/ScribblePrompt/182c44975f77749b559974ce8db558c8bde57788/checkpoints/README.md",
+      "bytes": 22,
+      "sha256": "95c83603c59dad624bb0b0418b7bdda2e7df447535a367e0045d25746960d873",
+      "seconds": 0.429
+    },
+    {
+      "name": "tree.json",
+      "url": "https://api.github.com/repos/halleewong/ScribblePrompt/git/trees/182c44975f77749b559974ce8db558c8bde57788?recursive=1",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/halleewong/ScribblePrompt/git/trees/182c44975f77749b559974ce8db558c8bde57788?recursive=1",
+      "bytes": 131531,
+      "sha256": "af44f7784eeec9adef86da904b12b6e274e75d210810b74e32fc7d65e0c35ebc",
+      "seconds": 0.561
+    }
+  ],
+  "model_inference_run": false,
+  "revision": "182c44975f77749b559974ce8db558c8bde57788",
+  "seconds": 2.17,
+  "status": "partial_failure",
+  "medscribble_counts": {
+    "img.npy": 56,
+    "seg.npy": 56,
+    "scribble_0.npy": 64,
+    "scribble_1.npy": 64,
+    "scribble_2.npy": 64
+  },
+  "tree_truncated": false,
+  "outside_sandbox_retry": "rejected_by_user_not_executed"
+}
