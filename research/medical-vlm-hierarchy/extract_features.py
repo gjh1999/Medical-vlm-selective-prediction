@@ -13,6 +13,7 @@ import time
 from pathlib import Path
 
 from prepare_openai_clip import WEIGHT_SHA256
+from prepare_biomedclip import CONFIG_BLOBS, WEIGHT_SHA256 as BIOMED_SHA256, validate_config_file
 
 
 def read_inputs(audit_dir):
@@ -26,6 +27,74 @@ def read_inputs(audit_dir):
     return audit,rows
 
 
+def load_encoder(name, weights, device, config_path, report, with_tokenizer=False):
+    expected = WEIGHT_SHA256 if name == "clip" else BIOMED_SHA256
+    with weights.open("rb") as stream:
+        if hashlib.file_digest(stream, "sha256").hexdigest() != expected:
+            raise ValueError(f"Unexpected checkpoint for {name}")
+    report["weights_sha256"] = expected
+    tokenizer = None
+    if name == "clip":
+        import clip
+        model, preprocess = clip.load(str(weights.resolve()), device=device, jit=False)
+        model.float()
+        report["loader"] = "openai/CLIP clip.load"
+        origin = json.loads(importlib.metadata.distribution("clip").read_text("direct_url.json") or "{}")
+        report["loader_commit"] = origin.get("vcs_info", {}).get("commit_id")
+        report["visual_activations"] = sorted({
+            type(block.mlp.gelu).__name__ for block in model.visual.transformer.resblocks
+        })
+        if report["visual_activations"] != ["QuickGELU"]:
+            raise ValueError("Unexpected visual activation in the OpenAI ViT-B/16 checkpoint")
+        if with_tokenizer:
+            tokenizer = clip.tokenize
+    elif name == "biomedclip":
+        import open_clip
+        from open_clip.factory import _MODEL_CONFIGS
+        if config_path is None:
+            raise ValueError("BiomedCLIP requires open_clip_config.json")
+        config_path = Path(config_path)
+        report["model_config_sha256"] = validate_config_file(config_path, "open_clip_config.json")
+        config = json.loads(config_path.read_bytes())
+        text_dir = config_path.resolve().parent / "text"
+        if text_dir.is_dir():
+            report["text_config_sha256"] = {key: validate_config_file(text_dir / key, key)
+                                            for key in CONFIG_BLOBS if key != "open_clip_config.json"}
+            config["model_cfg"]["text_cfg"].update(hf_model_name=str(text_dir), hf_tokenizer_name=str(text_dir))
+        _MODEL_CONFIGS["biomedclip_local"] = config["model_cfg"]
+        preprocess_cfg = config["preprocess_cfg"]
+        model, _, preprocess = open_clip.create_model_and_transforms(
+            "biomedclip_local", pretrained=str(weights.resolve()), device=device, pretrained_hf=False,
+            image_mean=preprocess_cfg["mean"], image_std=preprocess_cfg["std"])
+        report["loader"] = "open_clip.create_model_and_transforms"
+        if with_tokenizer:
+            tokenizer = open_clip.get_tokenizer("biomedclip_local")
+    else:
+        raise ValueError(f"Unknown encoder {name}")
+    model.eval()
+    model.requires_grad_(False)
+    report["preprocess"] = repr(preprocess)
+    return model, preprocess, tokenizer
+
+
+def encode_images(model, preprocess, rows, device):
+    import torch
+    from PIL import Image, ImageOps
+    images = []
+    for row in rows:
+        path = Path(row["image_path"])
+        if hashlib.sha256(path.read_bytes()).hexdigest() != row["sha256"]:
+            raise ValueError("Image changed since audit")
+        with Image.open(path) as image:
+            images.append(preprocess(ImageOps.exif_transpose(image).convert("RGB")))
+    with torch.inference_mode():
+        features = model.encode_image(torch.stack(images).to(device)).float()
+        norms = features.norm(dim=-1, keepdim=True)
+        if not torch.isfinite(norms).all() or (norms <= 0).any():
+            raise ValueError("Invalid image embedding norm")
+        return (features / norms).cpu().numpy()
+
+
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--audit',required=True);ap.add_argument('--output',required=True)
     ap.add_argument('--weights',required=True);ap.add_argument('--weights-sha256',required=True)
@@ -37,10 +106,8 @@ def main():
     ap.add_argument('--device',choices=['cuda','cpu'],default='cuda');args=ap.parse_args()
     if args.batch_size<1:ap.error('batch-size must be positive')
     audit,rows=read_inputs(Path(args.audit));weights=Path(args.weights)
-    with weights.open('rb') as stream:weight_hash=hashlib.file_digest(stream,'sha256').hexdigest()
-    if weight_hash!=args.weights_sha256:raise ValueError('Weight SHA256 mismatch')
-    if args.model == 'clip' and weight_hash != WEIGHT_SHA256:
-        raise ValueError('Expected the original OpenAI ViT-B/16 checkpoint')
+    expected = WEIGHT_SHA256 if args.model == 'clip' else BIOMED_SHA256
+    if args.weights_sha256 != expected:raise ValueError('Expected the pinned checkpoint SHA256')
     if args.smoke_only:
         rows = sorted((r for r in rows if r['split'] == 'train' and r['representative'] == '1'),
                       key=lambda r: r['image_id'])[:args.batch_size]
@@ -58,54 +125,18 @@ def main():
     try:
         import numpy as np
         import torch
-        from PIL import Image,ImageOps
         if args.device=='cuda' and not torch.cuda.is_available():raise RuntimeError('CUDA unavailable; no silent CPU fallback')
         device=torch.device(args.device)
         packages = ['torch', 'torchvision', 'numpy', 'pillow']
         packages += ['clip'] if args.model == 'clip' else ['open_clip_torch', 'transformers']
         report['versions'] = {p: importlib.metadata.version(p) for p in packages}
         report['python']=platform.python_version();report['cuda_build']=torch.version.cuda
-        if args.model=='clip':
-            import clip
-            model, preprocess = clip.load(str(weights.resolve()), device=device, jit=False)
-            model.float()
-            report['loader'] = 'openai/CLIP clip.load'
-            distribution = importlib.metadata.distribution('clip')
-            origin = json.loads(distribution.read_text('direct_url.json') or '{}')
-            report['loader_commit'] = origin.get('vcs_info', {}).get('commit_id')
-            report['visual_activations'] = sorted({
-                type(block.mlp.gelu).__name__ for block in model.visual.transformer.resblocks
-            })
-            if report['visual_activations'] != ['QuickGELU']:
-                raise ValueError('Unexpected visual activation for the OpenAI ViT-B/16 checkpoint')
-        else:
-            import open_clip
-            if not args.model_config:raise ValueError('BiomedCLIP needs its pinned model config')
-            config_bytes=Path(args.model_config).read_bytes();config=json.loads(config_bytes)
-            report['model_config_sha256']=hashlib.sha256(config_bytes).hexdigest()
-            # Follows the official BiomedCLIP local-loading recipe. Version-sensitive.
-            from open_clip.factory import _MODEL_CONFIGS
-            _MODEL_CONFIGS['biomedclip_local']=config['model_cfg']
-            model,_,preprocess=open_clip.create_model_and_transforms('biomedclip_local',pretrained=str(weights),
-                device=device,**{f'force_{k}':v for k,v in config.get('preprocess_cfg',{}).items() if k=='image_size'},
-                **{f'image_{k}':v for k,v in config.get('preprocess_cfg',{}).items() if k in {'mean','std'}})
-        model.eval();model.requires_grad_(False);report['preprocess']=repr(preprocess)
+        model, preprocess, _ = load_encoder(args.model, weights, device, args.model_config, report)
         if args.device=='cuda':
             torch.cuda.reset_peak_memory_stats();torch.cuda.synchronize();report['gpu']=torch.cuda.get_device_name()
         features=[];inference_start=time.perf_counter()
         for offset in range(0,len(rows),args.batch_size):
-            images=[]
-            for row in rows[offset:offset+args.batch_size]:
-                p=Path(row['image_path'])
-                if hashlib.sha256(p.read_bytes()).hexdigest()!=row['sha256']:raise ValueError('Image changed since audit')
-                with Image.open(p) as image:images.append(preprocess(ImageOps.exif_transpose(image).convert('RGB')))
-            with torch.inference_mode():
-                f = model.encode_image(torch.stack(images).to(device)).float()
-                norms = f.norm(dim=-1, keepdim=True)
-                if not torch.isfinite(norms).all() or (norms <= 0).any():
-                    raise ValueError('Invalid image embedding norm')
-                f = f / norms
-            features.append(f.cpu().float().numpy())
+            features.append(encode_images(model, preprocess, rows[offset:offset+args.batch_size], device))
             print(f'Encoded {min(offset+args.batch_size,len(rows))}/{len(rows)}',flush=True)
         if args.device=='cuda':torch.cuda.synchronize()
         array=np.concatenate(features);np.save(out/'image_features.npy',array,allow_pickle=False)

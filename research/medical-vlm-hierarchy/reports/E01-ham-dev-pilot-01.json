@@ -1,0 +1,1306 @@
+{
+  "scope": "development pilot",
+  "role": "dev",
+  "groups": 128,
+  "seed": 17,
+  "selection_sha256": "64760d4586734aa48eeaefa2558598533cf33716db191442d7f8fc2b7a2ec40e",
+  "config_sha256": "de04895cd0bdb141cd31a48c5d98107b729c5ebeb1642211bc1d579fd16237de",
+  "manifest_sha256": "870b971420b4b1b23f587834b59066d2ff6702af5896065b8c2c99bcb6bdc6ba",
+  "split_sha256": "6e198d8f99eceb5fc9ec6033e7575308372e3ee1abdf20553e865d50da07fe5c",
+  "sensitivity_groups_sha256": "890cc0967a7e558ace9643fbbf2977c9b66534de5f27922ee833e76fa5ded090",
+  "device": "cpu",
+  "batch_size": 8,
+  "python": "3.14.7",
+  "versions": {
+    "torch": "2.15.0+cpu",
+    "torchvision": "0.29.2+cpu",
+    "numpy": "2.5.4",
+    "pillow": "13.0.0",
+    "clip": "1.0",
+    "open_clip_torch": "2.23.0",
+    "timm": "0.9.16",
+    "transformers": "4.57.6"
+  },
+  "models": {
+    "clip": {
+      "weights_sha256": "5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f",
+      "loader": "openai/CLIP clip.load",
+      "loader_commit": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+      "visual_activations": [
+        "QuickGELU"
+      ],
+      "preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    <function _convert_image_to_rgb at 0x00000152F096D7A0>\n    ToTensor()\n    Normalize(mean=(0.48145466, 0.4578275, 0.40821073), std=(0.26862954, 0.26130258, 0.27577711))\n)",
+      "revision": "OpenAI-ViT-B-16",
+      "context_length": 77,
+      "logit_scale": 100.00000762939453,
+      "image_seconds": 15.827,
+      "primary": {
+        "n": 128,
+        "correct": 12,
+        "accuracy": 0.09375,
+        "macro_f1_supported": 0.0494279176201373,
+        "classes": {
+          "akiec": {
+            "support": 2,
+            "predicted": 6,
+            "correct": 0,
+            "f1": 0.0
+          },
+          "bcc": {
+            "support": 5,
+            "predicted": 2,
+            "correct": 0,
+            "f1": 0.0
+          },
+          "bkl": {
+            "support": 17,
+            "predicted": 2,
+            "correct": 1,
+            "f1": 0.10526315789473684
+          },
+          "df": {
+            "support": 0,
+            "predicted": 10,
+            "correct": 0,
+            "f1": 0.0
+          },
+          "mel": {
+            "support": 12,
+            "predicted": 103,
+            "correct": 11,
+            "f1": 0.19130434782608696
+          },
+          "nv": {
+            "support": 91,
+            "predicted": 0,
+            "correct": 0,
+            "f1": 0.0
+          },
+          "vasc": {
+            "support": 1,
+            "predicted": 5,
+            "correct": 0,
+            "f1": 0.0
+          }
+        },
+        "error_auroc": {
+          "negative_margin": 0.492816091954023,
+          "entropy": 0.5991379310344828,
+          "prompt_js": 0.45186781609195403,
+          "parent_js": 0.3757183908045977
+        },
+        "climbing": {
+          "0.5": {
+            "n": 128,
+            "node_n": 69,
+            "node_errors": 43,
+            "leaf_n": 43,
+            "leaf_errors": 38,
+            "node_coverage": 0.5390625,
+            "leaf_coverage": 0.3359375,
+            "node_risk": 0.6231884057971014,
+            "leaf_risk": 0.8837209302325582,
+            "correct_information_utility": 0.13654538934377927,
+            "per_class": {
+              "akiec": {
+                "n": 2,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bcc": {
+                "n": 5,
+                "node_n": 4,
+                "node_errors": 1,
+                "leaf_n": 1,
+                "leaf_errors": 1,
+                "node_coverage": 0.8,
+                "leaf_coverage": 0.2,
+                "node_risk": 0.25,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.26125497956785215
+              },
+              "bkl": {
+                "n": 17,
+                "node_n": 7,
+                "node_errors": 5,
+                "leaf_n": 3,
+                "leaf_errors": 3,
+                "node_coverage": 0.4117647058823529,
+                "leaf_coverage": 0.17647058823529413,
+                "node_risk": 0.7142857142857143,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.05122646658193181
+              },
+              "mel": {
+                "n": 12,
+                "node_n": 5,
+                "node_errors": 0,
+                "leaf_n": 5,
+                "leaf_errors": 0,
+                "node_coverage": 0.4166666666666667,
+                "leaf_coverage": 0.4166666666666667,
+                "node_risk": 0.0,
+                "leaf_risk": 0.0,
+                "correct_information_utility": 0.4166666666666667
+              },
+              "nv": {
+                "n": 91,
+                "node_n": 52,
+                "node_errors": 36,
+                "leaf_n": 34,
+                "leaf_errors": 34,
+                "node_coverage": 0.5714285714285714,
+                "leaf_coverage": 0.37362637362637363,
+                "node_risk": 0.6923076923076923,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.11319434072825985
+              },
+              "vasc": {
+                "n": 1,
+                "node_n": 1,
+                "node_errors": 1,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 1.0,
+                "leaf_coverage": 0.0,
+                "node_risk": 1.0,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              }
+            }
+          },
+          "0.7": {
+            "n": 128,
+            "node_n": 13,
+            "node_errors": 10,
+            "leaf_n": 10,
+            "leaf_errors": 10,
+            "node_coverage": 0.1015625,
+            "leaf_coverage": 0.078125,
+            "node_risk": 0.7692307692307693,
+            "leaf_risk": 1.0,
+            "correct_information_utility": 0.015088894052155731,
+            "per_class": {
+              "akiec": {
+                "n": 2,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bcc": {
+                "n": 5,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bkl": {
+                "n": 17,
+                "node_n": 1,
+                "node_errors": 1,
+                "leaf_n": 1,
+                "leaf_errors": 1,
+                "node_coverage": 0.058823529411764705,
+                "leaf_coverage": 0.058823529411764705,
+                "node_risk": 1.0,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.0
+              },
+              "mel": {
+                "n": 12,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "nv": {
+                "n": 91,
+                "node_n": 12,
+                "node_errors": 9,
+                "leaf_n": 9,
+                "leaf_errors": 9,
+                "node_coverage": 0.13186813186813187,
+                "leaf_coverage": 0.0989010989010989,
+                "node_risk": 0.75,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.02122393888654872
+              },
+              "vasc": {
+                "n": 1,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              }
+            }
+          },
+          "0.9": {
+            "n": 128,
+            "node_n": 0,
+            "node_errors": 0,
+            "leaf_n": 0,
+            "leaf_errors": 0,
+            "node_coverage": 0.0,
+            "leaf_coverage": 0.0,
+            "node_risk": null,
+            "leaf_risk": null,
+            "correct_information_utility": 0.0,
+            "per_class": {
+              "akiec": {
+                "n": 2,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bcc": {
+                "n": 5,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bkl": {
+                "n": 17,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "mel": {
+                "n": 12,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "nv": {
+                "n": 91,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "vasc": {
+                "n": 1,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              }
+            }
+          }
+        }
+      },
+      "sensitivity": {
+        "n": 111,
+        "correct": 9,
+        "accuracy": 0.08108108108108109,
+        "macro_f1_supported": 0.05798969072164948,
+        "classes": {
+          "akiec": {
+            "support": 2,
+            "predicted": 6,
+            "correct": 0,
+            "f1": 0.0
+          },
+          "bcc": {
+            "support": 4,
+            "predicted": 0,
+            "correct": 0,
+            "f1": 0.0
+          },
+          "bkl": {
+            "support": 14,
+            "predicted": 2,
+            "correct": 1,
+            "f1": 0.125
+          },
+          "df": {
+            "support": 0,
+            "predicted": 10,
+            "correct": 0,
+            "f1": 0.0
+          },
+          "mel": {
+            "support": 9,
+            "predicted": 88,
+            "correct": 8,
+            "f1": 0.16494845360824742
+          },
+          "nv": {
+            "support": 82,
+            "predicted": 0,
+            "correct": 0,
+            "f1": 0.0
+          },
+          "vasc": {
+            "support": 0,
+            "predicted": 5,
+            "correct": 0,
+            "f1": 0.0
+          }
+        },
+        "error_auroc": {
+          "negative_margin": 0.40413943355119825,
+          "entropy": 0.5403050108932462,
+          "prompt_js": 0.48257080610021785,
+          "parent_js": 0.41938997821350765
+        },
+        "climbing": {
+          "0.5": {
+            "n": 111,
+            "node_n": 57,
+            "node_errors": 36,
+            "leaf_n": 34,
+            "leaf_errors": 32,
+            "node_coverage": 0.5135135135135135,
+            "leaf_coverage": 0.3063063063063063,
+            "node_risk": 0.631578947368421,
+            "leaf_risk": 0.9411764705882353,
+            "correct_information_utility": 0.12070803655103918,
+            "per_class": {
+              "akiec": {
+                "n": 2,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bcc": {
+                "n": 4,
+                "node_n": 3,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.75,
+                "leaf_coverage": 0.0,
+                "node_risk": 0.0,
+                "leaf_risk": null,
+                "correct_information_utility": 0.3265687244598152
+              },
+              "bkl": {
+                "n": 14,
+                "node_n": 4,
+                "node_errors": 3,
+                "leaf_n": 1,
+                "leaf_errors": 1,
+                "node_coverage": 0.2857142857142857,
+                "leaf_coverage": 0.07142857142857142,
+                "node_risk": 0.75,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.031101783281887167
+              },
+              "mel": {
+                "n": 9,
+                "node_n": 2,
+                "node_errors": 0,
+                "leaf_n": 2,
+                "leaf_errors": 0,
+                "node_coverage": 0.2222222222222222,
+                "leaf_coverage": 0.2222222222222222,
+                "node_risk": 0.0,
+                "leaf_risk": 0.0,
+                "correct_information_utility": 0.2222222222222222
+              },
+              "nv": {
+                "n": 82,
+                "node_n": 48,
+                "node_errors": 33,
+                "leaf_n": 31,
+                "leaf_errors": 31,
+                "node_coverage": 0.5853658536585366,
+                "leaf_coverage": 0.3780487804878049,
+                "node_risk": 0.6875,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.11776697796804474
+              }
+            }
+          },
+          "0.7": {
+            "n": 111,
+            "node_n": 10,
+            "node_errors": 7,
+            "leaf_n": 7,
+            "leaf_errors": 7,
+            "node_coverage": 0.09009009009009009,
+            "leaf_coverage": 0.06306306306306306,
+            "node_risk": 0.7,
+            "leaf_risk": 1.0,
+            "correct_information_utility": 0.01739980575383724,
+            "per_class": {
+              "akiec": {
+                "n": 2,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bcc": {
+                "n": 4,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bkl": {
+                "n": 14,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "mel": {
+                "n": 9,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "nv": {
+                "n": 82,
+                "node_n": 10,
+                "node_errors": 7,
+                "leaf_n": 7,
+                "leaf_errors": 7,
+                "node_coverage": 0.12195121951219512,
+                "leaf_coverage": 0.08536585365853659,
+                "node_risk": 0.7,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.023553395593608948
+              }
+            }
+          },
+          "0.9": {
+            "n": 111,
+            "node_n": 0,
+            "node_errors": 0,
+            "leaf_n": 0,
+            "leaf_errors": 0,
+            "node_coverage": 0.0,
+            "leaf_coverage": 0.0,
+            "node_risk": null,
+            "leaf_risk": null,
+            "correct_information_utility": 0.0,
+            "per_class": {
+              "akiec": {
+                "n": 2,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bcc": {
+                "n": 4,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bkl": {
+                "n": 14,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "mel": {
+                "n": 9,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "nv": {
+                "n": 82,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              }
+            }
+          }
+        }
+      },
+      "cache_sha256": "8a8131173f9864fdd4d44d6821d0e21034b0932dee708075e99c27d8d7136117",
+      "elapsed_seconds": 19.713,
+      "leaf_order": [
+        "akiec",
+        "bcc",
+        "bkl",
+        "df",
+        "mel",
+        "nv",
+        "vasc"
+      ],
+      "parent_order": [
+        "df",
+        "epithelial",
+        "melanocytic",
+        "vasc"
+      ],
+      "text_node_order": [
+        "akiec",
+        "bcc",
+        "bkl",
+        "df",
+        "epithelial",
+        "mel",
+        "melanocytic",
+        "nv",
+        "vasc"
+      ]
+    },
+    "biomedclip": {
+      "weights_sha256": "52cc993c5c5ff962bd0c60931874bc001e7e9b41666a385530f4a036294576be",
+      "model_config_sha256": "9a41f334a8c444678772c0ebb9ab854c97ab350bced3a17b803e258d39c23dc0",
+      "text_config_sha256": {
+        "special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+        "tokenizer.json": "defc1f91456606e7847af3a2fb4a8abb96441423aa5407a52498395ea68327ff",
+        "tokenizer_config.json": "e1790949631401af1bfb6c9c7aeec7fcf612e274d73579d99f704faea40c8ba7",
+        "vocab.txt": "7b36651908a88bc38bda41b728b2a598191e0d3b553cbacf7b1e5f026d5b5b9f",
+        "config.json": "56bab767c02bc792897638feb8addc06d483d9c73769a5f554bbabea1f5507a1"
+      },
+      "loader": "open_clip.create_model_and_transforms",
+      "preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    <function _convert_to_rgb at 0x000001530F224720>\n    ToTensor()\n    Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])\n)",
+      "revision": "9f341de24bfb00180f1b847274256e9b65a3a32e",
+      "context_length": 256,
+      "logit_scale": 85.2322769165039,
+      "image_seconds": 12.863,
+      "primary": {
+        "n": 128,
+        "correct": 15,
+        "accuracy": 0.1171875,
+        "macro_f1_supported": 0.1019116186693148,
+        "classes": {
+          "akiec": {
+            "support": 2,
+            "predicted": 1,
+            "correct": 0,
+            "f1": 0.0
+          },
+          "bcc": {
+            "support": 5,
+            "predicted": 19,
+            "correct": 3,
+            "f1": 0.25
+          },
+          "bkl": {
+            "support": 17,
+            "predicted": 0,
+            "correct": 0,
+            "f1": 0.0
+          },
+          "df": {
+            "support": 0,
+            "predicted": 48,
+            "correct": 0,
+            "f1": 0.0
+          },
+          "mel": {
+            "support": 12,
+            "predicted": 26,
+            "correct": 4,
+            "f1": 0.21052631578947367
+          },
+          "nv": {
+            "support": 91,
+            "predicted": 15,
+            "correct": 8,
+            "f1": 0.1509433962264151
+          },
+          "vasc": {
+            "support": 1,
+            "predicted": 19,
+            "correct": 0,
+            "f1": 0.0
+          }
+        },
+        "error_auroc": {
+          "negative_margin": 0.5056047197640118,
+          "entropy": 0.5740412979351033,
+          "prompt_js": 0.5392330383480826,
+          "parent_js": 0.4920353982300885
+        },
+        "climbing": {
+          "0.5": {
+            "n": 128,
+            "node_n": 47,
+            "node_errors": 26,
+            "leaf_n": 25,
+            "leaf_errors": 21,
+            "node_coverage": 0.3671875,
+            "leaf_coverage": 0.1953125,
+            "node_risk": 0.5531914893617021,
+            "leaf_risk": 0.84,
+            "correct_information_utility": 0.11349798535369147,
+            "per_class": {
+              "akiec": {
+                "n": 2,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bcc": {
+                "n": 5,
+                "node_n": 4,
+                "node_errors": 1,
+                "leaf_n": 2,
+                "leaf_errors": 1,
+                "node_coverage": 0.8,
+                "leaf_coverage": 0.4,
+                "node_risk": 0.25,
+                "leaf_risk": 0.5,
+                "correct_information_utility": 0.37416998637856813
+              },
+              "bkl": {
+                "n": 17,
+                "node_n": 5,
+                "node_errors": 5,
+                "leaf_n": 2,
+                "leaf_errors": 2,
+                "node_coverage": 0.29411764705882354,
+                "leaf_coverage": 0.11764705882352941,
+                "node_risk": 1.0,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.0
+              },
+              "mel": {
+                "n": 12,
+                "node_n": 9,
+                "node_errors": 4,
+                "leaf_n": 5,
+                "leaf_errors": 3,
+                "node_coverage": 0.75,
+                "leaf_coverage": 0.4166666666666667,
+                "node_risk": 0.4444444444444444,
+                "leaf_risk": 0.6,
+                "correct_information_utility": 0.3276148698896611
+              },
+              "nv": {
+                "n": 91,
+                "node_n": 29,
+                "node_errors": 16,
+                "leaf_n": 16,
+                "leaf_errors": 15,
+                "node_coverage": 0.31868131868131866,
+                "leaf_coverage": 0.17582417582417584,
+                "node_risk": 0.5517241379310345,
+                "leaf_risk": 0.9375,
+                "correct_information_utility": 0.09588476653520586
+              },
+              "vasc": {
+                "n": 1,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              }
+            }
+          },
+          "0.7": {
+            "n": 128,
+            "node_n": 17,
+            "node_errors": 6,
+            "leaf_n": 6,
+            "leaf_errors": 6,
+            "node_coverage": 0.1328125,
+            "leaf_coverage": 0.046875,
+            "node_risk": 0.35294117647058826,
+            "leaf_risk": 1.0,
+            "correct_information_utility": 0.052070197249380015,
+            "per_class": {
+              "akiec": {
+                "n": 2,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bcc": {
+                "n": 5,
+                "node_n": 1,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.2,
+                "leaf_coverage": 0.0,
+                "node_risk": 0.0,
+                "leaf_risk": null,
+                "correct_information_utility": 0.08708499318928406
+              },
+              "bkl": {
+                "n": 17,
+                "node_n": 1,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.058823529411764705,
+                "leaf_coverage": 0.0,
+                "node_risk": 0.0,
+                "leaf_risk": null,
+                "correct_information_utility": 0.025613233290965903
+              },
+              "mel": {
+                "n": 12,
+                "node_n": 6,
+                "node_errors": 2,
+                "leaf_n": 2,
+                "leaf_errors": 2,
+                "node_coverage": 0.5,
+                "leaf_coverage": 0.16666666666666666,
+                "node_risk": 0.3333333333333333,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.21459760429732597
+              },
+              "nv": {
+                "n": 91,
+                "node_n": 9,
+                "node_errors": 4,
+                "leaf_n": 4,
+                "leaf_errors": 4,
+                "node_coverage": 0.0989010989010989,
+                "leaf_coverage": 0.04395604395604396,
+                "node_risk": 0.4444444444444444,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.0353732314775812
+              },
+              "vasc": {
+                "n": 1,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              }
+            }
+          },
+          "0.9": {
+            "n": 128,
+            "node_n": 3,
+            "node_errors": 0,
+            "leaf_n": 0,
+            "leaf_errors": 0,
+            "node_coverage": 0.0234375,
+            "leaf_coverage": 0.0,
+            "node_risk": 0.0,
+            "leaf_risk": null,
+            "correct_information_utility": 0.015088894052155731,
+            "per_class": {
+              "akiec": {
+                "n": 2,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bcc": {
+                "n": 5,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bkl": {
+                "n": 17,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "mel": {
+                "n": 12,
+                "node_n": 3,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.25,
+                "leaf_coverage": 0.0,
+                "node_risk": 0.0,
+                "leaf_risk": null,
+                "correct_information_utility": 0.16094820322299447
+              },
+              "nv": {
+                "n": 91,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "vasc": {
+                "n": 1,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              }
+            }
+          }
+        }
+      },
+      "sensitivity": {
+        "n": 111,
+        "correct": 12,
+        "accuracy": 0.10810810810810811,
+        "macro_f1_supported": 0.11677527151211362,
+        "classes": {
+          "akiec": {
+            "support": 2,
+            "predicted": 1,
+            "correct": 0,
+            "f1": 0.0
+          },
+          "bcc": {
+            "support": 4,
+            "predicted": 14,
+            "correct": 2,
+            "f1": 0.2222222222222222
+          },
+          "bkl": {
+            "support": 14,
+            "predicted": 0,
+            "correct": 0,
+            "f1": 0.0
+          },
+          "df": {
+            "support": 0,
+            "predicted": 46,
+            "correct": 0,
+            "f1": 0.0
+          },
+          "mel": {
+            "support": 9,
+            "predicted": 19,
+            "correct": 3,
+            "f1": 0.21428571428571427
+          },
+          "nv": {
+            "support": 82,
+            "predicted": 13,
+            "correct": 7,
+            "f1": 0.14736842105263157
+          },
+          "vasc": {
+            "support": 0,
+            "predicted": 18,
+            "correct": 0,
+            "f1": 0.0
+          }
+        },
+        "error_auroc": {
+          "negative_margin": 0.48148148148148145,
+          "entropy": 0.5378787878787878,
+          "prompt_js": 0.5580808080808081,
+          "parent_js": 0.4890572390572391
+        },
+        "climbing": {
+          "0.5": {
+            "n": 111,
+            "node_n": 36,
+            "node_errors": 20,
+            "leaf_n": 19,
+            "leaf_errors": 17,
+            "node_coverage": 0.32432432432432434,
+            "leaf_coverage": 0.17117117117117117,
+            "node_risk": 0.5555555555555556,
+            "leaf_risk": 0.8947368421052632,
+            "correct_information_utility": 0.09546273591528447,
+            "per_class": {
+              "akiec": {
+                "n": 2,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bcc": {
+                "n": 4,
+                "node_n": 3,
+                "node_errors": 1,
+                "leaf_n": 1,
+                "leaf_errors": 1,
+                "node_coverage": 0.75,
+                "leaf_coverage": 0.25,
+                "node_risk": 0.3333333333333333,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.21771248297321016
+              },
+              "bkl": {
+                "n": 14,
+                "node_n": 3,
+                "node_errors": 3,
+                "leaf_n": 1,
+                "leaf_errors": 1,
+                "node_coverage": 0.21428571428571427,
+                "leaf_coverage": 0.07142857142857142,
+                "node_risk": 1.0,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.0
+              },
+              "mel": {
+                "n": 9,
+                "node_n": 6,
+                "node_errors": 3,
+                "leaf_n": 4,
+                "leaf_errors": 3,
+                "node_coverage": 0.6666666666666666,
+                "leaf_coverage": 0.4444444444444444,
+                "node_risk": 0.5,
+                "leaf_risk": 0.75,
+                "correct_information_utility": 0.25417618064266173
+              },
+              "nv": {
+                "n": 82,
+                "node_n": 24,
+                "node_errors": 13,
+                "leaf_n": 13,
+                "leaf_errors": 12,
+                "node_coverage": 0.2926829268292683,
+                "leaf_coverage": 0.15853658536585366,
+                "node_risk": 0.5416666666666666,
+                "leaf_risk": 0.9230769230769231,
+                "correct_information_utility": 0.09070644059658267
+              }
+            }
+          },
+          "0.7": {
+            "n": 111,
+            "node_n": 10,
+            "node_errors": 4,
+            "leaf_n": 4,
+            "leaf_errors": 4,
+            "node_coverage": 0.09009009009009009,
+            "leaf_coverage": 0.036036036036036036,
+            "node_risk": 0.4,
+            "leaf_risk": 1.0,
+            "correct_information_utility": 0.03292242369735414,
+            "per_class": {
+              "akiec": {
+                "n": 2,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bcc": {
+                "n": 4,
+                "node_n": 1,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.25,
+                "leaf_coverage": 0.0,
+                "node_risk": 0.0,
+                "leaf_risk": null,
+                "correct_information_utility": 0.10885624148660508
+              },
+              "bkl": {
+                "n": 14,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "mel": {
+                "n": 9,
+                "node_n": 4,
+                "node_errors": 2,
+                "leaf_n": 2,
+                "leaf_errors": 2,
+                "node_coverage": 0.4444444444444444,
+                "leaf_coverage": 0.2222222222222222,
+                "node_risk": 0.5,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.14306506953155063
+              },
+              "nv": {
+                "n": 82,
+                "node_n": 5,
+                "node_errors": 2,
+                "leaf_n": 2,
+                "leaf_errors": 2,
+                "node_coverage": 0.06097560975609756,
+                "leaf_coverage": 0.024390243902439025,
+                "node_risk": 0.4,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.023553395593608948
+              }
+            }
+          },
+          "0.9": {
+            "n": 111,
+            "node_n": 3,
+            "node_errors": 0,
+            "leaf_n": 0,
+            "leaf_errors": 0,
+            "node_coverage": 0.02702702702702703,
+            "leaf_coverage": 0.0,
+            "node_risk": 0.0,
+            "leaf_risk": null,
+            "correct_information_utility": 0.01739980575383724,
+            "per_class": {
+              "akiec": {
+                "n": 2,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bcc": {
+                "n": 4,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "bkl": {
+                "n": 14,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "mel": {
+                "n": 9,
+                "node_n": 3,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.3333333333333333,
+                "leaf_coverage": 0.0,
+                "node_risk": 0.0,
+                "leaf_risk": null,
+                "correct_information_utility": 0.21459760429732597
+              },
+              "nv": {
+                "n": 82,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              }
+            }
+          }
+        }
+      },
+      "cache_sha256": "0ec0f50d7b3502a9a5d648c5354f94c2b5342d4f0996415c799ac823cf5d7771",
+      "elapsed_seconds": 21.51,
+      "leaf_order": [
+        "akiec",
+        "bcc",
+        "bkl",
+        "df",
+        "mel",
+        "nv",
+        "vasc"
+      ],
+      "parent_order": [
+        "df",
+        "epithelial",
+        "melanocytic",
+        "vasc"
+      ],
+      "text_node_order": [
+        "akiec",
+        "bcc",
+        "bkl",
+        "df",
+        "epithelial",
+        "mel",
+        "melanocytic",
+        "nv",
+        "vasc"
+      ]
+    }
+  },
+  "status": "complete",
+  "seconds": 41.262
+}

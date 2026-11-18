@@ -1,0 +1,27 @@
+{
+  "dataset": "HAM10000 v4.0",
+  "protocol": "v1.3",
+  "split_seed": 17,
+  "split_sha256": "6e198d8f99eceb5fc9ec6033e7575308372e3ee1abdf20553e865d50da07fe5c",
+  "role": "dev",
+  "groups": 128,
+  "selection_salt": "ham-dev-pilot-v1",
+  "templates": ["a dermoscopic image of {label}.", "dermoscopy of {label}."],
+  "parent": {"akiec": "epithelial", "bcc": "epithelial", "bkl": "epithelial", "mel": "melanocytic", "nv": "melanocytic", "epithelial": "root", "melanocytic": "root", "df": "root", "vasc": "root"},
+  "names": {
+    "akiec": "actinic keratosis or intraepithelial carcinoma",
+    "bcc": "basal cell carcinoma",
+    "bkl": "benign keratosis-like lesion",
+    "mel": "melanoma",
+    "nv": "melanocytic nevus",
+    "df": "dermatofibroma",
+    "vasc": "vascular lesion",
+    "epithelial": "keratinocytic skin lesion",
+    "melanocytic": "melanocytic skin lesion"
+  },
+  "taxonomy_status": "engineering pilot using the research plan draft; not a clinically reviewed taxonomy",
+  "temperature": 1.0,
+  "climbing_thresholds": [0.5, 0.7, 0.9],
+  "error_ranking": ["negative_margin", "entropy", "prompt_js", "parent_js"],
+  "label_source": "https://doi.org/10.1038/sdata.2018.161"
+}

@@ -1,0 +1,61 @@
+{
+  "source_config_sha256": "de04895cd0bdb141cd31a48c5d98107b729c5ebeb1642211bc1d579fd16237de",
+  "source_selection_sha256": "64760d4586734aa48eeaefa2558598533cf33716db191442d7f8fc2b7a2ec40e",
+  "majority_class_from_training": "nv",
+  "training_counts": {
+    "nv": 2158,
+    "mel": 246,
+    "bkl": 289,
+    "bcc": 131,
+    "vasc": 39,
+    "akiec": 91,
+    "df": 29
+  },
+  "majority_correct": 91,
+  "n": 128,
+  "models": {
+    "clip": {
+      "single_image_max_logit_abs_difference": 1.52587890625e-05,
+      "reference_images": 2,
+      "primary": {
+        "paired_delta_parent_minus_entropy": -0.22341954022988506,
+        "percentiles_2_5_97_5": [
+          -0.5245204160246533,
+          0.08438426906779657
+        ],
+        "valid_resamples": 2000
+      },
+      "sensitivity": {
+        "paired_delta_parent_minus_entropy": -0.12091503267973856,
+        "percentiles_2_5_97_5": [
+          -0.45866325014854425,
+          0.23213208360267126
+        ],
+        "valid_resamples": 2000
+      }
+    },
+    "biomedclip": {
+      "single_image_max_logit_abs_difference": 1.9073486328125e-05,
+      "reference_images": 2,
+      "primary": {
+        "paired_delta_parent_minus_entropy": -0.08200589970501475,
+        "percentiles_2_5_97_5": [
+          -0.28379294475125866,
+          0.12659909471955733
+        ],
+        "valid_resamples": 2000
+      },
+      "sensitivity": {
+        "paired_delta_parent_minus_entropy": -0.04882154882154882,
+        "percentiles_2_5_97_5": [
+          -0.25556753889674677,
+          0.17524752475247524
+        ],
+        "valid_resamples": 2000
+      }
+    }
+  },
+  "bootstrap": "2000 resamples of selected development groups, seed 17; descriptive only",
+  "status": "verified",
+  "seconds": 12.447
+}
