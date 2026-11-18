@@ -1,0 +1,76 @@
+{
+  "status": "complete",
+  "opencv_workers": 3,
+  "varied": "OPENBLAS_NUM_THREADS and OMP_NUM_THREADS set together in each fresh process",
+  "comparisons": {
+    "1": {
+      "review_seconds": 13.035,
+      "scores_sha256": "3179dcd0c97b614652485a5a4a50eaed31c1047209d3fb26b40e4acf1092eb73",
+      "versus_fresh": {
+        "rows": 248,
+        "correlation_absolute_tolerance": 1e-12,
+        "max_absolute_difference": {
+          "intensity_correlation": 5.4067861299245124e-14,
+          "detail_correlation": 1.7763568394002505e-15
+        },
+        "nonidentical_correlations": {
+          "intensity_correlation": 182,
+          "detail_correlation": 180
+        },
+        "fresh_scores_sha256": "3179dcd0c97b614652485a5a4a50eaed31c1047209d3fb26b40e4acf1092eb73",
+        "prior_scores_sha256": "abfaa65a6255925c5f15206d81465cb911fd5ad5876c76432cb369cf4aa1e7c2",
+        "all_other_fields_and_decisions_exact": true
+      },
+      "versus_previous_release": {
+        "rows": 248,
+        "correlation_absolute_tolerance": 1e-12,
+        "max_absolute_difference": {
+          "intensity_correlation": 0.0,
+          "detail_correlation": 0.0
+        },
+        "nonidentical_correlations": {
+          "intensity_correlation": 0,
+          "detail_correlation": 0
+        },
+        "fresh_scores_sha256": "3179dcd0c97b614652485a5a4a50eaed31c1047209d3fb26b40e4acf1092eb73",
+        "prior_scores_sha256": "3179dcd0c97b614652485a5a4a50eaed31c1047209d3fb26b40e4acf1092eb73",
+        "all_other_fields_and_decisions_exact": true
+      }
+    },
+    "3": {
+      "review_seconds": 13.088,
+      "scores_sha256": "abfaa65a6255925c5f15206d81465cb911fd5ad5876c76432cb369cf4aa1e7c2",
+      "versus_fresh": {
+        "rows": 248,
+        "correlation_absolute_tolerance": 1e-12,
+        "max_absolute_difference": {
+          "intensity_correlation": 0.0,
+          "detail_correlation": 0.0
+        },
+        "nonidentical_correlations": {
+          "intensity_correlation": 0,
+          "detail_correlation": 0
+        },
+        "fresh_scores_sha256": "abfaa65a6255925c5f15206d81465cb911fd5ad5876c76432cb369cf4aa1e7c2",
+        "prior_scores_sha256": "abfaa65a6255925c5f15206d81465cb911fd5ad5876c76432cb369cf4aa1e7c2",
+        "all_other_fields_and_decisions_exact": true
+      },
+      "versus_previous_release": {
+        "rows": 248,
+        "correlation_absolute_tolerance": 1e-12,
+        "max_absolute_difference": {
+          "intensity_correlation": 5.4067861299245124e-14,
+          "detail_correlation": 1.7763568394002505e-15
+        },
+        "nonidentical_correlations": {
+          "intensity_correlation": 182,
+          "detail_correlation": 180
+        },
+        "fresh_scores_sha256": "abfaa65a6255925c5f15206d81465cb911fd5ad5876c76432cb369cf4aa1e7c2",
+        "prior_scores_sha256": "3179dcd0c97b614652485a5a4a50eaed31c1047209d3fb26b40e4acf1092eb73",
+        "all_other_fields_and_decisions_exact": true
+      }
+    }
+  },
+  "verification_seconds": 0.011
+}

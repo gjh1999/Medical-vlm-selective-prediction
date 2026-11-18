@@ -1,0 +1,57 @@
+{
+  "status": "complete",
+  "review_comparison": {
+    "rows": 248,
+    "correlation_absolute_tolerance": 1e-12,
+    "max_absolute_difference": {
+      "intensity_correlation": 5.4067861299245124e-14,
+      "detail_correlation": 1.7763568394002505e-15
+    },
+    "nonidentical_correlations": {
+      "intensity_correlation": 182,
+      "detail_correlation": 180
+    },
+    "fresh_scores_sha256": "abfaa65a6255925c5f15206d81465cb911fd5ad5876c76432cb369cf4aa1e7c2",
+    "prior_scores_sha256": "3179dcd0c97b614652485a5a4a50eaed31c1047209d3fb26b40e4acf1092eb73",
+    "all_other_fields_and_decisions_exact": true
+  },
+  "matched_files": {
+    "controls/pairs.csv": "679b67027ca2057d44b1daff0e18f1dad257b20ab91d8a5f79510d59754e6541",
+    "local-features/index.csv": "ce69f9d17992fa7a1dae3a9ee917cebcae3efe0ae35fb94effef758891b35140",
+    "words/candidates.csv": "a85409e1c60fb94a394190f1bcb98e5dfbd799760b6797c248d7008b38f9ac9c",
+    "words/vocabulary.npz": "8df6cb32ed1aa4b7c1378d847dbd09d60e3dc0a7d6f1665e5d053bed504a7946",
+    "geometry/scores.csv": "0a36aa2092ca69bb394f69b2ecb5eaa2afaa4e7df3e2ffae3fc5b2df3e19af8c",
+    "review/panel_index.csv": "5578a2d04241e2402fec748a693ca2ad7e378cd12e060eb50c21f8b192698b1d",
+    "review/panel-01.jpg": "53ccc2e66ead411c23be5b300dd2fd863971f4304253ad4015d41dcbd82a69a6",
+    "review/panel-02.jpg": "c3700b5f87517d15deb42bf96486f8cd3e23bf3584682f06832009fe8dd098e7",
+    "review/panel-03.jpg": "3b63aff23ad0affe77c7f6daa82f62ce497ae0327c78d652d3b0dd3eacc82601",
+    "review/panel-04.jpg": "5edcd91e0b3653a971ef7e8aa27353394163c7d2b1c13608c9290a34af4bf0f7",
+    "splits/split_seed17.csv": "0db64bc28463dbc89984b8be8dd912bd580fe88687f00bd84d6a13686db674e9",
+    "splits/split_seed29.csv": "4b31664ae2775f64c2727d2e80ec00f7add1e39dcc047eb88323f99fe8bc104f",
+    "splits/split_seed43.csv": "c82cbdab0ca2ee62137323af64066d2a39ba0dbbf7233b218435b91910b5d22a",
+    "splits/texture_candidates.csv": "ae48bfa980c27b106bde5b56905de9faf11e45550fbb968aa60415407cefee53",
+    "audit/manifest.csv": "d30792103d5ad225e6540dd8622ebcf443365c29d9c71484e1910e8e8b099533",
+    "audit/duplicate_candidates.json": "69db34618b816e2506e2f6222f8a8b2098f23ed8b06c38104aaa2d2e956108c7",
+    "sensitivity/sensitivity_groups.csv": "6d924ed1a6523306662e60a71da506adaa5edbd36334d83fe2932022d2d58111"
+  },
+  "matched_file_count": 17,
+  "feature_packs_verified_in_each_run": 10015,
+  "feature_pack_bytes_per_run": 2540069726,
+  "semantic_json_comparisons": 4,
+  "geometry_score_rows": 235407,
+  "candidate_pairs": 235405,
+  "extra_control_pairs": 2,
+  "control_scores_verified": 225,
+  "fresh_reused_pairs": 0,
+  "original_reused_pairs": 10085,
+  "fresh_seconds": 4828.269,
+  "release_with_existing_screen_seconds": 69.826,
+  "image_count": 10015,
+  "groups": 7428,
+  "analysis_units": 7452,
+  "sensitivity_groups": 833,
+  "sensitivity_analysis_units": 844,
+  "strong_edges": 23,
+  "loose_edges": 44,
+  "verification_seconds": 94.907
+}

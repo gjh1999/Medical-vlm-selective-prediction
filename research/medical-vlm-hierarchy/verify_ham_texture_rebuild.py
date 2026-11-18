@@ -3,6 +3,7 @@ import argparse
 import csv
 import hashlib
 import json
+import math
 import time
 from pathlib import Path
 
@@ -14,6 +15,40 @@ def fingerprint(path):
 
 def load(directory, name="summary.json"):
     return json.loads((directory / name).read_bytes())
+
+
+def check_review(new, old):
+    fields = ("intensity_correlation", "detail_correlation")
+    with ((new/"scores.csv").open(encoding="utf-8", newline="") as a,
+          (old/"scores.csv").open(encoding="utf-8", newline="") as b):
+        first, second = csv.DictReader(a), csv.DictReader(b)
+        if first.fieldnames != second.fieldnames or not set(fields) <= set(first.fieldnames):
+            raise ValueError("Review score schema differs")
+        maxima = dict.fromkeys(fields, 0.)
+        differing = dict.fromkeys(fields, 0)
+        n = 0
+        for one, two in zip(first, second, strict=True):
+            for key in fields:
+                x, y = float(one.pop(key)), float(two.pop(key))
+                if not math.isfinite(x) or not math.isfinite(y) or abs(x-y) > 1e-12:
+                    raise ValueError("Nonfinite or materially different pixel correlation")
+                if key == "detail_correlation" and (x >= .3) != (y >= .3):
+                    raise ValueError("Pixel eligibility threshold changed")
+                maxima[key] = max(maxima[key], abs(x-y))
+                differing[key] += int(x != y)
+            if one != two:
+                raise ValueError("Pair identity, geometric evidence or scientific decision changed")
+            n += 1
+    current, prior = load(new), load(old)
+    for info, directory in ((current, new), (prior, old)):
+        if info.pop("scores_sha256") != fingerprint(directory/"scores.csv"):
+            raise ValueError("Review source hash changed")
+        del info["seconds"]
+    if current != prior:
+        raise ValueError("Review categories, thresholds or counts changed")
+    return {"rows": n, "correlation_absolute_tolerance": 1e-12, "max_absolute_difference": maxima,
+            "nonidentical_correlations": differing, "fresh_scores_sha256": fingerprint(new/"scores.csv"),
+            "prior_scores_sha256": fingerprint(old/"scores.csv"), "all_other_fields_and_decisions_exact": True}
 
 
 def verify(args):
@@ -29,7 +64,7 @@ def verify(args):
         "local-features": (args.features, ["index.csv"]),
         "words": (args.words, ["candidates.csv", "vocabulary.npz"]),
         "geometry": (args.geometry, ["scores.csv"]),
-        "review": (args.review, ["scores.csv", "panel_index.csv"]),
+        "review": (args.review, ["panel_index.csv"]),
         "splits": (released / "splits", ["split_seed17.csv", "split_seed29.csv", "split_seed43.csv", "texture_candidates.csv"]),
         "audit": (released / "audit", ["manifest.csv", "duplicate_candidates.json"]),
         "sensitivity": (released / "sensitivity", ["sensitivity_groups.csv"]),
@@ -45,6 +80,7 @@ def verify(args):
             if value != fingerprint(prior / file):
                 raise ValueError(f"Byte mismatch in {relative}")
             compared[relative] = value
+    review = check_review(fresh / "review", args.review)
     feature_count = feature_bytes = 0
     with (fresh / "local-features/index.csv").open(encoding="utf-8", newline="") as source:
         for row in csv.DictReader(source):
@@ -83,7 +119,7 @@ def verify(args):
         raise ValueError("Wrong score-table length")
     release = load(fresh / "splits", "audit.json")
     sensitivity = load(fresh / "sensitivity")
-    return {"status": "complete", "matched_files": compared, "matched_file_count": len(compared),
+    return {"status": "complete", "review_comparison": review, "matched_files": compared, "matched_file_count": len(compared),
             "feature_packs_verified_in_each_run": feature_count, "feature_pack_bytes_per_run": feature_bytes,
             "semantic_json_comparisons": 4, "geometry_score_rows": scores,
             "candidate_pairs": geometry["candidate_pairs"], "extra_control_pairs": geometry["extra_control_pairs"],
