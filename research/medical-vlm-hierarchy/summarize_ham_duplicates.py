@@ -4,6 +4,7 @@ import csv
 import hashlib
 import json
 import time
+from collections import defaultdict
 from pathlib import Path
 
 from extract_features import read_inputs
@@ -13,11 +14,20 @@ def summarize_split(audited, pairs, split_path):
     with split_path.open(encoding="utf-8-sig", newline="") as stream:
         rows = list(csv.DictReader(stream))
     by_id = {row["image_id"]: row for row in rows}
-    if len(rows) != len(audited) or by_id.keys() != audited.keys():
+    if len(by_id) != len(rows) or by_id.keys() != audited.keys():
         raise ValueError(f"Image inventory differs in {split_path}")
     for image_id, row in by_id.items():
-        if any(row[k] != audited[image_id][k] for k in ("representative", "lesion_id", "label")):
+        if any(row.get(k) != audited[image_id].get(k)
+               for k in ("representative", "lesion_id", "analysis_group", "split_group", "label")):
             raise ValueError(f"Image metadata differs in {split_path}")
+    group_roles = defaultdict(set)
+    representatives = defaultdict(int)
+    for row in rows:
+        unit = row.get("analysis_group", row["lesion_id"])
+        group_roles[row.get("split_group", row["lesion_id"])].add(row["split"])
+        representatives[unit] += int(row["representative"])
+    if any(len(s) != 1 for s in group_roles.values()) or any(n != 1 for n in representatives.values()):
+        raise ValueError("Split group isolation or representative count failed")
     cross_split = exact = representative_pairs = exact_reps = 0
     for pair in pairs:
         first, second = by_id[pair["first"]], by_id[pair["second"]]
@@ -50,14 +60,16 @@ def main():
     pairs = json.loads(payload)
     if len(pairs) != audit["near_candidate_pairs"]:
         raise ValueError("Candidate count does not match image audit")
-    protocol = json.loads(Path(__file__).with_name("protocol.json").read_text(encoding="utf-8-sig"))
+    prepared = json.loads((args.split_dir / "audit.json").read_bytes())
     splits = {seed: summarize_split(audited, pairs, args.split_dir / f"split_seed{seed}.csv")
-              for seed in protocol["split_seeds"]}
+              for seed in prepared["splits"]}
+    if any(metrics["split_sha256"] != prepared["splits"][seed]["sha256"] for seed, metrics in splits.items()):
+        raise ValueError("Split file changed since preparation")
     source = next(s for s in splits.values() if s["split_sha256"] == audit["split_sha256"])
     for field in ("cross_split_candidates", "exact_cross_split_pairs"):
         if source[field] != audit[field]:
             raise ValueError(f"Split projection disagrees with image audit on {field}")
-    report = {"protocol": protocol["version"], "decoded": audit["decoded"],
+    report = {"protocol": prepared.get("split_protocol", "legacy_lesion_id"), "decoded": audit["decoded"],
               "missing": len(audit["missing"]), "corrupt": len(audit["corrupt"]),
               "pillow": audit["pillow_version"], "radius": 3,
               "manifest_sha256": audit["manifest_sha256"],
@@ -68,6 +80,14 @@ def main():
               "identical_pixel_pairs": sum(p["same_decoded_pixels"] for p in pairs),
               "splits": splits, "decode_and_audit_seconds": audit["seconds"],
               "projection_seconds": round(time.perf_counter() - start, 3)}
+    if "review_source_commit" in prepared:
+        report.update(review_source_commit=prepared["review_source_commit"],
+                      review_source_hashes=prepared["review_source_hashes"],
+                      original_lesion_ids=prepared["lesion_count"], analysis_units=prepared["analysis_units"],
+                      split_groups=prepared["split_groups"], split_build_seconds=prepared["elapsed_seconds"])
+        for seed, metrics in splits.items():
+            for key in ("analysis_unit_counts", "group_counts", "moved_raw_lesions", "moved_images", "reviewed_pair_crossings"):
+                metrics[key] = prepared["splits"][seed][key]
     args.output.mkdir(exist_ok=False, parents=True)
     (args.output / "summary.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
 

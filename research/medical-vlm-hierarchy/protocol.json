@@ -1,13 +1,16 @@
 {
-  "version": "1.2",
-  "date": "2026-11-17",
-  "status": "ham_images_decoded_near_duplicate_review_required_pad_metadata_audited_5080_pending",
+  "version": "1.3",
+  "date": "2026-11-18",
+  "status": "ham_reviewed_pairs_grouped_additional_candidate_review_and_5080_pending",
   "task": "closed_set_hierarchical_selective_prediction",
   "primary_domain": "skin_lesion_classification",
   "datasets": [
     {
       "name": "HAM10000",
-      "group_key": "lesion_id",
+      "group_key": "split_group",
+      "analysis_unit": "analysis_group, one lexicographically first image per published confirmed component",
+      "identity_review": "10.1038/s41597-025-04382-5; 18 confirmed edges join analysis units, two uncertain edges bind splits only",
+      "split_assignment": "original v1.2 seeded assignment of the smallest raw lesion ID in each connected split group",
       "patient_independence": "unverified",
       "access": "Harvard Dataverse v4.0 metadata and both original image archives verified"
     },
@@ -104,7 +107,7 @@
     "consistent_splits_minimum": 2
   },
   "targets_are": "research_management_criteria_not_observed_results_or_clinical_safety_thresholds",
-  "notes": "v1.2 uses conservative PAD grouping. HAM splits match the original metadata run. HAM near-duplicate review, 5080 evaluation and classification results are pending.",
+  "notes": "v1.3 updates HAM split membership and representatives using the published pair tables. v1.2 is archived. PAD and the risk budgets retain their previous definitions. HAM grouping cannot establish patient independence.",
   "execution": {
     "preparation_host": "Windows GT 710 2GB",
     "experiment_host": "User home RTX 5080; environment pending",

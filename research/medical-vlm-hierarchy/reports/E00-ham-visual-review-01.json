@@ -1,0 +1,57 @@
+{
+  "opencv": "5.1.0",
+  "numpy": "2.5.4",
+  "radius": 3,
+  "manifest_sha256": "870b971420b4b1b23f587834b59066d2ff6702af5896065b8c2c99bcb6bdc6ba",
+  "unique_images": 421,
+  "scores": {
+    "cross_split_candidate": {
+      "n": 1439,
+      "median_inliers": 0.0,
+      "max_inliers": 3,
+      "at_least_8": 0,
+      "at_least_16": 0
+    },
+    "published_confirmed": {
+      "n": 18,
+      "median_inliers": 2.5,
+      "max_inliers": 38,
+      "at_least_8": 6,
+      "at_least_16": 3
+    },
+    "published_uncertain": {
+      "n": 2,
+      "median_inliers": 0.0,
+      "max_inliers": 0,
+      "at_least_8": 0,
+      "at_least_16": 0
+    }
+  },
+  "visual_sample": {
+    "ranked": 18,
+    "published_confirmed": 18,
+    "random_remainder": 18,
+    "published_uncertain": 2
+  },
+  "panel_index_sha256": "2c2b2d07d745ab259bb24783a1cbecafc8627edd0b70bfb0789c0799baaf44a3",
+  "elapsed_seconds": 15.063,
+  "reviewer": "single model-assisted visual read of local image panels, no diagnostic labels or split roles displayed",
+  "observations": {
+    "ranked": {
+      "no_visible_correspondence": 18
+    },
+    "published_confirmed": {
+      "visible_correspondence": 17,
+      "indeterminate": 1
+    },
+    "random_remainder": {
+      "no_visible_correspondence": 17,
+      "indeterminate": 1
+    },
+    "published_uncertain": {
+      "indeterminate": 1,
+      "visible_correspondence": 1
+    }
+  },
+  "observation_sha256": "2c65b957e30666b968a8058dd20a7fb9a0cc8d18f4ea9d40e7b3e92a2c39ee44"
+}

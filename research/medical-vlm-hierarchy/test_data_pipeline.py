@@ -9,6 +9,25 @@ from pathlib import Path
 from prepare_pad import conservative_rows,patient_splits
 from audit_images import duplicate_candidates
 from extract_features import read_inputs
+from ham_reviewed_pairs import CONFIRMED, UNCERTAIN, reviewed_groups
+
+
+class HamIdentityTests(unittest.TestCase):
+    def test_transitive_review_and_uncertain_followup(self):
+        rows = [{'lesion_id': k, 'image_id': k + '1', 'dx': 'nv'} for k in 'edcba']
+        pairs = {CONFIRMED: [('c1', 'b1'), ('b1', 'a1')], UNCERTAIN: [('d1', 'c1')]}
+        units, groups = reviewed_groups(rows, pairs)
+        self.assertEqual(units, dict(a='a', b='a', c='a', d='d', e='e'))
+        self.assertEqual(groups, dict(a='a', b='a', c='a', d='a', e='e'))
+
+    def test_conflicting_confirmed_labels_fail_but_uncertain_labels_stay_separate(self):
+        rows = [{'lesion_id': 'x', 'image_id': 'X', 'dx': 'nv'},
+                {'lesion_id': 'y', 'image_id': 'Y', 'dx': 'mel'}]
+        with self.assertRaises(ValueError):
+            reviewed_groups(rows, {CONFIRMED: [('X','Y')], UNCERTAIN: []})
+        units, groups = reviewed_groups(rows, {CONFIRMED: [], UNCERTAIN: [('X','Y')]})
+        self.assertNotEqual(units['x'], units['y'])
+        self.assertEqual(groups['x'], groups['y'])
 
 
 class PatientIdentityTests(unittest.TestCase):

@@ -10,6 +10,8 @@ import urllib.request
 from collections import Counter, defaultdict
 from pathlib import Path
 
+from ham_reviewed_pairs import CONFIRMED, UNCERTAIN, SOURCE_COMMIT, TABLE_HASHES, load_tables, reviewed_groups
+
 API = 'https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/DBW86T'
 
 
@@ -59,20 +61,36 @@ def grouped_splits(rows, seed):
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--output',required=True)
     ap.add_argument('--download-images',action='store_true',help='Also download 2.77GB original image archives; no extraction')
+    ap.add_argument('--source-dir', type=Path, help='Reuse the official dataset API JSON and original metadata from an earlier run')
+    ap.add_argument('--pair-dir', type=Path, help='Reuse the two pinned published duplicate-review CSVs')
     args=ap.parse_args();out=Path(args.output);out.mkdir(parents=True,exist_ok=False)
     start=time.perf_counter();report={'status':'in_progress','source':API}
     try:
-        req=urllib.request.Request(API,headers={'User-Agent':'MedicalVLMResearch/0.1'})
-        with urllib.request.urlopen(req,timeout=45) as r: meta=json.load(r)
+        source = args.source_dir
+        if source:
+            meta = json.loads((source / 'dataset_api.json').read_bytes())
+        else:
+            req=urllib.request.Request(API,headers={'User-Agent':'MedicalVLMResearch/0.1'})
+            with urllib.request.urlopen(req,timeout=45) as r: meta=json.load(r)
         (out/'dataset_api.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2),encoding='utf-8')
         v=meta['data']['latestVersion'];files=[f['dataFile'] for f in v['files']]
         report.update(version=f"{v['versionNumber']}.{v['versionMinorNumber']}",terms=v.get('termsOfUse'),file_inventory=files)
         f=next(f for f in files if f['filename'].startswith('HAM10000_metadata.'))
         original=out/'HAM10000_metadata.original'
         # Preserve both checksum declarations; original exports need not match tab exports.
-        report['metadata_download']=download(f"https://dataverse.harvard.edu/api/access/datafile/{f['id']}?format=original",original)
+        metadata_url = f"https://dataverse.harvard.edu/api/access/datafile/{f['id']}?format=original"
+        if source:
+            data = (source / original.name).read_bytes()
+            original.write_bytes(data)
+            report['metadata_download'] = {'bytes': len(data), 'md5': hashlib.md5(data).hexdigest(),
+                                           'sha256': hashlib.sha256(data).hexdigest(), 'url': metadata_url,
+                                           'reused_from': str(source)}
+        else:
+            report['metadata_download']=download(metadata_url,original)
         report['metadata_download']['official_checksum']=f.get('checksum')
         report['metadata_download']['official_md5_matches']=(f.get('checksum',{}).get('type')=='MD5' and f['checksum']['value']==report['metadata_download']['md5'])
+        if report['metadata_download']['sha256'] != 'de17ec44cb25ea9c3f6378ba18d69224c740afd62e86ec2edc6a894d6aa663d3':
+            raise ValueError('Reviewed-pair split requires the audited HAM v4.0 metadata')
         text=original.read_text(encoding='utf-8-sig'); dialect=csv.Sniffer().sniff(text[:4096],delimiters=',\t')
         rows=list(csv.DictReader(io.StringIO(text),dialect=dialect))
         required={'lesion_id','image_id','dx'}
@@ -84,19 +102,42 @@ def main():
         report['patient_id_available']='patient_id' in rows[0]
         report['image_hash_audit']='not_run_no_images';report['near_duplicate_audit']='not_run_no_images'
         report['splits']={}
+        tables = load_tables(out, args.pair_dir)
+        analysis, split_groups = reviewed_groups(rows, tables)
+        reps = {}
+        for r in sorted(rows, key=lambda r: r['image_id']):
+            reps.setdefault(analysis[r['lesion_id']], r['image_id'])
+        report.update(split_protocol='v1.3', analysis_units=len(reps), split_groups=len(set(split_groups.values())),
+                      review_source_commit=SOURCE_COMMIT, review_source_hashes=TABLE_HASHES)
+        by_image = {r['image_id']: r['lesion_id'] for r in rows}
         for seed in [17,29,43]:
-            assigned=grouped_splits(rows,seed)
-            # Label-independent representative by lexicographic image ID per lesion.
-            reps={}
-            for r in sorted(rows,key=lambda r:r['image_id']):reps.setdefault(r['lesion_id'],r['image_id'])
+            previous = grouped_splits(rows,seed)
+            # Keep the smallest raw lesion ID's original split. Unlinked cases stay put.
+            assigned = {lesion: previous[group] for lesion, group in split_groups.items()}
             target=out/f'split_seed{seed}.csv'
             with target.open('w',encoding='utf-8',newline='') as f:
-                writer=csv.DictWriter(f,fieldnames=['image_id','lesion_id','label','split','representative'])
+                writer=csv.DictWriter(f,fieldnames=['image_id','lesion_id','analysis_group','split_group','label','split','representative'])
                 writer.writeheader()
                 for r in sorted(rows,key=lambda r:r['image_id']):
-                    writer.writerow({'image_id':r['image_id'],'lesion_id':r['lesion_id'],'label':r['dx'],'split':assigned[r['lesion_id']],'representative':int(reps[r['lesion_id']]==r['image_id'])})
-            report['splits'][str(seed)]={'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'group_counts':dict(Counter(assigned.values())),
-                'representative_labels':{s:dict(Counter(r['dx'] for r in rows if assigned[r['lesion_id']]==s and reps[r['lesion_id']]==r['image_id'])) for s in ['train','dev','calibration','test']},'group_leakage_count':0}
+                    lesion = r['lesion_id']
+                    unit = analysis[lesion]
+                    writer.writerow({'image_id':r['image_id'], 'lesion_id':lesion, 'analysis_group':unit,
+                                     'split_group':split_groups[lesion], 'label':r['dx'], 'split':assigned[lesion],
+                                     'representative':int(reps[unit]==r['image_id'])})
+            pair_crossings = {}
+            for name, table in [('confirmed', CONFIRMED), ('uncertain', UNCERTAIN)]:
+                edges = [(by_image[a], by_image[b]) for a, b in tables[table]]
+                pair_crossings[name] = {'before':sum(previous[a]!=previous[b] for a,b in edges),
+                                        'after':sum(assigned[a]!=assigned[b] for a,b in edges)}
+            report['splits'][str(seed)]={
+                'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),
+                'group_counts':dict(Counter(assigned[g] for g in set(split_groups.values()))),
+                'analysis_unit_counts':dict(Counter(assigned[g] for g in set(analysis.values()))),
+                'moved_raw_lesions':sum(assigned[g]!=previous[g] for g in assigned),
+                'moved_images':sum(assigned[g]!=previous[g] for g in by_image.values()),
+                'reviewed_pair_crossings':pair_crossings,
+                'representative_labels':{s:dict(Counter(r['dx'] for r in rows if assigned[r['lesion_id']]==s and reps[analysis[r['lesion_id']]]==r['image_id'])) for s in ['train','dev','calibration','test']},
+                'group_leakage_count':sum(v['after'] for v in pair_crossings.values())}
         if args.download_images:
             report['image_downloads']={}
             for f in files:
