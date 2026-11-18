@@ -1,0 +1,890 @@
+{
+  "scope": "metadata only, no test predictions or clinical tree validation",
+  "config_sha256": "d8f0bd34f2aac785e7272dc2acd77ef624821174b6b4fdeaf0c6f7ca0d7539d8",
+  "pad_supplement_rows": 59,
+  "pad_author_concept_types": {
+    "ACK": [
+      "disorder"
+    ],
+    "BCC": [
+      "morphologic abnormality"
+    ],
+    "MEL": [
+      "disorder"
+    ],
+    "NEV": [
+      "disorder"
+    ],
+    "SCC": [
+      "disorder",
+      "morphologic abnormality"
+    ],
+    "SEK": [
+      "morphologic abnormality"
+    ]
+  },
+  "ham": {
+    "seeds": {
+      "17": {
+        "calibration": {
+          "representatives": 1859,
+          "groups": 1858,
+          "leaf_counts": {
+            "akiec": 57,
+            "bcc": 82,
+            "bkl": 178,
+            "df": 18,
+            "mel": 154,
+            "nv": 1345,
+            "vasc": 25
+          },
+          "shared_leaf_representatives": 1581,
+          "groups_containing_shared_leaves": 1580,
+          "groups_with_only_shared_leaves": 1580,
+          "groups_with_shared_and_other_leaves": 0,
+          "groups_with_any_shared_each": {
+            "bcc": 82,
+            "mel": 154,
+            "nv": 1344
+          },
+          "coarse_representatives": {
+            "melanocytic": 1499,
+            "epithelial": 317
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 1498,
+            "epithelial": 317
+          },
+          "groups_spanning_coarse_nodes": 0
+        },
+        "dev": {
+          "representatives": 744,
+          "groups": 743,
+          "leaf_counts": {
+            "akiec": 23,
+            "bcc": 32,
+            "bkl": 72,
+            "df": 8,
+            "mel": 61,
+            "nv": 538,
+            "vasc": 10
+          },
+          "shared_leaf_representatives": 631,
+          "groups_containing_shared_leaves": 631,
+          "groups_with_only_shared_leaves": 631,
+          "groups_with_shared_and_other_leaves": 0,
+          "groups_with_any_shared_each": {
+            "bcc": 32,
+            "mel": 61,
+            "nv": 538
+          },
+          "coarse_representatives": {
+            "melanocytic": 599,
+            "epithelial": 127
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 599,
+            "epithelial": 126
+          },
+          "groups_spanning_coarse_nodes": 0
+        },
+        "test": {
+          "representatives": 1865,
+          "groups": 1865,
+          "leaf_counts": {
+            "akiec": 57,
+            "bcc": 82,
+            "bkl": 181,
+            "df": 18,
+            "mel": 153,
+            "nv": 1350,
+            "vasc": 24
+          },
+          "shared_leaf_representatives": 1585,
+          "groups_containing_shared_leaves": 1585,
+          "groups_with_only_shared_leaves": 1585,
+          "groups_with_shared_and_other_leaves": 0,
+          "groups_with_any_shared_each": {
+            "bcc": 82,
+            "mel": 153,
+            "nv": 1350
+          },
+          "coarse_representatives": {
+            "melanocytic": 1503,
+            "epithelial": 320
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 1503,
+            "epithelial": 320
+          },
+          "groups_spanning_coarse_nodes": 0
+        },
+        "train": {
+          "representatives": 2984,
+          "groups": 2979,
+          "leaf_counts": {
+            "akiec": 91,
+            "bcc": 131,
+            "bkl": 290,
+            "df": 29,
+            "mel": 246,
+            "nv": 2158,
+            "vasc": 39
+          },
+          "shared_leaf_representatives": 2535,
+          "groups_containing_shared_leaves": 2532,
+          "groups_with_only_shared_leaves": 2532,
+          "groups_with_shared_and_other_leaves": 0,
+          "groups_with_any_shared_each": {
+            "bcc": 131,
+            "mel": 246,
+            "nv": 2155
+          },
+          "coarse_representatives": {
+            "melanocytic": 2404,
+            "epithelial": 512
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 2401,
+            "epithelial": 510
+          },
+          "groups_spanning_coarse_nodes": 0
+        }
+      },
+      "29": {
+        "calibration": {
+          "representatives": 1864,
+          "groups": 1862,
+          "leaf_counts": {
+            "akiec": 57,
+            "bcc": 82,
+            "bkl": 182,
+            "df": 18,
+            "mel": 154,
+            "nv": 1346,
+            "vasc": 25
+          },
+          "shared_leaf_representatives": 1582,
+          "groups_containing_shared_leaves": 1581,
+          "groups_with_only_shared_leaves": 1581,
+          "groups_with_shared_and_other_leaves": 0,
+          "groups_with_any_shared_each": {
+            "bcc": 82,
+            "mel": 154,
+            "nv": 1345
+          },
+          "coarse_representatives": {
+            "melanocytic": 1500,
+            "epithelial": 321
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 1499,
+            "epithelial": 320
+          },
+          "groups_spanning_coarse_nodes": 0
+        },
+        "dev": {
+          "representatives": 744,
+          "groups": 743,
+          "leaf_counts": {
+            "akiec": 23,
+            "bcc": 32,
+            "bkl": 71,
+            "df": 8,
+            "mel": 61,
+            "nv": 539,
+            "vasc": 10
+          },
+          "shared_leaf_representatives": 632,
+          "groups_containing_shared_leaves": 632,
+          "groups_with_only_shared_leaves": 632,
+          "groups_with_shared_and_other_leaves": 0,
+          "groups_with_any_shared_each": {
+            "bcc": 32,
+            "mel": 61,
+            "nv": 539
+          },
+          "coarse_representatives": {
+            "melanocytic": 600,
+            "epithelial": 126
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 600,
+            "epithelial": 125
+          },
+          "groups_spanning_coarse_nodes": 0
+        },
+        "test": {
+          "representatives": 1861,
+          "groups": 1860,
+          "leaf_counts": {
+            "akiec": 57,
+            "bcc": 82,
+            "bkl": 179,
+            "df": 18,
+            "mel": 153,
+            "nv": 1348,
+            "vasc": 24
+          },
+          "shared_leaf_representatives": 1583,
+          "groups_containing_shared_leaves": 1582,
+          "groups_with_only_shared_leaves": 1582,
+          "groups_with_shared_and_other_leaves": 0,
+          "groups_with_any_shared_each": {
+            "bcc": 82,
+            "mel": 153,
+            "nv": 1347
+          },
+          "coarse_representatives": {
+            "melanocytic": 1501,
+            "epithelial": 318
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 1500,
+            "epithelial": 318
+          },
+          "groups_spanning_coarse_nodes": 0
+        },
+        "train": {
+          "representatives": 2983,
+          "groups": 2980,
+          "leaf_counts": {
+            "akiec": 91,
+            "bcc": 131,
+            "bkl": 289,
+            "df": 29,
+            "mel": 246,
+            "nv": 2158,
+            "vasc": 39
+          },
+          "shared_leaf_representatives": 2535,
+          "groups_containing_shared_leaves": 2533,
+          "groups_with_only_shared_leaves": 2533,
+          "groups_with_shared_and_other_leaves": 0,
+          "groups_with_any_shared_each": {
+            "bcc": 131,
+            "mel": 246,
+            "nv": 2156
+          },
+          "coarse_representatives": {
+            "melanocytic": 2404,
+            "epithelial": 511
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 2402,
+            "epithelial": 510
+          },
+          "groups_spanning_coarse_nodes": 0
+        }
+      },
+      "43": {
+        "calibration": {
+          "representatives": 1861,
+          "groups": 1861,
+          "leaf_counts": {
+            "akiec": 57,
+            "bcc": 82,
+            "bkl": 178,
+            "df": 18,
+            "mel": 154,
+            "nv": 1347,
+            "vasc": 25
+          },
+          "shared_leaf_representatives": 1583,
+          "groups_containing_shared_leaves": 1583,
+          "groups_with_only_shared_leaves": 1583,
+          "groups_with_shared_and_other_leaves": 0,
+          "groups_with_any_shared_each": {
+            "bcc": 82,
+            "mel": 154,
+            "nv": 1347
+          },
+          "coarse_representatives": {
+            "melanocytic": 1501,
+            "epithelial": 317
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 1501,
+            "epithelial": 317
+          },
+          "groups_spanning_coarse_nodes": 0
+        },
+        "dev": {
+          "representatives": 742,
+          "groups": 741,
+          "leaf_counts": {
+            "akiec": 23,
+            "bcc": 32,
+            "bkl": 69,
+            "df": 8,
+            "mel": 61,
+            "nv": 539,
+            "vasc": 10
+          },
+          "shared_leaf_representatives": 632,
+          "groups_containing_shared_leaves": 631,
+          "groups_with_only_shared_leaves": 631,
+          "groups_with_shared_and_other_leaves": 0,
+          "groups_with_any_shared_each": {
+            "bcc": 32,
+            "mel": 61,
+            "nv": 538
+          },
+          "coarse_representatives": {
+            "melanocytic": 600,
+            "epithelial": 124
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 599,
+            "epithelial": 124
+          },
+          "groups_spanning_coarse_nodes": 0
+        },
+        "test": {
+          "representatives": 1861,
+          "groups": 1861,
+          "leaf_counts": {
+            "akiec": 57,
+            "bcc": 82,
+            "bkl": 181,
+            "df": 18,
+            "mel": 153,
+            "nv": 1346,
+            "vasc": 24
+          },
+          "shared_leaf_representatives": 1581,
+          "groups_containing_shared_leaves": 1581,
+          "groups_with_only_shared_leaves": 1581,
+          "groups_with_shared_and_other_leaves": 0,
+          "groups_with_any_shared_each": {
+            "bcc": 82,
+            "mel": 153,
+            "nv": 1346
+          },
+          "coarse_representatives": {
+            "melanocytic": 1499,
+            "epithelial": 320
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 1499,
+            "epithelial": 320
+          },
+          "groups_spanning_coarse_nodes": 0
+        },
+        "train": {
+          "representatives": 2988,
+          "groups": 2982,
+          "leaf_counts": {
+            "akiec": 91,
+            "bcc": 131,
+            "bkl": 293,
+            "df": 29,
+            "mel": 246,
+            "nv": 2159,
+            "vasc": 39
+          },
+          "shared_leaf_representatives": 2536,
+          "groups_containing_shared_leaves": 2533,
+          "groups_with_only_shared_leaves": 2533,
+          "groups_with_shared_and_other_leaves": 0,
+          "groups_with_any_shared_each": {
+            "bcc": 131,
+            "mel": 246,
+            "nv": 2156
+          },
+          "coarse_representatives": {
+            "melanocytic": 2405,
+            "epithelial": 515
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 2402,
+            "epithelial": 512
+          },
+          "groups_spanning_coarse_nodes": 0
+        }
+      }
+    },
+    "all": {
+      "representatives": 7452,
+      "groups": 7445,
+      "leaf_counts": {
+        "akiec": 228,
+        "bcc": 327,
+        "bkl": 721,
+        "df": 73,
+        "mel": 614,
+        "nv": 5391,
+        "vasc": 98
+      },
+      "shared_leaf_representatives": 6332,
+      "groups_containing_shared_leaves": 6328,
+      "groups_with_only_shared_leaves": 6328,
+      "groups_with_shared_and_other_leaves": 0,
+      "groups_with_any_shared_each": {
+        "bcc": 327,
+        "mel": 614,
+        "nv": 5387
+      },
+      "coarse_representatives": {
+        "melanocytic": 6005,
+        "epithelial": 1276
+      },
+      "groups_containing_coarse_node": {
+        "melanocytic": 6001,
+        "epithelial": 1273
+      },
+      "groups_spanning_coarse_nodes": 0
+    }
+  },
+  "pad": {
+    "seeds": {
+      "17": {
+        "calibration": {
+          "representatives": 473,
+          "groups": 283,
+          "leaf_counts": {
+            "ACK": 161,
+            "BCC": 163,
+            "MEL": 9,
+            "NEV": 54,
+            "SCC": 36,
+            "SEK": 50
+          },
+          "shared_leaf_representatives": 226,
+          "groups_containing_shared_leaves": 161,
+          "groups_with_only_shared_leaves": 113,
+          "groups_with_shared_and_other_leaves": 48,
+          "groups_with_any_shared_each": {
+            "BCC": 119,
+            "MEL": 9,
+            "NEV": 44
+          },
+          "coarse_representatives": {
+            "melanocytic": 63,
+            "epithelial": 410
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 50,
+            "epithelial": 246
+          },
+          "groups_spanning_coarse_nodes": 13
+        },
+        "dev": {
+          "representatives": 189,
+          "groups": 114,
+          "leaf_counts": {
+            "ACK": 64,
+            "BCC": 65,
+            "MEL": 4,
+            "NEV": 21,
+            "SCC": 15,
+            "SEK": 20
+          },
+          "shared_leaf_representatives": 90,
+          "groups_containing_shared_leaves": 65,
+          "groups_with_only_shared_leaves": 44,
+          "groups_with_shared_and_other_leaves": 21,
+          "groups_with_any_shared_each": {
+            "BCC": 47,
+            "MEL": 4,
+            "NEV": 17
+          },
+          "coarse_representatives": {
+            "melanocytic": 25,
+            "epithelial": 164
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 20,
+            "epithelial": 100
+          },
+          "groups_spanning_coarse_nodes": 6
+        },
+        "test": {
+          "representatives": 472,
+          "groups": 282,
+          "leaf_counts": {
+            "ACK": 161,
+            "BCC": 163,
+            "MEL": 9,
+            "NEV": 54,
+            "SCC": 36,
+            "SEK": 49
+          },
+          "shared_leaf_representatives": 226,
+          "groups_containing_shared_leaves": 162,
+          "groups_with_only_shared_leaves": 107,
+          "groups_with_shared_and_other_leaves": 55,
+          "groups_with_any_shared_each": {
+            "BCC": 121,
+            "MEL": 9,
+            "NEV": 46
+          },
+          "coarse_representatives": {
+            "melanocytic": 63,
+            "epithelial": 409
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 53,
+            "epithelial": 250
+          },
+          "groups_spanning_coarse_nodes": 21
+        },
+        "train": {
+          "representatives": 757,
+          "groups": 453,
+          "leaf_counts": {
+            "ACK": 258,
+            "BCC": 261,
+            "MEL": 14,
+            "NEV": 87,
+            "SCC": 58,
+            "SEK": 79
+          },
+          "shared_leaf_representatives": 362,
+          "groups_containing_shared_leaves": 255,
+          "groups_with_only_shared_leaves": 181,
+          "groups_with_shared_and_other_leaves": 74,
+          "groups_with_any_shared_each": {
+            "BCC": 191,
+            "MEL": 14,
+            "NEV": 74
+          },
+          "coarse_representatives": {
+            "melanocytic": 101,
+            "epithelial": 656
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 84,
+            "epithelial": 398
+          },
+          "groups_spanning_coarse_nodes": 29
+        }
+      },
+      "29": {
+        "calibration": {
+          "representatives": 473,
+          "groups": 283,
+          "leaf_counts": {
+            "ACK": 161,
+            "BCC": 163,
+            "MEL": 9,
+            "NEV": 54,
+            "SCC": 36,
+            "SEK": 50
+          },
+          "shared_leaf_representatives": 226,
+          "groups_containing_shared_leaves": 161,
+          "groups_with_only_shared_leaves": 113,
+          "groups_with_shared_and_other_leaves": 48,
+          "groups_with_any_shared_each": {
+            "BCC": 119,
+            "MEL": 9,
+            "NEV": 44
+          },
+          "coarse_representatives": {
+            "melanocytic": 63,
+            "epithelial": 410
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 50,
+            "epithelial": 246
+          },
+          "groups_spanning_coarse_nodes": 13
+        },
+        "dev": {
+          "representatives": 189,
+          "groups": 114,
+          "leaf_counts": {
+            "ACK": 64,
+            "BCC": 65,
+            "MEL": 4,
+            "NEV": 21,
+            "SCC": 15,
+            "SEK": 20
+          },
+          "shared_leaf_representatives": 90,
+          "groups_containing_shared_leaves": 65,
+          "groups_with_only_shared_leaves": 44,
+          "groups_with_shared_and_other_leaves": 21,
+          "groups_with_any_shared_each": {
+            "BCC": 47,
+            "MEL": 4,
+            "NEV": 17
+          },
+          "coarse_representatives": {
+            "melanocytic": 25,
+            "epithelial": 164
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 20,
+            "epithelial": 100
+          },
+          "groups_spanning_coarse_nodes": 6
+        },
+        "test": {
+          "representatives": 472,
+          "groups": 282,
+          "leaf_counts": {
+            "ACK": 161,
+            "BCC": 163,
+            "MEL": 9,
+            "NEV": 54,
+            "SCC": 36,
+            "SEK": 49
+          },
+          "shared_leaf_representatives": 226,
+          "groups_containing_shared_leaves": 162,
+          "groups_with_only_shared_leaves": 107,
+          "groups_with_shared_and_other_leaves": 55,
+          "groups_with_any_shared_each": {
+            "BCC": 121,
+            "MEL": 9,
+            "NEV": 46
+          },
+          "coarse_representatives": {
+            "melanocytic": 63,
+            "epithelial": 409
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 53,
+            "epithelial": 250
+          },
+          "groups_spanning_coarse_nodes": 21
+        },
+        "train": {
+          "representatives": 757,
+          "groups": 453,
+          "leaf_counts": {
+            "ACK": 258,
+            "BCC": 261,
+            "MEL": 14,
+            "NEV": 87,
+            "SCC": 58,
+            "SEK": 79
+          },
+          "shared_leaf_representatives": 362,
+          "groups_containing_shared_leaves": 255,
+          "groups_with_only_shared_leaves": 181,
+          "groups_with_shared_and_other_leaves": 74,
+          "groups_with_any_shared_each": {
+            "BCC": 191,
+            "MEL": 14,
+            "NEV": 74
+          },
+          "coarse_representatives": {
+            "melanocytic": 101,
+            "epithelial": 656
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 84,
+            "epithelial": 398
+          },
+          "groups_spanning_coarse_nodes": 29
+        }
+      },
+      "43": {
+        "calibration": {
+          "representatives": 473,
+          "groups": 283,
+          "leaf_counts": {
+            "ACK": 161,
+            "BCC": 163,
+            "MEL": 9,
+            "NEV": 54,
+            "SCC": 36,
+            "SEK": 50
+          },
+          "shared_leaf_representatives": 226,
+          "groups_containing_shared_leaves": 161,
+          "groups_with_only_shared_leaves": 113,
+          "groups_with_shared_and_other_leaves": 48,
+          "groups_with_any_shared_each": {
+            "BCC": 119,
+            "MEL": 9,
+            "NEV": 44
+          },
+          "coarse_representatives": {
+            "melanocytic": 63,
+            "epithelial": 410
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 50,
+            "epithelial": 246
+          },
+          "groups_spanning_coarse_nodes": 13
+        },
+        "dev": {
+          "representatives": 189,
+          "groups": 114,
+          "leaf_counts": {
+            "ACK": 64,
+            "BCC": 65,
+            "MEL": 4,
+            "NEV": 21,
+            "SCC": 15,
+            "SEK": 20
+          },
+          "shared_leaf_representatives": 90,
+          "groups_containing_shared_leaves": 65,
+          "groups_with_only_shared_leaves": 44,
+          "groups_with_shared_and_other_leaves": 21,
+          "groups_with_any_shared_each": {
+            "BCC": 47,
+            "MEL": 4,
+            "NEV": 17
+          },
+          "coarse_representatives": {
+            "melanocytic": 25,
+            "epithelial": 164
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 20,
+            "epithelial": 100
+          },
+          "groups_spanning_coarse_nodes": 6
+        },
+        "test": {
+          "representatives": 472,
+          "groups": 282,
+          "leaf_counts": {
+            "ACK": 161,
+            "BCC": 163,
+            "MEL": 9,
+            "NEV": 54,
+            "SCC": 36,
+            "SEK": 49
+          },
+          "shared_leaf_representatives": 226,
+          "groups_containing_shared_leaves": 162,
+          "groups_with_only_shared_leaves": 107,
+          "groups_with_shared_and_other_leaves": 55,
+          "groups_with_any_shared_each": {
+            "BCC": 121,
+            "MEL": 9,
+            "NEV": 46
+          },
+          "coarse_representatives": {
+            "melanocytic": 63,
+            "epithelial": 409
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 53,
+            "epithelial": 250
+          },
+          "groups_spanning_coarse_nodes": 21
+        },
+        "train": {
+          "representatives": 757,
+          "groups": 453,
+          "leaf_counts": {
+            "ACK": 258,
+            "BCC": 261,
+            "MEL": 14,
+            "NEV": 87,
+            "SCC": 58,
+            "SEK": 79
+          },
+          "shared_leaf_representatives": 362,
+          "groups_containing_shared_leaves": 255,
+          "groups_with_only_shared_leaves": 181,
+          "groups_with_shared_and_other_leaves": 74,
+          "groups_with_any_shared_each": {
+            "BCC": 191,
+            "MEL": 14,
+            "NEV": 74
+          },
+          "coarse_representatives": {
+            "melanocytic": 101,
+            "epithelial": 656
+          },
+          "groups_containing_coarse_node": {
+            "melanocytic": 84,
+            "epithelial": 398
+          },
+          "groups_spanning_coarse_nodes": 29
+        }
+      }
+    },
+    "all": {
+      "representatives": 1891,
+      "groups": 1132,
+      "leaf_counts": {
+        "ACK": 644,
+        "BCC": 652,
+        "MEL": 36,
+        "NEV": 216,
+        "SCC": 145,
+        "SEK": 198
+      },
+      "shared_leaf_representatives": 904,
+      "groups_containing_shared_leaves": 643,
+      "groups_with_only_shared_leaves": 445,
+      "groups_with_shared_and_other_leaves": 198,
+      "groups_with_any_shared_each": {
+        "BCC": 478,
+        "MEL": 36,
+        "NEV": 181
+      },
+      "coarse_representatives": {
+        "melanocytic": 252,
+        "epithelial": 1639
+      },
+      "groups_containing_coarse_node": {
+        "melanocytic": 207,
+        "epithelial": 994
+      },
+      "groups_spanning_coarse_nodes": 69
+    }
+  },
+  "nominal_group_capacity": {
+    "protocol_sha256": "556fca7acdaa367aad4c97a6d42cc221b07604d74df24b9d1020565583305058",
+    "per_check_delta": 0.0015625,
+    "count_assumption": "one independent Bernoulli observation per accepted group; fixed policy; prospective best case",
+    "nonroot_risk_target": 0.05,
+    "minimum_accepted_groups_by_error_count": {
+      "0": 126,
+      "1": 171,
+      "2": 210
+    },
+    "pad_calibration": {
+      "17": {
+        "groups_containing_shared_leaves": {
+          "groups": 161,
+          "zero_errors_upper": 0.039338666574321425,
+          "one_error_upper": 0.052984630876861394
+        },
+        "groups_with_only_shared_leaves": {
+          "groups": 113,
+          "zero_errors_upper": 0.055577013527849974,
+          "one_error_upper": 0.07472954291546047
+        }
+      },
+      "29": {
+        "groups_containing_shared_leaves": {
+          "groups": 161,
+          "zero_errors_upper": 0.039338666574321425,
+          "one_error_upper": 0.052984630876861394
+        },
+        "groups_with_only_shared_leaves": {
+          "groups": 113,
+          "zero_errors_upper": 0.055577013527849974,
+          "one_error_upper": 0.07472954291546047
+        }
+      },
+      "43": {
+        "groups_containing_shared_leaves": {
+          "groups": 161,
+          "zero_errors_upper": 0.039338666574321425,
+          "one_error_upper": 0.052984630876861394
+        },
+        "groups_with_only_shared_leaves": {
+          "groups": 113,
+          "zero_errors_upper": 0.055577013527849974,
+          "one_error_upper": 0.07472954291546047
+        }
+      }
+    }
+  },
+  "status": "complete",
+  "seconds": 0.16
+}

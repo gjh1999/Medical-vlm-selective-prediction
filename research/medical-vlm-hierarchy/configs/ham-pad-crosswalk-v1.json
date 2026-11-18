@@ -1,0 +1,28 @@
+{
+  "scope": "nominal dataset-label crosswalk for external stress tests; operating point and clinical validity unassessed",
+  "authors": {
+    "ham": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6091241/",
+    "pad": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7479321/"
+  },
+  "shared_nominal_leaves": {"mel": "MEL", "nv": "NEV", "bcc": "BCC"},
+  "coarse_partition": {
+    "ham": {"melanocytic": ["mel", "nv"], "epithelial": ["akiec", "bcc", "bkl"]},
+    "pad": {"melanocytic": ["MEL", "NEV"], "epithelial": ["ACK", "BCC", "SCC", "SEK"]}
+  },
+  "unmatched": {"ham": ["df", "vasc"], "pad": []},
+  "pad_supplement_sha256": "b95cd5a99fa9ddec9925c17f086fafc180a349e9a906de241ef50c4e3f3c5052",
+  "pad_authors_sctids": {
+    "ACK": ["201101007"],
+    "BCC": ["1338007"],
+    "MEL": ["93655004"],
+    "NEV": ["400096001"],
+    "SCC": ["402815007", "84999002"],
+    "SEK": ["25499005"]
+  },
+  "qualifications": [
+    "The PAD article pools Bowen disease with SCC. HAM places Bowen disease with actinic keratoses under akiec.",
+    "HAM bkl includes seborrheic keratoses, solar lentigines and lichen-planus-like keratoses. PAD SEK is narrower.",
+    "The PAD authors' supplement maps to a mixture of disorder and morphologic abnormality concepts. The listed coarse nodes are operational and do not assert direct SNOMED CT parentage.",
+    "Counts of the three shared labels condition on the reference diagnosis. This subset does not represent deployment with an unknown diagnosis."
+  ]
+}
