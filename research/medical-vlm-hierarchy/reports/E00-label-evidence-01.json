@@ -1,0 +1,2553 @@
+{
+  "scope": "verified dataset metadata and posthoc descriptive development comparisons",
+  "auc_groups": "pooled original frozen detectors, two prior natural development batches only",
+  "ham": {
+    "metadata_sha256": "de17ec44cb25ea9c3f6378ba18d69224c740afd62e86ec2edc6a894d6aa663d3",
+    "seeds": {
+      "17": {
+        "train": {
+          "n": 2995,
+          "dx_type": {
+            "counts": {
+              "confocal": 12,
+              "consensus": 257,
+              "follow_up": 1476,
+              "histo": 1250
+            },
+            "by_diagnosis": {
+              "confocal": {
+                "bkl": 12
+              },
+              "consensus": {
+                "bkl": 85,
+                "df": 17,
+                "nv": 131,
+                "vasc": 24
+              },
+              "follow_up": {
+                "nv": 1476
+              },
+              "histo": {
+                "akiec": 91,
+                "bcc": 131,
+                "bkl": 199,
+                "df": 12,
+                "mel": 246,
+                "nv": 556,
+                "vasc": 15
+              }
+            }
+          },
+          "dataset": {
+            "counts": {
+              "rosendahl": 619,
+              "vidir_modern": 691,
+              "vidir_molemax": 1568,
+              "vienna_dias": 117
+            },
+            "by_diagnosis": {
+              "rosendahl": {
+                "akiec": 83,
+                "bcc": 84,
+                "bkl": 138,
+                "df": 5,
+                "mel": 95,
+                "nv": 214
+              },
+              "vidir_modern": {
+                "akiec": 8,
+                "bcc": 45,
+                "bkl": 106,
+                "df": 11,
+                "mel": 123,
+                "nv": 381,
+                "vasc": 17
+              },
+              "vidir_molemax": {
+                "bkl": 49,
+                "df": 12,
+                "mel": 7,
+                "nv": 1479,
+                "vasc": 21
+              },
+              "vienna_dias": {
+                "bcc": 2,
+                "bkl": 3,
+                "df": 1,
+                "mel": 21,
+                "nv": 89,
+                "vasc": 1
+              }
+            }
+          }
+        },
+        "dev": {
+          "n": 744,
+          "dx_type": {
+            "counts": {
+              "confocal": 3,
+              "consensus": 62,
+              "follow_up": 376,
+              "histo": 303
+            },
+            "by_diagnosis": {
+              "confocal": {
+                "bkl": 3
+              },
+              "consensus": {
+                "bkl": 23,
+                "df": 5,
+                "nv": 30,
+                "vasc": 4
+              },
+              "follow_up": {
+                "nv": 376
+              },
+              "histo": {
+                "akiec": 23,
+                "bcc": 32,
+                "bkl": 46,
+                "df": 3,
+                "mel": 61,
+                "nv": 132,
+                "vasc": 6
+              }
+            }
+          },
+          "dataset": {
+            "counts": {
+              "rosendahl": 159,
+              "vidir_modern": 148,
+              "vidir_molemax": 407,
+              "vienna_dias": 30
+            },
+            "by_diagnosis": {
+              "rosendahl": {
+                "akiec": 21,
+                "bcc": 23,
+                "bkl": 36,
+                "df": 3,
+                "mel": 17,
+                "nv": 58,
+                "vasc": 1
+              },
+              "vidir_modern": {
+                "akiec": 2,
+                "bcc": 9,
+                "bkl": 18,
+                "df": 2,
+                "mel": 32,
+                "nv": 80,
+                "vasc": 5
+              },
+              "vidir_molemax": {
+                "bkl": 17,
+                "df": 3,
+                "mel": 3,
+                "nv": 381,
+                "vasc": 3
+              },
+              "vienna_dias": {
+                "bkl": 1,
+                "mel": 9,
+                "nv": 19,
+                "vasc": 1
+              }
+            }
+          }
+        },
+        "calibration": {
+          "n": 1858,
+          "dx_type": {
+            "counts": {
+              "confocal": 10,
+              "consensus": 170,
+              "follow_up": 917,
+              "histo": 761
+            },
+            "by_diagnosis": {
+              "confocal": {
+                "bkl": 10
+              },
+              "consensus": {
+                "bkl": 49,
+                "df": 12,
+                "nv": 92,
+                "vasc": 17
+              },
+              "follow_up": {
+                "nv": 917
+              },
+              "histo": {
+                "akiec": 57,
+                "bcc": 82,
+                "bkl": 119,
+                "df": 6,
+                "mel": 154,
+                "nv": 335,
+                "vasc": 8
+              }
+            }
+          },
+          "dataset": {
+            "counts": {
+              "rosendahl": 392,
+              "vidir_modern": 428,
+              "vidir_molemax": 978,
+              "vienna_dias": 60
+            },
+            "by_diagnosis": {
+              "rosendahl": {
+                "akiec": 55,
+                "bcc": 55,
+                "bkl": 89,
+                "df": 2,
+                "mel": 59,
+                "nv": 131,
+                "vasc": 1
+              },
+              "vidir_modern": {
+                "akiec": 2,
+                "bcc": 24,
+                "bkl": 59,
+                "df": 7,
+                "mel": 85,
+                "nv": 241,
+                "vasc": 10
+              },
+              "vidir_molemax": {
+                "bcc": 2,
+                "bkl": 28,
+                "df": 9,
+                "mel": 3,
+                "nv": 923,
+                "vasc": 13
+              },
+              "vienna_dias": {
+                "bcc": 1,
+                "bkl": 2,
+                "mel": 7,
+                "nv": 49,
+                "vasc": 1
+              }
+            }
+          }
+        },
+        "test": {
+          "n": 1855,
+          "dx_type": {
+            "counts": {
+              "confocal": 8,
+              "consensus": 148,
+              "follow_up": 930,
+              "histo": 769
+            },
+            "by_diagnosis": {
+              "confocal": {
+                "bkl": 8
+              },
+              "consensus": {
+                "bkl": 45,
+                "df": 10,
+                "nv": 73,
+                "vasc": 20
+              },
+              "follow_up": {
+                "nv": 930
+              },
+              "histo": {
+                "akiec": 57,
+                "bcc": 82,
+                "bkl": 122,
+                "df": 8,
+                "mel": 153,
+                "nv": 343,
+                "vasc": 4
+              }
+            }
+          },
+          "dataset": {
+            "counts": {
+              "rosendahl": 382,
+              "vidir_modern": 416,
+              "vidir_molemax": 987,
+              "vienna_dias": 70
+            },
+            "by_diagnosis": {
+              "rosendahl": {
+                "akiec": 52,
+                "bcc": 49,
+                "bkl": 86,
+                "df": 6,
+                "mel": 54,
+                "nv": 135
+              },
+              "vidir_modern": {
+                "akiec": 5,
+                "bcc": 32,
+                "bkl": 58,
+                "df": 5,
+                "mel": 89,
+                "nv": 220,
+                "vasc": 7
+              },
+              "vidir_molemax": {
+                "bkl": 29,
+                "df": 6,
+                "mel": 3,
+                "nv": 932,
+                "vasc": 17
+              },
+              "vienna_dias": {
+                "bcc": 1,
+                "bkl": 2,
+                "df": 1,
+                "mel": 7,
+                "nv": 59
+              }
+            }
+          }
+        }
+      },
+      "29": {
+        "train": {
+          "n": 2988,
+          "dx_type": {
+            "counts": {
+              "confocal": 15,
+              "consensus": 280,
+              "follow_up": 1476,
+              "histo": 1217
+            },
+            "by_diagnosis": {
+              "confocal": {
+                "bkl": 15
+              },
+              "consensus": {
+                "bkl": 86,
+                "df": 17,
+                "nv": 148,
+                "vasc": 29
+              },
+              "follow_up": {
+                "nv": 1476
+              },
+              "histo": {
+                "akiec": 91,
+                "bcc": 131,
+                "bkl": 189,
+                "df": 12,
+                "mel": 246,
+                "nv": 538,
+                "vasc": 10
+              }
+            }
+          },
+          "dataset": {
+            "counts": {
+              "rosendahl": 644,
+              "vidir_modern": 665,
+              "vidir_molemax": 1580,
+              "vienna_dias": 99
+            },
+            "by_diagnosis": {
+              "rosendahl": {
+                "akiec": 87,
+                "bcc": 85,
+                "bkl": 140,
+                "df": 8,
+                "mel": 94,
+                "nv": 229,
+                "vasc": 1
+              },
+              "vidir_modern": {
+                "akiec": 4,
+                "bcc": 43,
+                "bkl": 92,
+                "df": 10,
+                "mel": 131,
+                "nv": 374,
+                "vasc": 11
+              },
+              "vidir_molemax": {
+                "bcc": 2,
+                "bkl": 55,
+                "df": 11,
+                "mel": 6,
+                "nv": 1480,
+                "vasc": 26
+              },
+              "vienna_dias": {
+                "bcc": 1,
+                "bkl": 3,
+                "mel": 15,
+                "nv": 79,
+                "vasc": 1
+              }
+            }
+          }
+        },
+        "dev": {
+          "n": 748,
+          "dx_type": {
+            "counts": {
+              "confocal": 3,
+              "consensus": 76,
+              "follow_up": 366,
+              "histo": 303
+            },
+            "by_diagnosis": {
+              "confocal": {
+                "bkl": 3
+              },
+              "consensus": {
+                "bkl": 22,
+                "df": 7,
+                "nv": 41,
+                "vasc": 6
+              },
+              "follow_up": {
+                "nv": 366
+              },
+              "histo": {
+                "akiec": 23,
+                "bcc": 32,
+                "bkl": 49,
+                "df": 1,
+                "mel": 61,
+                "nv": 133,
+                "vasc": 4
+              }
+            }
+          },
+          "dataset": {
+            "counts": {
+              "rosendahl": 144,
+              "vidir_modern": 191,
+              "vidir_molemax": 393,
+              "vienna_dias": 20
+            },
+            "by_diagnosis": {
+              "rosendahl": {
+                "akiec": 22,
+                "bcc": 18,
+                "bkl": 33,
+                "mel": 21,
+                "nv": 49,
+                "vasc": 1
+              },
+              "vidir_modern": {
+                "akiec": 1,
+                "bcc": 14,
+                "bkl": 30,
+                "df": 4,
+                "mel": 34,
+                "nv": 105,
+                "vasc": 3
+              },
+              "vidir_molemax": {
+                "bkl": 11,
+                "df": 4,
+                "mel": 3,
+                "nv": 370,
+                "vasc": 5
+              },
+              "vienna_dias": {
+                "mel": 3,
+                "nv": 16,
+                "vasc": 1
+              }
+            }
+          }
+        },
+        "calibration": {
+          "n": 1863,
+          "dx_type": {
+            "counts": {
+              "confocal": 8,
+              "consensus": 143,
+              "follow_up": 936,
+              "histo": 776
+            },
+            "by_diagnosis": {
+              "confocal": {
+                "bkl": 8
+              },
+              "consensus": {
+                "bkl": 46,
+                "df": 11,
+                "nv": 70,
+                "vasc": 16
+              },
+              "follow_up": {
+                "nv": 936
+              },
+              "histo": {
+                "akiec": 57,
+                "bcc": 82,
+                "bkl": 128,
+                "df": 7,
+                "mel": 154,
+                "nv": 339,
+                "vasc": 9
+              }
+            }
+          },
+          "dataset": {
+            "counts": {
+              "rosendahl": 404,
+              "vidir_modern": 397,
+              "vidir_molemax": 993,
+              "vienna_dias": 69
+            },
+            "by_diagnosis": {
+              "rosendahl": {
+                "akiec": 50,
+                "bcc": 58,
+                "bkl": 98,
+                "df": 4,
+                "mel": 53,
+                "nv": 141
+              },
+              "vidir_modern": {
+                "akiec": 7,
+                "bcc": 23,
+                "bkl": 54,
+                "df": 3,
+                "mel": 87,
+                "nv": 212,
+                "vasc": 11
+              },
+              "vidir_molemax": {
+                "bkl": 28,
+                "df": 10,
+                "mel": 2,
+                "nv": 940,
+                "vasc": 13
+              },
+              "vienna_dias": {
+                "bcc": 1,
+                "bkl": 2,
+                "df": 1,
+                "mel": 12,
+                "nv": 52,
+                "vasc": 1
+              }
+            }
+          }
+        },
+        "test": {
+          "n": 1853,
+          "dx_type": {
+            "counts": {
+              "confocal": 7,
+              "consensus": 138,
+              "follow_up": 921,
+              "histo": 787
+            },
+            "by_diagnosis": {
+              "confocal": {
+                "bkl": 7
+              },
+              "consensus": {
+                "bkl": 48,
+                "df": 9,
+                "nv": 67,
+                "vasc": 14
+              },
+              "follow_up": {
+                "nv": 921
+              },
+              "histo": {
+                "akiec": 57,
+                "bcc": 82,
+                "bkl": 120,
+                "df": 9,
+                "mel": 153,
+                "nv": 356,
+                "vasc": 10
+              }
+            }
+          },
+          "dataset": {
+            "counts": {
+              "rosendahl": 360,
+              "vidir_modern": 430,
+              "vidir_molemax": 974,
+              "vienna_dias": 89
+            },
+            "by_diagnosis": {
+              "rosendahl": {
+                "akiec": 52,
+                "bcc": 50,
+                "bkl": 78,
+                "df": 4,
+                "mel": 57,
+                "nv": 119
+              },
+              "vidir_modern": {
+                "akiec": 5,
+                "bcc": 30,
+                "bkl": 65,
+                "df": 8,
+                "mel": 77,
+                "nv": 231,
+                "vasc": 14
+              },
+              "vidir_molemax": {
+                "bkl": 29,
+                "df": 5,
+                "mel": 5,
+                "nv": 925,
+                "vasc": 10
+              },
+              "vienna_dias": {
+                "bcc": 2,
+                "bkl": 3,
+                "df": 1,
+                "mel": 14,
+                "nv": 69
+              }
+            }
+          }
+        }
+      },
+      "43": {
+        "train": {
+          "n": 2998,
+          "dx_type": {
+            "counts": {
+              "confocal": 12,
+              "consensus": 260,
+              "follow_up": 1495,
+              "histo": 1231
+            },
+            "by_diagnosis": {
+              "confocal": {
+                "bkl": 12
+              },
+              "consensus": {
+                "bkl": 87,
+                "df": 17,
+                "nv": 131,
+                "vasc": 25
+              },
+              "follow_up": {
+                "nv": 1495
+              },
+              "histo": {
+                "akiec": 91,
+                "bcc": 131,
+                "bkl": 197,
+                "df": 12,
+                "mel": 246,
+                "nv": 540,
+                "vasc": 14
+              }
+            }
+          },
+          "dataset": {
+            "counts": {
+              "rosendahl": 607,
+              "vidir_modern": 678,
+              "vidir_molemax": 1603,
+              "vienna_dias": 110
+            },
+            "by_diagnosis": {
+              "rosendahl": {
+                "akiec": 82,
+                "bcc": 93,
+                "bkl": 131,
+                "df": 7,
+                "mel": 84,
+                "nv": 210
+              },
+              "vidir_modern": {
+                "akiec": 9,
+                "bcc": 35,
+                "bkl": 101,
+                "df": 8,
+                "mel": 138,
+                "nv": 371,
+                "vasc": 16
+              },
+              "vidir_molemax": {
+                "bcc": 2,
+                "bkl": 57,
+                "df": 13,
+                "mel": 6,
+                "nv": 1503,
+                "vasc": 22
+              },
+              "vienna_dias": {
+                "bcc": 1,
+                "bkl": 7,
+                "df": 1,
+                "mel": 18,
+                "nv": 82,
+                "vasc": 1
+              }
+            }
+          }
+        },
+        "dev": {
+          "n": 740,
+          "dx_type": {
+            "counts": {
+              "confocal": 3,
+              "consensus": 68,
+              "follow_up": 365,
+              "histo": 304
+            },
+            "by_diagnosis": {
+              "confocal": {
+                "bkl": 3
+              },
+              "consensus": {
+                "bkl": 27,
+                "df": 6,
+                "nv": 29,
+                "vasc": 6
+              },
+              "follow_up": {
+                "nv": 365
+              },
+              "histo": {
+                "akiec": 23,
+                "bcc": 32,
+                "bkl": 39,
+                "df": 2,
+                "mel": 61,
+                "nv": 143,
+                "vasc": 4
+              }
+            }
+          },
+          "dataset": {
+            "counts": {
+              "rosendahl": 135,
+              "vidir_modern": 183,
+              "vidir_molemax": 394,
+              "vienna_dias": 28
+            },
+            "by_diagnosis": {
+              "rosendahl": {
+                "akiec": 20,
+                "bcc": 19,
+                "bkl": 22,
+                "df": 2,
+                "mel": 22,
+                "nv": 50
+              },
+              "vidir_modern": {
+                "akiec": 3,
+                "bcc": 13,
+                "bkl": 33,
+                "mel": 32,
+                "nv": 96,
+                "vasc": 6
+              },
+              "vidir_molemax": {
+                "bkl": 14,
+                "df": 6,
+                "mel": 3,
+                "nv": 367,
+                "vasc": 4
+              },
+              "vienna_dias": {
+                "mel": 4,
+                "nv": 24
+              }
+            }
+          }
+        },
+        "calibration": {
+          "n": 1857,
+          "dx_type": {
+            "counts": {
+              "confocal": 9,
+              "consensus": 151,
+              "follow_up": 928,
+              "histo": 769
+            },
+            "by_diagnosis": {
+              "confocal": {
+                "bkl": 9
+              },
+              "consensus": {
+                "bkl": 48,
+                "df": 9,
+                "nv": 77,
+                "vasc": 17
+              },
+              "follow_up": {
+                "nv": 928
+              },
+              "histo": {
+                "akiec": 57,
+                "bcc": 82,
+                "bkl": 120,
+                "df": 9,
+                "mel": 154,
+                "nv": 339,
+                "vasc": 8
+              }
+            }
+          },
+          "dataset": {
+            "counts": {
+              "rosendahl": 413,
+              "vidir_modern": 402,
+              "vidir_molemax": 979,
+              "vienna_dias": 63
+            },
+            "by_diagnosis": {
+              "rosendahl": {
+                "akiec": 54,
+                "bcc": 53,
+                "bkl": 95,
+                "df": 5,
+                "mel": 56,
+                "nv": 150
+              },
+              "vidir_modern": {
+                "akiec": 3,
+                "bcc": 29,
+                "bkl": 55,
+                "df": 8,
+                "mel": 89,
+                "nv": 209,
+                "vasc": 9
+              },
+              "vidir_molemax": {
+                "bkl": 26,
+                "df": 4,
+                "mel": 2,
+                "nv": 932,
+                "vasc": 15
+              },
+              "vienna_dias": {
+                "bkl": 1,
+                "df": 1,
+                "mel": 7,
+                "nv": 53,
+                "vasc": 1
+              }
+            }
+          }
+        },
+        "test": {
+          "n": 1857,
+          "dx_type": {
+            "counts": {
+              "confocal": 9,
+              "consensus": 158,
+              "follow_up": 911,
+              "histo": 779
+            },
+            "by_diagnosis": {
+              "confocal": {
+                "bkl": 9
+              },
+              "consensus": {
+                "bkl": 40,
+                "df": 12,
+                "nv": 89,
+                "vasc": 17
+              },
+              "follow_up": {
+                "nv": 911
+              },
+              "histo": {
+                "akiec": 57,
+                "bcc": 82,
+                "bkl": 130,
+                "df": 6,
+                "mel": 153,
+                "nv": 344,
+                "vasc": 7
+              }
+            }
+          },
+          "dataset": {
+            "counts": {
+              "rosendahl": 397,
+              "vidir_modern": 420,
+              "vidir_molemax": 964,
+              "vienna_dias": 76
+            },
+            "by_diagnosis": {
+              "rosendahl": {
+                "akiec": 55,
+                "bcc": 46,
+                "bkl": 101,
+                "df": 2,
+                "mel": 63,
+                "nv": 128,
+                "vasc": 2
+              },
+              "vidir_modern": {
+                "akiec": 2,
+                "bcc": 33,
+                "bkl": 52,
+                "df": 9,
+                "mel": 70,
+                "nv": 246,
+                "vasc": 8
+              },
+              "vidir_molemax": {
+                "bkl": 26,
+                "df": 7,
+                "mel": 5,
+                "nv": 913,
+                "vasc": 13
+              },
+              "vienna_dias": {
+                "bcc": 3,
+                "mel": 15,
+                "nv": 57,
+                "vasc": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "images": {
+      "n": 10015,
+      "dx_type": {
+        "counts": {
+          "confocal": 69,
+          "consensus": 902,
+          "follow_up": 3704,
+          "histo": 5340
+        },
+        "by_diagnosis": {
+          "confocal": {
+            "bkl": 69
+          },
+          "consensus": {
+            "bkl": 264,
+            "df": 60,
+            "nv": 503,
+            "vasc": 75
+          },
+          "follow_up": {
+            "nv": 3704
+          },
+          "histo": {
+            "akiec": 327,
+            "bcc": 514,
+            "bkl": 766,
+            "df": 55,
+            "mel": 1113,
+            "nv": 2498,
+            "vasc": 67
+          }
+        }
+      },
+      "dataset": {
+        "counts": {
+          "rosendahl": 2259,
+          "vidir_modern": 3363,
+          "vidir_molemax": 3954,
+          "vienna_dias": 439
+        },
+        "by_diagnosis": {
+          "rosendahl": {
+            "akiec": 295,
+            "bcc": 296,
+            "bkl": 490,
+            "df": 30,
+            "mel": 342,
+            "nv": 803,
+            "vasc": 3
+          },
+          "vidir_modern": {
+            "akiec": 32,
+            "bcc": 211,
+            "bkl": 475,
+            "df": 51,
+            "mel": 680,
+            "nv": 1832,
+            "vasc": 82
+          },
+          "vidir_molemax": {
+            "bcc": 2,
+            "bkl": 124,
+            "df": 30,
+            "mel": 24,
+            "nv": 3720,
+            "vasc": 54
+          },
+          "vienna_dias": {
+            "bcc": 5,
+            "bkl": 10,
+            "df": 4,
+            "mel": 67,
+            "nv": 350,
+            "vasc": 3
+          }
+        }
+      }
+    },
+    "representatives": {
+      "n": 7452,
+      "dx_type": {
+        "counts": {
+          "confocal": 33,
+          "consensus": 637,
+          "follow_up": 3699,
+          "histo": 3083
+        },
+        "by_diagnosis": {
+          "confocal": {
+            "bkl": 33
+          },
+          "consensus": {
+            "bkl": 202,
+            "df": 44,
+            "nv": 326,
+            "vasc": 65
+          },
+          "follow_up": {
+            "nv": 3699
+          },
+          "histo": {
+            "akiec": 228,
+            "bcc": 327,
+            "bkl": 486,
+            "df": 29,
+            "mel": 614,
+            "nv": 1366,
+            "vasc": 33
+          }
+        }
+      },
+      "dataset": {
+        "counts": {
+          "rosendahl": 1552,
+          "vidir_modern": 1683,
+          "vidir_molemax": 3940,
+          "vienna_dias": 277
+        },
+        "by_diagnosis": {
+          "rosendahl": {
+            "akiec": 211,
+            "bcc": 211,
+            "bkl": 349,
+            "df": 16,
+            "mel": 225,
+            "nv": 538,
+            "vasc": 2
+          },
+          "vidir_modern": {
+            "akiec": 17,
+            "bcc": 110,
+            "bkl": 241,
+            "df": 25,
+            "mel": 329,
+            "nv": 922,
+            "vasc": 39
+          },
+          "vidir_molemax": {
+            "bcc": 2,
+            "bkl": 123,
+            "df": 30,
+            "mel": 16,
+            "nv": 3715,
+            "vasc": 54
+          },
+          "vienna_dias": {
+            "bcc": 4,
+            "bkl": 8,
+            "df": 2,
+            "mel": 44,
+            "nv": 216,
+            "vasc": 3
+          }
+        }
+      }
+    },
+    "mixed": {
+      "dx_type": {
+        "analysis_group": {
+          "groups": 7452,
+          "multiple_field_values": 3
+        },
+        "split_group": {
+          "groups": 7428,
+          "multiple_field_values": 6
+        }
+      },
+      "dataset": {
+        "analysis_group": {
+          "groups": 7452,
+          "multiple_field_values": 9
+        },
+        "split_group": {
+          "groups": 7428,
+          "multiple_field_values": 2
+        }
+      }
+    }
+  },
+  "pad": {
+    "metadata_sha256": "14d145235cedb022548257acb0d84dcd949e2c916f65d2baa7c38ed5339e9527",
+    "seeds": {
+      "17": {
+        "train": {
+          "n": 757,
+          "biopsed": {
+            "counts": {
+              "False": 356,
+              "True": 401
+            },
+            "by_diagnosis": {
+              "False": {
+                "ACK": 209,
+                "NEV": 72,
+                "SEK": 75
+              },
+              "True": {
+                "ACK": 49,
+                "BCC": 261,
+                "MEL": 14,
+                "NEV": 15,
+                "SCC": 58,
+                "SEK": 4
+              }
+            }
+          }
+        },
+        "dev": {
+          "n": 189,
+          "biopsed": {
+            "counts": {
+              "False": 75,
+              "True": 114
+            },
+            "by_diagnosis": {
+              "False": {
+                "ACK": 44,
+                "NEV": 13,
+                "SEK": 18
+              },
+              "True": {
+                "ACK": 20,
+                "BCC": 65,
+                "MEL": 4,
+                "NEV": 8,
+                "SCC": 15,
+                "SEK": 2
+              }
+            }
+          }
+        },
+        "calibration": {
+          "n": 473,
+          "biopsed": {
+            "counts": {
+              "False": 204,
+              "True": 269
+            },
+            "by_diagnosis": {
+              "False": {
+                "ACK": 118,
+                "NEV": 38,
+                "SEK": 48
+              },
+              "True": {
+                "ACK": 43,
+                "BCC": 163,
+                "MEL": 9,
+                "NEV": 16,
+                "SCC": 36,
+                "SEK": 2
+              }
+            }
+          }
+        },
+        "test": {
+          "n": 472,
+          "biopsed": {
+            "counts": {
+              "False": 209,
+              "True": 263
+            },
+            "by_diagnosis": {
+              "False": {
+                "ACK": 121,
+                "NEV": 44,
+                "SEK": 44
+              },
+              "True": {
+                "ACK": 40,
+                "BCC": 163,
+                "MEL": 9,
+                "NEV": 10,
+                "SCC": 36,
+                "SEK": 5
+              }
+            }
+          }
+        }
+      },
+      "29": {
+        "train": {
+          "n": 757,
+          "biopsed": {
+            "counts": {
+              "False": 341,
+              "True": 416
+            },
+            "by_diagnosis": {
+              "False": {
+                "ACK": 199,
+                "NEV": 68,
+                "SEK": 74
+              },
+              "True": {
+                "ACK": 59,
+                "BCC": 261,
+                "MEL": 14,
+                "NEV": 19,
+                "SCC": 58,
+                "SEK": 5
+              }
+            }
+          }
+        },
+        "dev": {
+          "n": 189,
+          "biopsed": {
+            "counts": {
+              "False": 80,
+              "True": 109
+            },
+            "by_diagnosis": {
+              "False": {
+                "ACK": 46,
+                "NEV": 15,
+                "SEK": 19
+              },
+              "True": {
+                "ACK": 18,
+                "BCC": 65,
+                "MEL": 4,
+                "NEV": 6,
+                "SCC": 15,
+                "SEK": 1
+              }
+            }
+          }
+        },
+        "calibration": {
+          "n": 473,
+          "biopsed": {
+            "counts": {
+              "False": 209,
+              "True": 264
+            },
+            "by_diagnosis": {
+              "False": {
+                "ACK": 122,
+                "NEV": 40,
+                "SEK": 47
+              },
+              "True": {
+                "ACK": 39,
+                "BCC": 163,
+                "MEL": 9,
+                "NEV": 14,
+                "SCC": 36,
+                "SEK": 3
+              }
+            }
+          }
+        },
+        "test": {
+          "n": 472,
+          "biopsed": {
+            "counts": {
+              "False": 214,
+              "True": 258
+            },
+            "by_diagnosis": {
+              "False": {
+                "ACK": 125,
+                "NEV": 44,
+                "SEK": 45
+              },
+              "True": {
+                "ACK": 36,
+                "BCC": 163,
+                "MEL": 9,
+                "NEV": 10,
+                "SCC": 36,
+                "SEK": 4
+              }
+            }
+          }
+        }
+      },
+      "43": {
+        "train": {
+          "n": 757,
+          "biopsed": {
+            "counts": {
+              "False": 353,
+              "True": 404
+            },
+            "by_diagnosis": {
+              "False": {
+                "ACK": 209,
+                "NEV": 70,
+                "SEK": 74
+              },
+              "True": {
+                "ACK": 49,
+                "BCC": 261,
+                "MEL": 14,
+                "NEV": 17,
+                "SCC": 58,
+                "SEK": 5
+              }
+            }
+          }
+        },
+        "dev": {
+          "n": 189,
+          "biopsed": {
+            "counts": {
+              "False": 77,
+              "True": 112
+            },
+            "by_diagnosis": {
+              "False": {
+                "ACK": 50,
+                "NEV": 9,
+                "SEK": 18
+              },
+              "True": {
+                "ACK": 14,
+                "BCC": 65,
+                "MEL": 4,
+                "NEV": 12,
+                "SCC": 15,
+                "SEK": 2
+              }
+            }
+          }
+        },
+        "calibration": {
+          "n": 473,
+          "biopsed": {
+            "counts": {
+              "False": 218,
+              "True": 255
+            },
+            "by_diagnosis": {
+              "False": {
+                "ACK": 126,
+                "NEV": 45,
+                "SEK": 47
+              },
+              "True": {
+                "ACK": 35,
+                "BCC": 163,
+                "MEL": 9,
+                "NEV": 9,
+                "SCC": 36,
+                "SEK": 3
+              }
+            }
+          }
+        },
+        "test": {
+          "n": 472,
+          "biopsed": {
+            "counts": {
+              "False": 196,
+              "True": 276
+            },
+            "by_diagnosis": {
+              "False": {
+                "ACK": 107,
+                "NEV": 43,
+                "SEK": 46
+              },
+              "True": {
+                "ACK": 54,
+                "BCC": 163,
+                "MEL": 9,
+                "NEV": 11,
+                "SCC": 36,
+                "SEK": 3
+              }
+            }
+          }
+        }
+      }
+    },
+    "images": {
+      "n": 2298,
+      "biopsed": {
+        "counts": {
+          "False": 956,
+          "True": 1342
+        },
+        "by_diagnosis": {
+          "False": {
+            "ACK": 552,
+            "NEV": 184,
+            "SEK": 220
+          },
+          "True": {
+            "ACK": 178,
+            "BCC": 845,
+            "MEL": 52,
+            "NEV": 60,
+            "SCC": 192,
+            "SEK": 15
+          }
+        }
+      }
+    },
+    "representatives": {
+      "n": 1891,
+      "biopsed": {
+        "counts": {
+          "False": 844,
+          "True": 1047
+        },
+        "by_diagnosis": {
+          "False": {
+            "ACK": 492,
+            "NEV": 167,
+            "SEK": 185
+          },
+          "True": {
+            "ACK": 152,
+            "BCC": 652,
+            "MEL": 36,
+            "NEV": 49,
+            "SCC": 145,
+            "SEK": 13
+          }
+        }
+      }
+    },
+    "mixed": {
+      "biopsed": {
+        "lesion_id": {
+          "groups": 1891,
+          "multiple_field_values": 0
+        },
+        "split_group": {
+          "groups": 1132,
+          "multiple_field_values": 220
+        }
+      }
+    }
+  },
+  "development": {
+    "original_fit_dev": {
+      "n": 128,
+      "dataset": {
+        "counts": {
+          "rosendahl": 27,
+          "vidir_modern": 27,
+          "vidir_molemax": 69,
+          "vienna_dias": 5
+        },
+        "by_diagnosis": {
+          "rosendahl": {
+            "akiec": 2,
+            "bcc": 5,
+            "bkl": 9,
+            "mel": 3,
+            "nv": 8
+          },
+          "vidir_modern": {
+            "bkl": 4,
+            "mel": 5,
+            "nv": 17,
+            "vasc": 1
+          },
+          "vidir_molemax": {
+            "bkl": 4,
+            "nv": 65
+          },
+          "vienna_dias": {
+            "mel": 4,
+            "nv": 1
+          }
+        }
+      },
+      "dx_type": {
+        "counts": {
+          "consensus": 11,
+          "follow_up": 65,
+          "histo": 52
+        },
+        "by_diagnosis": {
+          "consensus": {
+            "bkl": 5,
+            "nv": 6
+          },
+          "follow_up": {
+            "nv": 65
+          },
+          "histo": {
+            "akiec": 2,
+            "bcc": 5,
+            "bkl": 12,
+            "mel": 12,
+            "nv": 20,
+            "vasc": 1
+          }
+        }
+      }
+    },
+    "first_natural_dev": {
+      "n": 96,
+      "dataset": {
+        "counts": {
+          "rosendahl": 15,
+          "vidir_modern": 16,
+          "vidir_molemax": 62,
+          "vienna_dias": 3
+        },
+        "by_diagnosis": {
+          "rosendahl": {
+            "akiec": 3,
+            "bcc": 4,
+            "bkl": 3,
+            "mel": 1,
+            "nv": 4
+          },
+          "vidir_modern": {
+            "bkl": 1,
+            "mel": 5,
+            "nv": 10
+          },
+          "vidir_molemax": {
+            "nv": 62
+          },
+          "vienna_dias": {
+            "nv": 3
+          }
+        }
+      },
+      "dx_type": {
+        "counts": {
+          "consensus": 4,
+          "follow_up": 62,
+          "histo": 30
+        },
+        "by_diagnosis": {
+          "consensus": {
+            "nv": 4
+          },
+          "follow_up": {
+            "nv": 62
+          },
+          "histo": {
+            "akiec": 3,
+            "bcc": 4,
+            "bkl": 4,
+            "mel": 6,
+            "nv": 13
+          }
+        }
+      }
+    },
+    "second_natural_dev": {
+      "n": 96,
+      "dataset": {
+        "counts": {
+          "rosendahl": 17,
+          "vidir_modern": 18,
+          "vidir_molemax": 57,
+          "vienna_dias": 4
+        },
+        "by_diagnosis": {
+          "rosendahl": {
+            "akiec": 3,
+            "bkl": 6,
+            "mel": 3,
+            "nv": 5
+          },
+          "vidir_modern": {
+            "bcc": 1,
+            "bkl": 3,
+            "mel": 3,
+            "nv": 11
+          },
+          "vidir_molemax": {
+            "bkl": 2,
+            "nv": 55
+          },
+          "vienna_dias": {
+            "nv": 4
+          }
+        }
+      },
+      "dx_type": {
+        "counts": {
+          "consensus": 7,
+          "follow_up": 51,
+          "histo": 38
+        },
+        "by_diagnosis": {
+          "consensus": {
+            "bkl": 4,
+            "nv": 3
+          },
+          "follow_up": {
+            "nv": 51
+          },
+          "histo": {
+            "akiec": 3,
+            "bcc": 1,
+            "bkl": 7,
+            "mel": 6,
+            "nv": 21
+          }
+        }
+      }
+    },
+    "balanced_dev": {
+      "n": 56,
+      "dataset": {
+        "counts": {
+          "rosendahl": 24,
+          "vidir_modern": 17,
+          "vidir_molemax": 12,
+          "vienna_dias": 3
+        },
+        "by_diagnosis": {
+          "rosendahl": {
+            "akiec": 6,
+            "bcc": 7,
+            "bkl": 4,
+            "df": 3,
+            "mel": 3,
+            "nv": 1
+          },
+          "vidir_modern": {
+            "akiec": 2,
+            "bcc": 1,
+            "bkl": 2,
+            "df": 2,
+            "mel": 4,
+            "nv": 2,
+            "vasc": 4
+          },
+          "vidir_molemax": {
+            "bkl": 1,
+            "df": 3,
+            "nv": 5,
+            "vasc": 3
+          },
+          "vienna_dias": {
+            "bkl": 1,
+            "mel": 1,
+            "vasc": 1
+          }
+        }
+      },
+      "dx_type": {
+        "counts": {
+          "confocal": 1,
+          "consensus": 11,
+          "follow_up": 5,
+          "histo": 39
+        },
+        "by_diagnosis": {
+          "confocal": {
+            "bkl": 1
+          },
+          "consensus": {
+            "bkl": 2,
+            "df": 5,
+            "vasc": 4
+          },
+          "follow_up": {
+            "nv": 5
+          },
+          "histo": {
+            "akiec": 8,
+            "bcc": 8,
+            "bkl": 5,
+            "df": 3,
+            "mel": 8,
+            "nv": 3,
+            "vasc": 4
+          }
+        }
+      }
+    },
+    "balanced_train": {
+      "n": 56,
+      "dataset": {
+        "counts": {
+          "rosendahl": 24,
+          "vidir_modern": 14,
+          "vidir_molemax": 16,
+          "vienna_dias": 2
+        },
+        "by_diagnosis": {
+          "rosendahl": {
+            "akiec": 8,
+            "bcc": 6,
+            "bkl": 3,
+            "df": 2,
+            "mel": 4,
+            "nv": 1
+          },
+          "vidir_modern": {
+            "bcc": 2,
+            "bkl": 3,
+            "df": 1,
+            "mel": 4,
+            "nv": 1,
+            "vasc": 3
+          },
+          "vidir_molemax": {
+            "bkl": 2,
+            "df": 4,
+            "nv": 5,
+            "vasc": 5
+          },
+          "vienna_dias": {
+            "df": 1,
+            "nv": 1
+          }
+        }
+      },
+      "dx_type": {
+        "counts": {
+          "consensus": 10,
+          "follow_up": 5,
+          "histo": 41
+        },
+        "by_diagnosis": {
+          "consensus": {
+            "bkl": 1,
+            "df": 4,
+            "vasc": 5
+          },
+          "follow_up": {
+            "nv": 5
+          },
+          "histo": {
+            "akiec": 8,
+            "bcc": 8,
+            "bkl": 7,
+            "df": 4,
+            "mel": 8,
+            "nv": 3,
+            "vasc": 3
+          }
+        }
+      }
+    },
+    "alternative_dev": {
+      "n": 128,
+      "dataset": {
+        "counts": {
+          "rosendahl": 27,
+          "vidir_modern": 28,
+          "vidir_molemax": 68,
+          "vienna_dias": 5
+        },
+        "by_diagnosis": {
+          "rosendahl": {
+            "akiec": 3,
+            "bcc": 2,
+            "bkl": 6,
+            "mel": 2,
+            "nv": 13,
+            "vasc": 1
+          },
+          "vidir_modern": {
+            "bkl": 3,
+            "mel": 7,
+            "nv": 18
+          },
+          "vidir_molemax": {
+            "bkl": 2,
+            "mel": 2,
+            "nv": 64
+          },
+          "vienna_dias": {
+            "nv": 5
+          }
+        }
+      },
+      "dx_type": {
+        "counts": {
+          "confocal": 1,
+          "consensus": 10,
+          "follow_up": 64,
+          "histo": 53
+        },
+        "by_diagnosis": {
+          "confocal": {
+            "bkl": 1
+          },
+          "consensus": {
+            "bkl": 3,
+            "nv": 7
+          },
+          "follow_up": {
+            "nv": 64
+          },
+          "histo": {
+            "akiec": 3,
+            "bcc": 2,
+            "bkl": 7,
+            "mel": 11,
+            "nv": 29,
+            "vasc": 1
+          }
+        }
+      }
+    },
+    "alternative_train": {
+      "n": 56,
+      "dataset": {
+        "counts": {
+          "rosendahl": 21,
+          "vidir_modern": 21,
+          "vidir_molemax": 14
+        },
+        "by_diagnosis": {
+          "rosendahl": {
+            "akiec": 7,
+            "bcc": 6,
+            "bkl": 3,
+            "df": 1,
+            "mel": 3,
+            "nv": 1
+          },
+          "vidir_modern": {
+            "akiec": 1,
+            "bcc": 2,
+            "bkl": 3,
+            "df": 4,
+            "mel": 5,
+            "nv": 2,
+            "vasc": 4
+          },
+          "vidir_molemax": {
+            "bkl": 2,
+            "df": 3,
+            "nv": 5,
+            "vasc": 4
+          }
+        }
+      },
+      "dx_type": {
+        "counts": {
+          "consensus": 12,
+          "follow_up": 5,
+          "histo": 39
+        },
+        "by_diagnosis": {
+          "consensus": {
+            "bkl": 3,
+            "df": 5,
+            "vasc": 4
+          },
+          "follow_up": {
+            "nv": 5
+          },
+          "histo": {
+            "akiec": 8,
+            "bcc": 8,
+            "bkl": 5,
+            "df": 3,
+            "mel": 8,
+            "nv": 3,
+            "vasc": 4
+          }
+        }
+      }
+    }
+  },
+  "natural_pooled": {
+    "n": 192,
+    "dataset": {
+      "counts": {
+        "rosendahl": 32,
+        "vidir_modern": 34,
+        "vidir_molemax": 119,
+        "vienna_dias": 7
+      },
+      "by_diagnosis": {
+        "rosendahl": {
+          "akiec": 6,
+          "bcc": 4,
+          "bkl": 9,
+          "mel": 4,
+          "nv": 9
+        },
+        "vidir_modern": {
+          "bcc": 1,
+          "bkl": 4,
+          "mel": 8,
+          "nv": 21
+        },
+        "vidir_molemax": {
+          "bkl": 2,
+          "nv": 117
+        },
+        "vienna_dias": {
+          "nv": 7
+        }
+      }
+    },
+    "dx_type": {
+      "counts": {
+        "consensus": 11,
+        "follow_up": 113,
+        "histo": 68
+      },
+      "by_diagnosis": {
+        "consensus": {
+          "bkl": 4,
+          "nv": 7
+        },
+        "follow_up": {
+          "nv": 113
+        },
+        "histo": {
+          "akiec": 6,
+          "bcc": 5,
+          "bkl": 11,
+          "mel": 12,
+          "nv": 34
+        }
+      }
+    }
+  },
+  "risk_by_source": {
+    "clip": {
+      "frozen_text": {
+        "dataset": {
+          "overall_delta": 0.03415369161225512,
+          "pairs": 1991,
+          "within": {
+            "pairs": 295,
+            "base": 0.7152542372881356,
+            "augmented": 0.7423728813559322,
+            "contribution_to_overall_delta": 0.004018081366147665
+          },
+          "between": {
+            "pairs": 1696,
+            "base": 0.7629716981132075,
+            "augmented": 0.7983490566037735,
+            "contribution_to_overall_delta": 0.030135610246107485
+          },
+          "by_stratum": {
+            "rosendahl": {
+              "n": 32,
+              "errors": 29,
+              "pairs": 87,
+              "base": 0.3793103448275862,
+              "augmented": 0.45977011494252873,
+              "contribution_to_overall_delta": 0.0035158211953792064
+            },
+            "vidir_modern": {
+              "n": 34,
+              "errors": 26,
+              "pairs": 208,
+              "base": 0.8557692307692307,
+              "augmented": 0.8605769230769231,
+              "contribution_to_overall_delta": 0.0005022601707684581
+            },
+            "vidir_molemax": {
+              "n": 119,
+              "errors": 119,
+              "pairs": 0,
+              "base": null,
+              "augmented": null,
+              "contribution_to_overall_delta": 0.0
+            },
+            "vienna_dias": {
+              "n": 7,
+              "errors": 7,
+              "pairs": 0,
+              "base": null,
+              "augmented": null,
+              "contribution_to_overall_delta": 0.0
+            }
+          }
+        },
+        "dx_type": {
+          "overall_delta": 0.03415369161225512,
+          "pairs": 1991,
+          "within": {
+            "pairs": 590,
+            "base": 0.735593220338983,
+            "augmented": 0.7254237288135593,
+            "contribution_to_overall_delta": -0.0030135610246107484
+          },
+          "between": {
+            "pairs": 1401,
+            "base": 0.7644539614561028,
+            "augmented": 0.8172733761598858,
+            "contribution_to_overall_delta": 0.0371672526368659
+          },
+          "by_stratum": {
+            "consensus": {
+              "n": 11,
+              "errors": 10,
+              "pairs": 10,
+              "base": 0.6,
+              "augmented": 1.0,
+              "contribution_to_overall_delta": 0.0020090406830738324
+            },
+            "follow_up": {
+              "n": 113,
+              "errors": 113,
+              "pairs": 0,
+              "base": null,
+              "augmented": null,
+              "contribution_to_overall_delta": 0.0
+            },
+            "histo": {
+              "n": 68,
+              "errors": 58,
+              "pairs": 580,
+              "base": 0.7379310344827587,
+              "augmented": 0.7206896551724138,
+              "contribution_to_overall_delta": -0.005022601707684581
+            }
+          }
+        },
+        "label": {
+          "overall_delta": 0.03415369161225512,
+          "pairs": 1991,
+          "within": {
+            "pairs": 46,
+            "base": 0.717391304347826,
+            "augmented": 0.8043478260869565,
+            "contribution_to_overall_delta": 0.0020090406830738324
+          },
+          "between": {
+            "pairs": 1945,
+            "base": 0.7568123393316195,
+            "augmented": 0.7897172236503857,
+            "contribution_to_overall_delta": 0.03214465092918132
+          },
+          "by_stratum": {
+            "akiec": {
+              "n": 6,
+              "errors": 5,
+              "pairs": 5,
+              "base": 1.0,
+              "augmented": 1.0,
+              "contribution_to_overall_delta": 0.0
+            },
+            "bcc": {
+              "n": 5,
+              "errors": 5,
+              "pairs": 0,
+              "base": null,
+              "augmented": null,
+              "contribution_to_overall_delta": 0.0
+            },
+            "bkl": {
+              "n": 15,
+              "errors": 14,
+              "pairs": 14,
+              "base": 0.5,
+              "augmented": 0.7857142857142857,
+              "contribution_to_overall_delta": 0.0020090406830738324
+            },
+            "mel": {
+              "n": 12,
+              "errors": 3,
+              "pairs": 27,
+              "base": 0.7777777777777778,
+              "augmented": 0.7777777777777778,
+              "contribution_to_overall_delta": 0.0
+            },
+            "nv": {
+              "n": 154,
+              "errors": 154,
+              "pairs": 0,
+              "base": null,
+              "augmented": null,
+              "contribution_to_overall_delta": 0.0
+            }
+          }
+        }
+      },
+      "cosine_centroid": {
+        "dataset": {
+          "overall_delta": 0.08200282393830782,
+          "pairs": 9207,
+          "within": {
+            "pairs": 3985,
+            "base": 0.7061480552070264,
+            "augmented": 0.8150564617314932,
+            "contribution_to_overall_delta": 0.04713804713804714
+          },
+          "between": {
+            "pairs": 5222,
+            "base": 0.6696667943316736,
+            "augmented": 0.7311374952125622,
+            "contribution_to_overall_delta": 0.03486477680026067
+          },
+          "by_stratum": {
+            "rosendahl": {
+              "n": 32,
+              "errors": 23,
+              "pairs": 207,
+              "base": 0.46859903381642515,
+              "augmented": 0.47342995169082125,
+              "contribution_to_overall_delta": 0.0001086130118388183
+            },
+            "vidir_modern": {
+              "n": 34,
+              "errors": 18,
+              "pairs": 288,
+              "base": 0.5763888888888888,
+              "augmented": 0.6006944444444444,
+              "contribution_to_overall_delta": 0.000760291082871728
+            },
+            "vidir_molemax": {
+              "n": 119,
+              "errors": 52,
+              "pairs": 3484,
+              "base": 0.7307692307692307,
+              "augmented": 0.8530424799081515,
+              "contribution_to_overall_delta": 0.04626914304333659
+            },
+            "vienna_dias": {
+              "n": 7,
+              "errors": 6,
+              "pairs": 6,
+              "base": 0.8333333333333334,
+              "augmented": 0.8333333333333334,
+              "contribution_to_overall_delta": 0.0
+            }
+          }
+        },
+        "dx_type": {
+          "overall_delta": 0.08200282393830782,
+          "pairs": 9207,
+          "within": {
+            "pairs": 4255,
+            "base": 0.7097532314923619,
+            "augmented": 0.808225616921269,
+            "contribution_to_overall_delta": 0.04550885196046486
+          },
+          "between": {
+            "pairs": 4952,
+            "base": 0.6645799676898223,
+            "augmented": 0.7324313408723748,
+            "contribution_to_overall_delta": 0.036493971977842946
+          },
+          "by_stratum": {
+            "consensus": {
+              "n": 11,
+              "errors": 6,
+              "pairs": 30,
+              "base": 0.26666666666666666,
+              "augmented": 0.4,
+              "contribution_to_overall_delta": 0.0004344520473552732
+            },
+            "follow_up": {
+              "n": 113,
+              "errors": 50,
+              "pairs": 3150,
+              "base": 0.7425396825396825,
+              "augmented": 0.8568253968253968,
+              "contribution_to_overall_delta": 0.039100684261974585
+            },
+            "histo": {
+              "n": 68,
+              "errors": 43,
+              "pairs": 1075,
+              "base": 0.626046511627907,
+              "augmented": 0.6772093023255814,
+              "contribution_to_overall_delta": 0.005973715651135006
+            }
+          }
+        },
+        "label": {
+          "overall_delta": 0.08200282393830782,
+          "pairs": 9207,
+          "within": {
+            "pairs": 5980,
+            "base": 0.703010033444816,
+            "augmented": 0.8036789297658863,
+            "contribution_to_overall_delta": 0.06538503312696861
+          },
+          "between": {
+            "pairs": 3227,
+            "base": 0.6529284164859002,
+            "augmented": 0.7003408738766657,
+            "contribution_to_overall_delta": 0.016617790811339198
+          },
+          "by_stratum": {
+            "akiec": {
+              "n": 6,
+              "errors": 1,
+              "pairs": 5,
+              "base": 0.4,
+              "augmented": 0.2,
+              "contribution_to_overall_delta": -0.0001086130118388183
+            },
+            "bcc": {
+              "n": 5,
+              "errors": 3,
+              "pairs": 6,
+              "base": 1.0,
+              "augmented": 1.0,
+              "contribution_to_overall_delta": 0.0
+            },
+            "bkl": {
+              "n": 15,
+              "errors": 14,
+              "pairs": 14,
+              "base": 0.42857142857142855,
+              "augmented": 0.42857142857142855,
+              "contribution_to_overall_delta": 0.0
+            },
+            "mel": {
+              "n": 12,
+              "errors": 7,
+              "pairs": 35,
+              "base": 0.7714285714285715,
+              "augmented": 0.6571428571428571,
+              "contribution_to_overall_delta": -0.0004344520473552732
+            },
+            "nv": {
+              "n": 154,
+              "errors": 74,
+              "pairs": 5920,
+              "base": 0.7032094594594595,
+              "augmented": 0.8057432432432432,
+              "contribution_to_overall_delta": 0.0659280981861627
+            }
+          }
+        }
+      }
+    },
+    "biomedclip": {
+      "frozen_text": {
+        "dataset": {
+          "overall_delta": 0.0073014907210222635,
+          "pairs": 3287,
+          "within": {
+            "pairs": 653,
+            "base": 0.7825421133231241,
+            "augmented": 0.7335375191424196,
+            "contribution_to_overall_delta": -0.009735320961362945
+          },
+          "between": {
+            "pairs": 2634,
+            "base": 0.7425968109339408,
+            "augmented": 0.7638572513287776,
+            "contribution_to_overall_delta": 0.017036811682385154
+          },
+          "by_stratum": {
+            "rosendahl": {
+              "n": 32,
+              "errors": 29,
+              "pairs": 87,
+              "base": 0.6896551724137931,
+              "augmented": 0.6436781609195402,
+              "contribution_to_overall_delta": -0.001216915120170368
+            },
+            "vidir_modern": {
+              "n": 34,
+              "errors": 26,
+              "pairs": 208,
+              "base": 0.7019230769230769,
+              "augmented": 0.7403846153846154,
+              "contribution_to_overall_delta": 0.002433830240340736
+            },
+            "vidir_molemax": {
+              "n": 119,
+              "errors": 116,
+              "pairs": 348,
+              "base": 0.853448275862069,
+              "augmented": 0.75,
+              "contribution_to_overall_delta": -0.010952236081533314
+            },
+            "vienna_dias": {
+              "n": 7,
+              "errors": 2,
+              "pairs": 10,
+              "base": 0.8,
+              "augmented": 0.8,
+              "contribution_to_overall_delta": 0.0
+            }
+          }
+        },
+        "dx_type": {
+          "overall_delta": 0.0073014907210222635,
+          "pairs": 3287,
+          "within": {
+            "pairs": 1089,
+            "base": 0.7006427915518825,
+            "augmented": 0.6749311294765841,
+            "contribution_to_overall_delta": -0.008518405841192577
+          },
+          "between": {
+            "pairs": 2198,
+            "base": 0.7752502274795269,
+            "augmented": 0.7989080982711556,
+            "contribution_to_overall_delta": 0.015819896562214785
+          },
+          "by_stratum": {
+            "consensus": {
+              "n": 11,
+              "errors": 11,
+              "pairs": 0,
+              "base": null,
+              "augmented": null,
+              "contribution_to_overall_delta": 0.0
+            },
+            "follow_up": {
+              "n": 113,
+              "errors": 111,
+              "pairs": 222,
+              "base": 0.8018018018018018,
+              "augmented": 0.6666666666666666,
+              "contribution_to_overall_delta": -0.009126863401277762
+            },
+            "histo": {
+              "n": 68,
+              "errors": 51,
+              "pairs": 867,
+              "base": 0.6747404844290658,
+              "augmented": 0.6770472895040369,
+              "contribution_to_overall_delta": 0.000608457560085184
+            }
+          }
+        },
+        "label": {
+          "overall_delta": 0.0073014907210222635,
+          "pairs": 3287,
+          "within": {
+            "pairs": 1996,
+            "base": 0.8241482965931863,
+            "augmented": 0.7965931863727455,
+            "contribution_to_overall_delta": -0.01673258290234256
+          },
+          "between": {
+            "pairs": 1291,
+            "base": 0.6367157242447715,
+            "augmented": 0.6979085979860573,
+            "contribution_to_overall_delta": 0.02403407362336477
+          },
+          "by_stratum": {
+            "akiec": {
+              "n": 6,
+              "errors": 6,
+              "pairs": 0,
+              "base": null,
+              "augmented": null,
+              "contribution_to_overall_delta": 0.0
+            },
+            "bcc": {
+              "n": 5,
+              "errors": 4,
+              "pairs": 4,
+              "base": 0.5,
+              "augmented": 0.75,
+              "contribution_to_overall_delta": 0.000304228780042592
+            },
+            "bkl": {
+              "n": 15,
+              "errors": 15,
+              "pairs": 0,
+              "base": null,
+              "augmented": null,
+              "contribution_to_overall_delta": 0.0
+            },
+            "mel": {
+              "n": 12,
+              "errors": 8,
+              "pairs": 32,
+              "base": 0.40625,
+              "augmented": 0.59375,
+              "contribution_to_overall_delta": 0.0018253726802555522
+            },
+            "nv": {
+              "n": 154,
+              "errors": 140,
+              "pairs": 1960,
+              "base": 0.8316326530612245,
+              "augmented": 0.8,
+              "contribution_to_overall_delta": -0.018862184362640706
+            }
+          }
+        }
+      },
+      "cosine_centroid": {
+        "dataset": {
+          "overall_delta": -0.005126953125,
+          "pairs": 8192,
+          "within": {
+            "pairs": 2903,
+            "base": 0.793661729245608,
+            "augmented": 0.7895280744057871,
+            "contribution_to_overall_delta": -0.00146484375
+          },
+          "between": {
+            "pairs": 5289,
+            "base": 0.7311401020986954,
+            "augmented": 0.7254679523539421,
+            "contribution_to_overall_delta": -0.003662109375
+          },
+          "by_stratum": {
+            "rosendahl": {
+              "n": 32,
+              "errors": 18,
+              "pairs": 252,
+              "base": 0.44841269841269843,
+              "augmented": 0.43253968253968256,
+              "contribution_to_overall_delta": -0.00048828125
+            },
+            "vidir_modern": {
+              "n": 34,
+              "errors": 17,
+              "pairs": 289,
+              "base": 0.8442906574394463,
+              "augmented": 0.8373702422145328,
+              "contribution_to_overall_delta": -0.000244140625
+            },
+            "vidir_molemax": {
+              "n": 119,
+              "errors": 25,
+              "pairs": 2350,
+              "base": 0.8263829787234043,
+              "augmented": 0.8238297872340425,
+              "contribution_to_overall_delta": -0.000732421875
+            },
+            "vienna_dias": {
+              "n": 7,
+              "errors": 4,
+              "pairs": 12,
+              "base": 0.4166666666666667,
+              "augmented": 0.4166666666666667,
+              "contribution_to_overall_delta": 0.0
+            }
+          }
+        },
+        "dx_type": {
+          "overall_delta": -0.005126953125,
+          "pairs": 8192,
+          "within": {
+            "pairs": 3179,
+            "base": 0.7461465869770368,
+            "augmented": 0.7417426863793646,
+            "contribution_to_overall_delta": -0.001708984375
+          },
+          "between": {
+            "pairs": 5013,
+            "base": 0.7578296429283862,
+            "augmented": 0.7522441651705566,
+            "contribution_to_overall_delta": -0.00341796875
+          },
+          "by_stratum": {
+            "consensus": {
+              "n": 11,
+              "errors": 5,
+              "pairs": 30,
+              "base": 0.9333333333333333,
+              "augmented": 0.9333333333333333,
+              "contribution_to_overall_delta": 0.0
+            },
+            "follow_up": {
+              "n": 113,
+              "errors": 22,
+              "pairs": 2002,
+              "base": 0.8291708291708292,
+              "augmented": 0.8271728271728271,
+              "contribution_to_overall_delta": -0.00048828125
+            },
+            "histo": {
+              "n": 68,
+              "errors": 37,
+              "pairs": 1147,
+              "base": 0.5963382737576286,
+              "augmented": 0.5876198779424586,
+              "contribution_to_overall_delta": -0.001220703125
+            }
+          }
+        },
+        "label": {
+          "overall_delta": -0.005126953125,
+          "pairs": 8192,
+          "within": {
+            "pairs": 4549,
+            "base": 0.7896240932072983,
+            "augmented": 0.7847878654649374,
+            "contribution_to_overall_delta": -0.002685546875
+          },
+          "between": {
+            "pairs": 3643,
+            "base": 0.7079330222344222,
+            "augmented": 0.7024430414493549,
+            "contribution_to_overall_delta": -0.00244140625
+          },
+          "by_stratum": {
+            "akiec": {
+              "n": 6,
+              "errors": 1,
+              "pairs": 5,
+              "base": 0.0,
+              "augmented": 0.0,
+              "contribution_to_overall_delta": 0.0
+            },
+            "bcc": {
+              "n": 5,
+              "errors": 2,
+              "pairs": 6,
+              "base": 0.6666666666666666,
+              "augmented": 0.6666666666666666,
+              "contribution_to_overall_delta": 0.0
+            },
+            "bkl": {
+              "n": 15,
+              "errors": 13,
+              "pairs": 26,
+              "base": 0.46153846153846156,
+              "augmented": 0.46153846153846156,
+              "contribution_to_overall_delta": 0.0
+            },
+            "mel": {
+              "n": 12,
+              "errors": 9,
+              "pairs": 27,
+              "base": 0.48148148148148145,
+              "augmented": 0.4074074074074074,
+              "contribution_to_overall_delta": -0.000244140625
+            },
+            "nv": {
+              "n": 154,
+              "errors": 39,
+              "pairs": 4485,
+              "base": 0.7944258639910814,
+              "augmented": 0.7899665551839465,
+              "contribution_to_overall_delta": -0.00244140625
+            }
+          }
+        }
+      }
+    }
+  },
+  "status": "complete",
+  "seconds": 0.248
+}

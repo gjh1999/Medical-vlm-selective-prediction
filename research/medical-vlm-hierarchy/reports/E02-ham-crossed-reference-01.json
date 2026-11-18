@@ -1,0 +1,9 @@
+{
+  "method": "independent group ranking; torch float64 signals, L-BFGS fit and Mann-Whitney ranks",
+  "checks": 128,
+  "max_abs_auroc_difference": 0.0,
+  "max_abs_brier_difference": 8.697705888849327e-10,
+  "selected_rows_verified": 184,
+  "status": "complete",
+  "seconds": 1.61
+}
