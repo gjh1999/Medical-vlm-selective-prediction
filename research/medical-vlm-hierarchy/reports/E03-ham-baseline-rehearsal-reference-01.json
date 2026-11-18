@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "method": "50-digit decimal binomial sums at the returned bound and original target",
+  "candidate_constraints": 768,
+  "oracle_constraints": 48,
+  "empty": 145,
+  "nonempty": 623,
+  "selected_replayed": 24,
+  "maximum_absolute_probability_residual": 5.073812639677975e-16,
+  "seconds": 0.096
+}
