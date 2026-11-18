@@ -1,6 +1,7 @@
 """Measure how screened HAM image pairs touch released splits and previously used pilot cohorts."""
 import argparse
 import csv
+import hashlib
 import json
 import time
 from collections import Counter, defaultdict
@@ -64,6 +65,7 @@ def main():
         for tier,edges in tiers.items():
             touched = {examples[i]["split_group"] for e in edges for i in e}
             tier_report = {"pairs":len(edges),"groups":len(touched),"also_in_old_dhash_mask":len(touched&old_mask),
+                           "pairs_sha256":hashlib.sha256("".join(f"{a},{b}\n" for a,b in sorted(edges)).encode()).hexdigest(),
                            "missing_from_old_dhash_mask":len(touched-old_mask),"seeds":{}}
             for seed,rows in seed_rows.items():
                 old = {r["image_id"]:r for r in rows}
