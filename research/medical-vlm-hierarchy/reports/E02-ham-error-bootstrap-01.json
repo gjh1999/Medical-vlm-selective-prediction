@@ -1,0 +1,67 @@
+{
+  "scope": "development bootstrap under empirical cohort distributions",
+  "config_sha256": "053bf9c01de31805edb209c370fdf30a2e9dcd759f4d1e8c24c9198285a0cbee",
+  "replicates": 2000,
+  "seed": 17,
+  "resampling": "paired across detectors/encoders, stratified replacement within each support class, independent replacement of fit and dev groups",
+  "models": {
+    "clip": {
+      "frozen_text": {
+        "observed_delta": 0.0593900481540931,
+        "valid_replicates": 1998,
+        "invalid": {
+          "single_class_fit": 0,
+          "single_class_evaluation": 2
+        },
+        "median": 0.057065217391304324,
+        "percentiles_2_5_97_5": [
+          -0.09578694375192111,
+          0.2652329749103942
+        ]
+      },
+      "cosine_centroid": {
+        "observed_delta": 0.08478260869565213,
+        "valid_replicates": 2000,
+        "invalid": {
+          "single_class_fit": 0,
+          "single_class_evaluation": 0
+        },
+        "median": 0.04141586159130023,
+        "percentiles_2_5_97_5": [
+          -0.06352189477189477,
+          0.22480894361568626
+        ]
+      }
+    },
+    "biomedclip": {
+      "frozen_text": {
+        "observed_delta": 0.022471910112359605,
+        "valid_replicates": 1998,
+        "invalid": {
+          "single_class_fit": 0,
+          "single_class_evaluation": 2
+        },
+        "median": 0.0037037037037037646,
+        "percentiles_2_5_97_5": [
+          -0.1930312870751623,
+          0.20458317544524457
+        ]
+      },
+      "cosine_centroid": {
+        "observed_delta": -0.0014430014430014682,
+        "valid_replicates": 2000,
+        "invalid": {
+          "single_class_fit": 0,
+          "single_class_evaluation": 0
+        },
+        "median": -0.00390625,
+        "percentiles_2_5_97_5": [
+          -0.08686145483155715,
+          0.04183535762483126
+        ]
+      }
+    }
+  },
+  "status": "complete",
+  "seconds": 7.549
+}

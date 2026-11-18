@@ -1,4 +1,4 @@
-"""Frozen image features only. Needs a complete image audit; no labels/model fitting.
+"""Cache frozen image features and optional fixed text prompts from an audited inventory.
 
 Both model and preprocessing are pinned from local verified weights. No online
 fallback, no pickle feature cache, no test-dependent text/prompt selection.
@@ -13,7 +13,7 @@ import time
 from pathlib import Path
 
 from prepare_openai_clip import WEIGHT_SHA256
-from prepare_biomedclip import CONFIG_BLOBS, WEIGHT_SHA256 as BIOMED_SHA256, validate_config_file
+from prepare_biomedclip import BERT, BERT_REVISION, CONFIG_BLOBS, MODEL, REVISION, WEIGHT_SHA256 as BIOMED_SHA256, validate_config_file
 
 
 def read_inputs(audit_dir):
@@ -61,6 +61,22 @@ def load_encoder(name, weights, device, config_path, report, with_tokenizer=Fals
             report["text_config_sha256"] = {key: validate_config_file(text_dir / key, key)
                                             for key in CONFIG_BLOBS if key != "open_clip_config.json"}
             config["model_cfg"]["text_cfg"].update(hf_model_name=str(text_dir), hf_tokenizer_name=str(text_dir))
+        else:
+            from huggingface_hub import hf_hub_download
+            # Older image-only caches may have the pinned base configuration in the local Hub cache.
+            needed = ["config.json"]
+            if with_tokenizer:
+                needed.extend(k for k in CONFIG_BLOBS if k not in ("config.json", "open_clip_config.json"))
+            hashes = {}
+            for filename in needed:
+                base_model = filename == "config.json"
+                local = Path(hf_hub_download(BERT if base_model else MODEL, filename,
+                                             revision=BERT_REVISION if base_model else REVISION,
+                                             local_files_only=True))
+                hashes[filename] = validate_config_file(local, filename)
+                key = "hf_model_name" if base_model else "hf_tokenizer_name"
+                config["model_cfg"]["text_cfg"][key] = str(local.parent)
+            report["text_config_sha256"] = hashes
         _MODEL_CONFIGS["biomedclip_local"] = config["model_cfg"]
         preprocess_cfg = config["preprocess_cfg"]
         model, _, preprocess = open_clip.create_model_and_transforms(
@@ -75,6 +91,30 @@ def load_encoder(name, weights, device, config_path, report, with_tokenizer=Fals
     model.requires_grad_(False)
     report["preprocess"] = repr(preprocess)
     return model, preprocess, tokenizer
+
+
+def encode_node_prompts(model, tokenize, config, device):
+    import math
+    import torch
+    from selective_core import Taxonomy
+
+    tree = Taxonomy(config["parent"])
+    names, templates = config["names"], config["templates"]
+    if set(names) != set(tree.parent) or not all(isinstance(v, str) and v.strip() for v in names.values()):
+        raise ValueError("Every non-root node needs one nonempty text label")
+    if not templates or not all(isinstance(t, str) and "{label}" in t for t in templates):
+        raise ValueError("Expected at least one prompt template containing {label}")
+    nodes = sorted(names)
+    prompts = [template.format(label=names[node]) for template in templates for node in nodes]
+    with torch.inference_mode():
+        tokens = tokenize(prompts).to(device)
+        vectors = model.encode_text(tokens).float()
+        norms = vectors.norm(dim=-1, keepdim=True)
+        scale = float(model.logit_scale.exp().item())
+        if not torch.isfinite(norms).all() or (norms <= 0).any() or not math.isfinite(scale) or scale <= 0:
+            raise ValueError("Invalid text embeddings or checkpoint logit scale")
+        normalized = (vectors / norms).cpu().numpy().reshape(len(templates), len(nodes), -1)
+    return normalized, nodes, tokens.shape[1], scale
 
 
 def encode_images(model, preprocess, rows, device):
@@ -100,6 +140,7 @@ def main():
     ap.add_argument('--weights',required=True);ap.add_argument('--weights-sha256',required=True)
     ap.add_argument('--model',choices=['clip','biomedclip'],required=True)
     ap.add_argument('--model-config',help='BiomedCLIP open_clip_config.json from pinned revision')
+    ap.add_argument('--prompt-config',type=Path,help='Encode the fixed templates and node names in this taxonomy JSON')
     ap.add_argument('--revision',required=True);ap.add_argument('--batch-size',type=int,default=8)
     ap.add_argument('--smoke-only', action='store_true',
                     help='Encode at most one batch of train representatives, sorted by image ID')
@@ -131,9 +172,22 @@ def main():
         packages += ['clip'] if args.model == 'clip' else ['open_clip_torch', 'transformers']
         report['versions'] = {p: importlib.metadata.version(p) for p in packages}
         report['python']=platform.python_version();report['cuda_build']=torch.version.cuda
-        model, preprocess, _ = load_encoder(args.model, weights, device, args.model_config, report)
+        model, preprocess, tokenizer = load_encoder(args.model, weights, device, args.model_config, report,
+                                                   with_tokenizer=args.prompt_config is not None)
         if args.device=='cuda':
             torch.cuda.reset_peak_memory_stats();torch.cuda.synchronize();report['gpu']=torch.cuda.get_device_name()
+        if args.prompt_config:
+            text_start = time.perf_counter()
+            contents = args.prompt_config.read_bytes()
+            cfg = json.loads(contents)
+            text, nodes, context, scale = encode_node_prompts(model, tokenizer, cfg, device)
+            text_path = out / 'text_features.npy'
+            np.save(text_path, text, allow_pickle=False)
+            report['text'] = {'config_sha256':hashlib.sha256(contents).hexdigest(),
+                              'features_sha256':hashlib.sha256(text_path.read_bytes()).hexdigest(),
+                              'shape':list(text.shape), 'node_order':nodes, 'templates':cfg['templates'],
+                              'context_length':context, 'checkpoint_logit_scale':scale,
+                              'seconds':round(time.perf_counter()-text_start, 3)}
         features=[];inference_start=time.perf_counter()
         for offset in range(0,len(rows),args.batch_size):
             features.append(encode_images(model, preprocess, rows[offset:offset+args.batch_size], device))

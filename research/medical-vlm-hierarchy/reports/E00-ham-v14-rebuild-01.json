@@ -1,0 +1,57 @@
+{
+  "protocol": "v1.4",
+  "status": "complete",
+  "stages": [
+    {
+      "stage": "v1.3-splits",
+      "script": "prepare_ham.py",
+      "seconds": 0.29
+    },
+    {
+      "stage": "v1.3-audit",
+      "script": "audit_images.py",
+      "seconds": 50.66
+    },
+    {
+      "stage": "appearance",
+      "script": "audit_ham_appearance.py",
+      "seconds": 81.727
+    },
+    {
+      "stage": "geometry-shortlist",
+      "script": "review_ham_candidates.py",
+      "seconds": 18.548
+    },
+    {
+      "stage": "geometry-cross",
+      "script": "verify_ham_appearance_geometry.py",
+      "seconds": 198.712
+    },
+    {
+      "stage": "geometry-within",
+      "script": "verify_ham_appearance_geometry.py",
+      "seconds": 38.252
+    },
+    {
+      "stage": "splits",
+      "script": "prepare_ham_scene_splits.py",
+      "seconds": 0.503
+    },
+    {
+      "stage": "audit",
+      "script": "audit_images.py",
+      "seconds": 66.898
+    },
+    {
+      "stage": "summary",
+      "script": "summarize_ham_duplicates.py",
+      "seconds": 0.304
+    },
+    {
+      "stage": "sensitivity",
+      "script": "ham_overlap_sensitivity.py",
+      "seconds": 0.3
+    }
+  ],
+  "seconds": 456.198
+}

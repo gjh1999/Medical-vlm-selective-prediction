@@ -1,0 +1,317 @@
+{
+  "scope": "frozen error-detector comparison on new development groups",
+  "config_sha256": "053bf9c01de31805edb209c370fdf30a2e9dcd759f4d1e8c24c9198285a0cbee",
+  "manifest_sha256": "5bed1979d4ca0aff4e6f870429b65a9e76649632f128177c86e14b168f39ed1a",
+  "split_sha256": "138f18444ca71f815eed5c55edf94b89ab4cc9e2cd94335e3080f1fafaa99962",
+  "selection_sha256": "8b6ac07f29b2df16e118c96c73b642fbb31381c1194e7a6c7a8940bf0e9f9954",
+  "n_fit": 128,
+  "n_eval": 96,
+  "n_leaf_support": 56,
+  "reserved_groups": 240,
+  "overlap_with_reserved": 0,
+  "eval_class_counts": {
+    "akiec": 3,
+    "bcc": 4,
+    "bkl": 4,
+    "df": 0,
+    "mel": 6,
+    "nv": 79,
+    "vasc": 0
+  },
+  "device": "cpu",
+  "batch_size": 8,
+  "models": {
+    "clip": {
+      "fit_cache": "8a8131173f9864fdd4d44d6821d0e21034b0932dee708075e99c27d8d7136117",
+      "support_cache": "5b16bf5b5abe8412fed698eb075536b6edd904c11d55622f4275dfb4b6781dd4",
+      "readouts": {
+        "frozen_text": {
+          "fit_errors": 116,
+          "eval_errors": 89,
+          "base": {
+            "error_auroc": 0.7993579454253612,
+            "brier": 0.061670338689108574,
+            "features": [
+              "negative_margin",
+              "entropy",
+              "prompt_js"
+            ],
+            "coefficients": [
+              2.342106437169353,
+              -0.8350775957674224,
+              0.860605520873673,
+              -0.24666702475072716
+            ],
+            "fit_mean": [
+              -0.27409478951676197,
+              1.5420525042635238,
+              0.07119845380337768
+            ],
+            "fit_scale": [
+              0.1884228758425179,
+              0.25306167199685065,
+              0.029830762041866153
+            ]
+          },
+          "augmented": {
+            "error_auroc": 0.8587479935794543,
+            "brier": 0.05609754281040912,
+            "features": [
+              "negative_margin",
+              "entropy",
+              "prompt_js",
+              "parent_js"
+            ],
+            "coefficients": [
+              2.3788306756514745,
+              -0.9688687961437381,
+              0.5951081719604482,
+              -0.12855809774158872,
+              -0.542475547674492
+            ],
+            "fit_mean": [
+              -0.27409478951676197,
+              1.5420525042635238,
+              0.07119845380337768,
+              0.11077546066348383
+            ],
+            "fit_scale": [
+              0.1884228758425179,
+              0.25306167199685065,
+              0.029830762041866153,
+              0.05967851156439829
+            ]
+          },
+          "auroc_difference": 0.0593900481540931,
+          "percentiles_2_5_97_5": [
+            -0.029891304347826053,
+            0.16988600853237687
+          ],
+          "valid_bootstraps": 1998
+        },
+        "cosine_centroid": {
+          "fit_errors": 71,
+          "eval_errors": 46,
+          "base": {
+            "error_auroc": 0.7034782608695652,
+            "brier": 0.2236850694959819,
+            "features": [
+              "negative_margin",
+              "entropy",
+              "prompt_js"
+            ],
+            "coefficients": [
+              0.3121099178662786,
+              0.7197456416121164,
+              -0.2931635855899989,
+              -1.2895020253125717
+            ],
+            "fit_mean": [
+              -0.27658988402732476,
+              1.2752163783032968,
+              0.07119845380337768
+            ],
+            "fit_scale": [
+              0.20542383162083427,
+              0.2857824191956976,
+              0.029830762041866153
+            ]
+          },
+          "augmented": {
+            "error_auroc": 0.7882608695652173,
+            "brier": 0.19495642272730904,
+            "features": [
+              "negative_margin",
+              "entropy",
+              "prompt_js",
+              "parent_js"
+            ],
+            "coefficients": [
+              0.3325661552360632,
+              0.9214313661805249,
+              -1.1135742325150584,
+              -1.0151169428087508,
+              -1.097469825655872
+            ],
+            "fit_mean": [
+              -0.27658988402732476,
+              1.2752163783032968,
+              0.07119845380337768,
+              0.17418475886385396
+            ],
+            "fit_scale": [
+              0.20542383162083427,
+              0.2857824191956976,
+              0.029830762041866153,
+              0.07475152603962033
+            ]
+          },
+          "auroc_difference": 0.08478260869565213,
+          "percentiles_2_5_97_5": [
+            0.01952654949673864,
+            0.1526790709427694
+          ],
+          "valid_bootstraps": 2000
+        }
+      },
+      "weights_sha256": "5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f",
+      "loader": "openai/CLIP clip.load",
+      "loader_commit": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+      "visual_activations": [
+        "QuickGELU"
+      ],
+      "preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    <function _convert_image_to_rgb at 0x000001F9686A5C70>\n    ToTensor()\n    Normalize(mean=(0.48145466, 0.4578275, 0.40821073), std=(0.26862954, 0.26130258, 0.27577711))\n)",
+      "cache_sha256": "6c41f03c312bdfb2db0581a33554a17dfd815feb31a66867510f5c567f75b978",
+      "seconds": 13.362
+    },
+    "biomedclip": {
+      "fit_cache": "0ec0f50d7b3502a9a5d648c5354f94c2b5342d4f0996415c799ac823cf5d7771",
+      "support_cache": "426eaaa9a3e485a71b80f88fd6fbbbc0cd88f9ab350bb7403d7aa9cd55c26ed5",
+      "readouts": {
+        "frozen_text": {
+          "fit_errors": 113,
+          "eval_errors": 89,
+          "base": {
+            "error_auroc": 0.5858747993579454,
+            "brier": 0.06922393060945331,
+            "features": [
+              "negative_margin",
+              "entropy",
+              "prompt_js"
+            ],
+            "coefficients": [
+              2.0321628013509256,
+              0.04187649333556046,
+              0.08491949994747144,
+              0.14801803460060065
+            ],
+            "fit_mean": [
+              -0.17437887418358994,
+              1.510743283876631,
+              0.02039245128845247
+            ],
+            "fit_scale": [
+              0.1506925209758372,
+              0.2371013904275949,
+              0.014412383630634967
+            ]
+          },
+          "augmented": {
+            "error_auroc": 0.608346709470305,
+            "brier": 0.06899211171439194,
+            "features": [
+              "negative_margin",
+              "entropy",
+              "prompt_js",
+              "parent_js"
+            ],
+            "coefficients": [
+              2.0349331391223813,
+              0.02954320272341059,
+              0.11064971924495422,
+              0.13134648567610976,
+              -0.08701209662950696
+            ],
+            "fit_mean": [
+              -0.17437887418358994,
+              1.510743283876631,
+              0.02039245128845247,
+              0.08767665091580945
+            ],
+            "fit_scale": [
+              0.1506925209758372,
+              0.2371013904275949,
+              0.014412383630634967,
+              0.06788419477504029
+            ]
+          },
+          "auroc_difference": 0.022471910112359605,
+          "percentiles_2_5_97_5": [
+            -0.0725274725274725,
+            0.12219141323792473
+          ],
+          "valid_bootstraps": 1997
+        },
+        "cosine_centroid": {
+          "fit_errors": 37,
+          "eval_errors": 33,
+          "base": {
+            "error_auroc": 0.7609427609427609,
+            "brier": 0.18486085866644955,
+            "features": [
+              "negative_margin",
+              "entropy",
+              "prompt_js"
+            ],
+            "coefficients": [
+              -1.2186411860443622,
+              0.8150696380971102,
+              0.36805625312848766,
+              -0.2353396182788035
+            ],
+            "fit_mean": [
+              -0.4105570762192738,
+              1.0909234538241253,
+              0.02039245128845247
+            ],
+            "fit_scale": [
+              0.2620614469803588,
+              0.36176147154380645,
+              0.014412383630634967
+            ]
+          },
+          "augmented": {
+            "error_auroc": 0.7594997594997595,
+            "brier": 0.18635573763892457,
+            "features": [
+              "negative_margin",
+              "entropy",
+              "prompt_js",
+              "parent_js"
+            ],
+            "coefficients": [
+              -1.216814960373417,
+              0.8105935765268707,
+              0.3559422089767707,
+              -0.24097615521717694,
+              0.04051034735301034
+            ],
+            "fit_mean": [
+              -0.4105570762192738,
+              1.0909234538241253,
+              0.02039245128845247,
+              0.29824558066698736
+            ],
+            "fit_scale": [
+              0.2620614469803588,
+              0.36176147154380645,
+              0.014412383630634967,
+              0.12763316763988444
+            ]
+          },
+          "auroc_difference": -0.0014430014430014682,
+          "percentiles_2_5_97_5": [
+            -0.009341334894613659,
+            0.006734006734006706
+          ],
+          "valid_bootstraps": 2000
+        }
+      },
+      "weights_sha256": "52cc993c5c5ff962bd0c60931874bc001e7e9b41666a385530f4a036294576be",
+      "model_config_sha256": "9a41f334a8c444678772c0ebb9ab854c97ab350bced3a17b803e258d39c23dc0",
+      "text_config_sha256": {
+        "special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+        "tokenizer.json": "defc1f91456606e7847af3a2fb4a8abb96441423aa5407a52498395ea68327ff",
+        "tokenizer_config.json": "e1790949631401af1bfb6c9c7aeec7fcf612e274d73579d99f704faea40c8ba7",
+        "vocab.txt": "7b36651908a88bc38bda41b728b2a598191e0d3b553cbacf7b1e5f026d5b5b9f",
+        "config.json": "56bab767c02bc792897638feb8addc06d483d9c73769a5f554bbabea1f5507a1"
+      },
+      "loader": "open_clip.create_model_and_transforms",
+      "preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    <function _convert_to_rgb at 0x000001F97A63E560>\n    ToTensor()\n    Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])\n)",
+      "cache_sha256": "9b62b90d2cf54e57fb6d9bb92e4f2157b07d605fa49be176e4145b4827159b2f",
+      "seconds": 12.614
+    }
+  },
+  "status": "complete",
+  "seconds": 26.018
+}

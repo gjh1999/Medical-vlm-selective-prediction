@@ -1,0 +1,171 @@
+{
+  "source_config_sha256": "053bf9c01de31805edb209c370fdf30a2e9dcd759f4d1e8c24c9198285a0cbee",
+  "new_groups": 96,
+  "posthoc_balanced_dev": 56,
+  "method": "independent torch LBFGS and rank-sum AUROC",
+  "scope": "balanced cohort previously examined for leaf prediction, excluded from risk-detector fitting",
+  "models": {
+    "clip": {
+      "frozen_text": {
+        "maximum_optimizer_probability_difference": 1.359542478596154e-09,
+        "natural": {
+          "n": 96,
+          "errors": 89,
+          "base_auroc": 0.7993579454253612,
+          "augmented_auroc": 0.8587479935794543,
+          "auroc_difference": 0.0593900481540931,
+          "base_brier": 0.06167033868910856,
+          "augmented_brier": 0.05609754281040911
+        },
+        "balanced": {
+          "n": 56,
+          "errors": 45,
+          "base_auroc": 0.5434343434343434,
+          "augmented_auroc": 0.5616161616161616,
+          "auroc_difference": 0.018181818181818188,
+          "base_brier": 0.16925387220891966,
+          "augmented_brier": 0.17013430352771572
+        },
+        "natural_nv_only": {
+          "n": 79,
+          "errors": 79,
+          "auroc_difference": null
+        },
+        "posthoc_standardized_auc_differences": {
+          "natural": {
+            "equal_common_classes": 0.04955408515535087,
+            "natural_sample_proportions": 0.0593900481540931
+          },
+          "balanced": {
+            "equal_common_classes": 0.043333333333333335,
+            "natural_sample_proportions": 0.1656419052645468
+          }
+        }
+      },
+      "cosine_centroid": {
+        "maximum_optimizer_probability_difference": 6.623653847626088e-10,
+        "natural": {
+          "n": 96,
+          "errors": 46,
+          "base_auroc": 0.7034782608695652,
+          "augmented_auroc": 0.7882608695652173,
+          "auroc_difference": 0.08478260869565213,
+          "base_brier": 0.2236850694959819,
+          "augmented_brier": 0.19495642272730906
+        },
+        "balanced": {
+          "n": 56,
+          "errors": 27,
+          "base_auroc": 0.6551724137931034,
+          "augmented_auroc": 0.5849297573435505,
+          "auroc_difference": -0.07024265644955296,
+          "base_brier": 0.2625250959365781,
+          "augmented_brier": 0.2861551086940235
+        },
+        "natural_nv_only": {
+          "n": 79,
+          "errors": 35,
+          "base_auroc": 0.6909090909090909,
+          "augmented_auroc": 0.8103896103896104,
+          "auroc_difference": 0.11948051948051952,
+          "base_brier": 0.22170749191405748,
+          "augmented_brier": 0.18085983031484243
+        },
+        "posthoc_standardized_auc_differences": {
+          "natural": {
+            "equal_common_classes": 0.005204686963412808,
+            "natural_sample_proportions": 0.08478260869565213
+          },
+          "balanced": {
+            "equal_common_classes": 0.017676767676767624,
+            "natural_sample_proportions": 0.09288347435312294
+          }
+        }
+      }
+    },
+    "biomedclip": {
+      "frozen_text": {
+        "maximum_optimizer_probability_difference": 4.69610217379568e-09,
+        "natural": {
+          "n": 96,
+          "errors": 89,
+          "base_auroc": 0.5858747993579454,
+          "augmented_auroc": 0.608346709470305,
+          "auroc_difference": 0.022471910112359605,
+          "base_brier": 0.06922393060945331,
+          "augmented_brier": 0.06899211171439196
+        },
+        "balanced": {
+          "n": 56,
+          "errors": 40,
+          "base_auroc": 0.634375,
+          "augmented_auroc": 0.6765625,
+          "auroc_difference": 0.04218749999999993,
+          "base_brier": 0.22341278388834504,
+          "augmented_brier": 0.21962535353914298
+        },
+        "natural_nv_only": {
+          "n": 79,
+          "errors": 75,
+          "base_auroc": 0.6433333333333333,
+          "augmented_auroc": 0.5966666666666667,
+          "auroc_difference": -0.046666666666666634,
+          "base_brier": 0.051540099902703196,
+          "augmented_brier": 0.05156224547350113
+        },
+        "posthoc_standardized_auc_differences": {
+          "natural": {
+            "equal_common_classes": 0.13671929642891545,
+            "natural_sample_proportions": 0.022471910112359605
+          },
+          "balanced": {
+            "equal_common_classes": 0.05859375,
+            "natural_sample_proportions": 0.03749916772088685
+          }
+        }
+      },
+      "cosine_centroid": {
+        "maximum_optimizer_probability_difference": 1.8660105238765823e-08,
+        "natural": {
+          "n": 96,
+          "errors": 33,
+          "base_auroc": 0.7609427609427609,
+          "augmented_auroc": 0.7594997594997595,
+          "auroc_difference": -0.0014430014430014682,
+          "base_brier": 0.18486085866644963,
+          "augmented_brier": 0.18635573763892466
+        },
+        "balanced": {
+          "n": 56,
+          "errors": 34,
+          "base_auroc": 0.7152406417112299,
+          "augmented_auroc": 0.7192513368983957,
+          "auroc_difference": 0.004010695187165791,
+          "base_brier": 0.2351361720318425,
+          "augmented_brier": 0.23515116351167412
+        },
+        "natural_nv_only": {
+          "n": 79,
+          "errors": 23,
+          "base_auroc": 0.8059006211180124,
+          "augmented_auroc": 0.8066770186335404,
+          "auroc_difference": 0.0007763975155279379,
+          "base_brier": 0.15921702456359715,
+          "augmented_brier": 0.15993016140103572
+        },
+        "posthoc_standardized_auc_differences": {
+          "natural": {
+            "equal_common_classes": -0.011790304706323085,
+            "natural_sample_proportions": -0.0014430014430014682
+          },
+          "balanced": {
+            "equal_common_classes": 0.0,
+            "natural_sample_proportions": 0.00014507571570687716
+          }
+        }
+      }
+    }
+  },
+  "status": "verified",
+  "seconds": 0.979
+}

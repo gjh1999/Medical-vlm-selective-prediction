@@ -1,0 +1,136 @@
+{
+  "scope": "published figure correspondence; checkpoint membership unverified",
+  "workers": 3,
+  "opencv": "5.1.0",
+  "numpy": "2.5.4",
+  "criterion": "at least 16 mutual-ratio SIFT affine inliers across at least four grid cells",
+  "datasets": {
+    "ham": {
+      "pmcid": "PMC6091241",
+      "figure_sha256": {
+        "sdata2018161-f2.jpg": "9cc2bd6fb434145d79d7f1a0eed3cc62e336be0ce3caa072824f1bf37362b268",
+        "sdata2018161-f4.jpg": "90418f91aefa060c25acf79fabe581a6584a4654baf4a7f77b98f453bb59bb54"
+      },
+      "manifest_sha256": "5bed1979d4ca0aff4e6f870429b65a9e76649632f128177c86e14b168f39ed1a",
+      "benchmark_images": 10015,
+      "panel_image_comparisons": 50075,
+      "panels": {
+        "sdata2018161-f2.jpg/1": {
+          "above_threshold": 0,
+          "strongest_inliers": 6,
+          "strongest_cells": 3,
+          "strongest_full_frame_correlation": 0.8257678891528677,
+          "runner_up_inliers": 5,
+          "max_full_frame_correlation": 0.9695545952519544
+        },
+        "sdata2018161-f2.jpg/2": {
+          "above_threshold": 2,
+          "strongest_inliers": 21,
+          "strongest_cells": 6,
+          "strongest_full_frame_correlation": 0.9991355313793133,
+          "runner_up_inliers": 18,
+          "max_full_frame_correlation": 0.9991355313793133
+        },
+        "sdata2018161-f4.jpg/1": {
+          "above_threshold": 0,
+          "strongest_inliers": 8,
+          "strongest_cells": 4,
+          "strongest_full_frame_correlation": 0.9988358217621088,
+          "runner_up_inliers": 4,
+          "max_full_frame_correlation": 0.9988358217621088
+        },
+        "sdata2018161-f4.jpg/2": {
+          "above_threshold": 0,
+          "strongest_inliers": 13,
+          "strongest_cells": 6,
+          "strongest_full_frame_correlation": 0.999058735758172,
+          "runner_up_inliers": 5,
+          "max_full_frame_correlation": 0.999058735758172
+        },
+        "sdata2018161-f4.jpg/3": {
+          "above_threshold": 1,
+          "strongest_inliers": 27,
+          "strongest_cells": 11,
+          "strongest_full_frame_correlation": 0.9983217632322381,
+          "runner_up_inliers": 11,
+          "max_full_frame_correlation": 0.9983217632322381
+        }
+      },
+      "distinct_matched_images": 3,
+      "distinct_matched_groups": 2,
+      "seed17_group_counts": {
+        "train": 1,
+        "calibration": 1
+      },
+      "seconds": 122.088
+    },
+    "pad": {
+      "pmcid": "PMC7479321",
+      "figure_sha256": {
+        "gr3.jpg": "1b1632b770b3a71a7252785e22a7e4cd5e3eba1d9f04a4d94b308a05beb874e3"
+      },
+      "manifest_sha256": "3112b6606fb992aec017717e7ab57c893429f10713d92c050613bddb109daaa5",
+      "benchmark_images": 2298,
+      "panel_image_comparisons": 13788,
+      "panels": {
+        "gr3.jpg/1": {
+          "above_threshold": 1,
+          "strongest_inliers": 54,
+          "strongest_cells": 9,
+          "strongest_full_frame_correlation": 0.9956963797507847,
+          "runner_up_inliers": 5,
+          "max_full_frame_correlation": 0.9956963797507847
+        },
+        "gr3.jpg/2": {
+          "above_threshold": 1,
+          "strongest_inliers": 134,
+          "strongest_cells": 16,
+          "strongest_full_frame_correlation": 0.943280572547832,
+          "runner_up_inliers": 2,
+          "max_full_frame_correlation": 0.943280572547832
+        },
+        "gr3.jpg/3": {
+          "above_threshold": 1,
+          "strongest_inliers": 115,
+          "strongest_cells": 15,
+          "strongest_full_frame_correlation": 0.9824498650649229,
+          "runner_up_inliers": 3,
+          "max_full_frame_correlation": 0.9824498650649229
+        },
+        "gr3.jpg/4": {
+          "above_threshold": 1,
+          "strongest_inliers": 67,
+          "strongest_cells": 9,
+          "strongest_full_frame_correlation": 0.9963629309387471,
+          "runner_up_inliers": 2,
+          "max_full_frame_correlation": 0.9963629309387471
+        },
+        "gr3.jpg/5": {
+          "above_threshold": 0,
+          "strongest_inliers": 4,
+          "strongest_cells": 3,
+          "strongest_full_frame_correlation": 0.9959948644716347,
+          "runner_up_inliers": 0,
+          "max_full_frame_correlation": 0.9959948644716347
+        },
+        "gr3.jpg/6": {
+          "above_threshold": 1,
+          "strongest_inliers": 29,
+          "strongest_cells": 14,
+          "strongest_full_frame_correlation": 0.9855048812425496,
+          "runner_up_inliers": 0,
+          "max_full_frame_correlation": 0.9855048812425496
+        }
+      },
+      "distinct_matched_images": 5,
+      "distinct_matched_groups": 5,
+      "seed17_group_counts": {
+        "train": 3,
+        "calibration": 2
+      },
+      "seconds": 54.267
+    }
+  },
+  "status": "complete",
+  "seconds": 176.368
+}

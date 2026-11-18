@@ -1,0 +1,38 @@
+{
+  "opencv": "5.1.0",
+  "loaded_images": 93,
+  "pad_manifest": "3112b6606fb992aec017717e7ab57c893429f10713d92c050613bddb109daaa5",
+  "ham_manifest": "5bed1979d4ca0aff4e6f870429b65a9e76649632f128177c86e14b168f39ed1a",
+  "scores_sha256": "b8a0cbb7ba17a624ee686eabca0975fe67989d5c1e9cf894a958ab5a3951335f",
+  "by_source": {
+    "ham_pad": {
+      "pairs": 22,
+      "max_inliers": 0,
+      "median_inliers": 0.0,
+      "at_least_8": 0,
+      "at_least_16": 0
+    },
+    "pad_cross_group": {
+      "pairs": 62,
+      "max_inliers": 0,
+      "median_inliers": 0.0,
+      "at_least_8": 0,
+      "at_least_16": 0
+    },
+    "pad_exact_control": {
+      "pairs": 16,
+      "max_inliers": 244,
+      "median_inliers": 161.5,
+      "at_least_8": 15,
+      "at_least_16": 13
+    },
+    "pad_within_group": {
+      "pairs": 1,
+      "max_inliers": 140,
+      "median_inliers": 140.0,
+      "at_least_8": 1,
+      "at_least_16": 1
+    }
+  },
+  "seconds": 6.26
+}

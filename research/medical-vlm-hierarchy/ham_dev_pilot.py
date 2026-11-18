@@ -9,9 +9,8 @@ import time
 from pathlib import Path
 
 import numpy as np
-import torch
 
-from extract_features import encode_images, load_encoder, read_inputs
+from extract_features import encode_images, encode_node_prompts, load_encoder, read_inputs
 from prepare_biomedclip import REVISION
 from selective_core import Taxonomy
 
@@ -81,19 +80,11 @@ def run_model(name, args, cfg, rows, keep, tree, out, info):
     path = None if name == "clip" else args.biomed_dir / "open_clip_config.json"
     model, preprocess, tokenize = load_encoder(name, weights, args.device, path, info, with_tokenizer=True)
     info["revision"] = "OpenAI-ViT-B-16" if name == "clip" else REVISION
-    nodes = sorted(cfg["names"])
-    prompts = [template.format(label=cfg["names"][node]) for template in cfg["templates"] for node in nodes]
     if len(cfg["templates"]) != 2:
         raise ValueError("Paired template divergence requires two templates")
-    with torch.inference_mode():
-        tokens = tokenize(prompts).to(args.device)
-        vectors = model.encode_text(tokens).float()
-        vectors = torch.nn.functional.normalize(vectors, dim=-1)
-        scale = float(model.logit_scale.exp().item()) / cfg["temperature"]
-    text = vectors.cpu().numpy().reshape(2, len(nodes), -1)
-    if not np.allclose(np.linalg.norm(text, axis=-1), 1., atol=1e-5):
-        raise ValueError("Invalid text prototypes")
-    info["context_length"] = tokens.shape[1]
+    text, nodes, context, raw_scale = encode_node_prompts(model, tokenize, cfg, args.device)
+    scale = raw_scale / cfg["temperature"]
+    info["context_length"] = context
     info["logit_scale"] = scale
     t_img = time.perf_counter()
     image = np.concatenate([encode_images(model, preprocess, rows[i:i + args.batch_size], args.device)

@@ -47,10 +47,11 @@ def logistic_predict(fit, target, evaluation, penalty):
         beta-=rate*step
     else:
         raise ValueError("Logistic fit did not converge")
-    return 1/(1+np.exp(-np.clip(x_eval@beta,-700,700))),beta.tolist()
+    fitted={"coefficients":beta.tolist(),"fit_mean":mean.tolist(),"fit_scale":sd.tolist()}
+    return 1/(1+np.exp(-np.clip(x_eval@beta,-700,700))),fitted
 
 
-def signals(image,text,nodes,leaves,tree,scale,centers):
+def signals(image,text,nodes,leaves,tree,scale,centers,return_parent_distributions=False):
     text=text.astype(np.float64)
     x=image.astype(np.float64)
     avg=text.mean(0)
@@ -61,12 +62,16 @@ def signals(image,text,nodes,leaves,tree,scale,centers):
     template=softmax((x@text[:,leaf_idx,:].transpose(0,2,1))*scale)
     prompt=js(*template)
     out={}
+    pooled_by_readout={}
     for name,matrix in [("frozen_text",avg[leaf_idx]),("cosine_centroid",centers)]:
         prob=softmax(x@matrix.T*scale)
         pooled=np.column_stack([prob[:,[leaves.index(k) for k in sorted(tree.desc[parent])]].sum(1) for parent in roots])
+        pooled_by_readout[name]=pooled
         sorted_p=np.sort(prob,axis=1)
         out[name]=(prob.argmax(1),{"negative_margin":sorted_p[:,-2]-sorted_p[:,-1],
                    "entropy":-(prob*np.log(prob)).sum(1),"prompt_js":prompt,"parent_js":js(pooled,direct)})
+    if return_parent_distributions:
+        return out,direct,pooled_by_readout,roots
     return out
 
 
@@ -162,10 +167,10 @@ def main():
                 scores={}
                 for variant,keys in [("base",conf["base"]),("augmented",conf["base"]+[conf["extra"]])]:
                     matrix=np.column_stack([feature[k] for k in keys])
-                    score,beta=logistic_predict(matrix[:len(fit)],bad_fit,matrix[len(fit):],conf["l2_penalty"])
+                    score,fitted=logistic_predict(matrix[:len(fit)],bad_fit,matrix[len(fit):],conf["l2_penalty"])
                     scores[variant]=score
                     local[f"{readout}_{variant}"]=score
-                    stats[variant]={**metrics(bad_eval,score),"features":keys,"coefficients":beta}
+                    stats[variant]={**metrics(bad_eval,score),"features":keys,**fitted}
                 local[f"{readout}_error"]=bad_eval
                 diff=[]
                 rng=np.random.default_rng(conf["bootstrap_seed"])
