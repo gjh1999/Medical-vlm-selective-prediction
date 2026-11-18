@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "scope": "logged HAM supervised development and training cohorts reconstructed from the published selection recipes; technical image audits excluded",
+  "n_images": 616,
+  "membership_sha256": "a4f0c384d1c2e03d6b6134dbd549f6190cced609b0a5670db0cff954c393c5d5",
+  "fingerprint_encoding": "utf-8 sorted lines cohort,image_id,original_role,diagnosis with LF",
+  "technical_smoke": "current seed-17 first 8 training representatives by image_id; tracked separately",
+  "usage": "for cross-seed untouched-with-respect-to-supervised-pilots reporting exclude the entire current group if any member was used in a logged pilot"
+}
