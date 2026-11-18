@@ -1,0 +1,38 @@
+{
+  "scope": "technical scene verification, no patient identity or diagnosis inferred",
+  "audit_manifest_sha256": "5bed1979d4ca0aff4e6f870429b65a9e76649632f128177c86e14b168f39ed1a",
+  "control_sha256": "679b67027ca2057d44b1daff0e18f1dad257b20ab91d8a5f79510d59754e6541",
+  "criteria": "mutual ORB ratio 0.8, >=12 affine inliers and >=4 cells, masked overlap >=0.20, registered detail correlation >=0.30",
+  "geometry_sha256": "0a36aa2092ca69bb394f69b2ecb5eaa2afaa4e7df3e2ffae3fc5b2df3e19af8c",
+  "status": "complete",
+  "categories": {
+    "low_baseline_candidate": {
+      "pairs": 200,
+      "orb12_cells4": 0,
+      "all_pixel_and_geometry_criteria": 0
+    },
+    "published_confirmed": {
+      "pairs": 18,
+      "orb12_cells4": 13,
+      "all_pixel_and_geometry_criteria": 3
+    },
+    "new_screen_hit": {
+      "pairs": 23,
+      "orb12_cells4": 22,
+      "all_pixel_and_geometry_criteria": 9
+    },
+    "published_uncertain": {
+      "pairs": 2,
+      "orb12_cells4": 0,
+      "all_pixel_and_geometry_criteria": 0
+    },
+    "previous_scene_candidate": {
+      "pairs": 5,
+      "orb12_cells4": 5,
+      "all_pixel_and_geometry_criteria": 3
+    }
+  },
+  "review_panels_pairs": 23,
+  "scores_sha256": "3179dcd0c97b614652485a5a4a50eaed31c1047209d3fb26b40e4acf1092eb73",
+  "seconds": 15.227
+}

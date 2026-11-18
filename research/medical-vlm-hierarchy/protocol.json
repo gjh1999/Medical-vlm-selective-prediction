@@ -1,7 +1,7 @@
 {
-  "version": "1.4",
+  "version": "1.5",
   "date": "2026-11-19",
-  "status": "ham_reviewed_and_geometry_linked_development_pilots_complete_formal_gpu_evaluation_pending",
+  "status": "ham_texture_coassignment_released_development_validation_in_progress_formal_gpu_evaluation_pending",
   "task": "closed_set_hierarchical_selective_prediction",
   "primary_domain": "skin_lesion_classification",
   "datasets": [
@@ -9,13 +9,16 @@
       "name": "HAM10000",
       "group_key": "split_group",
       "analysis_unit": "analysis_group, one lexicographically first image per published confirmed component",
-      "identity_review": "18 published confirmed edges join analysis units, two published uncertain edges and five additional geometry-supported scene pairs bind splits only",
-      "split_assignment": "prepare_ham.py reconstructs v1.3. prepare_ham_scene_splits.py binds five scene pairs into whole v1.3 groups, resolving conflicts in train, dev, calibration, test order",
-      "scene_edge_sha256": "4dcd84dffab0a854097a6979989ca0025972336f66c37f8c76cd084e55d3335d",
-      "split_groups": 7445,
+      "identity_review": "18 published confirmed edges determine analysis units; 2 published uncertain edges, 5 v1.4 scene edges and 23 v1.5 strong texture edges enforce partition coassignment only",
+      "split_assignment": "prepare_ham_formal.py rebuilds v1.4; prepare_ham_texture_formal.py verifies the combined retrieval pool, then binds entire v1.4 groups with train, dev, calibration, test exposure precedence",
+      "split_groups": 7428,
       "analysis_units": 7452,
       "patient_independence": "unverified",
-      "access": "Harvard Dataverse v4.0 metadata and both original image archives verified"
+      "access": "Harvard Dataverse v4.0 metadata and both original image archives verified",
+      "v1_4_scene_edge_sha256": "4dcd84dffab0a854097a6979989ca0025972336f66c37f8c76cd084e55d3335d",
+      "v1_5_texture_edge_sha256": "81c77a31554de39fc46b9aaa07f3369c8ad1f82c2355f6e5d238fce418065150",
+      "v1_5_sensitivity_edge_sha256": "60d4eb9b00358f4cac8b7617601bd59dfc674bf3314823b06b17e14b389563e5",
+      "sensitivity": "exclude current groups touching any cross-partition dHash or >=8-inlier local-texture edge on any seed in a separate analysis"
     },
     {
       "name": "PAD-UFES-20",
@@ -110,7 +113,7 @@
     "consistent_splits_minimum": 2
   },
   "targets_are": "research_management_criteria_not_observed_results_or_clinical_safety_thresholds",
-  "notes": "The 128-group and class-balanced CPU development pilots used archived v1.3. v1.4 changes HAM split grouping only. Five scene pairs are technical co-assignment constraints, not new diagnoses. PAD grouping and the risk budgets retain their former definitions. HAM patient independence is unverified.",
+  "notes": "E01 used archived v1.3 development groups; the original E02 extension used v1.4. Neither the strong nor the loose new texture endpoints touch the 336 historical training/development rows. v1.5 keeps original images and the 7452 analysis units. The shallow taxonomy remains a research draft; formal GPU evaluation and clinical tree review are pending.",
   "execution": {
     "preparation_host": "Windows GT 710 2GB",
     "experiment_host": "User home RTX 5080; environment pending",

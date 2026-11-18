@@ -1,0 +1,28 @@
+{
+  "protocol": "v1.5",
+  "reused_verified_screen": true,
+  "stages": [
+    {
+      "stage": "splits",
+      "script": "prepare_ham_texture_splits.py",
+      "seconds": 1.526
+    },
+    {
+      "stage": "audit",
+      "script": "audit_images.py",
+      "seconds": 67.446
+    },
+    {
+      "stage": "summary",
+      "script": "summarize_ham_duplicates.py",
+      "seconds": 0.415
+    },
+    {
+      "stage": "sensitivity",
+      "script": "ham_overlap_sensitivity.py",
+      "seconds": 0.439
+    }
+  ],
+  "status": "complete",
+  "seconds": 69.826
+}

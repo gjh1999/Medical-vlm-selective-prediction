@@ -30,14 +30,29 @@ def main():
                 or masking["sensitivity_groups_sha256"]!=sha(args.sensitivity/"sensitivity_groups.csv")):
             raise ValueError("Input evidence chain changed")
         old_mask = {r["split_group"] for r in read_csv(args.sensitivity/"sensitivity_groups.csv") if r["excluded"]=="1"}
+        retrieval = defaultdict(Counter)
         with (args.geometry/"scores.csv").open(newline="",encoding="utf-8") as f:
             low,high = set(),set()
             for r in csv.DictReader(f):
-                if r["in_pool"]=="1" and r["same_v14_group"]=="0" and int(r["inliers"])>=8:
+                if r["in_pool"]!="1":
+                    continue
+                rank = int(r["best_word_rank"])
+                band = next((name for maximum,name in ((1,"1"),(5,"2-5"),(10,"6-10"),(20,"11-20"))
+                             if 0 < rank <= maximum),"appearance_only")
+                summary = retrieval[band]
+                summary["unique_pairs"] += 1
+                summary["in_appearance_retrieval"] += r["old_appearance"]=="1"
+                if r["same_v14_group"]=="0" and int(r["inliers"])>=8:
                     edge = r["first"],r["second"]
                     low.add(edge)
+                    summary["loose_distinct_group_pairs"] += 1
                     if int(r["inliers"])>=16 and int(r["cells"])>=4:
                         high.add(edge)
+                        summary["strong_distinct_group_pairs"] += 1
+                        summary["strong_also_in_appearance"] += r["old_appearance"]=="1"
+                        summary["strong_crossing_any_seed"] += bool(r["v14_cross_seeds"])
+        if sum(v["unique_pairs"] for v in retrieval.values())!=geometry["candidate_pairs"]:
+            raise ValueError("Rank-band counts differ from the complete scored pool")
         checked = [r for r in read_csv(args.review/"scores.csv") if r["source"]=="new_screen_hit"]
         if {(r["first"],r["second"]) for r in checked}!=high:
             raise ValueError("Independent review does not cover every strong distinct-group match")
@@ -61,7 +76,8 @@ def main():
                                             if int(r["orb_inliers"])>=12 and int(r["orb_cells"])>=4},
                  "also_strict_registered_pixels":{(r["first"],r["second"]) for r in checked if r["passes"]=="1"}}
         report.update(source_geometry_sha256=geometry["scores_sha256"],source_review_sha256=review["scores_sha256"],
-                      cohort_counts={k:len(v) for k,v in cohorts.items()},tiers={})
+                      cohort_counts={k:len(v) for k,v in cohorts.items()},tiers={},
+                      retrieval_by_best_word_rank={k:dict(v) for k,v in retrieval.items()})
         for tier,edges in tiers.items():
             touched = {examples[i]["split_group"] for e in edges for i in e}
             tier_report = {"pairs":len(edges),"groups":len(touched),"also_in_old_dhash_mask":len(touched&old_mask),

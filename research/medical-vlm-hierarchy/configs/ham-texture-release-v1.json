@@ -1,0 +1,13 @@
+{
+  "release": "v1.5",
+  "candidate_pairs": 235405,
+  "strong_edges_sha256": "81c77a31554de39fc46b9aaa07f3369c8ad1f82c2355f6e5d238fce418065150",
+  "weak_edges_sha256": "60d4eb9b00358f4cac8b7617601bd59dfc674bf3314823b06b17e14b389563e5",
+  "source_split_sha256": {
+    "17": "138f18444ca71f815eed5c55edf94b89ab4cc9e2cd94335e3080f1fafaa99962",
+    "29": "1c9ef8c3dc3c5afc41084a90997e8a7b64957275697d0cf033de3c7f70c2bc28",
+    "43": "298cda8e983da6657dcd84ad259d90b6c06ef155d5f0894bf0fecd5cf476b0b5"
+  },
+  "binding": "different v1.4 groups; >=16 mutual RootSIFT affine inliers and at least 4 occupied 4x4 cells on both sides; coassign only",
+  "sensitivity": "different v1.4 groups; >=8 inliers; exclude endpoints only if crossing on any released seed, union with the dHash mask"
+}

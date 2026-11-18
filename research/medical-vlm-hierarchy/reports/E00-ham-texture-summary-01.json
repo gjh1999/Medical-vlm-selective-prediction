@@ -1,0 +1,131 @@
+{
+  "protocol": "v1.5",
+  "decoded": 10015,
+  "missing": 0,
+  "corrupt": 0,
+  "pillow": "13.0.0",
+  "radius": 3,
+  "manifest_sha256": "d30792103d5ad225e6540dd8622ebcf443365c29d9c71484e1910e8e8b099533",
+  "candidate_list_sha256": "69db34618b816e2506e2f6222f8a8b2098f23ed8b06c38104aaa2d2e956108c7",
+  "candidate_pairs": 7661,
+  "different_lesion_id_pairs": 7588,
+  "identical_pixel_pairs": 2,
+  "splits": {
+    "17": {
+      "split_sha256": "0db64bc28463dbc89984b8be8dd912bd580fe88687f00bd84d6a13686db674e9",
+      "cross_split_candidates": 5302,
+      "exact_cross_split_pairs": 0,
+      "cross_split_representative_pairs": 1042,
+      "exact_cross_split_representative_pairs": 0,
+      "analysis_unit_counts": {
+        "train": 2995,
+        "calibration": 1858,
+        "dev": 744,
+        "test": 1855
+      },
+      "group_counts": {
+        "train": 2976,
+        "calibration": 1854,
+        "dev": 743,
+        "test": 1855
+      },
+      "moved_raw_lesions": 14,
+      "moved_images": 22,
+      "reviewed_pair_crossings": {
+        "confirmed": {
+          "before": 0,
+          "after": 0
+        },
+        "uncertain": {
+          "before": 0,
+          "after": 0
+        },
+        "new_texture": {
+          "before": 18,
+          "after": 0
+        }
+      }
+    },
+    "29": {
+      "split_sha256": "4b31664ae2775f64c2727d2e80ec00f7add1e39dcc047eb88323f99fe8bc104f",
+      "cross_split_candidates": 5416,
+      "exact_cross_split_pairs": 0,
+      "cross_split_representative_pairs": 1079,
+      "exact_cross_split_representative_pairs": 0,
+      "analysis_unit_counts": {
+        "calibration": 1863,
+        "test": 1853,
+        "train": 2988,
+        "dev": 748
+      },
+      "group_counts": {
+        "calibration": 1858,
+        "test": 1851,
+        "train": 2977,
+        "dev": 742
+      },
+      "moved_raw_lesions": 12,
+      "moved_images": 18,
+      "reviewed_pair_crossings": {
+        "confirmed": {
+          "before": 0,
+          "after": 0
+        },
+        "uncertain": {
+          "before": 0,
+          "after": 0
+        },
+        "new_texture": {
+          "before": 14,
+          "after": 0
+        }
+      }
+    },
+    "43": {
+      "split_sha256": "c82cbdab0ca2ee62137323af64066d2a39ba0dbbf7233b218435b91910b5d22a",
+      "cross_split_candidates": 5368,
+      "exact_cross_split_pairs": 0,
+      "cross_split_representative_pairs": 1015,
+      "exact_cross_split_representative_pairs": 0,
+      "analysis_unit_counts": {
+        "test": 1857,
+        "train": 2998,
+        "calibration": 1857,
+        "dev": 740
+      },
+      "group_counts": {
+        "test": 1855,
+        "train": 2980,
+        "calibration": 1856,
+        "dev": 737
+      },
+      "moved_raw_lesions": 11,
+      "moved_images": 15,
+      "reviewed_pair_crossings": {
+        "confirmed": {
+          "before": 0,
+          "after": 0
+        },
+        "uncertain": {
+          "before": 0,
+          "after": 0
+        },
+        "new_texture": {
+          "before": 18,
+          "after": 0
+        }
+      }
+    }
+  },
+  "decode_and_audit_seconds": 67.281,
+  "projection_seconds": 0.209,
+  "review_source_commit": "ac655ac5a5b93264c57d69d6d520778d915bfc89",
+  "review_source_hashes": {
+    "newly_discovered_duplicates.csv": "fafe916c6a97c4d6c6de3c7c93eae1f7eb601680692c25ea82c8ef595fca73c7",
+    "near_duplicates_different_times.csv": "6c4aff9e4b138c25765045783de8a47273051448da13670bad9087f87530492a"
+  },
+  "original_lesion_ids": 7470,
+  "analysis_units": 7452,
+  "split_groups": 7428,
+  "split_build_seconds": 1.331
+}

@@ -1,0 +1,299 @@
+{
+  "protocol": "v1.5",
+  "scope": "all image views, union over all three splits",
+  "manifest_sha256": "d30792103d5ad225e6540dd8622ebcf443365c29d9c71484e1910e8e8b099533",
+  "candidate_list_sha256": "69db34618b816e2506e2f6222f8a8b2098f23ed8b06c38104aaa2d2e956108c7",
+  "sensitivity_groups_sha256": "6d924ed1a6523306662e60a71da506adaa5edbd36334d83fe2932022d2d58111",
+  "split_sha256": {
+    "17": "0db64bc28463dbc89984b8be8dd912bd580fe88687f00bd84d6a13686db674e9",
+    "29": "4b31664ae2775f64c2727d2e80ec00f7add1e39dcc047eb88323f99fe8bc104f",
+    "43": "c82cbdab0ca2ee62137323af64066d2a39ba0dbbf7233b218435b91910b5d22a"
+  },
+  "crossing_pairs_in_union": 7394,
+  "groups": 7428,
+  "excluded_groups": 833,
+  "analysis_units": 7452,
+  "excluded_analysis_units": 844,
+  "splits": {
+    "17": {
+      "train": {
+        "original": 2995,
+        "retained": 2640,
+        "original_labels": {
+          "nv": 2163,
+          "mel": 246,
+          "bkl": 296,
+          "bcc": 131,
+          "vasc": 39,
+          "akiec": 91,
+          "df": 29
+        },
+        "retained_labels": {
+          "nv": 1932,
+          "mel": 203,
+          "bcc": 112,
+          "bkl": 257,
+          "vasc": 28,
+          "akiec": 88,
+          "df": 20
+        }
+      },
+      "dev": {
+        "original": 744,
+        "retained": 666,
+        "original_labels": {
+          "mel": 61,
+          "nv": 538,
+          "df": 8,
+          "bcc": 32,
+          "bkl": 72,
+          "vasc": 10,
+          "akiec": 23
+        },
+        "retained_labels": {
+          "mel": 47,
+          "nv": 495,
+          "bcc": 28,
+          "bkl": 60,
+          "vasc": 8,
+          "akiec": 22,
+          "df": 6
+        }
+      },
+      "calibration": {
+        "original": 1858,
+        "retained": 1644,
+        "original_labels": {
+          "nv": 1344,
+          "bkl": 178,
+          "akiec": 57,
+          "bcc": 82,
+          "df": 18,
+          "vasc": 25,
+          "mel": 154
+        },
+        "retained_labels": {
+          "nv": 1192,
+          "bkl": 161,
+          "akiec": 57,
+          "bcc": 72,
+          "df": 17,
+          "mel": 124,
+          "vasc": 21
+        }
+      },
+      "test": {
+        "original": 1855,
+        "retained": 1658,
+        "original_labels": {
+          "nv": 1346,
+          "df": 18,
+          "bcc": 82,
+          "mel": 153,
+          "bkl": 175,
+          "vasc": 24,
+          "akiec": 57
+        },
+        "retained_labels": {
+          "nv": 1220,
+          "bcc": 73,
+          "mel": 124,
+          "bkl": 155,
+          "vasc": 19,
+          "akiec": 51,
+          "df": 16
+        }
+      }
+    },
+    "29": {
+      "train": {
+        "original": 2988,
+        "retained": 2627,
+        "original_labels": {
+          "mel": 246,
+          "nv": 2162,
+          "df": 29,
+          "bkl": 290,
+          "bcc": 131,
+          "vasc": 39,
+          "akiec": 91
+        },
+        "retained_labels": {
+          "mel": 199,
+          "nv": 1920,
+          "bkl": 251,
+          "bcc": 113,
+          "vasc": 33,
+          "akiec": 90,
+          "df": 21
+        }
+      },
+      "dev": {
+        "original": 748,
+        "retained": 669,
+        "original_labels": {
+          "bkl": 74,
+          "akiec": 23,
+          "df": 8,
+          "nv": 540,
+          "mel": 61,
+          "bcc": 32,
+          "vasc": 10
+        },
+        "retained_labels": {
+          "akiec": 23,
+          "nv": 490,
+          "mel": 51,
+          "bcc": 26,
+          "df": 6,
+          "bkl": 64,
+          "vasc": 9
+        }
+      },
+      "calibration": {
+        "original": 1863,
+        "retained": 1667,
+        "original_labels": {
+          "nv": 1345,
+          "mel": 154,
+          "bkl": 182,
+          "bcc": 82,
+          "df": 18,
+          "vasc": 25,
+          "akiec": 57
+        },
+        "retained_labels": {
+          "nv": 1218,
+          "mel": 124,
+          "bkl": 167,
+          "bcc": 71,
+          "df": 16,
+          "vasc": 19,
+          "akiec": 52
+        }
+      },
+      "test": {
+        "original": 1853,
+        "retained": 1645,
+        "original_labels": {
+          "nv": 1344,
+          "mel": 153,
+          "bcc": 82,
+          "bkl": 175,
+          "vasc": 24,
+          "akiec": 57,
+          "df": 18
+        },
+        "retained_labels": {
+          "nv": 1211,
+          "mel": 124,
+          "bcc": 75,
+          "bkl": 151,
+          "vasc": 15,
+          "akiec": 53,
+          "df": 16
+        }
+      }
+    },
+    "43": {
+      "train": {
+        "original": 2998,
+        "retained": 2653,
+        "original_labels": {
+          "nv": 2166,
+          "mel": 246,
+          "akiec": 91,
+          "bcc": 131,
+          "vasc": 39,
+          "bkl": 296,
+          "df": 29
+        },
+        "retained_labels": {
+          "nv": 1946,
+          "mel": 191,
+          "akiec": 85,
+          "bcc": 119,
+          "vasc": 31,
+          "bkl": 256,
+          "df": 25
+        }
+      },
+      "dev": {
+        "original": 740,
+        "retained": 658,
+        "original_labels": {
+          "mel": 61,
+          "nv": 537,
+          "bcc": 32,
+          "bkl": 69,
+          "akiec": 23,
+          "vasc": 10,
+          "df": 8
+        },
+        "retained_labels": {
+          "mel": 53,
+          "nv": 483,
+          "bcc": 27,
+          "bkl": 58,
+          "akiec": 23,
+          "vasc": 6,
+          "df": 8
+        }
+      },
+      "calibration": {
+        "original": 1857,
+        "retained": 1645,
+        "original_labels": {
+          "mel": 154,
+          "bkl": 177,
+          "nv": 1344,
+          "df": 18,
+          "akiec": 57,
+          "vasc": 25,
+          "bcc": 82
+        },
+        "retained_labels": {
+          "mel": 121,
+          "bkl": 157,
+          "nv": 1210,
+          "akiec": 54,
+          "vasc": 19,
+          "bcc": 69,
+          "df": 15
+        }
+      },
+      "test": {
+        "original": 1857,
+        "retained": 1652,
+        "original_labels": {
+          "nv": 1344,
+          "mel": 153,
+          "bkl": 179,
+          "df": 18,
+          "bcc": 82,
+          "vasc": 24,
+          "akiec": 57
+        },
+        "retained_labels": {
+          "nv": 1200,
+          "mel": 133,
+          "bcc": 70,
+          "bkl": 162,
+          "df": 11,
+          "vasc": 20,
+          "akiec": 56
+        }
+      }
+    }
+  },
+  "candidate_sources": {
+    "crossing_dhash_pairs": 7380,
+    "crossing_loose_texture_pairs": 14,
+    "pairs_in_both": 0,
+    "dhash_groups": 815,
+    "loose_texture_groups": 24,
+    "groups_in_both": 6,
+    "texture_file_sha256": "ae48bfa980c27b106bde5b56905de9faf11e45550fbb968aa60415407cefee53"
+  },
+  "seconds": 0.233
+}

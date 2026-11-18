@@ -1,0 +1,245 @@
+{
+  "review_source_commit": "ac655ac5a5b93264c57d69d6d520778d915bfc89",
+  "review_source_hashes": {
+    "newly_discovered_duplicates.csv": "fafe916c6a97c4d6c6de3c7c93eae1f7eb601680692c25ea82c8ef595fca73c7",
+    "near_duplicates_different_times.csv": "6c4aff9e4b138c25765045783de8a47273051448da13670bad9087f87530492a"
+  },
+  "lesion_count": 7470,
+  "analysis_units": 7452,
+  "image_count": 10015,
+  "split_protocol": "v1.5",
+  "parent_protocol": "v1.4",
+  "source_split_groups": 7445,
+  "prior_geometry_edges_sha256": "4dcd84dffab0a854097a6979989ca0025972336f66c37f8c76cd084e55d3335d",
+  "release_config_sha256": "913f510f7e0292fc2804cff1e9b6931e447374cd79e1c36e32d5ab4c2d62622b",
+  "geometry_edges_sha256": "81c77a31554de39fc46b9aaa07f3369c8ad1f82c2355f6e5d238fce418065150",
+  "loose_edges_sha256": "60d4eb9b00358f4cac8b7617601bd59dfc674bf3314823b06b17e14b389563e5",
+  "eligible_geometry_pairs": 23,
+  "loose_geometry_pairs": 44,
+  "splits": {
+    "17": {
+      "sha256": "0db64bc28463dbc89984b8be8dd912bd580fe88687f00bd84d6a13686db674e9",
+      "v1_4_sha256": "138f18444ca71f815eed5c55edf94b89ab4cc9e2cd94335e3080f1fafaa99962",
+      "group_counts": {
+        "train": 2976,
+        "calibration": 1854,
+        "dev": 743,
+        "test": 1855
+      },
+      "analysis_unit_counts": {
+        "train": 2995,
+        "calibration": 1858,
+        "dev": 744,
+        "test": 1855
+      },
+      "moved_images": 22,
+      "moved_raw_lesions": 14,
+      "reviewed_pair_crossings": {
+        "confirmed": {
+          "before": 0,
+          "after": 0
+        },
+        "uncertain": {
+          "before": 0,
+          "after": 0
+        },
+        "new_texture": {
+          "before": 18,
+          "after": 0
+        }
+      },
+      "group_leakage_count": 0,
+      "representative_labels": {
+        "train": {
+          "nv": 2163,
+          "mel": 246,
+          "bkl": 296,
+          "bcc": 131,
+          "vasc": 39,
+          "akiec": 91,
+          "df": 29
+        },
+        "dev": {
+          "mel": 61,
+          "nv": 538,
+          "df": 8,
+          "bcc": 32,
+          "bkl": 72,
+          "vasc": 10,
+          "akiec": 23
+        },
+        "calibration": {
+          "nv": 1344,
+          "bkl": 178,
+          "akiec": 57,
+          "bcc": 82,
+          "df": 18,
+          "vasc": 25,
+          "mel": 154
+        },
+        "test": {
+          "nv": 1346,
+          "df": 18,
+          "bcc": 82,
+          "mel": 153,
+          "bkl": 175,
+          "vasc": 24,
+          "akiec": 57
+        }
+      }
+    },
+    "29": {
+      "sha256": "4b31664ae2775f64c2727d2e80ec00f7add1e39dcc047eb88323f99fe8bc104f",
+      "v1_4_sha256": "1c9ef8c3dc3c5afc41084a90997e8a7b64957275697d0cf033de3c7f70c2bc28",
+      "group_counts": {
+        "calibration": 1858,
+        "test": 1851,
+        "train": 2977,
+        "dev": 742
+      },
+      "analysis_unit_counts": {
+        "calibration": 1863,
+        "test": 1853,
+        "train": 2988,
+        "dev": 748
+      },
+      "moved_images": 18,
+      "moved_raw_lesions": 12,
+      "reviewed_pair_crossings": {
+        "confirmed": {
+          "before": 0,
+          "after": 0
+        },
+        "uncertain": {
+          "before": 0,
+          "after": 0
+        },
+        "new_texture": {
+          "before": 14,
+          "after": 0
+        }
+      },
+      "group_leakage_count": 0,
+      "representative_labels": {
+        "train": {
+          "mel": 246,
+          "nv": 2162,
+          "df": 29,
+          "bkl": 290,
+          "bcc": 131,
+          "vasc": 39,
+          "akiec": 91
+        },
+        "dev": {
+          "bkl": 74,
+          "akiec": 23,
+          "df": 8,
+          "nv": 540,
+          "mel": 61,
+          "bcc": 32,
+          "vasc": 10
+        },
+        "calibration": {
+          "nv": 1345,
+          "mel": 154,
+          "bkl": 182,
+          "bcc": 82,
+          "df": 18,
+          "vasc": 25,
+          "akiec": 57
+        },
+        "test": {
+          "nv": 1344,
+          "mel": 153,
+          "bcc": 82,
+          "bkl": 175,
+          "vasc": 24,
+          "akiec": 57,
+          "df": 18
+        }
+      }
+    },
+    "43": {
+      "sha256": "c82cbdab0ca2ee62137323af64066d2a39ba0dbbf7233b218435b91910b5d22a",
+      "v1_4_sha256": "298cda8e983da6657dcd84ad259d90b6c06ef155d5f0894bf0fecd5cf476b0b5",
+      "group_counts": {
+        "test": 1855,
+        "train": 2980,
+        "calibration": 1856,
+        "dev": 737
+      },
+      "analysis_unit_counts": {
+        "test": 1857,
+        "train": 2998,
+        "calibration": 1857,
+        "dev": 740
+      },
+      "moved_images": 15,
+      "moved_raw_lesions": 11,
+      "reviewed_pair_crossings": {
+        "confirmed": {
+          "before": 0,
+          "after": 0
+        },
+        "uncertain": {
+          "before": 0,
+          "after": 0
+        },
+        "new_texture": {
+          "before": 18,
+          "after": 0
+        }
+      },
+      "group_leakage_count": 0,
+      "representative_labels": {
+        "train": {
+          "nv": 2166,
+          "mel": 246,
+          "akiec": 91,
+          "bcc": 131,
+          "vasc": 39,
+          "bkl": 296,
+          "df": 29
+        },
+        "dev": {
+          "mel": 61,
+          "nv": 537,
+          "bcc": 32,
+          "bkl": 69,
+          "akiec": 23,
+          "vasc": 10,
+          "df": 8
+        },
+        "calibration": {
+          "mel": 154,
+          "bkl": 177,
+          "nv": 1344,
+          "df": 18,
+          "akiec": 57,
+          "vasc": 25,
+          "bcc": 82
+        },
+        "test": {
+          "nv": 1344,
+          "mel": 153,
+          "bkl": 179,
+          "df": 18,
+          "bcc": 82,
+          "vasc": 24,
+          "akiec": 57
+        }
+      }
+    }
+  },
+  "texture_candidates_sha256": "ae48bfa980c27b106bde5b56905de9faf11e45550fbb968aa60415407cefee53",
+  "split_groups": 7428,
+  "strong_edges_with_different_dataset_labels": 0,
+  "strong_edges_with_two_representatives": 13,
+  "analysis_units_per_group_histogram": {
+    "1": 7406,
+    "2": 20,
+    "3": 2
+  },
+  "status": "texture_split_binding_complete",
+  "elapsed_seconds": 1.331
+}

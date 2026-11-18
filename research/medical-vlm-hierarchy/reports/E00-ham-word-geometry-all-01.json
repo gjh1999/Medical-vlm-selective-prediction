@@ -1,0 +1,34 @@
+{
+  "cache_sha256": "ce69f9d17992fa7a1dae3a9ee917cebcae3efe0ae35fb94effef758891b35140",
+  "word_candidates_sha256": "a85409e1c60fb94a394190f1bcb98e5dfbd799760b6797c248d7008b38f9ac9c",
+  "max_rank": 20,
+  "include_appearance": true,
+  "candidate_pairs": 235405,
+  "extra_control_pairs": 2,
+  "reused": 10085,
+  "workers": 3,
+  "status": "complete",
+  "summary": {
+    "cross_partition": {
+      "pairs": 229326,
+      "at_least_8": 43,
+      "at_least_16_and_4_cells": 23,
+      "at_least_32_and_4_cells": 16
+    },
+    "same_partitions_distinct_group": {
+      "pairs": 6047,
+      "at_least_8": 1,
+      "at_least_16_and_4_cells": 0,
+      "at_least_32_and_4_cells": 0
+    },
+    "within_group": {
+      "pairs": 32,
+      "at_least_8": 28,
+      "at_least_16_and_4_cells": 21,
+      "at_least_32_and_4_cells": 19
+    }
+  },
+  "control_scores_verified": 225,
+  "scores_sha256": "0a36aa2092ca69bb394f69b2ecb5eaa2afaa4e7df3e2ffae3fc5b2df3e19af8c",
+  "seconds": 3673.358
+}
