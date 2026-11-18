@@ -4,7 +4,7 @@
 
 HAM 的 10,015 张原图全部解码。公开审阅确认的 18 对重复图在旧划分中有 13、12、11 对跨集合。v1.3 将确认重复合并，将另两对未决图分到同一集合。三个种子下这两类配对均无跨集合。修订后仍有 1,045、1,076、1,015 对跨集合代表图命中 dHash 筛查。保守敏感性分析排除涉及跨集合候选的 817 个组，主分析保留全部图像。[修订前后审计](reports/E00-ham-reviewed-summary-01.json) · [候选抽查](reports/E00-ham-visual-review-01.json) · [敏感性分析](reports/E00-ham-sensitivity-01.json)
 
-冻结特征入口已用 8 张 HAM 训练代表图在 CPU 上跑通。OpenAI CLIP ViT-B/16 批量提取与官方加载器逐图复算的最大逐分量差为 3.13×10⁻⁷。分类性能和 5080 上的推理成本待测。[单图复算结果](reports/E00-ham-clip-cpu-reference-01.json)
+两个冻结模型已在同一批 128 个 HAM 开发组上完成首轮小试。固定两种提示下，OpenAI CLIP 判对 12 组，BiomedCLIP 判对 15 组；训练集多数类基线判对 91 组。两个模型的父子分歧错例排序 AUROC 均低于普通熵，配对区间均包含零。独立逐图前向与批量缓存的最大 logit 差均小于 0.00002。正式比较、校准和 5080 成本待测。[开发集小试](reports/E01-ham-dev-pilot-01.json) · [独立复算](reports/E01-ham-dev-pilot-reference-01.json)
 
 HAM 有 7,470 个原始病灶 ID、7,452 个分析单位和 7,450 个划分组。种子 17 的校准集有 1,859 个分析单位，其中 df 18、nv 1,344。患者级独立性未知。PAD 有 2,298 张图像、1,373 位患者。250 个 raw lesion_id 跨患者重用，其中 226 个有标签差异。共享 raw ID 的患者保守连接成 1,132 个划分组，三套划分均无患者、raw ID 或连通组交叉。1,891 个 patient+lesion 处理键的生物学身份仍待核实。[实验记录](实验记录.md)
 
@@ -40,4 +40,4 @@ python -m unittest -v test_core.py
 .\.venv\Scripts\python.exe -m unittest discover -s research/medical-vlm-hierarchy -p 'test_*.py' -v
 ```
 
-`audit_images.py` 记录文件、像素哈希和 dHash 候选，`summarize_ham_duplicates.py` 复用同一轮解码结果统计三个划分。`extract_features.py --smoke-only` 用一批训练代表图验证入口，`verify_clip_smoke.py` 可对 OpenAI CLIP 向量逐张复算。近重复的身份审阅、BiomedCLIP 实机推理及 B0–B6 的性能比较仍待完成。
+`audit_images.py` 记录文件、像素哈希和 dHash 候选，`summarize_ham_duplicates.py` 复用同一轮解码结果统计三个划分。`prepare_biomedclip.py` 可下载固定版权重及离线文本配置，`extract_features.py --smoke-only` 用一批训练代表图验证入口。`ham_dev_pilot.py` 用固定的两种提示和树草案运行开发集对照，`verify_ham_dev_pilot.py` 逐图复算并核对错例排序。命令见[实验记录](实验记录.md)。

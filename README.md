@@ -14,6 +14,8 @@
 
 医学 VLM 主线已解码 HAM 全部 10,015 张原图。依据公开审阅修订分组后，18 对已知重复在三个划分中的跨集合数从 13、12、11 对降到零。另有近重复候选，已生成保守排除名单供敏感性分析。8 张训练代表图已完成 OpenAI CLIP 特征提取与逐图复核。PAD 每次有 283 个校准组，仅 9 组含黑色素瘤。现行协议下，即使零错误，5% 非根风险目标也至少需要 126 个独立接受组。正式分类比较仍待 5080 运行。[实验记录](research/medical-vlm-hierarchy/实验记录.md) · [5080 主机运行说明](research/medical-vlm-hierarchy/5080运行说明.md)
 
+首轮双模型开发集小试已完成。128 组中，OpenAI CLIP 和 BiomedCLIP 的父子分歧错例排序 AUROC 分别为 0.376 和 0.492，普通熵分别为 0.599 和 0.574。模型的叶类预测偏置很大，正式门控开发暂缓。[固定配置和开发集结果](research/medical-vlm-hierarchy/README.md)
+
 GitHub 仓库：[Medical-vlm-selective-prediction](https://github.com/gjh1999/Medical-vlm-selective-prediction)。`scripts/sync-github.ps1` 同步代码、配置、文档与实验摘要；`scripts/register-github-sync.ps1` 在成功首次推送后注册每 30 分钟执行的 Windows 任务。原始数据、权重与逐样本缓存不入库。状态以本机任务 `MCCAI-Research-GitHub-Sync` 和 `.sync-state/last-success.json` 为准；任务需要本机开机且注册用户已登录，日志在 `.sync-state/sync.log`。
 
 本项目已登记到用户 Codex 全局自动同步列表，每天本地时间 17:00 进行 WIP 备份；较大变更验证后也主动提交推送。定时备份不代表实验完成或测试通过。

@@ -1,0 +1,16 @@
+{
+  "split_seed": 17,
+  "split_sha256": "6e198d8f99eceb5fc9ec6033e7575308372e3ee1abdf20553e865d50da07fe5c",
+  "pilot_selection_sha256": "64760d4586734aa48eeaefa2558598533cf33716db191442d7f8fc2b7a2ec40e",
+  "salt": "ham-balanced-probe-v1",
+  "train_per_class": 8,
+  "dev_per_class": 8,
+  "roles": ["train", "dev"],
+  "exclude_prior_pilot_from_dev": true,
+  "methods": ["frozen_text", "cosine_nearest_centroid", "centered_ridge"],
+  "ridge_penalty": 1.0,
+  "ridge_targets": "one-hot, centered on training sample",
+  "bootstrap": {"resamples": 2000, "seed": 17, "strata": "true development class"},
+  "primary_measure": "correct count on 56 class-balanced development groups",
+  "interpretation": "mechanism diagnostic after observing first dev pilot; no model or threshold selection"
+}
