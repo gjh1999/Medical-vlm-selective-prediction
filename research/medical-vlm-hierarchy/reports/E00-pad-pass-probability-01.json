@@ -1,0 +1,51 @@
+{
+  "protocol_version": "1.2",
+  "seed": 17,
+  "capacity_sha256": "c4df41be30a3ee44bbf5f7c6846387904580027d051679468e254808a93db0e8",
+  "per_check_delta": 0.0015625,
+  "rows": [
+    {
+      "accepted_groups": 50,
+      "max_errors": null,
+      "pass_probability_by_true_error_percent": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      }
+    },
+    {
+      "accepted_groups": 100,
+      "max_errors": null,
+      "pass_probability_by_true_error_percent": {
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "5": 0.0
+      }
+    },
+    {
+      "accepted_groups": 200,
+      "max_errors": 1,
+      "pass_probability_by_true_error_percent": {
+        "1": 0.4046456846720265,
+        "2": 0.08937548377193204,
+        "3": 0.016248298803784093,
+        "5": 0.0004040281004470293
+      }
+    },
+    {
+      "accepted_groups": 283,
+      "max_errors": 4,
+      "pass_probability_by_true_error_percent": {
+        "1": 0.8439047864649751,
+        "2": 0.33063778442131253,
+        "3": 0.07180306101082654,
+        "5": 0.0013296642817931497
+      }
+    }
+  ],
+  "scope": "One fixed policy, iid accepted groups, nonroot risk only.",
+  "python": "3.14.7",
+  "elapsed_compute_seconds": 0.0007226000016089529
+}

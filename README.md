@@ -1,5 +1,8 @@
 # 医学视觉研究选题与计划
 
+- [五个课题的导师评审与实验顺序](research/导师组会-2026-11-18.md)（2026-11-18）。包括主线、各方向的强基线、已发现的预算和数据限制，以及继续或停题的条件。
+- [固定追加预算下的皮肤镜采集](research/paired-dermoscopy-acquisition/README.md)。核查同一病灶的双视图配对，检验追加前能否预测净纠错收益。
+
 - [新增并行方向：跨模态异常检测中的证据校准](research/cross-modal-evidence-calibration/README.md)：医学正常组织误报、目标正常样本预算与迁移失效边界；独立子目录启动探索。
 
 - [视觉顶会选题网页报告](docs/vision-report/index.html)：12 篇论文、9 项数据资源、4 个候选方向。

@@ -1,0 +1,80 @@
+{
+  "source_doi": "10.34970/648456",
+  "python": "3.14.7",
+  "sha256": {
+    "training_input.csv": "ec9a30c4d9f56bd89d17d98d0e24624423a9cea840e80e9081975ef16a7dc98e",
+    "milk10k.csv": "347c3a386331c1a8948f4d87a952be9aff3e859b668ddb2d08f35321addc2ebf",
+    "training_supp.csv": "13768a20082af5ec869d715760aaa96fae29ac0078b17ab11e6078acd9e17fba",
+    "ham_split_seed17.csv": "a22e738126b24e95c0cfcb2262532658103da95cb809028f1efd359d50ef910d"
+  },
+  "tables": {
+    "training_input.csv": {
+      "rows": 10480,
+      "columns": [
+        "lesion_id",
+        "image_type",
+        "isic_id",
+        "attribution",
+        "copyright_license",
+        "image_manipulation",
+        "age_approx",
+        "sex",
+        "skin_tone_class",
+        "site",
+        "MONET_ulceration_crust",
+        "MONET_hair",
+        "MONET_vasculature_vessels",
+        "MONET_erythema",
+        "MONET_pigmented",
+        "MONET_gel_water_drop_fluid_dermoscopy_liquid",
+        "MONET_skin_markings_pen_ink_purple_pen"
+      ],
+      "distinct_image_ids": 10480,
+      "id_symmetric_difference_from_input": 0
+    },
+    "milk10k.csv": {
+      "rows": 10480,
+      "columns": [
+        "isic_id",
+        "attribution",
+        "copyright_license",
+        "age_approx",
+        "anatom_site_general",
+        "anatom_site_special",
+        "concomitant_biopsy",
+        "diagnosis_1",
+        "diagnosis_2",
+        "diagnosis_3",
+        "diagnosis_4",
+        "diagnosis_confirm_type",
+        "image_manipulation",
+        "image_type",
+        "lesion_id",
+        "melanocytic",
+        "sex"
+      ],
+      "distinct_image_ids": 10480,
+      "id_symmetric_difference_from_input": 0
+    },
+    "training_supp.csv": {
+      "rows": 10480,
+      "columns": [
+        "isic_id",
+        "diagnosis_full",
+        "diagnosis_confirm_type",
+        "invasion_thickness_interval"
+      ],
+      "distinct_image_ids": 10480,
+      "id_symmetric_difference_from_input": 0
+    }
+  },
+  "distinct_lesions": 5240,
+  "one_clinical_one_dermoscopic": 5240,
+  "image_lesion_type_symmetric_difference": 0,
+  "licenses": {
+    "CC-BY-NC": 10480
+  },
+  "ham_distinct_image_ids": 10015,
+  "ham_milk_equal_image_ids": 0,
+  "elapsed_seconds": 0.11723179998807609
+}
