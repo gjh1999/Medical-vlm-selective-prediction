@@ -1,0 +1,1039 @@
+{
+  "scope": "posthoc development diagnosis; oracle uses reference labels; no threshold selection or risk certification",
+  "fixed_constant_branch_controls": {
+    "natural": {
+      "epithelial": {
+        "n": 96,
+        "node_n": 96,
+        "node_errors": 85,
+        "leaf_n": 0,
+        "leaf_errors": 0,
+        "node_coverage": 1.0,
+        "leaf_coverage": 0.0,
+        "node_risk": 0.8854166666666666,
+        "leaf_risk": null,
+        "correct_information_utility": 0.049892444014694
+      },
+      "melanocytic": {
+        "n": 96,
+        "node_n": 96,
+        "node_errors": 11,
+        "leaf_n": 0,
+        "leaf_errors": 0,
+        "node_coverage": 1.0,
+        "leaf_coverage": 0.0,
+        "node_risk": 0.11458333333333333,
+        "leaf_risk": null,
+        "correct_information_utility": 0.570024886414772
+      }
+    },
+    "balanced": {
+      "epithelial": {
+        "n": 56,
+        "node_n": 56,
+        "node_errors": 32,
+        "leaf_n": 0,
+        "leaf_errors": 0,
+        "node_coverage": 1.0,
+        "leaf_coverage": 0.0,
+        "node_risk": 0.5714285714285714,
+        "leaf_risk": null,
+        "correct_information_utility": 0.186610699691323
+      },
+      "melanocytic": {
+        "n": 56,
+        "node_n": 56,
+        "node_errors": 40,
+        "leaf_n": 0,
+        "leaf_errors": 0,
+        "node_coverage": 1.0,
+        "leaf_coverage": 0.0,
+        "node_risk": 0.7142857142857143,
+        "leaf_risk": null,
+        "correct_information_utility": 0.18394080368342225
+      }
+    }
+  },
+  "models": {
+    "clip": {
+      "frozen_text": {
+        "natural": {
+          "leaf_outcomes": {
+            "wrong_leaf_across_branches": 23,
+            "wrong_leaf_same_nontrivial_branch": 66,
+            "correct_leaf": 7
+          },
+          "all_leaf": {
+            "n": 96,
+            "node_n": 96,
+            "node_errors": 89,
+            "leaf_n": 96,
+            "leaf_errors": 89,
+            "node_coverage": 1.0,
+            "leaf_coverage": 1.0,
+            "node_risk": 0.9270833333333334,
+            "leaf_risk": 0.9270833333333334,
+            "correct_information_utility": 0.07291666666666667
+          },
+          "oracle": {
+            "n": 96,
+            "node_n": 73,
+            "node_errors": 0,
+            "leaf_n": 7,
+            "leaf_errors": 0,
+            "node_coverage": 0.7604166666666666,
+            "leaf_coverage": 0.07291666666666667,
+            "node_risk": 0.0,
+            "leaf_risk": 0.0,
+            "correct_information_utility": 0.5133537271242186
+          },
+          "thresholds": {
+            "0.5": {
+              "climbing": {
+                "n": 96,
+                "node_n": 52,
+                "node_errors": 33,
+                "leaf_n": 34,
+                "leaf_errors": 31,
+                "node_coverage": 0.5416666666666666,
+                "leaf_coverage": 0.3541666666666667,
+                "node_risk": 0.6346153846153846,
+                "leaf_risk": 0.9117647058823529,
+                "correct_information_utility": 0.1342078053372972
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 96,
+                "node_n": 52,
+                "node_errors": 48,
+                "leaf_n": 52,
+                "leaf_errors": 48,
+                "node_coverage": 0.5416666666666666,
+                "leaf_coverage": 0.5416666666666666,
+                "node_risk": 0.9230769230769231,
+                "leaf_risk": 0.9230769230769231,
+                "correct_information_utility": 0.041666666666666664
+              },
+              "utility_difference": 0.09254113867063055,
+              "wrong_leaves_rescued": 15,
+              "correct_leaves_coarsened": 1
+            },
+            "0.7": {
+              "climbing": {
+                "n": 96,
+                "node_n": 5,
+                "node_errors": 3,
+                "leaf_n": 3,
+                "leaf_errors": 3,
+                "node_coverage": 0.052083333333333336,
+                "leaf_coverage": 0.03125,
+                "node_risk": 0.6,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.013412350268582873
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 96,
+                "node_n": 5,
+                "node_errors": 4,
+                "leaf_n": 5,
+                "leaf_errors": 4,
+                "node_coverage": 0.052083333333333336,
+                "leaf_coverage": 0.052083333333333336,
+                "node_risk": 0.8,
+                "leaf_risk": 0.8,
+                "correct_information_utility": 0.010416666666666666
+              },
+              "utility_difference": 0.002995683601916207,
+              "wrong_leaves_rescued": 1,
+              "correct_leaves_coarsened": 1
+            },
+            "0.9": {
+              "climbing": {
+                "n": 96,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 96,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "utility_difference": 0.0,
+              "wrong_leaves_rescued": 0,
+              "correct_leaves_coarsened": 0
+            }
+          }
+        },
+        "balanced": {
+          "leaf_outcomes": {
+            "wrong_leaf_across_branches": 33,
+            "wrong_leaf_same_nontrivial_branch": 12,
+            "correct_leaf": 11
+          },
+          "all_leaf": {
+            "n": 56,
+            "node_n": 56,
+            "node_errors": 45,
+            "leaf_n": 56,
+            "leaf_errors": 45,
+            "node_coverage": 1.0,
+            "leaf_coverage": 1.0,
+            "node_risk": 0.8035714285714286,
+            "leaf_risk": 0.8035714285714286,
+            "correct_information_utility": 0.19642857142857142
+          },
+          "oracle": {
+            "n": 56,
+            "node_n": 23,
+            "node_errors": 0,
+            "leaf_n": 11,
+            "leaf_errors": 0,
+            "node_coverage": 0.4107142857142857,
+            "leaf_coverage": 0.19642857142857142,
+            "node_risk": 0.0,
+            "leaf_risk": 0.0,
+            "correct_information_utility": 0.3157799021424276
+          },
+          "thresholds": {
+            "0.5": {
+              "climbing": {
+                "n": 56,
+                "node_n": 29,
+                "node_errors": 14,
+                "leaf_n": 12,
+                "leaf_errors": 8,
+                "node_coverage": 0.5178571428571429,
+                "leaf_coverage": 0.21428571428571427,
+                "node_risk": 0.4827586206896552,
+                "leaf_risk": 0.6666666666666666,
+                "correct_information_utility": 0.17184189309272951
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 56,
+                "node_n": 29,
+                "node_errors": 20,
+                "leaf_n": 29,
+                "leaf_errors": 20,
+                "node_coverage": 0.5178571428571429,
+                "leaf_coverage": 0.5178571428571429,
+                "node_risk": 0.6896551724137931,
+                "leaf_risk": 0.6896551724137931,
+                "correct_information_utility": 0.16071428571428573
+              },
+              "utility_difference": 0.011127607378443788,
+              "wrong_leaves_rescued": 6,
+              "correct_leaves_coarsened": 5
+            },
+            "0.7": {
+              "climbing": {
+                "n": 56,
+                "node_n": 2,
+                "node_errors": 1,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.03571428571428571,
+                "leaf_coverage": 0.0,
+                "node_risk": 0.5,
+                "leaf_risk": null,
+                "correct_information_utility": 0.007775445820471792
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 56,
+                "node_n": 2,
+                "node_errors": 1,
+                "leaf_n": 2,
+                "leaf_errors": 1,
+                "node_coverage": 0.03571428571428571,
+                "leaf_coverage": 0.03571428571428571,
+                "node_risk": 0.5,
+                "leaf_risk": 0.5,
+                "correct_information_utility": 0.017857142857142856
+              },
+              "utility_difference": -0.010081697036671064,
+              "wrong_leaves_rescued": 0,
+              "correct_leaves_coarsened": 1
+            },
+            "0.9": {
+              "climbing": {
+                "n": 56,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 56,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "utility_difference": 0.0,
+              "wrong_leaves_rescued": 0,
+              "correct_leaves_coarsened": 0
+            }
+          }
+        }
+      },
+      "cosine_centroid": {
+        "natural": {
+          "leaf_outcomes": {
+            "correct_leaf": 50,
+            "wrong_leaf_across_branches": 33,
+            "wrong_leaf_same_nontrivial_branch": 13
+          },
+          "all_leaf": {
+            "n": 96,
+            "node_n": 96,
+            "node_errors": 46,
+            "leaf_n": 96,
+            "leaf_errors": 46,
+            "node_coverage": 1.0,
+            "leaf_coverage": 1.0,
+            "node_risk": 0.4791666666666667,
+            "leaf_risk": 0.4791666666666667,
+            "correct_information_utility": 0.5208333333333334
+          },
+          "oracle": {
+            "n": 96,
+            "node_n": 63,
+            "node_errors": 0,
+            "leaf_n": 50,
+            "leaf_errors": 0,
+            "node_coverage": 0.65625,
+            "leaf_coverage": 0.5208333333333334,
+            "node_risk": 0.0,
+            "leaf_risk": 0.0,
+            "correct_information_utility": 0.5993316164563904
+          },
+          "thresholds": {
+            "0.5": {
+              "climbing": {
+                "n": 96,
+                "node_n": 79,
+                "node_errors": 26,
+                "leaf_n": 48,
+                "leaf_errors": 22,
+                "node_coverage": 0.8229166666666666,
+                "leaf_coverage": 0.5,
+                "node_risk": 0.3291139240506329,
+                "leaf_risk": 0.4583333333333333,
+                "correct_information_utility": 0.4367065731194219
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 96,
+                "node_n": 79,
+                "node_errors": 33,
+                "leaf_n": 79,
+                "leaf_errors": 33,
+                "node_coverage": 0.8229166666666666,
+                "leaf_coverage": 0.8229166666666666,
+                "node_risk": 0.4177215189873418,
+                "leaf_risk": 0.4177215189873418,
+                "correct_information_utility": 0.4791666666666667
+              },
+              "utility_difference": -0.04246009354724478,
+              "wrong_leaves_rescued": 7,
+              "correct_leaves_coarsened": 20
+            },
+            "0.7": {
+              "climbing": {
+                "n": 96,
+                "node_n": 51,
+                "node_errors": 10,
+                "leaf_n": 11,
+                "leaf_errors": 9,
+                "node_coverage": 0.53125,
+                "leaf_coverage": 0.11458333333333333,
+                "node_risk": 0.19607843137254902,
+                "leaf_risk": 0.8181818181818182,
+                "correct_information_utility": 0.2715216715422849
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 96,
+                "node_n": 51,
+                "node_errors": 20,
+                "leaf_n": 51,
+                "leaf_errors": 20,
+                "node_coverage": 0.53125,
+                "leaf_coverage": 0.53125,
+                "node_risk": 0.39215686274509803,
+                "leaf_risk": 0.39215686274509803,
+                "correct_information_utility": 0.3229166666666667
+              },
+              "utility_difference": -0.05139499512438178,
+              "wrong_leaves_rescued": 10,
+              "correct_leaves_coarsened": 29
+            },
+            "0.9": {
+              "climbing": {
+                "n": 96,
+                "node_n": 4,
+                "node_errors": 3,
+                "leaf_n": 3,
+                "leaf_errors": 3,
+                "node_coverage": 0.041666666666666664,
+                "leaf_coverage": 0.03125,
+                "node_risk": 0.75,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.0067061751342914365
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 96,
+                "node_n": 4,
+                "node_errors": 4,
+                "leaf_n": 4,
+                "leaf_errors": 4,
+                "node_coverage": 0.041666666666666664,
+                "leaf_coverage": 0.041666666666666664,
+                "node_risk": 1.0,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.0
+              },
+              "utility_difference": 0.0067061751342914365,
+              "wrong_leaves_rescued": 1,
+              "correct_leaves_coarsened": 0
+            }
+          }
+        },
+        "balanced": {
+          "leaf_outcomes": {
+            "wrong_leaf_same_nontrivial_branch": 8,
+            "correct_leaf": 29,
+            "wrong_leaf_across_branches": 19
+          },
+          "all_leaf": {
+            "n": 56,
+            "node_n": 56,
+            "node_errors": 27,
+            "leaf_n": 56,
+            "leaf_errors": 27,
+            "node_coverage": 1.0,
+            "leaf_coverage": 1.0,
+            "node_risk": 0.48214285714285715,
+            "leaf_risk": 0.48214285714285715,
+            "correct_information_utility": 0.5178571428571429
+          },
+          "oracle": {
+            "n": 56,
+            "node_n": 37,
+            "node_errors": 0,
+            "leaf_n": 29,
+            "leaf_errors": 0,
+            "node_coverage": 0.6607142857142857,
+            "leaf_coverage": 0.5178571428571429,
+            "node_risk": 0.0,
+            "leaf_risk": 0.0,
+            "correct_information_utility": 0.5837815638306594
+          },
+          "thresholds": {
+            "0.5": {
+              "climbing": {
+                "n": 56,
+                "node_n": 44,
+                "node_errors": 14,
+                "leaf_n": 24,
+                "leaf_errors": 7,
+                "node_coverage": 0.7857142857142857,
+                "leaf_coverage": 0.42857142857142855,
+                "node_risk": 0.3181818181818182,
+                "leaf_risk": 0.2916666666666667,
+                "correct_information_utility": 0.4232564962862724
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 56,
+                "node_n": 44,
+                "node_errors": 19,
+                "leaf_n": 44,
+                "leaf_errors": 19,
+                "node_coverage": 0.7857142857142857,
+                "leaf_coverage": 0.7857142857142857,
+                "node_risk": 0.4318181818181818,
+                "leaf_risk": 0.4318181818181818,
+                "correct_information_utility": 0.44642857142857145
+              },
+              "utility_difference": -0.023172075142299076,
+              "wrong_leaves_rescued": 5,
+              "correct_leaves_coarsened": 8
+            },
+            "0.7": {
+              "climbing": {
+                "n": 56,
+                "node_n": 18,
+                "node_errors": 4,
+                "leaf_n": 10,
+                "leaf_errors": 2,
+                "node_coverage": 0.32142857142857145,
+                "leaf_coverage": 0.17857142857142858,
+                "node_risk": 0.2222222222222222,
+                "leaf_risk": 0.2,
+                "correct_information_utility": 0.2006723810091999
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 56,
+                "node_n": 18,
+                "node_errors": 5,
+                "leaf_n": 18,
+                "leaf_errors": 5,
+                "node_coverage": 0.32142857142857145,
+                "leaf_coverage": 0.32142857142857145,
+                "node_risk": 0.2777777777777778,
+                "leaf_risk": 0.2777777777777778,
+                "correct_information_utility": 0.23214285714285715
+              },
+              "utility_difference": -0.03147047613365725,
+              "wrong_leaves_rescued": 1,
+              "correct_leaves_coarsened": 5
+            },
+            "0.9": {
+              "climbing": {
+                "n": 56,
+                "node_n": 2,
+                "node_errors": 0,
+                "leaf_n": 2,
+                "leaf_errors": 0,
+                "node_coverage": 0.03571428571428571,
+                "leaf_coverage": 0.03571428571428571,
+                "node_risk": 0.0,
+                "leaf_risk": 0.0,
+                "correct_information_utility": 0.03571428571428571
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 56,
+                "node_n": 2,
+                "node_errors": 0,
+                "leaf_n": 2,
+                "leaf_errors": 0,
+                "node_coverage": 0.03571428571428571,
+                "leaf_coverage": 0.03571428571428571,
+                "node_risk": 0.0,
+                "leaf_risk": 0.0,
+                "correct_information_utility": 0.03571428571428571
+              },
+              "utility_difference": 0.0,
+              "wrong_leaves_rescued": 0,
+              "correct_leaves_coarsened": 0
+            }
+          }
+        }
+      }
+    },
+    "biomedclip": {
+      "frozen_text": {
+        "natural": {
+          "leaf_outcomes": {
+            "wrong_leaf_across_branches": 71,
+            "wrong_leaf_same_nontrivial_branch": 18,
+            "correct_leaf": 7
+          },
+          "all_leaf": {
+            "n": 96,
+            "node_n": 96,
+            "node_errors": 89,
+            "leaf_n": 96,
+            "leaf_errors": 89,
+            "node_coverage": 1.0,
+            "leaf_coverage": 1.0,
+            "node_risk": 0.9270833333333334,
+            "leaf_risk": 0.9270833333333334,
+            "correct_information_utility": 0.07291666666666667
+          },
+          "oracle": {
+            "n": 96,
+            "node_n": 25,
+            "node_errors": 0,
+            "leaf_n": 7,
+            "leaf_errors": 0,
+            "node_coverage": 0.2604166666666667,
+            "leaf_coverage": 0.07291666666666667,
+            "node_risk": 0.0,
+            "leaf_risk": 0.0,
+            "correct_information_utility": 0.18928682227254676
+          },
+          "thresholds": {
+            "0.5": {
+              "climbing": {
+                "n": 96,
+                "node_n": 31,
+                "node_errors": 19,
+                "leaf_n": 18,
+                "leaf_errors": 17,
+                "node_coverage": 0.3229166666666667,
+                "leaf_coverage": 0.1875,
+                "node_risk": 0.6129032258064516,
+                "leaf_risk": 0.9444444444444444,
+                "correct_information_utility": 0.08201409473818957
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 96,
+                "node_n": 31,
+                "node_errors": 26,
+                "leaf_n": 31,
+                "leaf_errors": 26,
+                "node_coverage": 0.3229166666666667,
+                "leaf_coverage": 0.3229166666666667,
+                "node_risk": 0.8387096774193549,
+                "leaf_risk": 0.8387096774193549,
+                "correct_information_utility": 0.052083333333333336
+              },
+              "utility_difference": 0.02993076140485624,
+              "wrong_leaves_rescued": 7,
+              "correct_leaves_coarsened": 4
+            },
+            "0.7": {
+              "climbing": {
+                "n": 96,
+                "node_n": 6,
+                "node_errors": 3,
+                "leaf_n": 2,
+                "leaf_errors": 2,
+                "node_coverage": 0.0625,
+                "leaf_coverage": 0.020833333333333332,
+                "node_risk": 0.5,
+                "leaf_risk": 1.0,
+                "correct_information_utility": 0.02011852540287431
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 96,
+                "node_n": 6,
+                "node_errors": 5,
+                "leaf_n": 6,
+                "leaf_errors": 5,
+                "node_coverage": 0.0625,
+                "leaf_coverage": 0.0625,
+                "node_risk": 0.8333333333333334,
+                "leaf_risk": 0.8333333333333334,
+                "correct_information_utility": 0.010416666666666666
+              },
+              "utility_difference": 0.009701858736207642,
+              "wrong_leaves_rescued": 2,
+              "correct_leaves_coarsened": 1
+            },
+            "0.9": {
+              "climbing": {
+                "n": 96,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 96,
+                "node_n": 0,
+                "node_errors": 0,
+                "leaf_n": 0,
+                "leaf_errors": 0,
+                "node_coverage": 0.0,
+                "leaf_coverage": 0.0,
+                "node_risk": null,
+                "leaf_risk": null,
+                "correct_information_utility": 0.0
+              },
+              "utility_difference": 0.0,
+              "wrong_leaves_rescued": 0,
+              "correct_leaves_coarsened": 0
+            }
+          }
+        },
+        "balanced": {
+          "leaf_outcomes": {
+            "wrong_leaf_across_branches": 32,
+            "wrong_leaf_same_nontrivial_branch": 8,
+            "correct_leaf": 16
+          },
+          "all_leaf": {
+            "n": 56,
+            "node_n": 56,
+            "node_errors": 40,
+            "leaf_n": 56,
+            "leaf_errors": 40,
+            "node_coverage": 1.0,
+            "leaf_coverage": 1.0,
+            "node_risk": 0.7142857142857143,
+            "leaf_risk": 0.7142857142857143,
+            "correct_information_utility": 0.2857142857142857
+          },
+          "oracle": {
+            "n": 56,
+            "node_n": 24,
+            "node_errors": 0,
+            "leaf_n": 16,
+            "leaf_errors": 0,
+            "node_coverage": 0.42857142857142855,
+            "leaf_coverage": 0.2857142857142857,
+            "node_risk": 0.0,
+            "leaf_risk": 0.0,
+            "correct_information_utility": 0.35908041550728637
+          },
+          "thresholds": {
+            "0.5": {
+              "climbing": {
+                "n": 56,
+                "node_n": 30,
+                "node_errors": 17,
+                "leaf_n": 18,
+                "leaf_errors": 12,
+                "node_coverage": 0.5357142857142857,
+                "leaf_coverage": 0.32142857142857145,
+                "node_risk": 0.5666666666666667,
+                "leaf_risk": 0.6666666666666666,
+                "correct_information_utility": 0.1764543955251281
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 56,
+                "node_n": 30,
+                "node_errors": 20,
+                "leaf_n": 30,
+                "leaf_errors": 20,
+                "node_coverage": 0.5357142857142857,
+                "leaf_coverage": 0.5357142857142857,
+                "node_risk": 0.6666666666666666,
+                "leaf_risk": 0.6666666666666666,
+                "correct_information_utility": 0.17857142857142858
+              },
+              "utility_difference": -0.0021170330463004816,
+              "wrong_leaves_rescued": 3,
+              "correct_leaves_coarsened": 4
+            },
+            "0.7": {
+              "climbing": {
+                "n": 56,
+                "node_n": 16,
+                "node_errors": 8,
+                "leaf_n": 8,
+                "leaf_errors": 4,
+                "node_coverage": 0.2857142857142857,
+                "leaf_coverage": 0.14285714285714285,
+                "node_risk": 0.5,
+                "leaf_risk": 0.5,
+                "correct_information_utility": 0.10997206352994279
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 56,
+                "node_n": 16,
+                "node_errors": 9,
+                "leaf_n": 16,
+                "leaf_errors": 9,
+                "node_coverage": 0.2857142857142857,
+                "leaf_coverage": 0.2857142857142857,
+                "node_risk": 0.5625,
+                "leaf_risk": 0.5625,
+                "correct_information_utility": 0.125
+              },
+              "utility_difference": -0.015027936470057207,
+              "wrong_leaves_rescued": 1,
+              "correct_leaves_coarsened": 3
+            },
+            "0.9": {
+              "climbing": {
+                "n": 56,
+                "node_n": 2,
+                "node_errors": 0,
+                "leaf_n": 1,
+                "leaf_errors": 0,
+                "node_coverage": 0.03571428571428571,
+                "leaf_coverage": 0.017857142857142856,
+                "node_risk": 0.0,
+                "leaf_risk": 0.0,
+                "correct_information_utility": 0.02563258867761465
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 56,
+                "node_n": 2,
+                "node_errors": 1,
+                "leaf_n": 2,
+                "leaf_errors": 1,
+                "node_coverage": 0.03571428571428571,
+                "leaf_coverage": 0.03571428571428571,
+                "node_risk": 0.5,
+                "leaf_risk": 0.5,
+                "correct_information_utility": 0.017857142857142856
+              },
+              "utility_difference": 0.0077754458204717936,
+              "wrong_leaves_rescued": 1,
+              "correct_leaves_coarsened": 0
+            }
+          }
+        }
+      },
+      "cosine_centroid": {
+        "natural": {
+          "leaf_outcomes": {
+            "correct_leaf": 63,
+            "wrong_leaf_across_branches": 22,
+            "wrong_leaf_same_nontrivial_branch": 11
+          },
+          "all_leaf": {
+            "n": 96,
+            "node_n": 96,
+            "node_errors": 33,
+            "leaf_n": 96,
+            "leaf_errors": 33,
+            "node_coverage": 1.0,
+            "leaf_coverage": 1.0,
+            "node_risk": 0.34375,
+            "leaf_risk": 0.34375,
+            "correct_information_utility": 0.65625
+          },
+          "oracle": {
+            "n": 96,
+            "node_n": 74,
+            "node_errors": 0,
+            "leaf_n": 63,
+            "leaf_errors": 0,
+            "node_coverage": 0.7708333333333334,
+            "leaf_coverage": 0.65625,
+            "node_risk": 0.0,
+            "leaf_risk": 0.0,
+            "correct_information_utility": 0.72567692966584
+          },
+          "thresholds": {
+            "0.5": {
+              "climbing": {
+                "n": 96,
+                "node_n": 80,
+                "node_errors": 15,
+                "leaf_n": 50,
+                "leaf_errors": 8,
+                "node_coverage": 0.8333333333333334,
+                "leaf_coverage": 0.5208333333333334,
+                "node_risk": 0.1875,
+                "leaf_risk": 0.16,
+                "correct_information_utility": 0.5765485392489228
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 96,
+                "node_n": 80,
+                "node_errors": 22,
+                "leaf_n": 80,
+                "leaf_errors": 22,
+                "node_coverage": 0.8333333333333334,
+                "leaf_coverage": 0.8333333333333334,
+                "node_risk": 0.275,
+                "leaf_risk": 0.275,
+                "correct_information_utility": 0.6041666666666666
+              },
+              "utility_difference": -0.027618127417743832,
+              "wrong_leaves_rescued": 7,
+              "correct_leaves_coarsened": 16
+            },
+            "0.7": {
+              "climbing": {
+                "n": 96,
+                "node_n": 59,
+                "node_errors": 3,
+                "leaf_n": 28,
+                "leaf_errors": 1,
+                "node_coverage": 0.6145833333333334,
+                "leaf_coverage": 0.2916666666666667,
+                "node_risk": 0.05084745762711865,
+                "leaf_risk": 0.03571428571428571,
+                "correct_information_utility": 0.46487658686603717
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 96,
+                "node_n": 59,
+                "node_errors": 11,
+                "leaf_n": 59,
+                "leaf_errors": 11,
+                "node_coverage": 0.6145833333333334,
+                "leaf_coverage": 0.6145833333333334,
+                "node_risk": 0.1864406779661017,
+                "leaf_risk": 0.1864406779661017,
+                "correct_information_utility": 0.5
+              },
+              "utility_difference": -0.03512341313396283,
+              "wrong_leaves_rescued": 8,
+              "correct_leaves_coarsened": 21
+            },
+            "0.9": {
+              "climbing": {
+                "n": 96,
+                "node_n": 11,
+                "node_errors": 0,
+                "leaf_n": 2,
+                "leaf_errors": 0,
+                "node_coverage": 0.11458333333333333,
+                "leaf_coverage": 0.020833333333333332,
+                "node_risk": 0.0,
+                "leaf_risk": 0.0,
+                "correct_information_utility": 0.07684791273059048
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 96,
+                "node_n": 11,
+                "node_errors": 2,
+                "leaf_n": 11,
+                "leaf_errors": 2,
+                "node_coverage": 0.11458333333333333,
+                "leaf_coverage": 0.11458333333333333,
+                "node_risk": 0.18181818181818182,
+                "leaf_risk": 0.18181818181818182,
+                "correct_information_utility": 0.09375
+              },
+              "utility_difference": -0.01690208726940952,
+              "wrong_leaves_rescued": 2,
+              "correct_leaves_coarsened": 7
+            }
+          }
+        },
+        "balanced": {
+          "leaf_outcomes": {
+            "wrong_leaf_across_branches": 26,
+            "correct_leaf": 22,
+            "wrong_leaf_same_nontrivial_branch": 8
+          },
+          "all_leaf": {
+            "n": 56,
+            "node_n": 56,
+            "node_errors": 34,
+            "leaf_n": 56,
+            "leaf_errors": 34,
+            "node_coverage": 1.0,
+            "leaf_coverage": 1.0,
+            "node_risk": 0.6071428571428571,
+            "leaf_risk": 0.6071428571428571,
+            "correct_information_utility": 0.39285714285714285
+          },
+          "oracle": {
+            "n": 56,
+            "node_n": 30,
+            "node_errors": 0,
+            "leaf_n": 22,
+            "leaf_errors": 0,
+            "node_coverage": 0.5357142857142857,
+            "leaf_coverage": 0.39285714285714285,
+            "node_risk": 0.0,
+            "leaf_risk": 0.0,
+            "correct_information_utility": 0.46250241824040134
+          },
+          "thresholds": {
+            "0.5": {
+              "climbing": {
+                "n": 56,
+                "node_n": 45,
+                "node_errors": 21,
+                "leaf_n": 25,
+                "leaf_errors": 10,
+                "node_coverage": 0.8035714285714286,
+                "leaf_coverage": 0.44642857142857145,
+                "node_risk": 0.4666666666666667,
+                "leaf_risk": 0.4,
+                "correct_information_utility": 0.3489987184706153
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 56,
+                "node_n": 45,
+                "node_errors": 24,
+                "leaf_n": 45,
+                "leaf_errors": 24,
+                "node_coverage": 0.8035714285714286,
+                "leaf_coverage": 0.8035714285714286,
+                "node_risk": 0.5333333333333333,
+                "leaf_risk": 0.5333333333333333,
+                "correct_information_utility": 0.375
+              },
+              "utility_difference": -0.02600128152938469,
+              "wrong_leaves_rescued": 3,
+              "correct_leaves_coarsened": 6
+            },
+            "0.7": {
+              "climbing": {
+                "n": 56,
+                "node_n": 29,
+                "node_errors": 9,
+                "leaf_n": 9,
+                "leaf_errors": 0,
+                "node_coverage": 0.5178571428571429,
+                "leaf_coverage": 0.16071428571428573,
+                "node_risk": 0.3103448275862069,
+                "leaf_risk": 0.0,
+                "correct_information_utility": 0.2611276073784438
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 56,
+                "node_n": 29,
+                "node_errors": 15,
+                "leaf_n": 29,
+                "leaf_errors": 15,
+                "node_coverage": 0.5178571428571429,
+                "leaf_coverage": 0.5178571428571429,
+                "node_risk": 0.5172413793103449,
+                "leaf_risk": 0.5172413793103449,
+                "correct_information_utility": 0.25
+              },
+              "utility_difference": 0.011127607378443816,
+              "wrong_leaves_rescued": 6,
+              "correct_leaves_coarsened": 5
+            },
+            "0.9": {
+              "climbing": {
+                "n": 56,
+                "node_n": 11,
+                "node_errors": 0,
+                "leaf_n": 6,
+                "leaf_errors": 0,
+                "node_coverage": 0.19642857142857142,
+                "leaf_coverage": 0.10714285714285714,
+                "node_risk": 0.0,
+                "leaf_risk": 0.0,
+                "correct_information_utility": 0.15718264947444238
+              },
+              "flat_on_identical_accepted_cases": {
+                "n": 56,
+                "node_n": 11,
+                "node_errors": 3,
+                "leaf_n": 11,
+                "leaf_errors": 3,
+                "node_coverage": 0.19642857142857142,
+                "leaf_coverage": 0.19642857142857142,
+                "node_risk": 0.2727272727272727,
+                "leaf_risk": 0.2727272727272727,
+                "correct_information_utility": 0.14285714285714285
+              },
+              "utility_difference": 0.014325506617299533,
+              "wrong_leaves_rescued": 3,
+              "correct_leaves_coarsened": 2
+            }
+          }
+        }
+      }
+    }
+  },
+  "status": "complete",
+  "taxonomy_sha256": "de04895cd0bdb141cd31a48c5d98107b729c5ebeb1642211bc1d579fd16237de",
+  "thresholds": [
+    0.5,
+    0.7,
+    0.9
+  ],
+  "seconds": 0.029
+}
