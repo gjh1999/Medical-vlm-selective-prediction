@@ -1,0 +1,526 @@
+{
+  "scope": "balanced disjoint development diagnostic",
+  "config_sha256": "52dc325b1eca997b76f76241933dcbf61191bd40685e591a51d510c647a955d2",
+  "selection_sha256": "e68b8a3111c9ab421dd0c52ca746776fed6587e5160e2577fd098146f25aed37",
+  "split_sha256": "6e198d8f99eceb5fc9ec6033e7575308372e3ee1abdf20553e865d50da07fe5c",
+  "prior_selection_sha256": "64760d4586734aa48eeaefa2558598533cf33716db191442d7f8fc2b7a2ec40e",
+  "prior_config_sha256": "de04895cd0bdb141cd31a48c5d98107b729c5ebeb1642211bc1d579fd16237de",
+  "manifest_sha256": "870b971420b4b1b23f587834b59066d2ff6702af5896065b8c2c99bcb6bdc6ba",
+  "n_train": 56,
+  "n_dev": 56,
+  "overlap_with_prior_dev": 0,
+  "leaf_order": [
+    "akiec",
+    "bcc",
+    "bkl",
+    "df",
+    "mel",
+    "nv",
+    "vasc"
+  ],
+  "device": "cpu",
+  "batch_size": 8,
+  "models": {
+    "clip": {
+      "source_cache_sha256": "8a8131173f9864fdd4d44d6821d0e21034b0932dee708075e99c27d8d7136117",
+      "weights_sha256": "5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f",
+      "loader": "openai/CLIP clip.load",
+      "loader_commit": "d05afc436d78f1c48dc0dbf8e5980a9d471f35f6",
+      "visual_activations": [
+        "QuickGELU"
+      ],
+      "preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    <function _convert_image_to_rgb at 0x0000021A1F9DDD20>\n    ToTensor()\n    Normalize(mean=(0.48145466, 0.4578275, 0.40821073), std=(0.26862954, 0.26130258, 0.27577711))\n)",
+      "metrics": {
+        "frozen_text": {
+          "n": 56,
+          "correct": 11,
+          "accuracy": 0.19642857142857142,
+          "corrected_vs_text": 0,
+          "lost_vs_text": 0,
+          "paired_difference": 0.0,
+          "paired_percentiles_2_5_97_5": [
+            0.0,
+            0.0
+          ],
+          "confusion_true_by_predicted": [
+            [
+              1,
+              1,
+              1,
+              0,
+              5,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0,
+              0,
+              5,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              1,
+              1,
+              5,
+              0,
+              0
+            ],
+            [
+              2,
+              0,
+              0,
+              1,
+              4,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              7,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              7,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              7,
+              0,
+              0
+            ]
+          ]
+        },
+        "cosine_nearest_centroid": {
+          "n": 56,
+          "correct": 29,
+          "accuracy": 0.5178571428571429,
+          "corrected_vs_text": 22,
+          "lost_vs_text": 4,
+          "paired_difference": 0.32142857142857145,
+          "paired_percentiles_2_5_97_5": [
+            0.19598214285714288,
+            0.44642857142857145
+          ],
+          "confusion_true_by_predicted": [
+            [
+              4,
+              1,
+              1,
+              0,
+              2,
+              0,
+              0
+            ],
+            [
+              3,
+              1,
+              1,
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              2,
+              2,
+              2,
+              1,
+              0
+            ],
+            [
+              0,
+              2,
+              0,
+              3,
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              0,
+              1,
+              6,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              1,
+              5,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        },
+        "centered_ridge": {
+          "n": 56,
+          "correct": 27,
+          "accuracy": 0.48214285714285715,
+          "corrected_vs_text": 19,
+          "lost_vs_text": 3,
+          "paired_difference": 0.2857142857142857,
+          "paired_percentiles_2_5_97_5": [
+            0.17857142857142858,
+            0.4107142857142857
+          ],
+          "confusion_true_by_predicted": [
+            [
+              4,
+              1,
+              2,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              3,
+              2,
+              0,
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              2,
+              2,
+              2,
+              1,
+              0
+            ],
+            [
+              0,
+              3,
+              1,
+              2,
+              0,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              1,
+              1,
+              6,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              2,
+              2,
+              3,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        }
+      },
+      "cache_sha256": "5b16bf5b5abe8412fed698eb075536b6edd904c11d55622f4275dfb4b6781dd4",
+      "seconds": 15.838
+    },
+    "biomedclip": {
+      "source_cache_sha256": "0ec0f50d7b3502a9a5d648c5354f94c2b5342d4f0996415c799ac823cf5d7771",
+      "weights_sha256": "52cc993c5c5ff962bd0c60931874bc001e7e9b41666a385530f4a036294576be",
+      "model_config_sha256": "9a41f334a8c444678772c0ebb9ab854c97ab350bced3a17b803e258d39c23dc0",
+      "text_config_sha256": {
+        "special_tokens_map.json": "b6d346be366a7d1d48332dbc9fdf3bf8960b5d879522b7799ddba59e76237ee3",
+        "tokenizer.json": "defc1f91456606e7847af3a2fb4a8abb96441423aa5407a52498395ea68327ff",
+        "tokenizer_config.json": "e1790949631401af1bfb6c9c7aeec7fcf612e274d73579d99f704faea40c8ba7",
+        "vocab.txt": "7b36651908a88bc38bda41b728b2a598191e0d3b553cbacf7b1e5f026d5b5b9f",
+        "config.json": "56bab767c02bc792897638feb8addc06d483d9c73769a5f554bbabea1f5507a1"
+      },
+      "loader": "open_clip.create_model_and_transforms",
+      "preprocess": "Compose(\n    Resize(size=224, interpolation=bicubic, max_size=None, antialias=True)\n    CenterCrop(size=(224, 224))\n    <function _convert_to_rgb at 0x0000021A319F2560>\n    ToTensor()\n    Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])\n)",
+      "metrics": {
+        "frozen_text": {
+          "n": 56,
+          "correct": 16,
+          "accuracy": 0.2857142857142857,
+          "corrected_vs_text": 0,
+          "lost_vs_text": 0,
+          "paired_difference": 0.0,
+          "paired_percentiles_2_5_97_5": [
+            0.0,
+            0.0
+          ],
+          "confusion_true_by_predicted": [
+            [
+              0,
+              3,
+              0,
+              2,
+              1,
+              0,
+              2
+            ],
+            [
+              1,
+              3,
+              0,
+              2,
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              0,
+              3,
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              3,
+              0,
+              0,
+              4,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              5
+            ]
+          ]
+        },
+        "cosine_nearest_centroid": {
+          "n": 56,
+          "correct": 22,
+          "accuracy": 0.39285714285714285,
+          "corrected_vs_text": 13,
+          "lost_vs_text": 7,
+          "paired_difference": 0.10714285714285714,
+          "paired_percentiles_2_5_97_5": [
+            -0.03571428571428571,
+            0.25
+          ],
+          "confusion_true_by_predicted": [
+            [
+              1,
+              1,
+              1,
+              1,
+              2,
+              2,
+              0
+            ],
+            [
+              3,
+              2,
+              0,
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              5,
+              2,
+              0
+            ],
+            [
+              4,
+              1,
+              0,
+              2,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              5,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              2,
+              0,
+              5,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              7
+            ]
+          ]
+        },
+        "centered_ridge": {
+          "n": 56,
+          "correct": 21,
+          "accuracy": 0.375,
+          "corrected_vs_text": 12,
+          "lost_vs_text": 7,
+          "paired_difference": 0.08928571428571429,
+          "paired_percentiles_2_5_97_5": [
+            -0.03571428571428571,
+            0.23214285714285715
+          ],
+          "confusion_true_by_predicted": [
+            [
+              1,
+              1,
+              1,
+              1,
+              0,
+              4,
+              0
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              0,
+              0,
+              4,
+              3,
+              0
+            ],
+            [
+              4,
+              1,
+              0,
+              2,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              4,
+              3,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              2,
+              0,
+              5,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              8
+            ]
+          ]
+        }
+      },
+      "cache_sha256": "426eaaa9a3e485a71b80f88fd6fbbbc0cd88f9ab350bb7403d7aa9cd55c26ed5",
+      "seconds": 14.111
+    }
+  },
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 17,
+    "strata": "true development class"
+  },
+  "status": "complete",
+  "seconds": 30.0
+}

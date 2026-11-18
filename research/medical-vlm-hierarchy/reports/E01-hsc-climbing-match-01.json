@@ -1,0 +1,64 @@
+{
+  "source_commit": "87f59e214d1521827118b1a22e9b5af8deaa57b8",
+  "source_sha256": "f029c2e02edfbde3a7d5e10359d7be8196fa436bef1d81c7dfbde9492aba268d",
+  "config_sha256": "de04895cd0bdb141cd31a48c5d98107b729c5ebeb1642211bc1d579fd16237de",
+  "selection_sha256": "64760d4586734aa48eeaefa2558598533cf33716db191442d7f8fc2b7a2ec40e",
+  "models": {
+    "clip": {
+      "rows": 128,
+      "thresholds": [
+        0.0,
+        0.5,
+        0.7,
+        0.9,
+        1.0
+      ],
+      "comparisons": 640,
+      "node_mismatches": {
+        "0.0": 0,
+        "0.5": 0,
+        "0.7": 0,
+        "0.9": 0,
+        "1.0": 0
+      }
+    },
+    "biomedclip": {
+      "rows": 128,
+      "thresholds": [
+        0.0,
+        0.5,
+        0.7,
+        0.9,
+        1.0
+      ],
+      "comparisons": 640,
+      "node_mismatches": {
+        "0.0": 0,
+        "0.5": 0,
+        "0.7": 0,
+        "0.9": 0,
+        "1.0": 0
+      }
+    }
+  },
+  "constructed_cases": {
+    "rows": 4,
+    "thresholds": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "comparisons": 20,
+    "node_mismatches": {
+      "0.0": 0,
+      "0.25": 0,
+      "0.5": 0,
+      "0.75": 0,
+      "1.0": 0
+    }
+  },
+  "total_mismatches": 0,
+  "seconds": 0.244
+}
