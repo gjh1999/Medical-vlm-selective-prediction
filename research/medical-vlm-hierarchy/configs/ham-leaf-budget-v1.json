@@ -1,0 +1,14 @@
+{
+  "scope": "development-only strength of the existing centered ridge and nearest-centroid leaf baselines; previously used HAM groups and frozen features",
+  "support_pool": "112 already logged training groups, 16 per diagnosis",
+  "shots_per_leaf": [1, 2, 4, 8],
+  "partitions": 128,
+  "seed": 114311,
+  "sampling": "independent random permutation of the 16 available cases in each diagnosis; take nested prefixes across budgets; paired across both heads and backbones",
+  "evaluation": {"natural": 192, "balanced": 56},
+  "ridge_penalty": 1.0,
+  "readouts": ["cosine_nearest_centroid", "centered_ridge"],
+  "metrics": "mean and empirical 2.5/50/97.5 percentiles of correct-group counts and represented-class macro recall; paired corrected minus lost under ridge; per-diagnosis denominators and mean correct counts",
+  "control": "check both original balanced E01 predictions; compare the dual ridge to its thin-SVD solution for each support, budget, backbone and evaluation row",
+  "interpretation": "conditional support composition sensitivity on fixed previously examined development sets; no calibration, target risk claim, confidence intervals or choice of a winning configuration"
+}
