@@ -4,6 +4,8 @@
 
 **当前决定（11 月 19 日）。** 暂缓开发新的层级门控。对 96 个预先留出的 HAM 开发组，加入父子分歧后，图像类中心的错例排序 AUROC 在 OpenAI CLIP 上由 0.703 升到 0.788，在 BiomedCLIP 上由 0.761 变为 0.759。同一套 OpenAI CLIP 风险模型在 56 个类别均衡开发组上的差为 −0.070。将训练支持、风险拟合和评价一并重抽 2,000 次，四种骨干与分类器组合的差值区间都跨零。正式比较将保留同标注预算的图像类中心、基本置信度与 Climbing。[预先固定的对照](reports/E02-ham-error-increment-02.json) · [父文本错配](reports/E02-ham-parent-alignment-01.json) · [重抽样](reports/E02-ham-error-bootstrap-01.json)
 
+基础共形对照已在开发组完成。名义覆盖 90% 时，两种图像类中心的预测集合在同一批 96 组上都包含 88 个真值。压缩为一个树节点后，OpenAI CLIP 输出正确非根节点 0 次，BiomedCLIP 为 49 次。正式结果须同时报告集合覆盖、根拒识和正确非根输出。[共形集合及祖先投影](reports/E01-ham-dev-conformal-01.json)
+
 HAM 的 10,015 张原图全部解码。公开审阅确认的 18 对重复图在旧划分中有 13、12、11 对跨集合。v1.3 处理了作者的 18 对确认及 2 对未决关联。全库外观检索和几何核对又找到 5 对需同集合处理的图，v1.4 将其跨集合数从 3、5、5 降到零。仍有 1,045、1,076、1,015 对跨集合代表图命中 dHash 筛查。保守敏感性分析扣除涉及跨集合候选的 817 个组，主分析保留全部原图。[v1.3 审计](reports/E00-ham-reviewed-summary-01.json) · [v1.4 审计](reports/E00-ham-scene-summary-01.json) · [当前敏感性分母](reports/E00-ham-scene-sensitivity-01.json)
 
 进一步的全库纹理检索与缩略图候选合并后找回 17/18 个作者确认对，先前单用缩略图找回 6/18。只检查每图首位纹理邻居，就在 v1.4 的不同组间找到 7 对强几何对应。三个种子分别有 6、5、5 对跨集合，历史 336 个小试组均未涉及。正式留出评价应等待合并候选的全量复核与分组验收。[检索对照](reports/E00-ham-retrieval-cascade-01.json) · [首位候选的划分影响](reports/E00-ham-word-impact-rank1-01.json)
@@ -53,3 +55,5 @@ python -m unittest -v test_core.py
 ```
 
 `audit_images.py` 记录文件、像素哈希和 dHash 候选，`summarize_ham_duplicates.py` 复用同一轮解码结果统计三个划分。`prepare_biomedclip.py` 可下载固定版权重及离线文本配置，`extract_features.py --smoke-only` 用一批训练代表图验证入口。`ham_dev_pilot.py` 用固定的两种提示和树草案运行开发集对照，`verify_ham_dev_pilot.py` 逐图复算并核对错例排序。命令见[实验记录](实验记录.md)。
+
+AISTATS 2026 作者的三种随机化层级共形构造已在七叶树上与本地穷举逐例对齐，共 5,472 次集合输出一致。BiomedCLIP 图像类中心允许输出两个节点后，自然开发集返回全部七个诊断的次数从 27–29 / 96 降到 3–8 / 96。病例覆盖及均衡组结果见[对照汇总](reports/E01-ham-crsvp-02.json)。

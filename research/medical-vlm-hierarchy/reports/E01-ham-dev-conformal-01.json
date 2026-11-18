@@ -1,0 +1,1739 @@
+{
+  "scope": "development-only surrogate calibration; natural and balanced evaluations reuse frozen cohorts",
+  "score": "1 - frozen probability of the true leaf",
+  "alphas": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "models": {
+    "clip": {
+      "frozen_text": {
+        "0.05": {
+          "quantile": 0.9770661784656154,
+          "order_statistic": 123,
+          "natural": {
+            "n": 96,
+            "set_contains_truth": 92,
+            "mean_set_size": 6.5625,
+            "set_size_histogram": {
+              "4": 3,
+              "5": 3,
+              "6": 27,
+              "7": 63
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 63,
+              "2": 5,
+              "3": 23,
+              "4": 1,
+              "5": 4
+            },
+            "projection_node_counts": {
+              "root": 96
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 33,
+            "true_label_added_to_nonempty_set_by_projection": 4,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 96,
+              "node_n": 0,
+              "node_errors": 0,
+              "leaf_n": 0,
+              "leaf_errors": 0,
+              "node_coverage": 0.0,
+              "leaf_coverage": 0.0,
+              "node_risk": null,
+              "leaf_risk": null,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 3,
+                "covered": 3
+              },
+              "bcc": {
+                "n": 4,
+                "covered": 4
+              },
+              "bkl": {
+                "n": 4,
+                "covered": 4
+              },
+              "df": {
+                "n": 0,
+                "covered": 0
+              },
+              "mel": {
+                "n": 6,
+                "covered": 6
+              },
+              "nv": {
+                "n": 79,
+                "covered": 75
+              },
+              "vasc": {
+                "n": 0,
+                "covered": 0
+              }
+            }
+          },
+          "balanced": {
+            "n": 56,
+            "set_contains_truth": 51,
+            "mean_set_size": 6.464285714285714,
+            "set_size_histogram": {
+              "5": 2,
+              "6": 26,
+              "7": 28
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 28,
+              "2": 1,
+              "3": 26,
+              "5": 1
+            },
+            "projection_node_counts": {
+              "root": 56
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 28,
+            "true_label_added_to_nonempty_set_by_projection": 5,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 56,
+              "node_n": 0,
+              "node_errors": 0,
+              "leaf_n": 0,
+              "leaf_errors": 0,
+              "node_coverage": 0.0,
+              "leaf_coverage": 0.0,
+              "node_risk": null,
+              "leaf_risk": null,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 8,
+                "covered": 8
+              },
+              "bcc": {
+                "n": 8,
+                "covered": 8
+              },
+              "bkl": {
+                "n": 8,
+                "covered": 8
+              },
+              "df": {
+                "n": 8,
+                "covered": 8
+              },
+              "mel": {
+                "n": 8,
+                "covered": 8
+              },
+              "nv": {
+                "n": 8,
+                "covered": 8
+              },
+              "vasc": {
+                "n": 8,
+                "covered": 3
+              }
+            }
+          }
+        },
+        "0.1": {
+          "quantile": 0.9716008976853739,
+          "order_statistic": 117,
+          "natural": {
+            "n": 96,
+            "set_contains_truth": 87,
+            "mean_set_size": 6.333333333333333,
+            "set_size_histogram": {
+              "4": 5,
+              "5": 11,
+              "6": 27,
+              "7": 53
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 53,
+              "2": 8,
+              "3": 27,
+              "4": 2,
+              "5": 6
+            },
+            "projection_node_counts": {
+              "root": 96
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 43,
+            "true_label_added_to_nonempty_set_by_projection": 9,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 96,
+              "node_n": 0,
+              "node_errors": 0,
+              "leaf_n": 0,
+              "leaf_errors": 0,
+              "node_coverage": 0.0,
+              "leaf_coverage": 0.0,
+              "node_risk": null,
+              "leaf_risk": null,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 3,
+                "covered": 3
+              },
+              "bcc": {
+                "n": 4,
+                "covered": 4
+              },
+              "bkl": {
+                "n": 4,
+                "covered": 4
+              },
+              "df": {
+                "n": 0,
+                "covered": 0
+              },
+              "mel": {
+                "n": 6,
+                "covered": 6
+              },
+              "nv": {
+                "n": 79,
+                "covered": 70
+              },
+              "vasc": {
+                "n": 0,
+                "covered": 0
+              }
+            }
+          },
+          "balanced": {
+            "n": 56,
+            "set_contains_truth": 50,
+            "mean_set_size": 6.232142857142857,
+            "set_size_histogram": {
+              "4": 1,
+              "5": 6,
+              "6": 28,
+              "7": 21
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 21,
+              "2": 4,
+              "3": 28,
+              "4": 1,
+              "5": 2
+            },
+            "projection_node_counts": {
+              "root": 56
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 35,
+            "true_label_added_to_nonempty_set_by_projection": 6,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 56,
+              "node_n": 0,
+              "node_errors": 0,
+              "leaf_n": 0,
+              "leaf_errors": 0,
+              "node_coverage": 0.0,
+              "leaf_coverage": 0.0,
+              "node_risk": null,
+              "leaf_risk": null,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 8,
+                "covered": 8
+              },
+              "bcc": {
+                "n": 8,
+                "covered": 8
+              },
+              "bkl": {
+                "n": 8,
+                "covered": 8
+              },
+              "df": {
+                "n": 8,
+                "covered": 8
+              },
+              "mel": {
+                "n": 8,
+                "covered": 8
+              },
+              "nv": {
+                "n": 8,
+                "covered": 7
+              },
+              "vasc": {
+                "n": 8,
+                "covered": 3
+              }
+            }
+          }
+        },
+        "0.2": {
+          "quantile": 0.9555733881870493,
+          "order_statistic": 104,
+          "natural": {
+            "n": 96,
+            "set_contains_truth": 77,
+            "mean_set_size": 5.677083333333333,
+            "set_size_histogram": {
+              "2": 2,
+              "3": 5,
+              "4": 8,
+              "5": 22,
+              "6": 29,
+              "7": 30
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 30,
+              "2": 19,
+              "3": 27,
+              "4": 10,
+              "5": 10
+            },
+            "projection_node_counts": {
+              "root": 96
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 66,
+            "true_label_added_to_nonempty_set_by_projection": 19,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 96,
+              "node_n": 0,
+              "node_errors": 0,
+              "leaf_n": 0,
+              "leaf_errors": 0,
+              "node_coverage": 0.0,
+              "leaf_coverage": 0.0,
+              "node_risk": null,
+              "leaf_risk": null,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 3,
+                "covered": 3
+              },
+              "bcc": {
+                "n": 4,
+                "covered": 4
+              },
+              "bkl": {
+                "n": 4,
+                "covered": 4
+              },
+              "df": {
+                "n": 0,
+                "covered": 0
+              },
+              "mel": {
+                "n": 6,
+                "covered": 6
+              },
+              "nv": {
+                "n": 79,
+                "covered": 60
+              },
+              "vasc": {
+                "n": 0,
+                "covered": 0
+              }
+            }
+          },
+          "balanced": {
+            "n": 56,
+            "set_contains_truth": 46,
+            "mean_set_size": 5.607142857142857,
+            "set_size_histogram": {
+              "3": 2,
+              "4": 7,
+              "5": 14,
+              "6": 21,
+              "7": 12
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 12,
+              "2": 16,
+              "3": 20,
+              "4": 3,
+              "5": 5
+            },
+            "projection_node_counts": {
+              "root": 56
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 44,
+            "true_label_added_to_nonempty_set_by_projection": 10,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 56,
+              "node_n": 0,
+              "node_errors": 0,
+              "leaf_n": 0,
+              "leaf_errors": 0,
+              "node_coverage": 0.0,
+              "leaf_coverage": 0.0,
+              "node_risk": null,
+              "leaf_risk": null,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 8,
+                "covered": 8
+              },
+              "bcc": {
+                "n": 8,
+                "covered": 8
+              },
+              "bkl": {
+                "n": 8,
+                "covered": 8
+              },
+              "df": {
+                "n": 8,
+                "covered": 6
+              },
+              "mel": {
+                "n": 8,
+                "covered": 8
+              },
+              "nv": {
+                "n": 8,
+                "covered": 5
+              },
+              "vasc": {
+                "n": 8,
+                "covered": 3
+              }
+            }
+          }
+        }
+      },
+      "cosine_centroid": {
+        "0.05": {
+          "quantile": 0.9848141700517744,
+          "order_statistic": 123,
+          "natural": {
+            "n": 96,
+            "set_contains_truth": 90,
+            "mean_set_size": 5.447916666666667,
+            "set_size_histogram": {
+              "2": 2,
+              "3": 7,
+              "4": 13,
+              "5": 21,
+              "6": 30,
+              "7": 23
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 23,
+              "2": 5,
+              "3": 37,
+              "4": 21,
+              "5": 10
+            },
+            "projection_node_counts": {
+              "root": 96
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 73,
+            "true_label_added_to_nonempty_set_by_projection": 6,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 96,
+              "node_n": 0,
+              "node_errors": 0,
+              "leaf_n": 0,
+              "leaf_errors": 0,
+              "node_coverage": 0.0,
+              "leaf_coverage": 0.0,
+              "node_risk": null,
+              "leaf_risk": null,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 3,
+                "covered": 3
+              },
+              "bcc": {
+                "n": 4,
+                "covered": 3
+              },
+              "bkl": {
+                "n": 4,
+                "covered": 4
+              },
+              "df": {
+                "n": 0,
+                "covered": 0
+              },
+              "mel": {
+                "n": 6,
+                "covered": 6
+              },
+              "nv": {
+                "n": 79,
+                "covered": 74
+              },
+              "vasc": {
+                "n": 0,
+                "covered": 0
+              }
+            }
+          },
+          "balanced": {
+            "n": 56,
+            "set_contains_truth": 55,
+            "mean_set_size": 5.5,
+            "set_size_histogram": {
+              "2": 1,
+              "3": 5,
+              "4": 5,
+              "5": 9,
+              "6": 26,
+              "7": 10
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 10,
+              "2": 3,
+              "3": 32,
+              "4": 10,
+              "5": 1
+            },
+            "projection_node_counts": {
+              "root": 56
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 46,
+            "true_label_added_to_nonempty_set_by_projection": 1,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 56,
+              "node_n": 0,
+              "node_errors": 0,
+              "leaf_n": 0,
+              "leaf_errors": 0,
+              "node_coverage": 0.0,
+              "leaf_coverage": 0.0,
+              "node_risk": null,
+              "leaf_risk": null,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 8,
+                "covered": 8
+              },
+              "bcc": {
+                "n": 8,
+                "covered": 8
+              },
+              "bkl": {
+                "n": 8,
+                "covered": 8
+              },
+              "df": {
+                "n": 8,
+                "covered": 7
+              },
+              "mel": {
+                "n": 8,
+                "covered": 8
+              },
+              "nv": {
+                "n": 8,
+                "covered": 8
+              },
+              "vasc": {
+                "n": 8,
+                "covered": 8
+              }
+            }
+          }
+        },
+        "0.1": {
+          "quantile": 0.9738375647539754,
+          "order_statistic": 117,
+          "natural": {
+            "n": 96,
+            "set_contains_truth": 88,
+            "mean_set_size": 4.854166666666667,
+            "set_size_histogram": {
+              "1": 1,
+              "2": 2,
+              "3": 12,
+              "4": 24,
+              "5": 24,
+              "6": 22,
+              "7": 11
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 12,
+              "2": 13,
+              "3": 44,
+              "4": 21,
+              "5": 6
+            },
+            "projection_node_counts": {
+              "df": 1,
+              "root": 95
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 84,
+            "true_label_added_to_nonempty_set_by_projection": 7,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 96,
+              "node_n": 1,
+              "node_errors": 1,
+              "leaf_n": 1,
+              "leaf_errors": 1,
+              "node_coverage": 0.010416666666666666,
+              "leaf_coverage": 0.010416666666666666,
+              "node_risk": 1.0,
+              "leaf_risk": 1.0,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 3,
+                "covered": 3
+              },
+              "bcc": {
+                "n": 4,
+                "covered": 3
+              },
+              "bkl": {
+                "n": 4,
+                "covered": 4
+              },
+              "df": {
+                "n": 0,
+                "covered": 0
+              },
+              "mel": {
+                "n": 6,
+                "covered": 6
+              },
+              "nv": {
+                "n": 79,
+                "covered": 72
+              },
+              "vasc": {
+                "n": 0,
+                "covered": 0
+              }
+            }
+          },
+          "balanced": {
+            "n": 56,
+            "set_contains_truth": 53,
+            "mean_set_size": 5.089285714285714,
+            "set_size_histogram": {
+              "1": 1,
+              "2": 2,
+              "3": 5,
+              "4": 8,
+              "5": 13,
+              "6": 21,
+              "7": 6
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 7,
+              "2": 8,
+              "3": 28,
+              "4": 11,
+              "5": 2
+            },
+            "projection_node_counts": {
+              "root": 55,
+              "vasc": 1
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 49,
+            "true_label_added_to_nonempty_set_by_projection": 3,
+            "correct_nonroot_projection": 1,
+            "projection_metrics": {
+              "n": 56,
+              "node_n": 1,
+              "node_errors": 0,
+              "leaf_n": 1,
+              "leaf_errors": 0,
+              "node_coverage": 0.017857142857142856,
+              "leaf_coverage": 0.017857142857142856,
+              "node_risk": 0.0,
+              "leaf_risk": 0.0,
+              "correct_information_utility": 0.017857142857142856
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 8,
+                "covered": 8
+              },
+              "bcc": {
+                "n": 8,
+                "covered": 7
+              },
+              "bkl": {
+                "n": 8,
+                "covered": 8
+              },
+              "df": {
+                "n": 8,
+                "covered": 6
+              },
+              "mel": {
+                "n": 8,
+                "covered": 8
+              },
+              "nv": {
+                "n": 8,
+                "covered": 8
+              },
+              "vasc": {
+                "n": 8,
+                "covered": 8
+              }
+            }
+          }
+        },
+        "0.2": {
+          "quantile": 0.9120606888251511,
+          "order_statistic": 104,
+          "natural": {
+            "n": 96,
+            "set_contains_truth": 78,
+            "mean_set_size": 2.8958333333333335,
+            "set_size_histogram": {
+              "1": 5,
+              "2": 32,
+              "3": 34,
+              "4": 18,
+              "5": 7
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 26,
+              "2": 37,
+              "3": 27,
+              "4": 6
+            },
+            "projection_node_counts": {
+              "df": 5,
+              "melanocytic": 21,
+              "root": 70
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 70,
+            "true_label_added_to_nonempty_set_by_projection": 13,
+            "correct_nonroot_projection": 21,
+            "projection_metrics": {
+              "n": 96,
+              "node_n": 26,
+              "node_errors": 5,
+              "leaf_n": 5,
+              "leaf_errors": 5,
+              "node_coverage": 0.2708333333333333,
+              "leaf_coverage": 0.052083333333333336,
+              "node_risk": 0.19230769230769232,
+              "leaf_risk": 1.0,
+              "correct_information_utility": 0.14082967782012015
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 3,
+                "covered": 3
+              },
+              "bcc": {
+                "n": 4,
+                "covered": 2
+              },
+              "bkl": {
+                "n": 4,
+                "covered": 3
+              },
+              "df": {
+                "n": 0,
+                "covered": 0
+              },
+              "mel": {
+                "n": 6,
+                "covered": 4
+              },
+              "nv": {
+                "n": 79,
+                "covered": 66
+              },
+              "vasc": {
+                "n": 0,
+                "covered": 0
+              }
+            }
+          },
+          "balanced": {
+            "n": 56,
+            "set_contains_truth": 44,
+            "mean_set_size": 3.0714285714285716,
+            "set_size_histogram": {
+              "1": 5,
+              "2": 10,
+              "3": 21,
+              "4": 16,
+              "5": 4
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 8,
+              "2": 20,
+              "3": 19,
+              "4": 8,
+              "5": 1
+            },
+            "projection_node_counts": {
+              "akiec": 1,
+              "df": 1,
+              "epithelial": 2,
+              "melanocytic": 3,
+              "root": 46,
+              "vasc": 3
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 48,
+            "true_label_added_to_nonempty_set_by_projection": 10,
+            "correct_nonroot_projection": 8,
+            "projection_metrics": {
+              "n": 56,
+              "node_n": 10,
+              "node_errors": 2,
+              "leaf_n": 5,
+              "leaf_errors": 1,
+              "node_coverage": 0.17857142857142858,
+              "leaf_coverage": 0.08928571428571429,
+              "node_risk": 0.2,
+              "leaf_risk": 0.2,
+              "correct_information_utility": 0.1136929179396849
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 8,
+                "covered": 7
+              },
+              "bcc": {
+                "n": 8,
+                "covered": 4
+              },
+              "bkl": {
+                "n": 8,
+                "covered": 5
+              },
+              "df": {
+                "n": 8,
+                "covered": 5
+              },
+              "mel": {
+                "n": 8,
+                "covered": 7
+              },
+              "nv": {
+                "n": 8,
+                "covered": 8
+              },
+              "vasc": {
+                "n": 8,
+                "covered": 8
+              }
+            }
+          }
+        }
+      }
+    },
+    "biomedclip": {
+      "frozen_text": {
+        "0.05": {
+          "quantile": 0.9948871660792747,
+          "order_statistic": 123,
+          "natural": {
+            "n": 96,
+            "set_contains_truth": 90,
+            "mean_set_size": 6.729166666666667,
+            "set_size_histogram": {
+              "3": 1,
+              "5": 1,
+              "6": 20,
+              "7": 74
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 74,
+              "3": 1,
+              "4": 8,
+              "5": 13
+            },
+            "projection_node_counts": {
+              "root": 96
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 22,
+            "true_label_added_to_nonempty_set_by_projection": 6,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 96,
+              "node_n": 0,
+              "node_errors": 0,
+              "leaf_n": 0,
+              "leaf_errors": 0,
+              "node_coverage": 0.0,
+              "leaf_coverage": 0.0,
+              "node_risk": null,
+              "leaf_risk": null,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 3,
+                "covered": 3
+              },
+              "bcc": {
+                "n": 4,
+                "covered": 4
+              },
+              "bkl": {
+                "n": 4,
+                "covered": 4
+              },
+              "df": {
+                "n": 0,
+                "covered": 0
+              },
+              "mel": {
+                "n": 6,
+                "covered": 6
+              },
+              "nv": {
+                "n": 79,
+                "covered": 73
+              },
+              "vasc": {
+                "n": 0,
+                "covered": 0
+              }
+            }
+          },
+          "balanced": {
+            "n": 56,
+            "set_contains_truth": 53,
+            "mean_set_size": 6.375,
+            "set_size_histogram": {
+              "3": 1,
+              "4": 2,
+              "5": 4,
+              "6": 17,
+              "7": 32
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 32,
+              "3": 1,
+              "4": 17,
+              "5": 6
+            },
+            "projection_node_counts": {
+              "root": 56
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 24,
+            "true_label_added_to_nonempty_set_by_projection": 3,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 56,
+              "node_n": 0,
+              "node_errors": 0,
+              "leaf_n": 0,
+              "leaf_errors": 0,
+              "node_coverage": 0.0,
+              "leaf_coverage": 0.0,
+              "node_risk": null,
+              "leaf_risk": null,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 8,
+                "covered": 8
+              },
+              "bcc": {
+                "n": 8,
+                "covered": 8
+              },
+              "bkl": {
+                "n": 8,
+                "covered": 7
+              },
+              "df": {
+                "n": 8,
+                "covered": 8
+              },
+              "mel": {
+                "n": 8,
+                "covered": 8
+              },
+              "nv": {
+                "n": 8,
+                "covered": 6
+              },
+              "vasc": {
+                "n": 8,
+                "covered": 8
+              }
+            }
+          }
+        },
+        "0.1": {
+          "quantile": 0.985469087731215,
+          "order_statistic": 117,
+          "natural": {
+            "n": 96,
+            "set_contains_truth": 84,
+            "mean_set_size": 6.229166666666667,
+            "set_size_histogram": {
+              "3": 1,
+              "4": 5,
+              "5": 11,
+              "6": 33,
+              "7": 46
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 46,
+              "3": 7,
+              "4": 17,
+              "5": 26
+            },
+            "projection_node_counts": {
+              "root": 96
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 50,
+            "true_label_added_to_nonempty_set_by_projection": 12,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 96,
+              "node_n": 0,
+              "node_errors": 0,
+              "leaf_n": 0,
+              "leaf_errors": 0,
+              "node_coverage": 0.0,
+              "leaf_coverage": 0.0,
+              "node_risk": null,
+              "leaf_risk": null,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 3,
+                "covered": 3
+              },
+              "bcc": {
+                "n": 4,
+                "covered": 4
+              },
+              "bkl": {
+                "n": 4,
+                "covered": 4
+              },
+              "df": {
+                "n": 0,
+                "covered": 0
+              },
+              "mel": {
+                "n": 6,
+                "covered": 6
+              },
+              "nv": {
+                "n": 79,
+                "covered": 67
+              },
+              "vasc": {
+                "n": 0,
+                "covered": 0
+              }
+            }
+          },
+          "balanced": {
+            "n": 56,
+            "set_contains_truth": 52,
+            "mean_set_size": 5.857142857142857,
+            "set_size_histogram": {
+              "2": 1,
+              "3": 1,
+              "4": 6,
+              "5": 12,
+              "6": 13,
+              "7": 23
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 23,
+              "2": 1,
+              "3": 7,
+              "4": 15,
+              "5": 10
+            },
+            "projection_node_counts": {
+              "root": 56
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 33,
+            "true_label_added_to_nonempty_set_by_projection": 4,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 56,
+              "node_n": 0,
+              "node_errors": 0,
+              "leaf_n": 0,
+              "leaf_errors": 0,
+              "node_coverage": 0.0,
+              "leaf_coverage": 0.0,
+              "node_risk": null,
+              "leaf_risk": null,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 8,
+                "covered": 8
+              },
+              "bcc": {
+                "n": 8,
+                "covered": 8
+              },
+              "bkl": {
+                "n": 8,
+                "covered": 7
+              },
+              "df": {
+                "n": 8,
+                "covered": 8
+              },
+              "mel": {
+                "n": 8,
+                "covered": 8
+              },
+              "nv": {
+                "n": 8,
+                "covered": 5
+              },
+              "vasc": {
+                "n": 8,
+                "covered": 8
+              }
+            }
+          }
+        },
+        "0.2": {
+          "quantile": 0.9734952264565748,
+          "order_statistic": 104,
+          "natural": {
+            "n": 96,
+            "set_contains_truth": 71,
+            "mean_set_size": 5.59375,
+            "set_size_histogram": {
+              "2": 1,
+              "3": 6,
+              "4": 11,
+              "5": 19,
+              "6": 35,
+              "7": 24
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 24,
+              "2": 1,
+              "3": 17,
+              "4": 19,
+              "5": 35
+            },
+            "projection_node_counts": {
+              "root": 96
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 72,
+            "true_label_added_to_nonempty_set_by_projection": 25,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 96,
+              "node_n": 0,
+              "node_errors": 0,
+              "leaf_n": 0,
+              "leaf_errors": 0,
+              "node_coverage": 0.0,
+              "leaf_coverage": 0.0,
+              "node_risk": null,
+              "leaf_risk": null,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 3,
+                "covered": 2
+              },
+              "bcc": {
+                "n": 4,
+                "covered": 3
+              },
+              "bkl": {
+                "n": 4,
+                "covered": 3
+              },
+              "df": {
+                "n": 0,
+                "covered": 0
+              },
+              "mel": {
+                "n": 6,
+                "covered": 6
+              },
+              "nv": {
+                "n": 79,
+                "covered": 57
+              },
+              "vasc": {
+                "n": 0,
+                "covered": 0
+              }
+            }
+          },
+          "balanced": {
+            "n": 56,
+            "set_contains_truth": 50,
+            "mean_set_size": 5.303571428571429,
+            "set_size_histogram": {
+              "2": 1,
+              "3": 4,
+              "4": 13,
+              "5": 12,
+              "6": 11,
+              "7": 15
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 15,
+              "2": 1,
+              "3": 13,
+              "4": 22,
+              "5": 5
+            },
+            "projection_node_counts": {
+              "root": 56
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 41,
+            "true_label_added_to_nonempty_set_by_projection": 6,
+            "correct_nonroot_projection": 0,
+            "projection_metrics": {
+              "n": 56,
+              "node_n": 0,
+              "node_errors": 0,
+              "leaf_n": 0,
+              "leaf_errors": 0,
+              "node_coverage": 0.0,
+              "leaf_coverage": 0.0,
+              "node_risk": null,
+              "leaf_risk": null,
+              "correct_information_utility": 0.0
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 8,
+                "covered": 7
+              },
+              "bcc": {
+                "n": 8,
+                "covered": 8
+              },
+              "bkl": {
+                "n": 8,
+                "covered": 6
+              },
+              "df": {
+                "n": 8,
+                "covered": 8
+              },
+              "mel": {
+                "n": 8,
+                "covered": 8
+              },
+              "nv": {
+                "n": 8,
+                "covered": 5
+              },
+              "vasc": {
+                "n": 8,
+                "covered": 8
+              }
+            }
+          }
+        }
+      },
+      "cosine_centroid": {
+        "0.05": {
+          "quantile": 0.9424407906709203,
+          "order_statistic": 123,
+          "natural": {
+            "n": 96,
+            "set_contains_truth": 94,
+            "mean_set_size": 3.4583333333333335,
+            "set_size_histogram": {
+              "1": 3,
+              "2": 19,
+              "3": 29,
+              "4": 26,
+              "5": 14,
+              "6": 5
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 18,
+              "2": 40,
+              "3": 26,
+              "4": 12
+            },
+            "projection_node_counts": {
+              "epithelial": 2,
+              "melanocytic": 13,
+              "nv": 3,
+              "root": 78
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 78,
+            "true_label_added_to_nonempty_set_by_projection": 2,
+            "correct_nonroot_projection": 18,
+            "projection_metrics": {
+              "n": 96,
+              "node_n": 18,
+              "node_errors": 0,
+              "leaf_n": 3,
+              "leaf_errors": 0,
+              "node_coverage": 0.1875,
+              "leaf_coverage": 0.03125,
+              "node_risk": 0.0,
+              "leaf_risk": 0.0,
+              "correct_information_utility": 0.12750163020300576
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 3,
+                "covered": 3
+              },
+              "bcc": {
+                "n": 4,
+                "covered": 4
+              },
+              "bkl": {
+                "n": 4,
+                "covered": 4
+              },
+              "df": {
+                "n": 0,
+                "covered": 0
+              },
+              "mel": {
+                "n": 6,
+                "covered": 6
+              },
+              "nv": {
+                "n": 79,
+                "covered": 77
+              },
+              "vasc": {
+                "n": 0,
+                "covered": 0
+              }
+            }
+          },
+          "balanced": {
+            "n": 56,
+            "set_contains_truth": 51,
+            "mean_set_size": 3.6607142857142856,
+            "set_size_histogram": {
+              "1": 7,
+              "2": 2,
+              "3": 13,
+              "4": 19,
+              "5": 11,
+              "6": 4
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 10,
+              "2": 21,
+              "3": 19,
+              "4": 6
+            },
+            "projection_node_counts": {
+              "df": 1,
+              "epithelial": 1,
+              "melanocytic": 2,
+              "nv": 1,
+              "root": 46,
+              "vasc": 5
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 46,
+            "true_label_added_to_nonempty_set_by_projection": 5,
+            "correct_nonroot_projection": 10,
+            "projection_metrics": {
+              "n": 56,
+              "node_n": 10,
+              "node_errors": 0,
+              "leaf_n": 7,
+              "leaf_errors": 0,
+              "node_coverage": 0.17857142857142858,
+              "leaf_coverage": 0.125,
+              "node_risk": 0.0,
+              "leaf_risk": 0.0,
+              "correct_information_utility": 0.15576804628089955
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 8,
+                "covered": 7
+              },
+              "bcc": {
+                "n": 8,
+                "covered": 7
+              },
+              "bkl": {
+                "n": 8,
+                "covered": 8
+              },
+              "df": {
+                "n": 8,
+                "covered": 6
+              },
+              "mel": {
+                "n": 8,
+                "covered": 7
+              },
+              "nv": {
+                "n": 8,
+                "covered": 8
+              },
+              "vasc": {
+                "n": 8,
+                "covered": 8
+              }
+            }
+          }
+        },
+        "0.1": {
+          "quantile": 0.8644896591674268,
+          "order_statistic": 117,
+          "natural": {
+            "n": 96,
+            "set_contains_truth": 88,
+            "mean_set_size": 2.1770833333333335,
+            "set_size_histogram": {
+              "1": 25,
+              "2": 37,
+              "3": 27,
+              "4": 6,
+              "5": 1
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 50,
+              "2": 29,
+              "3": 16,
+              "4": 1
+            },
+            "projection_node_counts": {
+              "df": 1,
+              "epithelial": 5,
+              "melanocytic": 21,
+              "nv": 24,
+              "root": 45
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 46,
+            "true_label_added_to_nonempty_set_by_projection": 6,
+            "correct_nonroot_projection": 49,
+            "projection_metrics": {
+              "n": 96,
+              "node_n": 51,
+              "node_errors": 2,
+              "leaf_n": 25,
+              "leaf_errors": 1,
+              "node_coverage": 0.53125,
+              "leaf_coverage": 0.2604166666666667,
+              "node_risk": 0.0392156862745098,
+              "leaf_risk": 0.04,
+              "correct_information_utility": 0.40897238473455433
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 3,
+                "covered": 3
+              },
+              "bcc": {
+                "n": 4,
+                "covered": 4
+              },
+              "bkl": {
+                "n": 4,
+                "covered": 3
+              },
+              "df": {
+                "n": 0,
+                "covered": 0
+              },
+              "mel": {
+                "n": 6,
+                "covered": 5
+              },
+              "nv": {
+                "n": 79,
+                "covered": 73
+              },
+              "vasc": {
+                "n": 0,
+                "covered": 0
+              }
+            }
+          },
+          "balanced": {
+            "n": 56,
+            "set_contains_truth": 49,
+            "mean_set_size": 2.4464285714285716,
+            "set_size_histogram": {
+              "1": 11,
+              "2": 17,
+              "3": 20,
+              "4": 8
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 18,
+              "2": 27,
+              "3": 10,
+              "4": 1
+            },
+            "projection_node_counts": {
+              "df": 2,
+              "epithelial": 7,
+              "melanocytic": 4,
+              "nv": 2,
+              "root": 34,
+              "vasc": 7
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 38,
+            "true_label_added_to_nonempty_set_by_projection": 3,
+            "correct_nonroot_projection": 18,
+            "projection_metrics": {
+              "n": 56,
+              "node_n": 22,
+              "node_errors": 4,
+              "leaf_n": 11,
+              "leaf_errors": 1,
+              "node_coverage": 0.39285714285714285,
+              "leaf_coverage": 0.19642857142857142,
+              "node_risk": 0.18181818181818182,
+              "leaf_risk": 0.09090909090909091,
+              "correct_information_utility": 0.2519375583644292
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 8,
+                "covered": 7
+              },
+              "bcc": {
+                "n": 8,
+                "covered": 6
+              },
+              "bkl": {
+                "n": 8,
+                "covered": 8
+              },
+              "df": {
+                "n": 8,
+                "covered": 6
+              },
+              "mel": {
+                "n": 8,
+                "covered": 6
+              },
+              "nv": {
+                "n": 8,
+                "covered": 8
+              },
+              "vasc": {
+                "n": 8,
+                "covered": 8
+              }
+            }
+          }
+        },
+        "0.2": {
+          "quantile": 0.771245653620825,
+          "order_statistic": 104,
+          "natural": {
+            "n": 96,
+            "set_contains_truth": 79,
+            "mean_set_size": 1.4895833333333333,
+            "set_size_histogram": {
+              "0": 1,
+              "1": 50,
+              "2": 42,
+              "3": 3
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "0": 1,
+              "1": 64,
+              "2": 31
+            },
+            "projection_node_counts": {
+              "akiec": 1,
+              "bcc": 2,
+              "bkl": 1,
+              "df": 4,
+              "epithelial": 7,
+              "mel": 1,
+              "melanocytic": 13,
+              "nv": 41,
+              "root": 26
+            },
+            "empty_set_to_root": 1,
+            "nonempty_sets_expanded": 31,
+            "true_label_added_to_nonempty_set_by_projection": 7,
+            "correct_nonroot_projection": 61,
+            "projection_metrics": {
+              "n": 96,
+              "node_n": 70,
+              "node_errors": 9,
+              "leaf_n": 50,
+              "leaf_errors": 6,
+              "node_coverage": 0.7291666666666666,
+              "leaf_coverage": 0.5208333333333334,
+              "node_risk": 0.12857142857142856,
+              "leaf_risk": 0.12,
+              "correct_information_utility": 0.5636563169935561
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 3,
+                "covered": 2
+              },
+              "bcc": {
+                "n": 4,
+                "covered": 3
+              },
+              "bkl": {
+                "n": 4,
+                "covered": 3
+              },
+              "df": {
+                "n": 0,
+                "covered": 0
+              },
+              "mel": {
+                "n": 6,
+                "covered": 5
+              },
+              "nv": {
+                "n": 79,
+                "covered": 66
+              },
+              "vasc": {
+                "n": 0,
+                "covered": 0
+              }
+            }
+          },
+          "balanced": {
+            "n": 56,
+            "set_contains_truth": 35,
+            "mean_set_size": 1.625,
+            "set_size_histogram": {
+              "1": 26,
+              "2": 25,
+              "3": 5
+            },
+            "minimum_exact_tree_nodes_histogram": {
+              "1": 33,
+              "2": 21,
+              "3": 2
+            },
+            "projection_node_counts": {
+              "akiec": 3,
+              "bcc": 2,
+              "bkl": 2,
+              "df": 4,
+              "epithelial": 6,
+              "mel": 3,
+              "melanocytic": 6,
+              "nv": 5,
+              "root": 18,
+              "vasc": 7
+            },
+            "empty_set_to_root": 0,
+            "nonempty_sets_expanded": 23,
+            "true_label_added_to_nonempty_set_by_projection": 5,
+            "correct_nonroot_projection": 22,
+            "projection_metrics": {
+              "n": 56,
+              "node_n": 38,
+              "node_errors": 16,
+              "leaf_n": 26,
+              "leaf_errors": 13,
+              "node_coverage": 0.6785714285714286,
+              "leaf_coverage": 0.4642857142857143,
+              "node_risk": 0.42105263157894735,
+              "leaf_risk": 0.5,
+              "correct_information_utility": 0.32072614157581375
+            },
+            "set_coverage_by_class": {
+              "akiec": {
+                "n": 8,
+                "covered": 4
+              },
+              "bcc": {
+                "n": 8,
+                "covered": 4
+              },
+              "bkl": {
+                "n": 8,
+                "covered": 5
+              },
+              "df": {
+                "n": 8,
+                "covered": 4
+              },
+              "mel": {
+                "n": 8,
+                "covered": 6
+              },
+              "nv": {
+                "n": 8,
+                "covered": 5
+              },
+              "vasc": {
+                "n": 8,
+                "covered": 7
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "fit_groups": 128,
+  "taxonomy_sha256": "de04895cd0bdb141cd31a48c5d98107b729c5ebeb1642211bc1d579fd16237de",
+  "status": "complete",
+  "seconds": 0.034
+}

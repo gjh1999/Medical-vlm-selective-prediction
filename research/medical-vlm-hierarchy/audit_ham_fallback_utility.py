@@ -6,11 +6,8 @@ import time
 from collections import Counter
 from pathlib import Path
 
-import numpy as np
-
-from ham_dev_pilot import digest, softmax
-from ham_error_increment import read_csv
-from selective_core import Taxonomy
+from ham_cached_readouts import development_readouts
+from ham_dev_pilot import digest
 
 
 def summary(tree,truth,choices):
@@ -78,54 +75,14 @@ def main():
     args.output.mkdir(parents=True,exist_ok=False)
     report={"scope":"posthoc development diagnosis; oracle uses reference labels; no threshold selection or risk certification"}
     try:
-        cfg=json.loads(args.taxonomy.read_bytes())
-        tree=Taxonomy(cfg["parent"])
-        paths=[args.pilot,args.balanced,args.increment]
-        infos=[json.loads((p/"summary.json").read_bytes()) for p in paths]
-        if (infos[0]["config_sha256"]!=digest(args.taxonomy)
-                or any(s["status"]!="complete" or s["selection_sha256"]!=digest(p/"selection.csv")
-                       for s,p in zip(infos,paths))):
-            raise ValueError("Input taxonomy or group selection changed")
-        past,balanced,fresh=[read_csv(p/"selection.csv") for p in paths]
-        selected=past+balanced+fresh
-        if len(selected)!=len({r["split_group"] for r in selected}):
-            raise ValueError("Development cohorts overlap")
-        train=[i for i,r in enumerate(balanced) if r["role"]=="train"]
-        dev=[i for i,r in enumerate(balanced) if r["role"]=="dev"]
-        if any(r["role"]!="dev" for r in fresh):
-            raise ValueError("New evaluation rows must be development only")
-        train_labels=np.asarray([balanced[i]["label"] for i in train])
-        truths={"natural":[r["label"] for r in fresh],"balanced":[balanced[i]["label"] for i in dev]}
+        cfg,tree,truths,scores=development_readouts(args.pilot,args.balanced,args.increment,args.taxonomy)
+        cohorts=("natural","balanced")
         report["fixed_constant_branch_controls"]={cohort:{
-            n:summary(tree,ys,[n]*len(ys)) for n in sorted(tree.nodes) if n!=tree.root and len(tree.desc[n])>1
-        } for cohort,ys in truths.items()}
-        report["models"]={}
-        for model,ref in infos[2]["models"].items():
-            files=[p/f"{model}.npz" for p in paths]
-            if [digest(p) for p in files]!=[ref["fit_cache"],ref["support_cache"],ref["cache_sha256"]]:
-                raise ValueError("Feature cache changed")
-            meta=infos[0]["models"][model]
-            with np.load(files[0],allow_pickle=False) as first, np.load(files[1],allow_pickle=False) as bal, np.load(files[2],allow_pickle=False) as new:
-                text=first["text_features"].astype(np.float64).mean(0)
-                text/=np.linalg.norm(text,axis=1,keepdims=True)
-                frozen=text[[meta["text_node_order"].index(n) for n in tree.leaves]]
-                support=bal["image"][train].astype(np.float64)
-                centers=np.stack([support[train_labels==n].mean(0) for n in tree.leaves])
-                centers/=np.linalg.norm(centers,axis=1,keepdims=True)
-                readouts={}
-                for method,proto,bal_key in (("frozen_text",frozen,"frozen_text"),("cosine_centroid",centers,"cosine_nearest_centroid")):
-                    cohorts={}
-                    for label,x in (("natural",new["image_features"]),("balanced",bal["image"][dev])):
-                        prob=softmax((x.astype(np.float64)@proto.T)*meta["logit_scale"])
-                        guess=prob.argmax(1)
-                        y=np.asarray([tree.leaves.index(n) for n in truths[label]])
-                        if label=="natural" and not np.array_equal(guess!=y,new[f"{method}_error"]):
-                            raise ValueError("Leaf errors differ from E02 cache")
-                        if label=="balanced" and not np.array_equal(guess,bal[bal_key].argmax(1)):
-                            raise ValueError("Balanced predictions differ from the original probe")
-                        cohorts[label]=analyze(tree,truths[label],prob,cfg["climbing_thresholds"])
-                    readouts[method]=cohorts
-            report["models"][model]=readouts
+            n:summary(tree,truths[cohort],[n]*len(truths[cohort])) for n in sorted(tree.nodes)
+            if n!=tree.root and len(tree.desc[n])>1} for cohort in cohorts}
+        report["models"]={model:{method:{c:analyze(tree,truths[c],probs[c],cfg["climbing_thresholds"])
+                                         for c in cohorts} for method,probs in methods.items()}
+                          for model,methods in scores.items()}
         report.update(status="complete",taxonomy_sha256=digest(args.taxonomy),thresholds=cfg["climbing_thresholds"])
     except Exception as exc:
         report.update(status="failed",error=str(exc))

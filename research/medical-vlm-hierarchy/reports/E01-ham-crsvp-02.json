@@ -1,0 +1,2144 @@
+{
+  "author_revision": "886ef7ba072b8ba54bbc1b5072e034e50cc7b6a6",
+  "alpha": 0.1,
+  "randomization_seeds": [
+    17,
+    29,
+    43
+  ],
+  "scope": "reused development cohorts only; prediction-set membership and cardinality",
+  "quantile": "ascending order statistic ceil((n+1)*(1-alpha)), equation 5",
+  "taxonomy_sha256": "de04895cd0bdb141cd31a48c5d98107b729c5ebeb1642211bc1d579fd16237de",
+  "numpy": "2.5.4",
+  "sklearn": "1.9.1",
+  "models": {
+    "clip": {
+      "frozen_text": {
+        "ancestor": {
+          "17": {
+            "reference_threshold": 0.8362552540348066,
+            "author_threshold": 0.8362552540348066,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 92,
+                "mean_leaves": 5.270833333333333,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 63,
+                "single_leaf": 2,
+                "correct_proper_nonempty": 29,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 92,
+                "mean_leaves": 5.270833333333333,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 63,
+                "single_leaf": 2,
+                "correct_proper_nonempty": 29,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 43,
+                "mean_leaves": 4.803571428571429,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 30,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 13,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 43,
+                "mean_leaves": 4.803571428571429,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 30,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 13,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "29": {
+            "reference_threshold": 0.8404698292095503,
+            "author_threshold": 0.8404698292095503,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 93,
+                "mean_leaves": 5.427083333333333,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 66,
+                "single_leaf": 3,
+                "correct_proper_nonempty": 27,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 93,
+                "mean_leaves": 5.427083333333333,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 66,
+                "single_leaf": 3,
+                "correct_proper_nonempty": 27,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 47,
+                "mean_leaves": 5.5,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 38,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 9,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 47,
+                "mean_leaves": 5.5,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 38,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 9,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "43": {
+            "reference_threshold": 0.8320379491243555,
+            "author_threshold": 0.8320379491243555,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 90,
+                "mean_leaves": 5.145833333333333,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 61,
+                "single_leaf": 3,
+                "correct_proper_nonempty": 29,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 90,
+                "mean_leaves": 5.145833333333333,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 61,
+                "single_leaf": 3,
+                "correct_proper_nonempty": 29,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 42,
+                "mean_leaves": 4.839285714285714,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 31,
+                "single_leaf": 1,
+                "correct_proper_nonempty": 11,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 42,
+                "mean_leaves": 4.839285714285714,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 31,
+                "single_leaf": 1,
+                "correct_proper_nonempty": 11,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          }
+        },
+        "1": {
+          "17": {
+            "reference_threshold": 0.9470039824254233,
+            "author_threshold": 0.9470039824254233,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 83,
+                "mean_leaves": 6.125,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 82,
+                "single_leaf": 14,
+                "correct_proper_nonempty": 1,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 83,
+                "mean_leaves": 6.125,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 82,
+                "single_leaf": 14,
+                "correct_proper_nonempty": 1,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 6.464285714285714,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 51,
+                "single_leaf": 5,
+                "correct_proper_nonempty": 0,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 6.464285714285714,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 51,
+                "single_leaf": 5,
+                "correct_proper_nonempty": 0,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "29": {
+            "reference_threshold": 0.9554507726410612,
+            "author_threshold": 0.9554507726410612,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 93,
+                "mean_leaves": 6.8125,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 93,
+                "single_leaf": 3,
+                "correct_proper_nonempty": 0,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 93,
+                "mean_leaves": 6.8125,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 93,
+                "single_leaf": 3,
+                "correct_proper_nonempty": 0,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 6.357142857142857,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 50,
+                "single_leaf": 6,
+                "correct_proper_nonempty": 1,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 6.357142857142857,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 50,
+                "single_leaf": 6,
+                "correct_proper_nonempty": 1,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "43": {
+            "reference_threshold": 0.9390776300889887,
+            "author_threshold": 0.9390776300889887,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 83,
+                "mean_leaves": 6.125,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 82,
+                "single_leaf": 14,
+                "correct_proper_nonempty": 1,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 83,
+                "mean_leaves": 6.125,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 82,
+                "single_leaf": 14,
+                "correct_proper_nonempty": 1,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 52,
+                "mean_leaves": 6.571428571428571,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 52,
+                "single_leaf": 4,
+                "correct_proper_nonempty": 0,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 52,
+                "mean_leaves": 6.571428571428571,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 52,
+                "single_leaf": 4,
+                "correct_proper_nonempty": 0,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          }
+        },
+        "2": {
+          "17": {
+            "reference_threshold": 0.9711894087509529,
+            "author_threshold": 0.9711894087509529,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 88,
+                "mean_leaves": 6.40625,
+                "mean_minimum_nodes": 1.2291666666666667,
+                "empty": 0,
+                "all_leaves": 74,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 14,
+                "multi_node": 22
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 88,
+                "mean_leaves": 6.40625,
+                "mean_minimum_nodes": 1.2291666666666667,
+                "empty": 0,
+                "all_leaves": 74,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 14,
+                "multi_node": 22
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 6.25,
+                "mean_minimum_nodes": 1.3214285714285714,
+                "empty": 0,
+                "all_leaves": 38,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 13,
+                "multi_node": 18
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 6.25,
+                "mean_minimum_nodes": 1.3214285714285714,
+                "empty": 0,
+                "all_leaves": 38,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 13,
+                "multi_node": 18
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "29": {
+            "reference_threshold": 0.9653981120466357,
+            "author_threshold": 0.9653981120466357,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 88,
+                "mean_leaves": 6.3125,
+                "mean_minimum_nodes": 1.2708333333333333,
+                "empty": 0,
+                "all_leaves": 70,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 18,
+                "multi_node": 26
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 88,
+                "mean_leaves": 6.3125,
+                "mean_minimum_nodes": 1.2708333333333333,
+                "empty": 0,
+                "all_leaves": 70,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 18,
+                "multi_node": 26
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 47,
+                "mean_leaves": 5.928571428571429,
+                "mean_minimum_nodes": 1.4107142857142858,
+                "empty": 0,
+                "all_leaves": 33,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 14,
+                "multi_node": 23
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 47,
+                "mean_leaves": 5.928571428571429,
+                "mean_minimum_nodes": 1.4107142857142858,
+                "empty": 0,
+                "all_leaves": 33,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 14,
+                "multi_node": 23
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "43": {
+            "reference_threshold": 0.9648788055942674,
+            "author_threshold": 0.9648788055942674,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 89,
+                "mean_leaves": 6.28125,
+                "mean_minimum_nodes": 1.2916666666666667,
+                "empty": 0,
+                "all_leaves": 68,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 21,
+                "multi_node": 28
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 89,
+                "mean_leaves": 6.28125,
+                "mean_minimum_nodes": 1.2916666666666667,
+                "empty": 0,
+                "all_leaves": 68,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 21,
+                "multi_node": 28
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 50,
+                "mean_leaves": 6.089285714285714,
+                "mean_minimum_nodes": 1.3928571428571428,
+                "empty": 0,
+                "all_leaves": 34,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 16,
+                "multi_node": 22
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 50,
+                "mean_leaves": 6.089285714285714,
+                "mean_minimum_nodes": 1.3928571428571428,
+                "empty": 0,
+                "all_leaves": 34,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 16,
+                "multi_node": 22
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          }
+        }
+      },
+      "cosine_centroid": {
+        "ancestor": {
+          "17": {
+            "reference_threshold": 0.9109561528909903,
+            "author_threshold": 0.9109561528909903,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 5.15625,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 61,
+                "single_leaf": 8,
+                "correct_proper_nonempty": 24,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 5.15625,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 61,
+                "single_leaf": 8,
+                "correct_proper_nonempty": 24,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 52,
+                "mean_leaves": 5.446428571428571,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 39,
+                "single_leaf": 7,
+                "correct_proper_nonempty": 13,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 52,
+                "mean_leaves": 5.446428571428571,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 39,
+                "single_leaf": 7,
+                "correct_proper_nonempty": 13,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "29": {
+            "reference_threshold": 0.9295398619311999,
+            "author_threshold": 0.9295398619311999,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 89,
+                "mean_leaves": 5.677083333333333,
+                "mean_minimum_nodes": 0.9895833333333334,
+                "empty": 1,
+                "all_leaves": 72,
+                "single_leaf": 6,
+                "correct_proper_nonempty": 17,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 89,
+                "mean_leaves": 5.677083333333333,
+                "mean_minimum_nodes": 0.9895833333333334,
+                "empty": 1,
+                "all_leaves": 72,
+                "single_leaf": 6,
+                "correct_proper_nonempty": 17,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 54,
+                "mean_leaves": 5.892857142857143,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 44,
+                "single_leaf": 6,
+                "correct_proper_nonempty": 10,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 54,
+                "mean_leaves": 5.892857142857143,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 44,
+                "single_leaf": 6,
+                "correct_proper_nonempty": 10,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "43": {
+            "reference_threshold": 0.9206377508689032,
+            "author_threshold": 0.9206377508689032,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 86,
+                "mean_leaves": 5.354166666666667,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 65,
+                "single_leaf": 8,
+                "correct_proper_nonempty": 21,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 86,
+                "mean_leaves": 5.354166666666667,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 65,
+                "single_leaf": 8,
+                "correct_proper_nonempty": 21,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 53,
+                "mean_leaves": 5.571428571428571,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 40,
+                "single_leaf": 6,
+                "correct_proper_nonempty": 13,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 53,
+                "mean_leaves": 5.571428571428571,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 40,
+                "single_leaf": 6,
+                "correct_proper_nonempty": 13,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          }
+        },
+        "1": {
+          "17": {
+            "reference_threshold": 0.9109561528909903,
+            "author_threshold": 0.9109561528909903,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 5.15625,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 63,
+                "single_leaf": 15,
+                "correct_proper_nonempty": 22,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 5.15625,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 63,
+                "single_leaf": 15,
+                "correct_proper_nonempty": 22,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 5.392857142857143,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 40,
+                "single_leaf": 11,
+                "correct_proper_nonempty": 11,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 5.392857142857143,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 40,
+                "single_leaf": 11,
+                "correct_proper_nonempty": 11,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "29": {
+            "reference_threshold": 0.9438125891861852,
+            "author_threshold": 0.9438125891861852,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 91,
+                "mean_leaves": 6.21875,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 82,
+                "single_leaf": 5,
+                "correct_proper_nonempty": 9,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 91,
+                "mean_leaves": 6.21875,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 82,
+                "single_leaf": 5,
+                "correct_proper_nonempty": 9,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 55,
+                "mean_leaves": 6.035714285714286,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 46,
+                "single_leaf": 6,
+                "correct_proper_nonempty": 9,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 55,
+                "mean_leaves": 6.035714285714286,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 46,
+                "single_leaf": 6,
+                "correct_proper_nonempty": 9,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "43": {
+            "reference_threshold": 0.9186426413890681,
+            "author_threshold": 0.9186426413890681,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 5.208333333333333,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 63,
+                "single_leaf": 12,
+                "correct_proper_nonempty": 22,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 5.208333333333333,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 63,
+                "single_leaf": 12,
+                "correct_proper_nonempty": 22,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 5.5,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 41,
+                "single_leaf": 11,
+                "correct_proper_nonempty": 10,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 5.5,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 41,
+                "single_leaf": 11,
+                "correct_proper_nonempty": 10,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          }
+        },
+        "2": {
+          "17": {
+            "reference_threshold": 0.9623451316644266,
+            "author_threshold": 0.9623451316644266,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 5.3125,
+                "mean_minimum_nodes": 1.4375,
+                "empty": 0,
+                "all_leaves": 53,
+                "single_leaf": 1,
+                "correct_proper_nonempty": 32,
+                "multi_node": 42
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 5.3125,
+                "mean_minimum_nodes": 1.4375,
+                "empty": 0,
+                "all_leaves": 53,
+                "single_leaf": 1,
+                "correct_proper_nonempty": 32,
+                "multi_node": 42
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 53,
+                "mean_leaves": 5.267857142857143,
+                "mean_minimum_nodes": 1.5357142857142858,
+                "empty": 0,
+                "all_leaves": 25,
+                "single_leaf": 1,
+                "correct_proper_nonempty": 28,
+                "multi_node": 30
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 53,
+                "mean_leaves": 5.267857142857143,
+                "mean_minimum_nodes": 1.5357142857142858,
+                "empty": 0,
+                "all_leaves": 25,
+                "single_leaf": 1,
+                "correct_proper_nonempty": 28,
+                "multi_node": 30
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "29": {
+            "reference_threshold": 0.9435249699043912,
+            "author_threshold": 0.9435249699043913,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 83,
+                "mean_leaves": 4.604166666666667,
+                "mean_minimum_nodes": 1.5833333333333333,
+                "empty": 0,
+                "all_leaves": 37,
+                "single_leaf": 3,
+                "correct_proper_nonempty": 46,
+                "multi_node": 56
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 83,
+                "mean_leaves": 4.604166666666667,
+                "mean_minimum_nodes": 1.5833333333333333,
+                "empty": 0,
+                "all_leaves": 37,
+                "single_leaf": 3,
+                "correct_proper_nonempty": 46,
+                "multi_node": 56
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 4.892857142857143,
+                "mean_minimum_nodes": 1.625,
+                "empty": 0,
+                "all_leaves": 19,
+                "single_leaf": 2,
+                "correct_proper_nonempty": 32,
+                "multi_node": 35
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 4.892857142857143,
+                "mean_minimum_nodes": 1.625,
+                "empty": 0,
+                "all_leaves": 19,
+                "single_leaf": 2,
+                "correct_proper_nonempty": 32,
+                "multi_node": 35
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "43": {
+            "reference_threshold": 0.9498674670632472,
+            "author_threshold": 0.9498674670632472,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 84,
+                "mean_leaves": 4.8125,
+                "mean_minimum_nodes": 1.53125,
+                "empty": 0,
+                "all_leaves": 42,
+                "single_leaf": 1,
+                "correct_proper_nonempty": 42,
+                "multi_node": 51
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 84,
+                "mean_leaves": 4.8125,
+                "mean_minimum_nodes": 1.53125,
+                "empty": 0,
+                "all_leaves": 42,
+                "single_leaf": 1,
+                "correct_proper_nonempty": 42,
+                "multi_node": 51
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 49,
+                "mean_leaves": 4.821428571428571,
+                "mean_minimum_nodes": 1.6607142857142858,
+                "empty": 0,
+                "all_leaves": 19,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 30,
+                "multi_node": 37
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 49,
+                "mean_leaves": 4.821428571428571,
+                "mean_minimum_nodes": 1.6607142857142858,
+                "empty": 0,
+                "all_leaves": 19,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 30,
+                "multi_node": 37
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          }
+        }
+      }
+    },
+    "biomedclip": {
+      "frozen_text": {
+        "ancestor": {
+          "17": {
+            "reference_threshold": 0.9242916422829787,
+            "author_threshold": 0.9242916422829787,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 87,
+                "mean_leaves": 6.135416666666667,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 80,
+                "single_leaf": 6,
+                "correct_proper_nonempty": 7,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 87,
+                "mean_leaves": 6.135416666666667,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 80,
+                "single_leaf": 6,
+                "correct_proper_nonempty": 7,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 5.767857142857143,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 42,
+                "single_leaf": 5,
+                "correct_proper_nonempty": 9,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 5.767857142857143,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 42,
+                "single_leaf": 5,
+                "correct_proper_nonempty": 9,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "29": {
+            "reference_threshold": 0.9250408982979886,
+            "author_threshold": 0.9250408982979886,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 93,
+                "mean_leaves": 6.604166666666667,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 89,
+                "single_leaf": 3,
+                "correct_proper_nonempty": 4,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 93,
+                "mean_leaves": 6.604166666666667,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 89,
+                "single_leaf": 3,
+                "correct_proper_nonempty": 4,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 52,
+                "mean_leaves": 5.839285714285714,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 43,
+                "single_leaf": 5,
+                "correct_proper_nonempty": 9,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 52,
+                "mean_leaves": 5.839285714285714,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 43,
+                "single_leaf": 5,
+                "correct_proper_nonempty": 9,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "43": {
+            "reference_threshold": 0.8996880888296491,
+            "author_threshold": 0.8996880888296491,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 80,
+                "mean_leaves": 5.708333333333333,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 74,
+                "single_leaf": 15,
+                "correct_proper_nonempty": 6,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 80,
+                "mean_leaves": 5.708333333333333,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 74,
+                "single_leaf": 15,
+                "correct_proper_nonempty": 6,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 48,
+                "mean_leaves": 5.196428571428571,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 35,
+                "single_leaf": 5,
+                "correct_proper_nonempty": 13,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 48,
+                "mean_leaves": 5.196428571428571,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 35,
+                "single_leaf": 5,
+                "correct_proper_nonempty": 13,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          }
+        },
+        "1": {
+          "17": {
+            "reference_threshold": 0.937024339316351,
+            "author_threshold": 0.9370243393163511,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 6.270833333333333,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 84,
+                "single_leaf": 11,
+                "correct_proper_nonempty": 1,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 6.270833333333333,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 84,
+                "single_leaf": 11,
+                "correct_proper_nonempty": 1,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 53,
+                "mean_leaves": 6.035714285714286,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 45,
+                "single_leaf": 4,
+                "correct_proper_nonempty": 8,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 53,
+                "mean_leaves": 6.035714285714286,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 45,
+                "single_leaf": 4,
+                "correct_proper_nonempty": 8,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "29": {
+            "reference_threshold": 0.9353505901726521,
+            "author_threshold": 0.9353505901726521,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 93,
+                "mean_leaves": 6.708333333333333,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 91,
+                "single_leaf": 3,
+                "correct_proper_nonempty": 2,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 93,
+                "mean_leaves": 6.708333333333333,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 91,
+                "single_leaf": 3,
+                "correct_proper_nonempty": 2,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 52,
+                "mean_leaves": 5.732142857142857,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 43,
+                "single_leaf": 8,
+                "correct_proper_nonempty": 9,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 52,
+                "mean_leaves": 5.732142857142857,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 43,
+                "single_leaf": 8,
+                "correct_proper_nonempty": 9,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "43": {
+            "reference_threshold": 0.9293421571737106,
+            "author_threshold": 0.9293421571737106,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 82,
+                "mean_leaves": 5.96875,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 79,
+                "single_leaf": 14,
+                "correct_proper_nonempty": 3,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 82,
+                "mean_leaves": 5.96875,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 79,
+                "single_leaf": 14,
+                "correct_proper_nonempty": 3,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 5.678571428571429,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 42,
+                "single_leaf": 7,
+                "correct_proper_nonempty": 9,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 51,
+                "mean_leaves": 5.678571428571429,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 42,
+                "single_leaf": 7,
+                "correct_proper_nonempty": 9,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          }
+        },
+        "2": {
+          "17": {
+            "reference_threshold": 0.9519569854746658,
+            "author_threshold": 0.9519569854746658,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 81,
+                "mean_leaves": 6.104166666666667,
+                "mean_minimum_nodes": 1.1875,
+                "empty": 0,
+                "all_leaves": 78,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 3,
+                "multi_node": 18
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 81,
+                "mean_leaves": 6.104166666666667,
+                "mean_minimum_nodes": 1.1875,
+                "empty": 0,
+                "all_leaves": 78,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 3,
+                "multi_node": 18
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 50,
+                "mean_leaves": 5.803571428571429,
+                "mean_minimum_nodes": 1.2857142857142858,
+                "empty": 0,
+                "all_leaves": 39,
+                "single_leaf": 1,
+                "correct_proper_nonempty": 11,
+                "multi_node": 16
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 50,
+                "mean_leaves": 5.803571428571429,
+                "mean_minimum_nodes": 1.2857142857142858,
+                "empty": 0,
+                "all_leaves": 39,
+                "single_leaf": 1,
+                "correct_proper_nonempty": 11,
+                "multi_node": 16
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "29": {
+            "reference_threshold": 0.952019684148457,
+            "author_threshold": 0.9520196841484571,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 87,
+                "mean_leaves": 6.333333333333333,
+                "mean_minimum_nodes": 1.15625,
+                "empty": 0,
+                "all_leaves": 81,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 6,
+                "multi_node": 15
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 87,
+                "mean_leaves": 6.333333333333333,
+                "mean_minimum_nodes": 1.15625,
+                "empty": 0,
+                "all_leaves": 81,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 6,
+                "multi_node": 15
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 54,
+                "mean_leaves": 5.803571428571429,
+                "mean_minimum_nodes": 1.2678571428571428,
+                "empty": 0,
+                "all_leaves": 40,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 14,
+                "multi_node": 15
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 54,
+                "mean_leaves": 5.803571428571429,
+                "mean_minimum_nodes": 1.2678571428571428,
+                "empty": 0,
+                "all_leaves": 40,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 14,
+                "multi_node": 15
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "43": {
+            "reference_threshold": 0.956436824210162,
+            "author_threshold": 0.9564368242101619,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 82,
+                "mean_leaves": 6.03125,
+                "mean_minimum_nodes": 1.21875,
+                "empty": 0,
+                "all_leaves": 75,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 7,
+                "multi_node": 21
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 82,
+                "mean_leaves": 6.03125,
+                "mean_minimum_nodes": 1.21875,
+                "empty": 0,
+                "all_leaves": 75,
+                "single_leaf": 0,
+                "correct_proper_nonempty": 7,
+                "multi_node": 21
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 52,
+                "mean_leaves": 5.589285714285714,
+                "mean_minimum_nodes": 1.3571428571428572,
+                "empty": 0,
+                "all_leaves": 35,
+                "single_leaf": 1,
+                "correct_proper_nonempty": 17,
+                "multi_node": 20
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 52,
+                "mean_leaves": 5.589285714285714,
+                "mean_minimum_nodes": 1.3571428571428572,
+                "empty": 0,
+                "all_leaves": 35,
+                "single_leaf": 1,
+                "correct_proper_nonempty": 17,
+                "multi_node": 20
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          }
+        }
+      },
+      "cosine_centroid": {
+        "ancestor": {
+          "17": {
+            "reference_threshold": 0.8272581497293668,
+            "author_threshold": 0.8272581497293668,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 3.2291666666666665,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 26,
+                "single_leaf": 23,
+                "correct_proper_nonempty": 59,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 3.2291666666666665,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 26,
+                "single_leaf": 23,
+                "correct_proper_nonempty": 59,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 36,
+                "mean_leaves": 3.357142857142857,
+                "mean_minimum_nodes": 0.9821428571428571,
+                "empty": 1,
+                "all_leaves": 15,
+                "single_leaf": 11,
+                "correct_proper_nonempty": 21,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 36,
+                "mean_leaves": 3.357142857142857,
+                "mean_minimum_nodes": 0.9821428571428571,
+                "empty": 1,
+                "all_leaves": 15,
+                "single_leaf": 11,
+                "correct_proper_nonempty": 21,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "29": {
+            "reference_threshold": 0.7971200261534469,
+            "author_threshold": 0.7971200261534469,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 84,
+                "mean_leaves": 2.9270833333333335,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 21,
+                "single_leaf": 29,
+                "correct_proper_nonempty": 63,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 84,
+                "mean_leaves": 2.9270833333333335,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 21,
+                "single_leaf": 29,
+                "correct_proper_nonempty": 63,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 38,
+                "mean_leaves": 3.375,
+                "mean_minimum_nodes": 0.9642857142857143,
+                "empty": 2,
+                "all_leaves": 16,
+                "single_leaf": 12,
+                "correct_proper_nonempty": 22,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 38,
+                "mean_leaves": 3.375,
+                "mean_minimum_nodes": 0.9642857142857143,
+                "empty": 2,
+                "all_leaves": 16,
+                "single_leaf": 12,
+                "correct_proper_nonempty": 22,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "43": {
+            "reference_threshold": 0.8083699586011156,
+            "author_threshold": 0.8083699586011156,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 83,
+                "mean_leaves": 3.2395833333333335,
+                "mean_minimum_nodes": 0.96875,
+                "empty": 3,
+                "all_leaves": 29,
+                "single_leaf": 28,
+                "correct_proper_nonempty": 54,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 83,
+                "mean_leaves": 3.2395833333333335,
+                "mean_minimum_nodes": 0.96875,
+                "empty": 3,
+                "all_leaves": 29,
+                "single_leaf": 28,
+                "correct_proper_nonempty": 54,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 38,
+                "mean_leaves": 3.3392857142857144,
+                "mean_minimum_nodes": 0.9821428571428571,
+                "empty": 1,
+                "all_leaves": 16,
+                "single_leaf": 14,
+                "correct_proper_nonempty": 22,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 38,
+                "mean_leaves": 3.3392857142857144,
+                "mean_minimum_nodes": 0.9821428571428571,
+                "empty": 1,
+                "all_leaves": 16,
+                "single_leaf": 14,
+                "correct_proper_nonempty": 22,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          }
+        },
+        "1": {
+          "17": {
+            "reference_threshold": 0.8222458984602506,
+            "author_threshold": 0.8222458984602506,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 86,
+                "mean_leaves": 3.1666666666666665,
+                "mean_minimum_nodes": 0.9895833333333334,
+                "empty": 1,
+                "all_leaves": 28,
+                "single_leaf": 33,
+                "correct_proper_nonempty": 58,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 86,
+                "mean_leaves": 3.1666666666666665,
+                "mean_minimum_nodes": 0.9895833333333334,
+                "empty": 1,
+                "all_leaves": 28,
+                "single_leaf": 33,
+                "correct_proper_nonempty": 58,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 40,
+                "mean_leaves": 3.6785714285714284,
+                "mean_minimum_nodes": 0.9821428571428571,
+                "empty": 1,
+                "all_leaves": 21,
+                "single_leaf": 18,
+                "correct_proper_nonempty": 19,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 40,
+                "mean_leaves": 3.6785714285714284,
+                "mean_minimum_nodes": 0.9821428571428571,
+                "empty": 1,
+                "all_leaves": 21,
+                "single_leaf": 18,
+                "correct_proper_nonempty": 19,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "29": {
+            "reference_threshold": 0.7971200261534469,
+            "author_threshold": 0.7971200261534469,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 87,
+                "mean_leaves": 3.0729166666666665,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 27,
+                "single_leaf": 41,
+                "correct_proper_nonempty": 60,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 87,
+                "mean_leaves": 3.0729166666666665,
+                "mean_minimum_nodes": 1.0,
+                "empty": 0,
+                "all_leaves": 27,
+                "single_leaf": 41,
+                "correct_proper_nonempty": 60,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 39,
+                "mean_leaves": 3.392857142857143,
+                "mean_minimum_nodes": 0.9642857142857143,
+                "empty": 2,
+                "all_leaves": 19,
+                "single_leaf": 21,
+                "correct_proper_nonempty": 20,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 39,
+                "mean_leaves": 3.392857142857143,
+                "mean_minimum_nodes": 0.9642857142857143,
+                "empty": 2,
+                "all_leaves": 19,
+                "single_leaf": 21,
+                "correct_proper_nonempty": 20,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "43": {
+            "reference_threshold": 0.8003051869189405,
+            "author_threshold": 0.8003051869189405,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 2.220446049250313e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 83,
+                "mean_leaves": 3.0833333333333335,
+                "mean_minimum_nodes": 0.96875,
+                "empty": 3,
+                "all_leaves": 29,
+                "single_leaf": 41,
+                "correct_proper_nonempty": 54,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 83,
+                "mean_leaves": 3.0833333333333335,
+                "mean_minimum_nodes": 0.96875,
+                "empty": 3,
+                "all_leaves": 29,
+                "single_leaf": 41,
+                "correct_proper_nonempty": 54,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 39,
+                "mean_leaves": 3.2857142857142856,
+                "mean_minimum_nodes": 0.9821428571428571,
+                "empty": 1,
+                "all_leaves": 18,
+                "single_leaf": 24,
+                "correct_proper_nonempty": 21,
+                "multi_node": 0
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 39,
+                "mean_leaves": 3.2857142857142856,
+                "mean_minimum_nodes": 0.9821428571428571,
+                "empty": 1,
+                "all_leaves": 18,
+                "single_leaf": 24,
+                "correct_proper_nonempty": 21,
+                "multi_node": 0
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          }
+        },
+        "2": {
+          "17": {
+            "reference_threshold": 0.8182076824395051,
+            "author_threshold": 0.8182076824395053,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 2.3333333333333335,
+                "mean_minimum_nodes": 1.4791666666666667,
+                "empty": 1,
+                "all_leaves": 3,
+                "single_leaf": 21,
+                "correct_proper_nonempty": 82,
+                "multi_node": 47
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 2.3333333333333335,
+                "mean_minimum_nodes": 1.4791666666666667,
+                "empty": 1,
+                "all_leaves": 3,
+                "single_leaf": 21,
+                "correct_proper_nonempty": 82,
+                "multi_node": 47
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 46,
+                "mean_leaves": 2.5714285714285716,
+                "mean_minimum_nodes": 1.6964285714285714,
+                "empty": 1,
+                "all_leaves": 1,
+                "single_leaf": 7,
+                "correct_proper_nonempty": 45,
+                "multi_node": 40
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 46,
+                "mean_leaves": 2.5714285714285716,
+                "mean_minimum_nodes": 1.6964285714285714,
+                "empty": 1,
+                "all_leaves": 1,
+                "single_leaf": 7,
+                "correct_proper_nonempty": 45,
+                "multi_node": 40
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "29": {
+            "reference_threshold": 0.8326266333475726,
+            "author_threshold": 0.8326266333475726,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 2.5520833333333335,
+                "mean_minimum_nodes": 1.5104166666666667,
+                "empty": 0,
+                "all_leaves": 7,
+                "single_leaf": 20,
+                "correct_proper_nonempty": 78,
+                "multi_node": 49
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 85,
+                "mean_leaves": 2.5520833333333335,
+                "mean_minimum_nodes": 1.5104166666666667,
+                "empty": 0,
+                "all_leaves": 7,
+                "single_leaf": 20,
+                "correct_proper_nonempty": 78,
+                "multi_node": 49
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 44,
+                "mean_leaves": 2.6785714285714284,
+                "mean_minimum_nodes": 1.6428571428571428,
+                "empty": 2,
+                "all_leaves": 2,
+                "single_leaf": 6,
+                "correct_proper_nonempty": 42,
+                "multi_node": 38
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 44,
+                "mean_leaves": 2.6785714285714284,
+                "mean_minimum_nodes": 1.6428571428571428,
+                "empty": 2,
+                "all_leaves": 2,
+                "single_leaf": 6,
+                "correct_proper_nonempty": 42,
+                "multi_node": 38
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          },
+          "43": {
+            "reference_threshold": 0.8114798110343945,
+            "author_threshold": 0.8114798110343945,
+            "fit_score_differences_gt_1e-10": 0,
+            "max_abs_fit_difference": 1.1102230246251565e-16,
+            "natural": {
+              "author": {
+                "n": 96,
+                "covers_truth": 81,
+                "mean_leaves": 2.4270833333333335,
+                "mean_minimum_nodes": 1.4583333333333333,
+                "empty": 3,
+                "all_leaves": 8,
+                "single_leaf": 25,
+                "correct_proper_nonempty": 73,
+                "multi_node": 47
+              },
+              "reference": {
+                "n": 96,
+                "covers_truth": 81,
+                "mean_leaves": 2.4270833333333335,
+                "mean_minimum_nodes": 1.4583333333333333,
+                "empty": 3,
+                "all_leaves": 8,
+                "single_leaf": 25,
+                "correct_proper_nonempty": 73,
+                "multi_node": 47
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            },
+            "balanced": {
+              "author": {
+                "n": 56,
+                "covers_truth": 45,
+                "mean_leaves": 2.5892857142857144,
+                "mean_minimum_nodes": 1.7142857142857142,
+                "empty": 1,
+                "all_leaves": 2,
+                "single_leaf": 8,
+                "correct_proper_nonempty": 43,
+                "multi_node": 41
+              },
+              "reference": {
+                "n": 56,
+                "covers_truth": 45,
+                "mean_leaves": 2.5892857142857144,
+                "mean_minimum_nodes": 1.7142857142857142,
+                "empty": 1,
+                "all_leaves": 2,
+                "single_leaf": 8,
+                "correct_proper_nonempty": 43,
+                "multi_node": 41
+              },
+              "different_outputs_own_thresholds": 0,
+              "different_outputs_at_author_threshold": 0
+            }
+          }
+        }
+      }
+    }
+  },
+  "fit_n": 128,
+  "ascending_rank": 117,
+  "status": "complete",
+  "seconds": 4.696
+}
