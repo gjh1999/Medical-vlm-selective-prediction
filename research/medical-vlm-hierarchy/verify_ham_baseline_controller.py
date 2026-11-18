@@ -1,5 +1,6 @@
 """Check both numerical risk bounds in each rehearsal cell against high-precision binomial probabilities."""
 import argparse
+import hashlib
 import json
 import math
 import time
@@ -34,22 +35,26 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--results", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--paired-risk", action="store_true", help="Check the matched 224-group risk rehearsal")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     start = time.perf_counter()
     out = {"status": "running", "method": "50-digit decimal binomial sums at the returned bound and original target",
            "candidate_constraints": 0, "oracle_constraints": 0, "empty": 0, "nonempty": 0, "selected_replayed": 0}
     try:
-        config = json.loads((Path(__file__).parent / "configs/ham-controller-rehearsal-v1.json").read_bytes())
+        name = "ham-paired-risk-rehearsal-v1.json" if args.paired_risk else "ham-controller-rehearsal-v1.json"
+        content = (Path(__file__).parent / "configs" / name).read_bytes()
+        config = json.loads(content)
         source = json.loads((args.results / "summary.json").read_bytes())
-        if source["status"] != "complete":
+        if source["config_sha256"] != hashlib.sha256(content).hexdigest() or source["status"] != "complete":
             raise ValueError("Incomplete rehearsal")
         worst = Decimal(0)
         with localcontext() as ctx:
             ctx.prec = 50
             for readouts in source["models"].values():
                 for run in readouts.values():
-                    for budget, result in run.items():
+                    for result in run.values():
+                        count = result["calibration_groups"] if args.paired_risk else result["groups"]
                         delta = Decimal(str(config["family_failure_probability"])) / (2 * len(result["candidates"]))
                         eligible = []
                         for name, row in result["candidates"].items():
@@ -65,11 +70,16 @@ def main():
                             if passed != row["passed"]:
                                 raise ArithmeticError("Individual constraint comparison differs")
                             if all(passed):
-                                eligible.append((row["correct_information_utility"], row["leaf_n"]/int(budget), name))
+                                eligible.append((row["correct_information_utility"], row["leaf_n"]/count, name))
                         chosen = max(eligible)[2] if eligible else None
                         if chosen != result["selected"]:
                             raise ArithmeticError("Selected policy differs")
                         out["selected_replayed"] += 1
+                        if chosen is None and any(m["node_n"] or m["leaf_n"] or m["correct_information_utility"]
+                                                  for m in result["evaluation"].values()):
+                            raise ValueError("Full abstention output differs on the held-out development batches")
+                        if args.paired_risk:
+                            continue
                         oracle = result["oracle"]
                         attain = []
                         for prefix, target in (("leaf", config["leaf_target"]), ("nonroot", config["nonroot_target"])):
