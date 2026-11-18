@@ -89,6 +89,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("pilot", "balanced", "increment", "confirmation", "crossed", "splits", "output"):
         parser.add_argument("--" + name, type=Path, required=True)
+    parser.add_argument("--threshold-envelope", action="store_true",
+                        help="Descriptively exhaust all flat/Climbing cutoffs on the complete proxy-calibration cohort")
     a = parser.parse_args()
     a.output.mkdir(parents=True, exist_ok=False)
     start = time.perf_counter()
@@ -152,7 +154,14 @@ def main():
                     sl = bounds[subset]
                     if np.sum(prob[sl].argmax(1) != targets[sl]) != ref[key]["errors"]:
                         raise ValueError("Evaluation predictions differ from the crossed reference")
-                report["models"][model][name] = analyze(tree, prob, truth, order, bounds, cfg)
+                if a.threshold_envelope:
+                    from ham_threshold_envelope import threshold_envelope
+                    report["models"][model][name] = threshold_envelope(tree, prob[order], [truth[k] for k in order], cfg)
+                else:
+                    report["models"][model][name] = analyze(tree, prob, truth, order, bounds, cfg)
+        if a.threshold_envelope:
+            report["scope"] = ("Exhaustive, label-aware development diagnostic at the fixed 16-candidate numerical cutoffs. "
+                               "No selected policy or risk certificate from this search.")
         report["status"] = "complete"
     except Exception as exc:
         report.update(status="failed", error=str(exc))

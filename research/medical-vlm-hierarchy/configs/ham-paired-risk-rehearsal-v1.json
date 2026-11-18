@@ -1,0 +1,13 @@
+{
+  "scope": "exploratory comparison on already used supervised development groups",
+  "design": "for each original/new leaf support and original/new risk fit, fit the E02 base and augmented risk models to the registered 128 groups. Use the other disjoint 128 fit groups plus the first 96 natural groups as a 224-group mock calibration cohort. Evaluate selected candidates on the second natural 96 and the balanced 56.",
+  "risk_cutoffs": [0.025, 0.05, 0.075, 0.10, 0.15, 0.20, 0.30, 0.50],
+  "fallbacks": ["root", "same_path_parent"],
+  "parent_sum_threshold": 0.70,
+  "families": ["fixed_flat_and_climbing", "base_risk", "augmented_risk"],
+  "per_family_candidates": 16,
+  "family_failure_probability": 0.05,
+  "leaf_target": 0.10,
+  "nonroot_target": 0.05,
+  "interpretation": "common policies and budget within each cell. Families evaluated separately. All calibration/assessment images are documented historical dev cases; no formal certificate or new model selection."
+}

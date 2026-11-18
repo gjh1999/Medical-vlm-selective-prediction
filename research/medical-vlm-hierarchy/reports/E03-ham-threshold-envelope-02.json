@@ -1,0 +1,266 @@
+{
+  "scope": "Exhaustive, label-aware development diagnostic at the fixed 16-candidate numerical cutoffs. No selected policy or risk certificate from this search.",
+  "config_sha256": "62e195e0266e902f716d7ca49158d13e9aed14954fda782ee0ba12b3ea2bfd9d",
+  "membership_sha256": "a4f0c384d1c2e03d6b6134dbd549f6190cced609b0a5670db0cff954c393c5d5",
+  "split_sha256": "0db64bc28463dbc89984b8be8dd912bd580fe88687f00bd84d6a13686db674e9",
+  "models": {
+    "clip": {
+      "frozen_text": {
+        "development_groups": 256,
+        "per_check_delta_for_comparison_only": 0.0015625,
+        "families": {
+          "flat": {
+            "states": 257,
+            "scalar_agreement": 257,
+            "leaf_constraint_passes": 0,
+            "nonroot_constraint_passes": 0,
+            "joint_passes": 0,
+            "max_zero_error_leaf_outputs": 0,
+            "minimum_joint_ratio": 18.834615720217798,
+            "best_joint_state": {
+              "threshold": 0.2688056460157617,
+              "leaf_n": 237,
+              "leaf_errors": 211,
+              "nonroot_n": 237,
+              "nonroot_errors": 211,
+              "leaf_upper": 0.9417307860108899,
+              "nonroot_upper": 0.9417307860108899
+            }
+          },
+          "climbing": {
+            "states": 481,
+            "scalar_agreement": 481,
+            "leaf_constraint_passes": 0,
+            "nonroot_constraint_passes": 0,
+            "joint_passes": 0,
+            "max_zero_error_leaf_outputs": 0,
+            "minimum_joint_ratio": 13.859492434434175,
+            "best_joint_state": {
+              "threshold": 0.5312872723969394,
+              "leaf_n": 74,
+              "leaf_errors": 66,
+              "nonroot_n": 129,
+              "nonroot_errors": 73,
+              "leaf_upper": 0.9703971889827321,
+              "nonroot_upper": 0.6929746217217088
+            }
+          }
+        }
+      },
+      "original_centroid": {
+        "development_groups": 256,
+        "per_check_delta_for_comparison_only": 0.0015625,
+        "families": {
+          "flat": {
+            "states": 257,
+            "scalar_agreement": 257,
+            "leaf_constraint_passes": 0,
+            "nonroot_constraint_passes": 0,
+            "joint_passes": 0,
+            "max_zero_error_leaf_outputs": 0,
+            "minimum_joint_ratio": 11.761434039247924,
+            "best_joint_state": {
+              "threshold": 0.47352831540442325,
+              "leaf_n": 141,
+              "leaf_errors": 65,
+              "nonroot_n": 141,
+              "nonroot_errors": 65,
+              "leaf_upper": 0.5880717019623962,
+              "nonroot_upper": 0.5880717019623962
+            }
+          },
+          "climbing": {
+            "states": 453,
+            "scalar_agreement": 453,
+            "leaf_constraint_passes": 0,
+            "nonroot_constraint_passes": 0,
+            "joint_passes": 0,
+            "max_zero_error_leaf_outputs": 0,
+            "minimum_joint_ratio": 7.329030055289989,
+            "best_joint_state": {
+              "threshold": 0.6060407735017797,
+              "leaf_n": 54,
+              "leaf_errors": 29,
+              "nonroot_n": 163,
+              "nonroot_errors": 41,
+              "leaf_upper": 0.7329030055289989,
+              "nonroot_upper": 0.36326687849375205
+            }
+          }
+        }
+      },
+      "new_centroid": {
+        "development_groups": 256,
+        "per_check_delta_for_comparison_only": 0.0015625,
+        "families": {
+          "flat": {
+            "states": 257,
+            "scalar_agreement": 257,
+            "leaf_constraint_passes": 0,
+            "nonroot_constraint_passes": 0,
+            "joint_passes": 0,
+            "max_zero_error_leaf_outputs": 1,
+            "minimum_joint_ratio": 12.100938041441287,
+            "best_joint_state": {
+              "threshold": 0.48805184594465884,
+              "leaf_n": 63,
+              "leaf_errors": 26,
+              "nonroot_n": 63,
+              "nonroot_errors": 26,
+              "leaf_upper": 0.6050469020720644,
+              "nonroot_upper": 0.6050469020720644
+            }
+          },
+          "climbing": {
+            "states": 453,
+            "scalar_agreement": 453,
+            "leaf_constraint_passes": 0,
+            "nonroot_constraint_passes": 0,
+            "joint_passes": 0,
+            "max_zero_error_leaf_outputs": 1,
+            "minimum_joint_ratio": 9.046580378526116,
+            "best_joint_state": {
+              "threshold": 0.4724910436532991,
+              "leaf_n": 71,
+              "leaf_errors": 32,
+              "nonroot_n": 174,
+              "nonroot_errors": 59,
+              "leaf_upper": 0.6301991395328743,
+              "nonroot_upper": 0.45232901892630584
+            }
+          }
+        }
+      }
+    },
+    "biomedclip": {
+      "frozen_text": {
+        "development_groups": 256,
+        "per_check_delta_for_comparison_only": 0.0015625,
+        "families": {
+          "flat": {
+            "states": 257,
+            "scalar_agreement": 257,
+            "leaf_constraint_passes": 0,
+            "nonroot_constraint_passes": 0,
+            "joint_passes": 0,
+            "max_zero_error_leaf_outputs": 0,
+            "minimum_joint_ratio": 17.895060488169516,
+            "best_joint_state": {
+              "threshold": 0.42978790324768446,
+              "leaf_n": 87,
+              "leaf_errors": 68,
+              "nonroot_n": 87,
+              "nonroot_errors": 68,
+              "leaf_upper": 0.8947530244084758,
+              "nonroot_upper": 0.8947530244084758
+            }
+          },
+          "climbing": {
+            "states": 387,
+            "scalar_agreement": 387,
+            "leaf_constraint_passes": 0,
+            "nonroot_constraint_passes": 0,
+            "joint_passes": 0,
+            "max_zero_error_leaf_outputs": 0,
+            "minimum_joint_ratio": 9.994788951635849,
+            "best_joint_state": {
+              "threshold": 0.728551069089269,
+              "leaf_n": 3,
+              "leaf_errors": 2,
+              "nonroot_n": 23,
+              "nonroot_errors": 4,
+              "leaf_upper": 0.9994788951635849,
+              "nonroot_upper": 0.49398248147705326
+            }
+          }
+        }
+      },
+      "original_centroid": {
+        "development_groups": 256,
+        "per_check_delta_for_comparison_only": 0.0015625,
+        "families": {
+          "flat": {
+            "states": 257,
+            "scalar_agreement": 257,
+            "leaf_constraint_passes": 0,
+            "nonroot_constraint_passes": 0,
+            "joint_passes": 0,
+            "max_zero_error_leaf_outputs": 54,
+            "minimum_joint_ratio": 2.2555027198210618,
+            "best_joint_state": {
+              "threshold": 0.7715815090105823,
+              "leaf_n": 54,
+              "leaf_errors": 0,
+              "nonroot_n": 54,
+              "nonroot_errors": 0,
+              "leaf_upper": 0.1127751359910531,
+              "nonroot_upper": 0.1127751359910531
+            }
+          },
+          "climbing": {
+            "states": 501,
+            "scalar_agreement": 501,
+            "leaf_constraint_passes": 0,
+            "nonroot_constraint_passes": 0,
+            "joint_passes": 0,
+            "max_zero_error_leaf_outputs": 54,
+            "minimum_joint_ratio": 2.200441837863198,
+            "best_joint_state": {
+              "threshold": 0.8700041784658503,
+              "leaf_n": 26,
+              "leaf_errors": 0,
+              "nonroot_n": 76,
+              "nonroot_errors": 1,
+              "leaf_upper": 0.22004418378631982,
+              "nonroot_upper": 0.10929117986648815
+            }
+          }
+        }
+      },
+      "new_centroid": {
+        "development_groups": 256,
+        "per_check_delta_for_comparison_only": 0.0015625,
+        "families": {
+          "flat": {
+            "states": 257,
+            "scalar_agreement": 257,
+            "leaf_constraint_passes": 0,
+            "nonroot_constraint_passes": 0,
+            "joint_passes": 0,
+            "max_zero_error_leaf_outputs": 3,
+            "minimum_joint_ratio": 8.188038953693797,
+            "best_joint_state": {
+              "threshold": 0.5701411402852664,
+              "leaf_n": 72,
+              "leaf_errors": 17,
+              "nonroot_n": 72,
+              "nonroot_errors": 17,
+              "leaf_upper": 0.40940194768468985,
+              "nonroot_upper": 0.40940194768468985
+            }
+          },
+          "climbing": {
+            "states": 497,
+            "scalar_agreement": 497,
+            "leaf_constraint_passes": 0,
+            "nonroot_constraint_passes": 0,
+            "joint_passes": 0,
+            "max_zero_error_leaf_outputs": 3,
+            "minimum_joint_ratio": 4.396769470301322,
+            "best_joint_state": {
+              "threshold": 0.6590004634769925,
+              "leaf_n": 30,
+              "leaf_errors": 5,
+              "nonroot_n": 143,
+              "nonroot_errors": 16,
+              "leaf_upper": 0.43967694703013227,
+              "nonroot_upper": 0.21008592658353814
+            }
+          }
+        }
+      }
+    }
+  },
+  "status": "complete",
+  "seconds": 13.056
+}
