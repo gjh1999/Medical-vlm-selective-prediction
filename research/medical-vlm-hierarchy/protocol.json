@@ -1,7 +1,7 @@
 {
   "version": "1.5",
   "date": "2026-11-19",
-  "status": "ham_texture_coassignment_released_development_validation_in_progress_formal_gpu_evaluation_pending",
+  "status": "ham_texture_coassignment_released_crossed_development_replication_complete_formal_gpu_evaluation_pending",
   "task": "closed_set_hierarchical_selective_prediction",
   "primary_domain": "skin_lesion_classification",
   "datasets": [
@@ -18,7 +18,9 @@
       "v1_4_scene_edge_sha256": "4dcd84dffab0a854097a6979989ca0025972336f66c37f8c76cd084e55d3335d",
       "v1_5_texture_edge_sha256": "81c77a31554de39fc46b9aaa07f3369c8ad1f82c2355f6e5d238fce418065150",
       "v1_5_sensitivity_edge_sha256": "60d4eb9b00358f4cac8b7617601bd59dfc674bf3314823b06b17e14b389563e5",
-      "sensitivity": "exclude current groups touching any cross-partition dHash or >=8-inlier local-texture edge on any seed in a separate analysis"
+      "sensitivity": "exclude current groups touching any cross-partition dHash or >=8-inlier local-texture edge on any seed in a separate analysis",
+      "historical_development_exposure": "Separate diagnostic for the 616 documented supervised seed-17 training and development groups. Report their membership by seed and role; for a supervised-unexposed sensitivity result use eligible calibration and test groups separately. The original assignments and primary metrics are unchanged.",
+      "development_exposure_recipe": "configs/ham-development-exposure-v1.json"
     },
     {
       "name": "PAD-UFES-20",

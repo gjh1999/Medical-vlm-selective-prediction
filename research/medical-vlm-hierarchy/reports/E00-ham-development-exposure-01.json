@@ -1,0 +1,783 @@
+{
+  "status": "complete",
+  "protocol": "v1.5",
+  "unit": "current HAM split_group",
+  "groups": 7428,
+  "analysis_units": 7452,
+  "split_sha256": {
+    "17": "0db64bc28463dbc89984b8be8dd912bd580fe88687f00bd84d6a13686db674e9",
+    "29": "4b31664ae2775f64c2727d2e80ec00f7add1e39dcc047eb88323f99fe8bc104f",
+    "43": "c82cbdab0ca2ee62137323af64066d2a39ba0dbbf7233b218435b91910b5d22a"
+  },
+  "membership_sha256": "a4f0c384d1c2e03d6b6134dbd549f6190cced609b0a5670db0cff954c393c5d5",
+  "mask_sha256": "5141f8763347380b2bc94283caef8f0d3c668a77ba3e9aa2e133c96ee043b1b0",
+  "image_sensitivity_sha256": "6d924ed1a6523306662e60a71da506adaa5edbd36334d83fe2932022d2d58111",
+  "supervised_groups": 616,
+  "supervised_cohort_counts": {
+    "balanced_evaluation": 56,
+    "first_natural": 96,
+    "new_fit": 128,
+    "new_support": 56,
+    "original_fit": 128,
+    "original_support": 56,
+    "second_natural": 96
+  },
+  "technical_smoke_groups": 8,
+  "technical_smoke_and_supervised": 0,
+  "roles": {
+    "17": {
+      "train": {
+        "total": {
+          "groups": 2976,
+          "analysis_units": 2995,
+          "representative_labels": {
+            "akiec": 91,
+            "bcc": 131,
+            "bkl": 296,
+            "df": 29,
+            "mel": 246,
+            "nv": 2163,
+            "vasc": 39
+          }
+        },
+        "supervised": {
+          "groups": 112,
+          "analysis_units": 112,
+          "representative_labels": {
+            "akiec": 16,
+            "bcc": 16,
+            "bkl": 16,
+            "df": 16,
+            "mel": 16,
+            "nv": 16,
+            "vasc": 16
+          }
+        },
+        "by_supervised_cohort": {
+          "new_support": 56,
+          "original_support": 56
+        },
+        "smoke_groups": 8,
+        "smoke_or_supervised_groups": 120,
+        "without_supervised": {
+          "groups": 2864,
+          "analysis_units": 2883,
+          "representative_labels": {
+            "akiec": 75,
+            "bcc": 115,
+            "bkl": 280,
+            "df": 13,
+            "mel": 230,
+            "nv": 2147,
+            "vasc": 23
+          }
+        },
+        "without_supervised_or_image_overlap": {
+          "groups": 2532,
+          "analysis_units": 2542,
+          "representative_labels": {
+            "akiec": 73,
+            "bcc": 97,
+            "bkl": 242,
+            "df": 7,
+            "mel": 189,
+            "nv": 1917,
+            "vasc": 17
+          }
+        }
+      },
+      "dev": {
+        "total": {
+          "groups": 743,
+          "analysis_units": 744,
+          "representative_labels": {
+            "akiec": 23,
+            "bcc": 32,
+            "bkl": 72,
+            "df": 8,
+            "mel": 61,
+            "nv": 538,
+            "vasc": 10
+          }
+        },
+        "supervised": {
+          "groups": 504,
+          "analysis_units": 504,
+          "representative_labels": {
+            "akiec": 19,
+            "bcc": 20,
+            "bkl": 51,
+            "df": 8,
+            "mel": 43,
+            "nv": 353,
+            "vasc": 10
+          }
+        },
+        "by_supervised_cohort": {
+          "balanced_evaluation": 56,
+          "first_natural": 96,
+          "new_fit": 128,
+          "original_fit": 128,
+          "second_natural": 96
+        },
+        "smoke_groups": 0,
+        "smoke_or_supervised_groups": 504,
+        "without_supervised": {
+          "groups": 239,
+          "analysis_units": 240,
+          "representative_labels": {
+            "akiec": 4,
+            "bcc": 12,
+            "bkl": 21,
+            "mel": 18,
+            "nv": 185
+          }
+        },
+        "without_supervised_or_image_overlap": {
+          "groups": 215,
+          "analysis_units": 215,
+          "representative_labels": {
+            "akiec": 4,
+            "bcc": 10,
+            "bkl": 16,
+            "mel": 17,
+            "nv": 168
+          }
+        }
+      },
+      "calibration": {
+        "total": {
+          "groups": 1854,
+          "analysis_units": 1858,
+          "representative_labels": {
+            "akiec": 57,
+            "bcc": 82,
+            "bkl": 178,
+            "df": 18,
+            "mel": 154,
+            "nv": 1344,
+            "vasc": 25
+          }
+        },
+        "supervised": {
+          "groups": 0,
+          "analysis_units": 0,
+          "representative_labels": {}
+        },
+        "by_supervised_cohort": {},
+        "smoke_groups": 0,
+        "smoke_or_supervised_groups": 0,
+        "without_supervised": {
+          "groups": 1854,
+          "analysis_units": 1858,
+          "representative_labels": {
+            "akiec": 57,
+            "bcc": 82,
+            "bkl": 178,
+            "df": 18,
+            "mel": 154,
+            "nv": 1344,
+            "vasc": 25
+          }
+        },
+        "without_supervised_or_image_overlap": {
+          "groups": 1641,
+          "analysis_units": 1644,
+          "representative_labels": {
+            "akiec": 57,
+            "bcc": 72,
+            "bkl": 161,
+            "df": 17,
+            "mel": 124,
+            "nv": 1192,
+            "vasc": 21
+          }
+        }
+      },
+      "test": {
+        "total": {
+          "groups": 1855,
+          "analysis_units": 1855,
+          "representative_labels": {
+            "akiec": 57,
+            "bcc": 82,
+            "bkl": 175,
+            "df": 18,
+            "mel": 153,
+            "nv": 1346,
+            "vasc": 24
+          }
+        },
+        "supervised": {
+          "groups": 0,
+          "analysis_units": 0,
+          "representative_labels": {}
+        },
+        "by_supervised_cohort": {},
+        "smoke_groups": 0,
+        "smoke_or_supervised_groups": 0,
+        "without_supervised": {
+          "groups": 1855,
+          "analysis_units": 1855,
+          "representative_labels": {
+            "akiec": 57,
+            "bcc": 82,
+            "bkl": 175,
+            "df": 18,
+            "mel": 153,
+            "nv": 1346,
+            "vasc": 24
+          }
+        },
+        "without_supervised_or_image_overlap": {
+          "groups": 1658,
+          "analysis_units": 1658,
+          "representative_labels": {
+            "akiec": 51,
+            "bcc": 73,
+            "bkl": 155,
+            "df": 16,
+            "mel": 124,
+            "nv": 1220,
+            "vasc": 19
+          }
+        }
+      }
+    },
+    "29": {
+      "train": {
+        "total": {
+          "groups": 2977,
+          "analysis_units": 2988,
+          "representative_labels": {
+            "akiec": 91,
+            "bcc": 131,
+            "bkl": 290,
+            "df": 29,
+            "mel": 246,
+            "nv": 2162,
+            "vasc": 39
+          }
+        },
+        "supervised": {
+          "groups": 240,
+          "analysis_units": 240,
+          "representative_labels": {
+            "akiec": 13,
+            "bcc": 14,
+            "bkl": 21,
+            "df": 6,
+            "mel": 20,
+            "nv": 150,
+            "vasc": 16
+          }
+        },
+        "by_supervised_cohort": {
+          "balanced_evaluation": 23,
+          "first_natural": 41,
+          "new_fit": 51,
+          "new_support": 21,
+          "original_fit": 47,
+          "original_support": 19,
+          "second_natural": 38
+        },
+        "smoke_groups": 3,
+        "smoke_or_supervised_groups": 243,
+        "without_supervised": {
+          "groups": 2737,
+          "analysis_units": 2748,
+          "representative_labels": {
+            "akiec": 78,
+            "bcc": 117,
+            "bkl": 269,
+            "df": 23,
+            "mel": 226,
+            "nv": 2012,
+            "vasc": 23
+          }
+        },
+        "without_supervised_or_image_overlap": {
+          "groups": 2405,
+          "analysis_units": 2410,
+          "representative_labels": {
+            "akiec": 77,
+            "bcc": 100,
+            "bkl": 232,
+            "df": 19,
+            "mel": 183,
+            "nv": 1779,
+            "vasc": 20
+          }
+        }
+      },
+      "dev": {
+        "total": {
+          "groups": 742,
+          "analysis_units": 748,
+          "representative_labels": {
+            "akiec": 23,
+            "bcc": 32,
+            "bkl": 74,
+            "df": 8,
+            "mel": 61,
+            "nv": 540,
+            "vasc": 10
+          }
+        },
+        "supervised": {
+          "groups": 77,
+          "analysis_units": 77,
+          "representative_labels": {
+            "akiec": 6,
+            "bcc": 4,
+            "bkl": 8,
+            "df": 4,
+            "mel": 7,
+            "nv": 48
+          }
+        },
+        "by_supervised_cohort": {
+          "balanced_evaluation": 4,
+          "first_natural": 14,
+          "new_fit": 13,
+          "new_support": 9,
+          "original_fit": 11,
+          "original_support": 8,
+          "second_natural": 18
+        },
+        "smoke_groups": 0,
+        "smoke_or_supervised_groups": 77,
+        "without_supervised": {
+          "groups": 665,
+          "analysis_units": 671,
+          "representative_labels": {
+            "akiec": 17,
+            "bcc": 28,
+            "bkl": 66,
+            "df": 4,
+            "mel": 54,
+            "nv": 492,
+            "vasc": 10
+          }
+        },
+        "without_supervised_or_image_overlap": {
+          "groups": 596,
+          "analysis_units": 601,
+          "representative_labels": {
+            "akiec": 17,
+            "bcc": 22,
+            "bkl": 57,
+            "df": 2,
+            "mel": 47,
+            "nv": 447,
+            "vasc": 9
+          }
+        }
+      },
+      "calibration": {
+        "total": {
+          "groups": 1858,
+          "analysis_units": 1863,
+          "representative_labels": {
+            "akiec": 57,
+            "bcc": 82,
+            "bkl": 182,
+            "df": 18,
+            "mel": 154,
+            "nv": 1345,
+            "vasc": 25
+          }
+        },
+        "supervised": {
+          "groups": 154,
+          "analysis_units": 154,
+          "representative_labels": {
+            "akiec": 7,
+            "bcc": 10,
+            "bkl": 21,
+            "df": 8,
+            "mel": 18,
+            "nv": 83,
+            "vasc": 7
+          }
+        },
+        "by_supervised_cohort": {
+          "balanced_evaluation": 17,
+          "first_natural": 21,
+          "new_fit": 30,
+          "new_support": 15,
+          "original_fit": 37,
+          "original_support": 15,
+          "second_natural": 19
+        },
+        "smoke_groups": 3,
+        "smoke_or_supervised_groups": 157,
+        "without_supervised": {
+          "groups": 1704,
+          "analysis_units": 1709,
+          "representative_labels": {
+            "akiec": 50,
+            "bcc": 72,
+            "bkl": 161,
+            "df": 10,
+            "mel": 136,
+            "nv": 1262,
+            "vasc": 18
+          }
+        },
+        "without_supervised_or_image_overlap": {
+          "groups": 1528,
+          "analysis_units": 1530,
+          "representative_labels": {
+            "akiec": 46,
+            "bcc": 61,
+            "bkl": 146,
+            "df": 9,
+            "mel": 111,
+            "nv": 1143,
+            "vasc": 14
+          }
+        }
+      },
+      "test": {
+        "total": {
+          "groups": 1851,
+          "analysis_units": 1853,
+          "representative_labels": {
+            "akiec": 57,
+            "bcc": 82,
+            "bkl": 175,
+            "df": 18,
+            "mel": 153,
+            "nv": 1344,
+            "vasc": 24
+          }
+        },
+        "supervised": {
+          "groups": 145,
+          "analysis_units": 145,
+          "representative_labels": {
+            "akiec": 9,
+            "bcc": 8,
+            "bkl": 17,
+            "df": 6,
+            "mel": 14,
+            "nv": 88,
+            "vasc": 3
+          }
+        },
+        "by_supervised_cohort": {
+          "balanced_evaluation": 12,
+          "first_natural": 20,
+          "new_fit": 34,
+          "new_support": 11,
+          "original_fit": 33,
+          "original_support": 14,
+          "second_natural": 21
+        },
+        "smoke_groups": 2,
+        "smoke_or_supervised_groups": 147,
+        "without_supervised": {
+          "groups": 1706,
+          "analysis_units": 1708,
+          "representative_labels": {
+            "akiec": 48,
+            "bcc": 74,
+            "bkl": 158,
+            "df": 12,
+            "mel": 139,
+            "nv": 1256,
+            "vasc": 21
+          }
+        },
+        "without_supervised_or_image_overlap": {
+          "groups": 1517,
+          "analysis_units": 1518,
+          "representative_labels": {
+            "akiec": 45,
+            "bcc": 69,
+            "bkl": 139,
+            "df": 10,
+            "mel": 113,
+            "nv": 1128,
+            "vasc": 14
+          }
+        }
+      }
+    },
+    "43": {
+      "train": {
+        "total": {
+          "groups": 2980,
+          "analysis_units": 2998,
+          "representative_labels": {
+            "akiec": 91,
+            "bcc": 131,
+            "bkl": 296,
+            "df": 29,
+            "mel": 246,
+            "nv": 2166,
+            "vasc": 39
+          }
+        },
+        "supervised": {
+          "groups": 262,
+          "analysis_units": 262,
+          "representative_labels": {
+            "akiec": 15,
+            "bcc": 18,
+            "bkl": 30,
+            "df": 9,
+            "mel": 26,
+            "nv": 156,
+            "vasc": 8
+          }
+        },
+        "by_supervised_cohort": {
+          "balanced_evaluation": 27,
+          "first_natural": 45,
+          "new_fit": 63,
+          "new_support": 21,
+          "original_fit": 49,
+          "original_support": 24,
+          "second_natural": 33
+        },
+        "smoke_groups": 3,
+        "smoke_or_supervised_groups": 265,
+        "without_supervised": {
+          "groups": 2718,
+          "analysis_units": 2736,
+          "representative_labels": {
+            "akiec": 76,
+            "bcc": 113,
+            "bkl": 266,
+            "df": 20,
+            "mel": 220,
+            "nv": 2010,
+            "vasc": 31
+          }
+        },
+        "without_supervised_or_image_overlap": {
+          "groups": 2402,
+          "analysis_units": 2410,
+          "representative_labels": {
+            "akiec": 71,
+            "bcc": 103,
+            "bkl": 229,
+            "df": 16,
+            "mel": 170,
+            "nv": 1797,
+            "vasc": 24
+          }
+        }
+      },
+      "dev": {
+        "total": {
+          "groups": 737,
+          "analysis_units": 740,
+          "representative_labels": {
+            "akiec": 23,
+            "bcc": 32,
+            "bkl": 69,
+            "df": 8,
+            "mel": 61,
+            "nv": 537,
+            "vasc": 10
+          }
+        },
+        "supervised": {
+          "groups": 68,
+          "analysis_units": 68,
+          "representative_labels": {
+            "akiec": 6,
+            "bcc": 2,
+            "bkl": 7,
+            "df": 4,
+            "mel": 6,
+            "nv": 39,
+            "vasc": 4
+          }
+        },
+        "by_supervised_cohort": {
+          "balanced_evaluation": 7,
+          "first_natural": 12,
+          "new_fit": 10,
+          "new_support": 8,
+          "original_fit": 12,
+          "original_support": 7,
+          "second_natural": 12
+        },
+        "smoke_groups": 0,
+        "smoke_or_supervised_groups": 68,
+        "without_supervised": {
+          "groups": 669,
+          "analysis_units": 672,
+          "representative_labels": {
+            "akiec": 17,
+            "bcc": 30,
+            "bkl": 62,
+            "df": 4,
+            "mel": 55,
+            "nv": 498,
+            "vasc": 6
+          }
+        },
+        "without_supervised_or_image_overlap": {
+          "groups": 594,
+          "analysis_units": 597,
+          "representative_labels": {
+            "akiec": 17,
+            "bcc": 25,
+            "bkl": 53,
+            "df": 4,
+            "mel": 49,
+            "nv": 445,
+            "vasc": 4
+          }
+        }
+      },
+      "calibration": {
+        "total": {
+          "groups": 1856,
+          "analysis_units": 1857,
+          "representative_labels": {
+            "akiec": 57,
+            "bcc": 82,
+            "bkl": 177,
+            "df": 18,
+            "mel": 154,
+            "nv": 1344,
+            "vasc": 25
+          }
+        },
+        "supervised": {
+          "groups": 122,
+          "analysis_units": 122,
+          "representative_labels": {
+            "akiec": 5,
+            "bcc": 7,
+            "bkl": 13,
+            "df": 5,
+            "mel": 13,
+            "nv": 74,
+            "vasc": 5
+          }
+        },
+        "by_supervised_cohort": {
+          "balanced_evaluation": 9,
+          "first_natural": 19,
+          "new_fit": 28,
+          "new_support": 13,
+          "original_fit": 22,
+          "original_support": 13,
+          "second_natural": 18
+        },
+        "smoke_groups": 1,
+        "smoke_or_supervised_groups": 123,
+        "without_supervised": {
+          "groups": 1734,
+          "analysis_units": 1735,
+          "representative_labels": {
+            "akiec": 52,
+            "bcc": 75,
+            "bkl": 164,
+            "df": 13,
+            "mel": 141,
+            "nv": 1270,
+            "vasc": 20
+          }
+        },
+        "without_supervised_or_image_overlap": {
+          "groups": 1545,
+          "analysis_units": 1546,
+          "representative_labels": {
+            "akiec": 50,
+            "bcc": 63,
+            "bkl": 146,
+            "df": 11,
+            "mel": 115,
+            "nv": 1144,
+            "vasc": 17
+          }
+        }
+      },
+      "test": {
+        "total": {
+          "groups": 1855,
+          "analysis_units": 1857,
+          "representative_labels": {
+            "akiec": 57,
+            "bcc": 82,
+            "bkl": 179,
+            "df": 18,
+            "mel": 153,
+            "nv": 1344,
+            "vasc": 24
+          }
+        },
+        "supervised": {
+          "groups": 164,
+          "analysis_units": 164,
+          "representative_labels": {
+            "akiec": 9,
+            "bcc": 9,
+            "bkl": 17,
+            "df": 6,
+            "mel": 14,
+            "nv": 100,
+            "vasc": 9
+          }
+        },
+        "by_supervised_cohort": {
+          "balanced_evaluation": 13,
+          "first_natural": 20,
+          "new_fit": 27,
+          "new_support": 14,
+          "original_fit": 45,
+          "original_support": 12,
+          "second_natural": 33
+        },
+        "smoke_groups": 4,
+        "smoke_or_supervised_groups": 168,
+        "without_supervised": {
+          "groups": 1691,
+          "analysis_units": 1693,
+          "representative_labels": {
+            "akiec": 48,
+            "bcc": 73,
+            "bkl": 162,
+            "df": 12,
+            "mel": 139,
+            "nv": 1244,
+            "vasc": 15
+          }
+        },
+        "without_supervised_or_image_overlap": {
+          "groups": 1505,
+          "analysis_units": 1506,
+          "representative_labels": {
+            "akiec": 47,
+            "bcc": 61,
+            "bkl": 146,
+            "df": 9,
+            "mel": 120,
+            "nv": 1111,
+            "vasc": 12
+          }
+        }
+      }
+    }
+  },
+  "cross_seed_overlap": {
+    "pairwise_test_groups": {
+      "17_29": 453,
+      "17_43": 478,
+      "29_43": 451
+    },
+    "test_union": 4300,
+    "test_all_seeds": 121,
+    "calibration_or_test_all_seeds": 967
+  },
+  "scope": "Documented supervised pilot participation. Technical smoke listed separately; patient independence unknown.",
+  "seconds": 0.319
+}

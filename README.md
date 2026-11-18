@@ -18,4 +18,6 @@
 
 GitHub 仓库：[Medical-vlm-selective-prediction](https://github.com/gjh1999/Medical-vlm-selective-prediction)。`scripts/sync-github.ps1` 同步代码、配置、文档与实验摘要；`scripts/register-github-sync.ps1` 在成功首次推送后注册每 30 分钟执行的 Windows 任务。原始数据、权重与逐样本缓存不入库。状态以本机任务 `MCCAI-Research-GitHub-Sync` 和 `.sync-state/last-success.json` 为准；任务需要本机开机且注册用户已登录，日志在 `.sync-state/sync.log`。
 
+主线补做了第二批自然开发组和同预算的训练病例对照。两批合计 192 组，原训练配置下加入父子分歧的错例排序增量为 OpenAI CLIP +0.082、BiomedCLIP −0.005。换一套支持组及风险拟合组，增量变为 +0.025、+0.075，在均衡开发组上则两者都为负。另已确定哪些早期开发病例会落入另两份正式测试集。[四格对照](research/medical-vlm-hierarchy/reports/E02-ham-crossed-fit-02.json) · [跨划分审计](research/medical-vlm-hierarchy/reports/E00-ham-development-exposure-01.json)
+
 本项目已登记到用户 Codex 全局自动同步列表，每天本地时间 17:00 进行 WIP 备份；较大变更验证后也主动提交推送。定时备份不代表实验完成或测试通过。

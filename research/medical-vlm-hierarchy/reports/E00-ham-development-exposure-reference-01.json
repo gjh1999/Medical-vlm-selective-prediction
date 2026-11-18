@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "method": "SQL join of the five original pilot manifests to the three splits, with both logged technical-smoke manifests checked separately",
+  "selection_file_sha256": [
+    "64760d4586734aa48eeaefa2558598533cf33716db191442d7f8fc2b7a2ec40e",
+    "e68b8a3111c9ab421dd0c52ca746776fed6587e5160e2577fd098146f25aed37",
+    "8b6ac07f29b2df16e118c96c73b642fbb31381c1194e7a6c7a8940bf0e9f9954",
+    "5c7d3dccbc00074dbe08b5bb36a692e6a56f54828829dcb711fa364a94fa0262",
+    "bcabbdc0479085f6fdafa782d36e6871040ed0571818dce7f25c363f59317f81"
+  ],
+  "rows_verified": 616,
+  "technical_smoke_groups_verified": 8,
+  "seeds_checked": 3,
+  "mask_sha256": "5141f8763347380b2bc94283caef8f0d3c668a77ba3e9aa2e133c96ee043b1b0",
+  "seconds": 0.177
+}

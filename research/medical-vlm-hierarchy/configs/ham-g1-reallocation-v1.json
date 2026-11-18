@@ -1,0 +1,14 @@
+{
+  "scope": "conditional training-set sensitivity on previously exposed development data only",
+  "seed": 793017,
+  "partitions": 128,
+  "design": "pool the two prior 56-group support sets and split each diagnosis into complementary random sets of 8 from 16. Independently split the two prior 128-group risk-fit sets into complementary random sets of 128 from 256. Cross all four combinations. Pair allocations across the two frozen backbones.",
+  "target": "paired error AUROC increment from parent_js in the existing image-centroid risk model",
+  "evaluation": {"pooled_natural": 192, "balanced": 56},
+  "support_per_leaf": 8,
+  "fit_size": 128,
+  "risk_fit": "retain original logistic features, training-only scaling, penalties, taxonomy and checkpoint logit scales",
+  "summary": "median, empirical 2.5 and 97.5 percentiles, positive and negative counts by backbone and cohort, same-sign counts across settings, and within-partition squared support/fit/interaction contrasts",
+  "control": "reproduce all four original allocation cells before random reallocation",
+  "scope_limit": "evaluation and available training cases are fixed; repeated cells are dependent. Descriptive frequencies concern this finite pool, not independent external replications, p-values or population confidence intervals."
+}
