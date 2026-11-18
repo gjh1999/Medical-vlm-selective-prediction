@@ -1,0 +1,38 @@
+{
+  "protocol": "1.2",
+  "decoded": 10015,
+  "missing": 0,
+  "corrupt": 0,
+  "pillow": "13.0.0",
+  "radius": 3,
+  "manifest_sha256": "a3b8a641900ec0df11f941cab3ddccd95bbee1077f7f977a49dac617c80124ff",
+  "candidate_list_sha256": "f380e6244b879135bfc2bdd533a9c0c04cc4ba84823116431845b00326abee2f",
+  "candidate_pairs": 7661,
+  "different_lesion_id_pairs": 7588,
+  "identical_pixel_pairs": 2,
+  "splits": {
+    "17": {
+      "split_sha256": "a22e738126b24e95c0cfcb2262532658103da95cb809028f1efd359d50ef910d",
+      "cross_split_candidates": 5334,
+      "exact_cross_split_pairs": 0,
+      "cross_split_representative_pairs": 1082,
+      "exact_cross_split_representative_pairs": 0
+    },
+    "29": {
+      "split_sha256": "fe594278040ebdd0eb1e24acd37812222d6cc3810ab88b02e45a6129155bdb32",
+      "cross_split_candidates": 5430,
+      "exact_cross_split_pairs": 0,
+      "cross_split_representative_pairs": 1113,
+      "exact_cross_split_representative_pairs": 0
+    },
+    "43": {
+      "split_sha256": "ea400b85b9a1c6a4fe94c150cad9b3a2035011110681dce7edf5fe3e4ed1e6cb",
+      "cross_split_candidates": 5391,
+      "exact_cross_split_pairs": 0,
+      "cross_split_representative_pairs": 1057,
+      "exact_cross_split_representative_pairs": 0
+    }
+  },
+  "decode_and_audit_seconds": 145.064,
+  "projection_seconds": 0.124
+}

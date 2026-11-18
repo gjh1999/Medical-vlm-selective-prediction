@@ -1,7 +1,7 @@
 {
   "version": "1.2",
   "date": "2026-11-17",
-  "status": "ham_and_pad_metadata_audited_image_tools_tested_gpu_path_pending",
+  "status": "ham_images_decoded_near_duplicate_review_required_pad_metadata_audited_5080_pending",
   "task": "closed_set_hierarchical_selective_prediction",
   "primary_domain": "skin_lesion_classification",
   "datasets": [
@@ -9,7 +9,7 @@
       "name": "HAM10000",
       "group_key": "lesion_id",
       "patient_independence": "unverified",
-      "access": "verify_original_terms_and_download"
+      "access": "Harvard Dataverse v4.0 metadata and both original image archives verified"
     },
     {
       "name": "PAD-UFES-20",
@@ -25,7 +25,7 @@
   ],
   "model_revisions": {
     "biomedclip": "9f341de24bfb00180f1b847274256e9b65a3a32e",
-    "openai_clip": "pending_weight_acquisition"
+    "openai_clip": "sha256:5806e77cd80f8b59890b7e101eabd078d9fb84e6937f9e85e4ecb61988df416f"
   },
   "taxonomy": "draft_requires_review_before_execution",
   "freeze_backbone": true,
@@ -104,7 +104,7 @@
     "consistent_splits_minimum": 2
   },
   "targets_are": "research_management_criteria_not_observed_results_or_clinical_safety_thresholds",
-  "notes": "v1.2 changes PAD identity/grouping after actual metadata audit; v1.1 retained. No image/model results yet. Feature extraction implemented but not exercised on 5080. Scientific metrics/risk targets unchanged.",
+  "notes": "v1.2 uses conservative PAD grouping. HAM splits match the original metadata run. HAM near-duplicate review, 5080 evaluation and classification results are pending.",
   "execution": {
     "preparation_host": "Windows GT 710 2GB",
     "experiment_host": "User home RTX 5080; environment pending",

@@ -13,7 +13,7 @@ from pathlib import Path
 API = 'https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/DBW86T'
 
 
-def download(url, target, expected_md5=None):
+def download(url, target, expected_md5=None, *, expected_sha256=None):
     if target.exists():
         raise FileExistsError(f'Refusing to overwrite {target}')
     request = urllib.request.Request(url,headers={'User-Agent':'MedicalVLMResearch/0.1'})
@@ -26,6 +26,8 @@ def download(url, target, expected_md5=None):
             f.write(chunk);md5.update(chunk);sha.update(chunk);size+=len(chunk)
     if expected_md5 and md5.hexdigest()!=expected_md5:
         raise ValueError(f'MD5 mismatch for {partial}; preserved for inspection')
+    if expected_sha256 and sha.hexdigest()!=expected_sha256:
+        raise ValueError(f'SHA256 mismatch for {partial}; preserved for inspection')
     partial.rename(target)
     return {'bytes':size,'md5':md5.hexdigest(),'sha256':sha.hexdigest(),'url':url}
 

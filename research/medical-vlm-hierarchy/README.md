@@ -2,7 +2,9 @@
 
 已选研究方向：有限标注和长尾条件下，在具体病种、上位类别和完全拒识之间作可靠决策。
 
-截至 2026-11-18，已校验 HAM v4.0 与 PAD v1 官方元数据，并生成三套划分。PAD 校准样本量审计已完成，15 项软件测试通过。原图内容审查和 5080 模型推理仍待执行。
+截至 2026-11-18，HAM 的 10,015 张原图全部解码，发现 2 对像素完全相同的图像，均在同一病灶内。三个划分中跨集合的精确重复均为 0。按每病灶只取一张代表图，种子 17、29、43 仍分别有 1,082、1,113、1,057 对跨集合近重复候选待审。PAD 已完成元数据与校准样本量审计。[HAM 聚合审计](reports/E00-ham-duplicates-01.json)
+
+冻结特征入口已用 8 张 HAM 训练代表图在 CPU 上跑通。OpenAI CLIP ViT-B/16 批量提取与官方加载器逐图复算的最大逐分量差为 3.13×10⁻⁷。分类性能和 5080 上的推理成本待测。[单图复算结果](reports/E00-ham-clip-cpu-reference-01.json)
 
 HAM：10,015 图像 / 7,470 病灶；calibration 1,869 病灶，其中 df 18、nv 1,351，尚不能声称患者级独立。PAD：2,298 图像 / 1,373 患者；250 个 raw lesion_id 跨患者重用，其中 226 个存在标签差异。当前将共享 raw ID 的患者保守连接成 1,132 个 split_group，三套划分均无患者/raw ID/连通组交叉。1,891 个 patient+lesion 处理键不能当成已核实的真实病灶数。完整证据见[实验记录](实验记录.md)。
 
@@ -32,10 +34,10 @@ python -m unittest -v test_core.py
 
 各 output 必须使用不存在的独立路径。`prepare_ham.py --download-images` 才会下载约 2.77GB 原图 ZIP。PAD API 已修正，不再使用旧 `/versions/1` 路径。`prepare_pad.py --source-dir 旧run --output 新run` 可复用已校验的元数据；它不下载 PAD 原图。
 
-准备机仅安装独立 `.venv` 中的 Pillow 13.0.0，无 torch/CUDA 安装。完整软件测试命令（从仓库根目录）：
+仓库根目录的审计环境使用 Pillow 13.0.0。CPU 特征小批次使用本次输出目录内独立的 PyTorch CPU 环境。完整软件测试命令从仓库根目录执行。
 
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s research/medical-vlm-hierarchy -p 'test_*.py' -v
 ```
 
-`audit_images.py` 对已解压图像做逐图 SHA256、EXIF 统一后的像素哈希和 dHash 候选审计，不静默去重。`extract_features.py` 只读取完整且未篡改的审计清单，并核对每个图像与权重哈希；它可以生成待去重审阅的数据缓存，但这类缓存不可直接当作已完成无泄漏评价。当前只验证了输入契约和 CLI，未验证 PyTorch/OpenCLIP 推理路径。参考核心也不是完整 B0–B6 复现；温度校准、提示文本缓存、分歧信号和外部模型验证仍待实施。
+`audit_images.py` 记录文件、像素哈希和 dHash 候选，`summarize_ham_duplicates.py` 复用同一轮解码结果统计三个划分。`extract_features.py --smoke-only` 用一批训练代表图验证入口，`verify_clip_smoke.py` 可对 OpenAI CLIP 向量逐张复算。近重复的身份审阅、BiomedCLIP 实机推理及 B0–B6 的性能比较仍待完成。
