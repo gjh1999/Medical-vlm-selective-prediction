@@ -42,6 +42,21 @@ class Taxonomy:
             v=self.parent[v]
         return v
 
+    def two_stage(self, p, leaf_threshold, branch_threshold):
+        """Choose the mode if confident, otherwise the highest-mass top-level branch if nontrivial."""
+        self.validate(p)
+        if not (0 <= leaf_threshold <= 1 and 0 <= branch_threshold <= 1):
+            raise ValueError("Invalid threshold")
+        leaf = max(self.leaves, key=p.get)
+        if p[leaf] >= leaf_threshold:
+            return leaf
+        branches = sorted(n for n, parent in self.parent.items() if parent == self.root)
+        masses = {n: math.fsum(p[y] for y in self.desc[n]) for n in branches}
+        best = max(branches, key=masses.get)
+        if best not in self.leaves and masses[best] >= branch_threshold:
+            return best
+        return self.root
+
     def lca(self, leaves):
         if not leaves:return self.root
         if not set(leaves)<=set(self.leaves):raise ValueError('Unknown leaf')

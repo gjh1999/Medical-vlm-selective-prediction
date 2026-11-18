@@ -24,6 +24,12 @@ class ResearchContractTests(unittest.TestCase):
     def test_bad_tree_and_probabilities(self):
         with self.assertRaises(ValueError):Taxonomy({'a':'b','b':'a','c':'root'})
         with self.assertRaises(ValueError):self.t.climbing({'a':1,'b':1,'c':1},.5)
+    def test_two_stage_can_choose_another_branch_but_cannot_admit_a_low_scoring_singleton(self):
+        p={'a':.31,'b':.29,'c':.4}
+        self.assertEqual(self.t.climbing(p,.55),'root')
+        self.assertEqual(self.t.two_stage(p,.55,.55),'g')
+        self.assertEqual(self.t.two_stage(p,.4,.55),'c')
+        self.assertEqual(self.t.two_stage({'a':.22,'b':.23,'c':.55},.7,.5),'root')
     def test_sample_size_and_exact_bounds(self):
         delta=.05/32
         self.assertGreater(upper_bound(0,125,delta),.05)
