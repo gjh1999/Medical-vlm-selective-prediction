@@ -1,0 +1,21 @@
+{
+  "protocol": "v1.4",
+  "seed": 17,
+  "split_sha256": "138f18444ca71f815eed5c55edf94b89ab4cc9e2cd94335e3080f1fafaa99962",
+  "fitting": "128 dev groups from E01-ham-dev-pilot-01",
+  "leaf_support": "56 train groups from E01-ham-balanced-probe-01 for image centroid only",
+  "reserved_groups": "all prior 128 dev and 112 balanced train/dev groups",
+  "evaluation": "96 new distinct seed-17 dev groups selected by salted SHA256 with no label or prediction filtering",
+  "eval_size": 96,
+  "salt": "ham-error-increment-v1",
+  "readouts": ["frozen_text", "cosine_centroid"],
+  "base": ["negative_margin", "entropy", "prompt_js"],
+  "extra": "parent_js",
+  "regression": "penalized logistic loss summed over fitting groups, unpenalized intercept, training-only z-score",
+  "l2_penalty": 1.0,
+  "temperature": "both readouts use the frozen checkpoint logit scale",
+  "primary": "paired change in error AUROC after adding parent_js",
+  "secondary": "Brier score for leaf error",
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 17
+}
