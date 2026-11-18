@@ -1,0 +1,17 @@
+{
+  "scope": "development rehearsal of the existing flat and Climbing baseline controller. All groups have already participated in earlier supervised pilots.",
+  "unit": "one documented representative per distinct HAM seed-17 split group",
+  "readouts": ["frozen_text", "original_centroid", "new_centroid"],
+  "proxy_calibration": "pool the original and alternative risk-fit development cohorts (256) for calibration of the fixed baseline policies only; no risk-regression model is used",
+  "nested_budgets": [50, 100, 200, 256],
+  "order_salt": "ham-baseline-controller-development-rehearsal-v1",
+  "evaluation_if_selected": ["two natural development batches (192)", "balanced development batch (56)"],
+  "baselines": ["flat", "climbing"],
+  "thresholds": [0.30, 0.40, 0.50, 0.60, 0.70, 0.80, 0.90, 0.95],
+  "family_failure_probability": 0.05,
+  "leaf_target": 0.1,
+  "nonroot_target": 0.05,
+  "oracle": "using true labels, retain every correct predicted leaf; on other rows return the deepest correct nonroot ancestor if one exists, otherwise root. Both zero-error acceptance counts and their one-sided bounds are optimistic limits for fixed mode-path actions.",
+  "report": "all sixteen fixed candidate counts and bounds for each readout and budget, selected policy or full abstention, label-aware oracle bounds, and agreement with direct binomial test inversion. Each readout assessed separately.",
+  "interpretation": "development workflow rehearsal; no formal calibration, independent patient sampling or clinical risk claim"
+}

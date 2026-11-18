@@ -1,0 +1,137 @@
+{
+  "scope": "evaluation and available training cases are fixed; repeated cells are dependent. Descriptive frequencies concern this finite pool, not independent external replications, p-values or population confidence intervals.",
+  "config_sha256": "2449fa90e734e8ad1ae848d5fe2095f5e1bea7af678cf3c1ea67eb2fe1174e0b",
+  "membership_sha256": "a4f0c384d1c2e03d6b6134dbd549f6190cced609b0a5670db0cff954c393c5d5",
+  "numpy": "2.5.4",
+  "partitions": 128,
+  "evaluation": {
+    "pooled_natural": 192,
+    "balanced": 56
+  },
+  "models": {
+    "clip": {
+      "control_max_absolute_difference": 0.0,
+      "pooled_natural": {
+        "valid_cells": 512,
+        "undefined_cells": 0,
+        "positive": 352,
+        "zero": 2,
+        "negative": 158,
+        "median": 0.008818055109615197,
+        "empirical_2_5_97_5": [
+          -0.04215878386180459,
+          0.07981254147312533
+        ],
+        "complete_partitions_for_variance": 128,
+        "within_partition_mean_square": {
+          "support": 0.00044686696652609134,
+          "risk_fit": 9.057876540434169e-05,
+          "interaction": 9.85359122528463e-05,
+          "total": 0.0006359816441832793
+        }
+      },
+      "balanced": {
+        "valid_cells": 512,
+        "undefined_cells": 0,
+        "positive": 164,
+        "zero": 24,
+        "negative": 324,
+        "median": -0.007227891156462551,
+        "empirical_2_5_97_5": [
+          -0.1058201530612245,
+          0.0737307692307692
+        ],
+        "complete_partitions_for_variance": 128,
+        "within_partition_mean_square": {
+          "support": 0.0005850692804395416,
+          "risk_fit": 0.00027362654648594733,
+          "interaction": 0.00019921131735741075,
+          "total": 0.0010579071442828997
+        }
+      },
+      "natural_and_balanced": {
+        "both_positive": 99,
+        "both_negative": 87,
+        "first_positive_second_negative": 237,
+        "first_negative_second_positive": 64,
+        "any_zero": 25,
+        "undefined": 0
+      }
+    },
+    "biomedclip": {
+      "control_max_absolute_difference": 0.0,
+      "pooled_natural": {
+        "valid_cells": 512,
+        "undefined_cells": 0,
+        "positive": 381,
+        "zero": 3,
+        "negative": 128,
+        "median": 0.012014253193131486,
+        "empirical_2_5_97_5": [
+          -0.029191499714755546,
+          0.056506905168322456
+        ],
+        "complete_partitions_for_variance": 128,
+        "within_partition_mean_square": {
+          "support": 0.00024089994967264043,
+          "risk_fit": 8.165018558344399e-05,
+          "interaction": 5.697824775750233e-05,
+          "total": 0.00037952838301358674
+        }
+      },
+      "balanced": {
+        "valid_cells": 512,
+        "undefined_cells": 0,
+        "positive": 216,
+        "zero": 28,
+        "negative": 268,
+        "median": -0.001290322580645209,
+        "empirical_2_5_97_5": [
+          -0.05747126436781613,
+          0.03168983689973188
+        ],
+        "complete_partitions_for_variance": 128,
+        "within_partition_mean_square": {
+          "support": 0.00020317552983150768,
+          "risk_fit": 8.589294586389602e-05,
+          "interaction": 6.773402806677368e-05,
+          "total": 0.00035680250376217735
+        }
+      },
+      "natural_and_balanced": {
+        "both_positive": 139,
+        "both_negative": 44,
+        "first_positive_second_negative": 224,
+        "first_negative_second_positive": 76,
+        "any_zero": 29,
+        "undefined": 0
+      }
+    }
+  },
+  "backbone_direction": {
+    "pooled_natural": {
+      "both_positive": 264,
+      "both_negative": 42,
+      "first_positive_second_negative": 86,
+      "first_negative_second_positive": 115,
+      "any_zero": 5,
+      "undefined": 0
+    },
+    "balanced": {
+      "both_positive": 68,
+      "both_negative": 169,
+      "first_positive_second_negative": 84,
+      "first_negative_second_positive": 141,
+      "any_zero": 50,
+      "undefined": 0
+    }
+  },
+  "both_backbones_and_both_cohorts": {
+    "all_positive": 30,
+    "all_negative": 5,
+    "estimable": 512
+  },
+  "status": "complete",
+  "cell_differences_sha256": "99bad8b20315619d3f31d6eb307d773f10766c8235282702baa1aee2d8be62fb",
+  "seconds": 2.267
+}

@@ -1,0 +1,22 @@
+{
+  "method": "torch float64 independent signals, L-BFGS, Mann-Whitney ranks on the same design",
+  "status": "complete",
+  "models": {
+    "clip": {
+      "increments": 1024,
+      "within_1e_minus_12": 1024,
+      "max_absolute_difference": 0.0,
+      "sign_disagreements": 0
+    },
+    "biomedclip": {
+      "increments": 1024,
+      "within_1e_minus_12": 1024,
+      "max_absolute_difference": 0.0,
+      "sign_disagreements": 0
+    }
+  },
+  "allocations_checked": 128,
+  "membership_sha256": "a4f0c384d1c2e03d6b6134dbd549f6190cced609b0a5670db0cff954c393c5d5",
+  "figure_sha256": "855ccf5e4633f97d929b53d037c053f6ff5b4dea7b9e7c9ec22d3aefd909df15",
+  "seconds": 19.556
+}
