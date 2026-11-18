@@ -1,0 +1,288 @@
+{
+  "scope": "analytic sensitivity using observed calibration group sizes; error probabilities assumed",
+  "assumptions": "one fixed nonroot policy accepts every row; independent groups, constant marginal error p; within each group beta-binomial ICC rho with limiting endpoints",
+  "per_check_delta": 0.0015625,
+  "target": 0.05,
+  "seeds": {
+    "17": {
+      "split_sha256": "db68c9f56cac49811ac12f8ec0727809141c726ce9ad71e0d6800036bf0ced07",
+      "all": {
+        "representatives": 473,
+        "groups": 283,
+        "size_histogram": {
+          "1": 195,
+          "2": 45,
+          "3": 21,
+          "4": 10,
+          "5": 4,
+          "6": 4,
+          "8": 1,
+          "10": 1,
+          "11": 1,
+          "12": 1
+        },
+        "image_error_ceiling_if_treated_as_iid": 10,
+        "independent_group_error_ceiling": 4,
+        "scenarios": {
+          "0.03": {
+            "one_preselected_representative_per_group": 0.07180306101082598,
+            "counting_all_representatives_as_iid": {
+              "0": 0.15943853766401345,
+              "0.25": 0.21231583705267634,
+              "0.5": 0.25223298639684577,
+              "1": 0.3112104484838892
+            }
+          },
+          "0.05": {
+            "one_preselected_representative_per_group": 0.0013296642817931328,
+            "counting_all_representatives_as_iid": {
+              "0": 0.0010826149370091799,
+              "0.25": 0.004369921222494396,
+              "0.5": 0.009895282480116898,
+              "1": 0.02818365524889635
+            }
+          },
+          "0.06": {
+            "one_preselected_representative_per_group": 0.00013654404564980306,
+            "counting_all_representatives_as_iid": {
+              "0": 4.5281595415388234e-05,
+              "0.25": 0.00035960778022402326,
+              "0.5": 0.0012138924173621531,
+              "1": 0.00593904634845179
+            }
+          }
+        }
+      },
+      "shared_leaves": {
+        "representatives": 226,
+        "groups": 161,
+        "size_histogram": {
+          "1": 122,
+          "2": 24,
+          "3": 8,
+          "4": 5,
+          "6": 2
+        },
+        "image_error_ceiling_if_treated_as_iid": 2,
+        "independent_group_error_ceiling": 0,
+        "scenarios": {
+          "0.03": {
+            "one_preselected_representative_per_group": 0.007417357591013403,
+            "counting_all_representatives_as_iid": {
+              "0": 0.03309345109919266,
+              "0.25": 0.04726421386043329,
+              "0.5": 0.061719072867712776,
+              "1": 0.09327786370486447
+            }
+          },
+          "0.05": {
+            "one_preselected_representative_per_group": 0.00025911971152330445,
+            "counting_all_representatives_as_iid": {
+              "0": 0.0007696715351488029,
+              "0.25": 0.0016873479279403618,
+              "0.5": 0.0030237927417082963,
+              "1": 0.007548207441493268
+            }
+          },
+          "0.06": {
+            "one_preselected_representative_per_group": 4.7161154664626e-05,
+            "counting_all_representatives_as_iid": {
+              "0": 0.00010057494037297204,
+              "0.25": 0.0002766414119335267,
+              "0.5": 0.0005857385650764132,
+              "1": 0.0019048921972822943
+            }
+          }
+        }
+      }
+    },
+    "29": {
+      "split_sha256": "4d558f7b8daadd87a3f7b7d7dee9eb3460023b8c43aca161050c2ec5c113d87a",
+      "all": {
+        "representatives": 473,
+        "groups": 283,
+        "size_histogram": {
+          "1": 195,
+          "2": 45,
+          "3": 21,
+          "4": 10,
+          "5": 4,
+          "6": 4,
+          "8": 1,
+          "10": 1,
+          "11": 1,
+          "12": 1
+        },
+        "image_error_ceiling_if_treated_as_iid": 10,
+        "independent_group_error_ceiling": 4,
+        "scenarios": {
+          "0.03": {
+            "one_preselected_representative_per_group": 0.07180306101082598,
+            "counting_all_representatives_as_iid": {
+              "0": 0.15943853766401345,
+              "0.25": 0.21231583705267634,
+              "0.5": 0.25223298639684577,
+              "1": 0.3112104484838892
+            }
+          },
+          "0.05": {
+            "one_preselected_representative_per_group": 0.0013296642817931328,
+            "counting_all_representatives_as_iid": {
+              "0": 0.0010826149370091799,
+              "0.25": 0.004369921222494396,
+              "0.5": 0.009895282480116898,
+              "1": 0.02818365524889635
+            }
+          },
+          "0.06": {
+            "one_preselected_representative_per_group": 0.00013654404564980306,
+            "counting_all_representatives_as_iid": {
+              "0": 4.5281595415388234e-05,
+              "0.25": 0.00035960778022402326,
+              "0.5": 0.0012138924173621531,
+              "1": 0.00593904634845179
+            }
+          }
+        }
+      },
+      "shared_leaves": {
+        "representatives": 226,
+        "groups": 161,
+        "size_histogram": {
+          "1": 122,
+          "2": 24,
+          "3": 8,
+          "4": 5,
+          "6": 2
+        },
+        "image_error_ceiling_if_treated_as_iid": 2,
+        "independent_group_error_ceiling": 0,
+        "scenarios": {
+          "0.03": {
+            "one_preselected_representative_per_group": 0.007417357591013403,
+            "counting_all_representatives_as_iid": {
+              "0": 0.03309345109919266,
+              "0.25": 0.04726421386043329,
+              "0.5": 0.061719072867712776,
+              "1": 0.09327786370486447
+            }
+          },
+          "0.05": {
+            "one_preselected_representative_per_group": 0.00025911971152330445,
+            "counting_all_representatives_as_iid": {
+              "0": 0.0007696715351488029,
+              "0.25": 0.0016873479279403618,
+              "0.5": 0.0030237927417082963,
+              "1": 0.007548207441493268
+            }
+          },
+          "0.06": {
+            "one_preselected_representative_per_group": 4.7161154664626e-05,
+            "counting_all_representatives_as_iid": {
+              "0": 0.00010057494037297204,
+              "0.25": 0.0002766414119335267,
+              "0.5": 0.0005857385650764132,
+              "1": 0.0019048921972822943
+            }
+          }
+        }
+      }
+    },
+    "43": {
+      "split_sha256": "48c188a384184d609ae3a8909ad0e241b3035a7aae1b85a271a706aa02d33d1b",
+      "all": {
+        "representatives": 473,
+        "groups": 283,
+        "size_histogram": {
+          "1": 195,
+          "2": 45,
+          "3": 21,
+          "4": 10,
+          "5": 4,
+          "6": 4,
+          "8": 1,
+          "10": 1,
+          "11": 1,
+          "12": 1
+        },
+        "image_error_ceiling_if_treated_as_iid": 10,
+        "independent_group_error_ceiling": 4,
+        "scenarios": {
+          "0.03": {
+            "one_preselected_representative_per_group": 0.07180306101082598,
+            "counting_all_representatives_as_iid": {
+              "0": 0.15943853766401345,
+              "0.25": 0.21231583705267634,
+              "0.5": 0.25223298639684577,
+              "1": 0.3112104484838892
+            }
+          },
+          "0.05": {
+            "one_preselected_representative_per_group": 0.0013296642817931328,
+            "counting_all_representatives_as_iid": {
+              "0": 0.0010826149370091799,
+              "0.25": 0.004369921222494396,
+              "0.5": 0.009895282480116898,
+              "1": 0.02818365524889635
+            }
+          },
+          "0.06": {
+            "one_preselected_representative_per_group": 0.00013654404564980306,
+            "counting_all_representatives_as_iid": {
+              "0": 4.5281595415388234e-05,
+              "0.25": 0.00035960778022402326,
+              "0.5": 0.0012138924173621531,
+              "1": 0.00593904634845179
+            }
+          }
+        }
+      },
+      "shared_leaves": {
+        "representatives": 226,
+        "groups": 161,
+        "size_histogram": {
+          "1": 122,
+          "2": 24,
+          "3": 8,
+          "4": 5,
+          "6": 2
+        },
+        "image_error_ceiling_if_treated_as_iid": 2,
+        "independent_group_error_ceiling": 0,
+        "scenarios": {
+          "0.03": {
+            "one_preselected_representative_per_group": 0.007417357591013403,
+            "counting_all_representatives_as_iid": {
+              "0": 0.03309345109919266,
+              "0.25": 0.04726421386043329,
+              "0.5": 0.061719072867712776,
+              "1": 0.09327786370486447
+            }
+          },
+          "0.05": {
+            "one_preselected_representative_per_group": 0.00025911971152330445,
+            "counting_all_representatives_as_iid": {
+              "0": 0.0007696715351488029,
+              "0.25": 0.0016873479279403618,
+              "0.5": 0.0030237927417082963,
+              "1": 0.007548207441493268
+            }
+          },
+          "0.06": {
+            "one_preselected_representative_per_group": 4.7161154664626e-05,
+            "counting_all_representatives_as_iid": {
+              "0": 0.00010057494037297204,
+              "0.25": 0.0002766414119335267,
+              "0.5": 0.0005857385650764132,
+              "1": 0.0019048921972822943
+            }
+          }
+        }
+      }
+    }
+  },
+  "protocol_sha256": "556fca7acdaa367aad4c97a6d42cc221b07604d74df24b9d1020565583305058",
+  "crosswalk_sha256": "d8f0bd34f2aac785e7272dc2acd77ef624821174b6b4fdeaf0c6f7ca0d7539d8",
+  "status": "complete",
+  "seconds": 0.075
+}
