@@ -1,0 +1,26 @@
+{
+  "protocol": "v1.5",
+  "split_seed": 17,
+  "cohort_role": "dev",
+  "n": 96,
+  "salt": "ham-g1-fixed-detectors-next96-20261119",
+  "selection": "first 96 unexposed groups in ascending sha256(salt|group); lexicographically first representative in group; reserve all new groups touched by the previous 336 train/dev images",
+  "previous_selections": [
+    "64760d4586734aa48eeaefa2558598533cf33716db191442d7f8fc2b7a2ec40e",
+    "e68b8a3111c9ab421dd0c52ca746776fed6587e5160e2577fd098146f25aed37",
+    "8b6ac07f29b2df16e118c96c73b642fbb31381c1194e7a6c7a8940bf0e9f9954"
+  ],
+  "risk_parameters_sha256": "05987e7d15205d8f8854d54fb861f8f6575395dcbf98e984694ca35b44dbce94",
+  "primary": "original frozen base versus augmented risk ranking, error AUROC difference on the 96 new groups, separately for both image centroids",
+  "secondary": [
+    "same comparison for both text readouts",
+    "Brier for predicting leaf errors",
+    "paired difference on the precomputed conservative image-overlap mask",
+    "descriptive pooled comparison with the first 96 natural dev groups where all current groups are independent of one another"
+  ],
+  "mask": "use all 96 for the primary; apply v1.5 overlap sensitivity mask to the same predictions separately",
+  "bootstrap": "resample only the new evaluation groups with shared indices across models; already-frozen risk models, no refitting",
+  "replicates": 2000,
+  "bootstrap_seed": 17043,
+  "interpretation": "single predeclared additional development batch; report all signs and sample counts; consistency across backbones and batch compositions needed before any new module"
+}
