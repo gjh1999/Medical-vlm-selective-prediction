@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "images": 10015,
+  "source_manifest_sha256": "5bed1979d4ca0aff4e6f870429b65a9e76649632f128177c86e14b168f39ed1a",
+  "opencv": "5.1.0",
+  "numpy": "2.5.4",
+  "workers": 3,
+  "representation": "unmodified uint8 SIFT for native and mirrored frames with float32 coordinates",
+  "total_descriptors": 18586701,
+  "index_sha256": "ce69f9d17992fa7a1dae3a9ee917cebcae3efe0ae35fb94effef758891b35140",
+  "seconds": 713.627
+}

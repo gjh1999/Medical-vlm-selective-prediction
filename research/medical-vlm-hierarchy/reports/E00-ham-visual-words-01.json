@@ -1,0 +1,53 @@
+{
+  "scope": "image-provenance retrieval only, no disease labels",
+  "seed": 17,
+  "branching": 64,
+  "training_samples_per_view": 4,
+  "top_k": 20,
+  "workers": 3,
+  "cache_index_sha256": "ce69f9d17992fa7a1dae3a9ee917cebcae3efe0ae35fb94effef758891b35140",
+  "old_candidate_sha256": "7512fae2aa95db17bbdb18e3405e714464936440ec8e25d0dd9e53b10a5677c2",
+  "stages": {
+    "sample_seconds": 9.253,
+    "vocabulary_seconds": 2.637,
+    "histogram_seconds": 37.441,
+    "retrieval_and_write_seconds": 11.069
+  },
+  "actual_visual_words": 4096,
+  "controls_by_depth": {
+    "1": {
+      "unique_pairs": 9874,
+      "overlap_old": 39,
+      "confirmed": 10,
+      "uncertain": 0,
+      "confirmed_union_with_old": 12
+    },
+    "5": {
+      "unique_pairs": 48683,
+      "overlap_old": 129,
+      "confirmed": 13,
+      "uncertain": 1,
+      "confirmed_union_with_old": 14
+    },
+    "10": {
+      "unique_pairs": 96347,
+      "overlap_old": 228,
+      "confirmed": 14,
+      "uncertain": 1,
+      "confirmed_union_with_old": 15
+    },
+    "20": {
+      "unique_pairs": 189901,
+      "overlap_old": 438,
+      "confirmed": 16,
+      "uncertain": 1,
+      "confirmed_union_with_old": 17
+    }
+  },
+  "status": "complete",
+  "images": 10015,
+  "training_descriptors": 80120,
+  "candidate_sha256": "a85409e1c60fb94a394190f1bcb98e5dfbd799760b6797c248d7008b38f9ac9c",
+  "vocabulary_sha256": "8df6cb32ed1aa4b7c1378d847dbd09d60e3dc0a7d6f1665e5d053bed504a7946",
+  "seconds": 60.502
+}

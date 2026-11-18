@@ -1,0 +1,329 @@
+{
+  "scope": "sensitivity scenarios on v1.4; no released partition changes",
+  "source_geometry_sha256": "66e62c45e5c9f4907ef85aa79a756b653ce23e77ea551f4cf6c6d2e1ac181a13",
+  "source_review_sha256": "80a709e3aa5b8c61fa42e73181141d57af8446e3dbbddc7b07d51271c344bf1b",
+  "cohort_counts": {
+    "first_dev": 128,
+    "balanced_train": 56,
+    "balanced_dev": 56,
+    "fresh_dev": 96
+  },
+  "tiers": {
+    "root8": {
+      "pairs": 15,
+      "groups": 29,
+      "also_in_old_dhash_mask": 10,
+      "missing_from_old_dhash_mask": 19,
+      "seeds": {
+        "17": {
+          "cross_pairs_now": 12,
+          "cross_pairs_after_hypothetical_binding": 0,
+          "groups_touched_by_role": {
+            "test": 10,
+            "calibration": 5,
+            "train": 12,
+            "dev": 2
+          },
+          "representatives_touched_by_role": {
+            "train": 12,
+            "test": 10,
+            "dev": 2,
+            "calibration": 5
+          },
+          "groups_after_hypothetical_binding": 7430,
+          "images_moved_if_bound": 20
+        },
+        "29": {
+          "cross_pairs_now": 10,
+          "cross_pairs_after_hypothetical_binding": 0,
+          "groups_touched_by_role": {
+            "train": 12,
+            "test": 8,
+            "dev": 4,
+            "calibration": 5
+          },
+          "representatives_touched_by_role": {
+            "test": 8,
+            "calibration": 5,
+            "dev": 4,
+            "train": 12
+          },
+          "groups_after_hypothetical_binding": 7430,
+          "images_moved_if_bound": 15
+        },
+        "43": {
+          "cross_pairs_now": 10,
+          "cross_pairs_after_hypothetical_binding": 0,
+          "groups_touched_by_role": {
+            "test": 8,
+            "train": 11,
+            "calibration": 6,
+            "dev": 4
+          },
+          "representatives_touched_by_role": {
+            "test": 8,
+            "calibration": 6,
+            "train": 11,
+            "dev": 4
+          },
+          "groups_after_hypothetical_binding": 7430,
+          "images_moved_if_bound": 14
+        }
+      },
+      "previous_cohorts": {
+        "first_dev": {
+          "touched": 0,
+          "would_change_role": 0
+        },
+        "balanced_train": {
+          "touched": 0,
+          "would_change_role": 0
+        },
+        "balanced_dev": {
+          "touched": 0,
+          "would_change_role": 0
+        },
+        "fresh_dev": {
+          "touched": 0,
+          "would_change_role": 0
+        }
+      },
+      "hypothetical_groups_with_multiple_previous_rows": 0,
+      "hypothetical_groups_crossing_previous_cohorts": 0
+    },
+    "root16_cells4": {
+      "pairs": 7,
+      "groups": 14,
+      "also_in_old_dhash_mask": 5,
+      "missing_from_old_dhash_mask": 9,
+      "seeds": {
+        "17": {
+          "cross_pairs_now": 6,
+          "cross_pairs_after_hypothetical_binding": 0,
+          "groups_touched_by_role": {
+            "train": 7,
+            "test": 4,
+            "calibration": 3
+          },
+          "representatives_touched_by_role": {
+            "train": 7,
+            "test": 4,
+            "calibration": 3
+          },
+          "groups_after_hypothetical_binding": 7438,
+          "images_moved_if_bound": 10
+        },
+        "29": {
+          "cross_pairs_now": 5,
+          "cross_pairs_after_hypothetical_binding": 0,
+          "groups_touched_by_role": {
+            "test": 5,
+            "train": 3,
+            "calibration": 4,
+            "dev": 2
+          },
+          "representatives_touched_by_role": {
+            "test": 5,
+            "dev": 2,
+            "calibration": 4,
+            "train": 3
+          },
+          "groups_after_hypothetical_binding": 7438,
+          "images_moved_if_bound": 8
+        },
+        "43": {
+          "cross_pairs_now": 5,
+          "cross_pairs_after_hypothetical_binding": 0,
+          "groups_touched_by_role": {
+            "dev": 3,
+            "train": 5,
+            "test": 4,
+            "calibration": 2
+          },
+          "representatives_touched_by_role": {
+            "test": 4,
+            "calibration": 2,
+            "dev": 3,
+            "train": 5
+          },
+          "groups_after_hypothetical_binding": 7438,
+          "images_moved_if_bound": 8
+        }
+      },
+      "previous_cohorts": {
+        "first_dev": {
+          "touched": 0,
+          "would_change_role": 0
+        },
+        "balanced_train": {
+          "touched": 0,
+          "would_change_role": 0
+        },
+        "balanced_dev": {
+          "touched": 0,
+          "would_change_role": 0
+        },
+        "fresh_dev": {
+          "touched": 0,
+          "would_change_role": 0
+        }
+      },
+      "hypothetical_groups_with_multiple_previous_rows": 0,
+      "hypothetical_groups_crossing_previous_cohorts": 0
+    },
+    "root16_and_orb12_cells4": {
+      "pairs": 6,
+      "groups": 12,
+      "also_in_old_dhash_mask": 5,
+      "missing_from_old_dhash_mask": 7,
+      "seeds": {
+        "17": {
+          "cross_pairs_now": 5,
+          "cross_pairs_after_hypothetical_binding": 0,
+          "groups_touched_by_role": {
+            "train": 7,
+            "test": 3,
+            "calibration": 2
+          },
+          "representatives_touched_by_role": {
+            "train": 7,
+            "test": 3,
+            "calibration": 2
+          },
+          "groups_after_hypothetical_binding": 7439,
+          "images_moved_if_bound": 8
+        },
+        "29": {
+          "cross_pairs_now": 4,
+          "cross_pairs_after_hypothetical_binding": 0,
+          "groups_touched_by_role": {
+            "test": 4,
+            "train": 3,
+            "calibration": 3,
+            "dev": 2
+          },
+          "representatives_touched_by_role": {
+            "test": 4,
+            "dev": 2,
+            "train": 3,
+            "calibration": 3
+          },
+          "groups_after_hypothetical_binding": 7439,
+          "images_moved_if_bound": 6
+        },
+        "43": {
+          "cross_pairs_now": 5,
+          "cross_pairs_after_hypothetical_binding": 0,
+          "groups_touched_by_role": {
+            "dev": 3,
+            "train": 5,
+            "test": 4
+          },
+          "representatives_touched_by_role": {
+            "test": 4,
+            "dev": 3,
+            "train": 5
+          },
+          "groups_after_hypothetical_binding": 7439,
+          "images_moved_if_bound": 8
+        }
+      },
+      "previous_cohorts": {
+        "first_dev": {
+          "touched": 0,
+          "would_change_role": 0
+        },
+        "balanced_train": {
+          "touched": 0,
+          "would_change_role": 0
+        },
+        "balanced_dev": {
+          "touched": 0,
+          "would_change_role": 0
+        },
+        "fresh_dev": {
+          "touched": 0,
+          "would_change_role": 0
+        }
+      },
+      "hypothetical_groups_with_multiple_previous_rows": 0,
+      "hypothetical_groups_crossing_previous_cohorts": 0
+    },
+    "also_strict_registered_pixels": {
+      "pairs": 2,
+      "groups": 4,
+      "also_in_old_dhash_mask": 3,
+      "missing_from_old_dhash_mask": 1,
+      "seeds": {
+        "17": {
+          "cross_pairs_now": 2,
+          "cross_pairs_after_hypothetical_binding": 0,
+          "groups_touched_by_role": {
+            "test": 1,
+            "calibration": 1,
+            "train": 2
+          },
+          "representatives_touched_by_role": {
+            "train": 2,
+            "test": 1,
+            "calibration": 1
+          },
+          "groups_after_hypothetical_binding": 7443,
+          "images_moved_if_bound": 4
+        },
+        "29": {
+          "cross_pairs_now": 1,
+          "cross_pairs_after_hypothetical_binding": 0,
+          "groups_touched_by_role": {
+            "test": 2,
+            "train": 1,
+            "dev": 1
+          },
+          "representatives_touched_by_role": {
+            "test": 2,
+            "train": 1,
+            "dev": 1
+          },
+          "groups_after_hypothetical_binding": 7443,
+          "images_moved_if_bound": 1
+        },
+        "43": {
+          "cross_pairs_now": 1,
+          "cross_pairs_after_hypothetical_binding": 0,
+          "groups_touched_by_role": {
+            "train": 1,
+            "test": 3
+          },
+          "representatives_touched_by_role": {
+            "test": 3,
+            "train": 1
+          },
+          "groups_after_hypothetical_binding": 7443,
+          "images_moved_if_bound": 2
+        }
+      },
+      "previous_cohorts": {
+        "first_dev": {
+          "touched": 0,
+          "would_change_role": 0
+        },
+        "balanced_train": {
+          "touched": 0,
+          "would_change_role": 0
+        },
+        "balanced_dev": {
+          "touched": 0,
+          "would_change_role": 0
+        },
+        "fresh_dev": {
+          "touched": 0,
+          "would_change_role": 0
+        }
+      },
+      "hypothetical_groups_with_multiple_previous_rows": 0,
+      "hypothetical_groups_crossing_previous_cohorts": 0
+    }
+  },
+  "status": "complete",
+  "seconds": 0.349
+}

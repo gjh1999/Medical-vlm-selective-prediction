@@ -1,0 +1,89 @@
+{
+  "scope": "published positive and unresolved pairs only; not population-level sensitivity",
+  "source_sha256": [
+    "a85409e1c60fb94a394190f1bcb98e5dfbd799760b6797c248d7008b38f9ac9c",
+    "7512fae2aa95db17bbdb18e3405e714464936440ec8e25d0dd9e53b10a5677c2",
+    "679b67027ca2057d44b1daff0e18f1dad257b20ab91d8a5f79510d59754e6541",
+    "65394575c3c46d4d75c690ecf6317f7166acc9866ab7141b41c84bf0e76a49e6"
+  ],
+  "tables": {
+    "published_confirmed": {
+      "1": {
+        "known_total": 18,
+        "words_retrieved": 10,
+        "words_then_root8": 10,
+        "combined_retrieved": 12,
+        "combined_then_root8": 12,
+        "combined_then_root16_cells4": 10,
+        "combined_then_root16_cells4_and_strict_pixel": 3
+      },
+      "5": {
+        "known_total": 18,
+        "words_retrieved": 13,
+        "words_then_root8": 13,
+        "combined_retrieved": 14,
+        "combined_then_root8": 14,
+        "combined_then_root16_cells4": 12,
+        "combined_then_root16_cells4_and_strict_pixel": 3
+      },
+      "10": {
+        "known_total": 18,
+        "words_retrieved": 14,
+        "words_then_root8": 14,
+        "combined_retrieved": 15,
+        "combined_then_root8": 15,
+        "combined_then_root16_cells4": 12,
+        "combined_then_root16_cells4_and_strict_pixel": 3
+      },
+      "20": {
+        "known_total": 18,
+        "words_retrieved": 16,
+        "words_then_root8": 16,
+        "combined_retrieved": 17,
+        "combined_then_root8": 17,
+        "combined_then_root16_cells4": 14,
+        "combined_then_root16_cells4_and_strict_pixel": 3
+      }
+    },
+    "published_uncertain": {
+      "1": {
+        "known_total": 2,
+        "words_retrieved": 0,
+        "words_then_root8": 0,
+        "combined_retrieved": 0,
+        "combined_then_root8": 0,
+        "combined_then_root16_cells4": 0,
+        "combined_then_root16_cells4_and_strict_pixel": 0
+      },
+      "5": {
+        "known_total": 2,
+        "words_retrieved": 1,
+        "words_then_root8": 0,
+        "combined_retrieved": 1,
+        "combined_then_root8": 0,
+        "combined_then_root16_cells4": 0,
+        "combined_then_root16_cells4_and_strict_pixel": 0
+      },
+      "10": {
+        "known_total": 2,
+        "words_retrieved": 1,
+        "words_then_root8": 0,
+        "combined_retrieved": 1,
+        "combined_then_root8": 0,
+        "combined_then_root16_cells4": 0,
+        "combined_then_root16_cells4_and_strict_pixel": 0
+      },
+      "20": {
+        "known_total": 2,
+        "words_retrieved": 1,
+        "words_then_root8": 0,
+        "combined_retrieved": 1,
+        "combined_then_root8": 0,
+        "combined_then_root16_cells4": 0,
+        "combined_then_root16_cells4_and_strict_pixel": 0
+      }
+    }
+  },
+  "status": "complete",
+  "seconds": 0.395
+}
