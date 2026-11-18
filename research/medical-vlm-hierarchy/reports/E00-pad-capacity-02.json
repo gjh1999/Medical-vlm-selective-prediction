@@ -1,0 +1,171 @@
+{
+  "protocol": "1.2",
+  "python": "3.14.7",
+  "per_check_delta": 0.0015625,
+  "splits": {
+    "17": {
+      "representatives": 473,
+      "groups": 283,
+      "groups_containing_each_label": {
+        "ACK": 120,
+        "BCC": 119,
+        "MEL": 9,
+        "NEV": 44,
+        "SCC": 31,
+        "SEK": 42
+      },
+      "sha256": "db68c9f56cac49811ac12f8ec0727809141c726ce9ad71e0d6800036bf0ced07"
+    },
+    "29": {
+      "representatives": 473,
+      "groups": 283,
+      "groups_containing_each_label": {
+        "ACK": 120,
+        "BCC": 119,
+        "MEL": 9,
+        "NEV": 44,
+        "SCC": 31,
+        "SEK": 42
+      },
+      "sha256": "4d558f7b8daadd87a3f7b7d7dee9eb3460023b8c43aca161050c2ec5c113d87a"
+    },
+    "43": {
+      "representatives": 473,
+      "groups": 283,
+      "groups_containing_each_label": {
+        "ACK": 120,
+        "BCC": 119,
+        "MEL": 9,
+        "NEV": 44,
+        "SCC": 31,
+        "SEK": 42
+      },
+      "sha256": "48c188a384184d609ae3a8909ad0e241b3035a7aae1b85a271a706aa02d33d1b"
+    }
+  },
+  "max_errors_if_all_groups_accepted": {
+    "17": {
+      "50": {
+        "leaf_conditional_error": null,
+        "nonroot_set_conditional_error": null
+      },
+      "100": {
+        "leaf_conditional_error": 1,
+        "nonroot_set_conditional_error": null
+      },
+      "200": {
+        "leaf_conditional_error": 8,
+        "nonroot_set_conditional_error": 1
+      },
+      "283": {
+        "leaf_conditional_error": 14,
+        "nonroot_set_conditional_error": 4
+      }
+    },
+    "29": {
+      "50": {
+        "leaf_conditional_error": null,
+        "nonroot_set_conditional_error": null
+      },
+      "100": {
+        "leaf_conditional_error": 1,
+        "nonroot_set_conditional_error": null
+      },
+      "200": {
+        "leaf_conditional_error": 8,
+        "nonroot_set_conditional_error": 1
+      },
+      "283": {
+        "leaf_conditional_error": 14,
+        "nonroot_set_conditional_error": 4
+      }
+    },
+    "43": {
+      "50": {
+        "leaf_conditional_error": null,
+        "nonroot_set_conditional_error": null
+      },
+      "100": {
+        "leaf_conditional_error": 1,
+        "nonroot_set_conditional_error": null
+      },
+      "200": {
+        "leaf_conditional_error": 8,
+        "nonroot_set_conditional_error": 1
+      },
+      "283": {
+        "leaf_conditional_error": 14,
+        "nonroot_set_conditional_error": 4
+      }
+    }
+  },
+  "calibration_group_overlap": {
+    "overall": {
+      "distinct_across_seeds": 617,
+      "common_to_all_seeds": 31,
+      "pairwise_intersections": {
+        "17/29": 85,
+        "17/43": 83,
+        "29/43": 95
+      }
+    },
+    "by_label": {
+      "ACK": {
+        "distinct_across_seeds": 257,
+        "common_to_all_seeds": 19,
+        "pairwise_intersections": {
+          "17/29": 38,
+          "17/43": 43,
+          "29/43": 41
+        }
+      },
+      "BCC": {
+        "distinct_across_seeds": 251,
+        "common_to_all_seeds": 19,
+        "pairwise_intersections": {
+          "17/29": 42,
+          "17/43": 38,
+          "29/43": 45
+        }
+      },
+      "MEL": {
+        "distinct_across_seeds": 16,
+        "common_to_all_seeds": 3,
+        "pairwise_intersections": {
+          "17/29": 6,
+          "17/43": 4,
+          "29/43": 4
+        }
+      },
+      "NEV": {
+        "distinct_across_seeds": 89,
+        "common_to_all_seeds": 9,
+        "pairwise_intersections": {
+          "17/29": 17,
+          "17/43": 15,
+          "29/43": 20
+        }
+      },
+      "SCC": {
+        "distinct_across_seeds": 56,
+        "common_to_all_seeds": 9,
+        "pairwise_intersections": {
+          "17/29": 15,
+          "17/43": 14,
+          "29/43": 17
+        }
+      },
+      "SEK": {
+        "distinct_across_seeds": 81,
+        "common_to_all_seeds": 12,
+        "pairwise_intersections": {
+          "17/29": 20,
+          "17/43": 18,
+          "29/43": 19
+        }
+      }
+    }
+  },
+  "scope": "Count ceiling only. No model outputs or iid claim.",
+  "elapsed_compute_seconds": 0.03634960000636056
+}

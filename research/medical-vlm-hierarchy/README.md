@@ -2,11 +2,13 @@
 
 已选研究方向：有限标注和长尾条件下，在具体病种、上位类别和完全拒识之间作可靠决策。
 
-当前状态：2026-11-17 已完成 HAM v4.0 与 PAD v1 官方元数据下载和校验，分别生成三套病灶级/保守患者连通组划分。参考核心、数据审计及特征输入校验合计 13 项测试通过。尚未下载原图或执行模型推理；5080 特征提取代码未在目标环境验证。
+截至 2026-11-18，已校验 HAM v4.0 与 PAD v1 官方元数据，并生成三套划分。PAD 校准样本量审计已完成，15 项软件测试通过。原图内容审查和 5080 模型推理仍待执行。
 
 HAM：10,015 图像 / 7,470 病灶；calibration 1,869 病灶，其中 df 18、nv 1,351，尚不能声称患者级独立。PAD：2,298 图像 / 1,373 患者；250 个 raw lesion_id 跨患者重用，其中 226 个存在标签差异。当前将共享 raw ID 的患者保守连接成 1,132 个 split_group，三套划分均无患者/raw ID/连通组交叉。1,891 个 patient+lesion 处理键不能当成已核实的真实病灶数。完整证据见[实验记录](实验记录.md)。
 
 正式 GPU 为家中的 RTX 5080，详见 [5080 运行说明](5080运行说明.md)。本机不安装 GPU 环境。
+
+PAD 每次划分可用 283 个校准组。按 v1.2 的 16 个候选策略计算，即使零错误，叶风险与非根风险也分别要求至少 62 和 126 个独立接受组。预算降到 100 组时，两项约束无法同时通过。每次仅 9 组含 MEL，三个种子合计涉及 16 个不同的含 MEL 组。[校准样本量与重叠统计](reports/E00-pad-capacity-02.json)
 
 - [研究计划](研究计划.md)：研究问题、最近工作、数据/树/划分、基线、候选方法、统计边界、实验清单和八周里程碑。
 - [本地网页计划](研究计划.html)：与研究计划内容一致，可离线浏览、打印 PDF。
@@ -24,6 +26,7 @@ GitHub：`https://github.com/gjh1999/Medical-vlm-selective-prediction.git`。已
 python preflight.py --network --output outputs/new-preflight-01
 python prepare_ham.py --output outputs/new-ham-01
 python prepare_pad.py --output outputs/new-pad-01
+python audit_pad_capacity.py --split-dir outputs/new-pad-01 --output outputs/new-pad-capacity-01
 python -m unittest -v test_core.py
 ```
 
