@@ -1,0 +1,18 @@
+{
+  "model": "biomedclip",
+  "device": "cpu",
+  "train_images": 8,
+  "prompts": 18,
+  "verified_logits": 144,
+  "scale": 85.2322769165039,
+  "feature_tolerance": 0.0001,
+  "logit_tolerance": 0.001,
+  "max_text_feature_error": 1.7881393432617188e-07,
+  "max_image_feature_error": 8.940696716308594e-08,
+  "max_logit_error": 1.1444091796875e-05,
+  "config_sha256": "de04895cd0bdb141cd31a48c5d98107b729c5ebeb1642211bc1d579fd16237de",
+  "cache_total_seconds": 19.131,
+  "text_seconds": 6.792,
+  "status": "passed",
+  "reference_seconds": 14.543
+}

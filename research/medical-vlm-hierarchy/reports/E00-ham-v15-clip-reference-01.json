@@ -1,0 +1,18 @@
+{
+  "model": "clip",
+  "device": "cpu",
+  "train_images": 8,
+  "prompts": 18,
+  "verified_logits": 144,
+  "scale": 100.00000762939453,
+  "feature_tolerance": 0.0001,
+  "logit_tolerance": 0.001,
+  "max_text_feature_error": 1.4156103134155273e-07,
+  "max_image_feature_error": 1.7881393432617188e-07,
+  "max_logit_error": 1.52587890625e-05,
+  "config_sha256": "de04895cd0bdb141cd31a48c5d98107b729c5ebeb1642211bc1d579fd16237de",
+  "cache_total_seconds": 11.335,
+  "text_seconds": 1.144,
+  "status": "passed",
+  "reference_seconds": 8.281
+}

@@ -1,0 +1,73 @@
+{
+  "scope": "development bootstrap under empirical cohort distributions",
+  "config_sha256": "053bf9c01de31805edb209c370fdf30a2e9dcd759f4d1e8c24c9198285a0cbee",
+  "replicates": 2000,
+  "seed": 17,
+  "resampling": "paired across detectors/encoders, stratified replacement within each support class, independent replacement of fit and dev groups",
+  "models": {
+    "clip": {
+      "frozen_text": {
+        "observed_delta": 0.03415369161225512,
+        "valid_replicates": 2000,
+        "invalid": {
+          "single_class_fit": 0,
+          "single_class_evaluation": 0
+        },
+        "median": 0.033151646567258775,
+        "percentiles_2_5_97_5": [
+          -0.07271853634446898,
+          0.168483337314859
+        ]
+      },
+      "cosine_centroid": {
+        "observed_delta": 0.08200282393830782,
+        "valid_replicates": 2000,
+        "invalid": {
+          "single_class_fit": 0,
+          "single_class_evaluation": 0
+        },
+        "median": 0.054227030233648055,
+        "percentiles_2_5_97_5": [
+          -0.026333028426681646,
+          0.20669187626180188
+        ]
+      }
+    },
+    "biomedclip": {
+      "frozen_text": {
+        "observed_delta": 0.0073014907210222635,
+        "valid_replicates": 2000,
+        "invalid": {
+          "single_class_fit": 0,
+          "single_class_evaluation": 0
+        },
+        "median": -0.0011627906976744151,
+        "percentiles_2_5_97_5": [
+          -0.1389893512415054,
+          0.12457231325373747
+        ]
+      },
+      "cosine_centroid": {
+        "observed_delta": -0.005126953125,
+        "valid_replicates": 2000,
+        "invalid": {
+          "single_class_fit": 0,
+          "single_class_evaluation": 0
+        },
+        "median": -0.0073287372413717855,
+        "percentiles_2_5_97_5": [
+          -0.10346153846153847,
+          0.041354058964793744
+        ]
+      }
+    }
+  },
+  "evaluation_batches": [
+    96,
+    96
+  ],
+  "confirmation_sha256": "5c7d3dccbc00074dbe08b5bb36a692e6a56f54828829dcb711fa364a94fa0262",
+  "evaluation_resampling": "resample separately within each of the two natural development batches",
+  "status": "complete",
+  "seconds": 13.854
+}
