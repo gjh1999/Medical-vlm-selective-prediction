@@ -12,7 +12,7 @@ import numpy as np
 from ham_dev_pilot import digest, softmax
 from ham_error_increment import read_csv
 from reallocate_ham_development_training import ROOT, read_cohorts
-from selective_core import Taxonomy, select_policy, upper_bound
+from selective_core import Taxonomy, policy_actions, select_policy, upper_bound
 
 
 def exact_pass(errors, accepted, risk, delta):
@@ -20,15 +20,6 @@ def exact_pass(errors, accepted, risk, delta):
         return False
     probability = math.fsum(math.comb(accepted, j) * risk**j * (1-risk)**(accepted-j) for j in range(errors+1))
     return probability <= delta
-
-
-def policy_actions(tree, probabilities, cfg):
-    results = {}
-    for mode in cfg["baselines"]:
-        method = {"flat": tree.flat, "climbing": tree.climbing}[mode]
-        for tau in cfg["thresholds"]:
-            results[f"{mode}_{tau:.2f}"] = [method(row, tau) for row in probabilities]
-    return results
 
 
 def best_possible(tree, truth, prob, delta, cfg):

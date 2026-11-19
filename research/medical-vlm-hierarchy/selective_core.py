@@ -120,6 +120,15 @@ def lac_set(probabilities, quantile):
     return [y for y,p in probabilities.items() if 1-p<=quantile]
 
 
+def policy_actions(tree, probabilities, config):
+    results = {}
+    methods = {"flat": tree.flat, "climbing": tree.climbing}
+    for mode in config["baselines"]:
+        for threshold in config["thresholds"]:
+            results[f"{mode}_{threshold:.2f}"] = [methods[mode](row, threshold) for row in probabilities]
+    return results
+
+
 def select_policy(taxonomy, truth, candidates, delta=.05, leaf_target=.1, node_target=.05):
     """Candidates fixed on dev; only select using calibration labels."""
     if not candidates or len(candidates)>16:raise ValueError('Need 1..16 fixed candidates')

@@ -1,0 +1,12 @@
+{
+  "protocol": "v1.5",
+  "prompt_config_sha256": "de04895cd0bdb141cd31a48c5d98107b729c5ebeb1642211bc1d579fd16237de",
+  "controller_rehearsal_sha256": "8282e7995cfaee389b584b658016f165b1de7f03242b8b502cd46b10e9d88516",
+  "selection_salt": "ham-frozen-baseline-v1",
+  "centroid_train_groups_per_leaf": 8,
+  "group_representative": "lowest image_id among existing analysis-unit representatives in the split group",
+  "train_support": "within each seed, use only train group representatives, rank by SHA256 of salt|seed|split_group and take the first eight per leaf",
+  "calibration": "one label-blind representative per eligible split group, all eligible groups, 16 fixed flat and Climbing policies; separate family budget per model, readout, split and population",
+  "test": "all eligible analysis-unit representatives for primary test point estimates, plus one representative per group for comparison with the calibration unit",
+  "taxonomy_scope": "HAM research grouping reviewed against the dataset descriptor, with the pilot topology and prompts retained. Clinical review remains pending."
+}
