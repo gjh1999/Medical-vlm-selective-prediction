@@ -50,6 +50,8 @@ PAD 每次划分可用 283 个校准组。按 v1.2 的 16 个候选策略计算�
 
 同一入口已加入 B1–B5 的扩展比较。最大概率、margin、负熵、提示分歧、Climbing、两级父类概率各用 16 档候选，另报温度拟合、单提示和 LAC 集合。128 个开发组的模拟校准中，48 次方法选择都未达到双风险约束。第二批 96 个自然开发组上，BiomedCLIP 类中心的名义 90% LAC 集合包含 86 个真值，单节点投影后有 50 个正确非根输出（原始温度）。[扩展开发结果](reports/E01-ham-extended-rehearsal-02.json)
 
+正式入口支持按划分组做 2,000 次成对重抽样，给出正确信息量和叶输出率的逐划分区间。开发演练中的 120 项风险策略比较均为两边完全拒识。始终输出叶时，在第二批 96 组上，余弦类中心较冻结文本多答对 39 个 OpenAI CLIP 组、53 个 BiomedCLIP 组。两个读出的标签预算有别，正式同风险结果待测。[开发组区间与分母](reports/E01-ham-paired-bootstrap-01.json)
+
 GitHub：`https://github.com/gjh1999/Medical-vlm-selective-prediction.git`。已加入全局项目列表，每天 17:00 执行 WIP 备份；原每 30 分钟项目同步任务保留。较大变更验证后也主动提交推送。任务需要本机开机且注册用户已登录。原图、权重、样本 manifest/split 与 outputs 不入库。
 
 网页由 `python build_plan.py` 从 Markdown 生成，不依赖外部库。以下命令可在当前主机或 5080 主机执行：

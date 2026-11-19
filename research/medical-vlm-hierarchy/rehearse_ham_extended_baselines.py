@@ -8,9 +8,11 @@ from pathlib import Path
 import numpy as np
 
 from audit_ham_temperature import loss
-from evaluate_ham_frozen_baselines import CONTROLLER, PROMPTS, RECIPE as BASE_RECIPE, config_digest, digest
+from audit_ham_development_exposure import read_csv, read_split
+from evaluate_ham_frozen_baselines import CONTROLLER, PROMPTS, RELEASE, RECIPE as BASE_RECIPE, config_digest, digest
 from ham_dev_pilot import js, softmax
 from ham_extended_baselines import RECIPE, compare_prompt_templates, evaluate_readout
+from ham_paired_inference import METRICS, RECIPE as BOOTSTRAP_RECIPE, unrestricted_readout_interval
 from reallocate_ham_development_training import read_cohorts
 from rehearse_ham_baseline_controller import exact_pass
 from selective_core import Taxonomy
@@ -74,7 +76,44 @@ def summarize(readout, controller, reference):
     return summary, checks, matched
 
 
-def run(args, config, controller, tree):
+def bootstrap_groups(splits, paths):
+    release = json.loads(RELEASE.read_bytes())
+    current = read_split(splits, 17, release["splits"]["17"]["sha256"])
+    selected = [[row for row in read_csv(path / "selection.csv") if row["role"] == "dev"] for path in paths]
+    groups = []
+    for batch in selected:
+        resolved = []
+        for old in batch:
+            row = current[old["image_id"]]
+            if (row["split"], row["label"], row["representative"]) != ("dev", old["label"], "1"):
+                raise ValueError("Development cohort differs from the released split")
+            resolved.append(row["split_group"])
+        groups.append(resolved)
+    if len(set().union(*groups)) != sum(map(len, groups)):
+        raise ValueError("Development cohorts share a split group")
+    _, balanced, first, second, _ = groups
+    return {"development_rehearsal": {"first_natural": first, "second_natural": second, "balanced": balanced}}
+
+
+def check_paired_points(report):
+    n_checks = n_changed = 0
+    for temperature in report["temperatures"].values():
+        population = temperature["populations"]["development_rehearsal"]
+        families = population["families"]
+        for view, panel in population["paired_bootstrap"].items():
+            for comparison in panel["comparisons"].values():
+                candidate, reference = (families[comparison[key]]["test"][view] for key in ("candidate", "reference"))
+                for metric in METRICS:
+                    difference = candidate[metric] - reference[metric]
+                    measured = comparison["metrics"][metric]["difference"]
+                    if abs(difference - measured) > 1e-12:
+                        raise ArithmeticError("Bootstrap point estimate differs from full-cohort test metrics")
+                    n_checks += 1
+                n_changed += comparison["different_nodes"] > 0
+    return n_checks, n_changed
+
+
+def run(args, config, controller, tree, bootstrap):
     paths = [args.pilot, args.balanced, args.increment, args.confirmation, args.crossed]
     info, labels, (old_train, new_train), membership = read_cohorts(paths, tree)
     old_labels = labels[1][old_train]
@@ -86,10 +125,13 @@ def run(args, config, controller, tree):
     rows = np.split(np.arange(sum(sizes)), np.cumsum(sizes)[:-1])
     d, cal, first, second, balanced = [(idx, names[block].tolist()) for idx, block in zip(rows, truth_blocks)]
     populations = {"development_rehearsal": (*cal, {"first_natural": first, "second_natural": second, "balanced": balanced})}
+    evaluation_groups = bootstrap_groups(args.splits, paths) if bootstrap is not None else None
     reference = json.loads(args.lac_reference.read_bytes())["models"]
     results = {}
     compact = {}
     checks = matched = temperature_checks = 0
+    paired_checks = changed_comparisons = 0
+    classification = {}
     for model in ("clip", "biomedclip"):
         source = info[2]["models"][model]
         hashes = [source["fit_cache"], source["support_cache"], source["cache_sha256"],
@@ -109,10 +151,13 @@ def run(args, config, controller, tree):
         prompt_confidence = -js(*prompt_probabilities)
         results[model] = {}
         compact[model] = {}
-        for name, head in (("frozen_text", leaf_text.mean(axis=0)),
-                           ("cosine_centroid", np.stack([support[old_labels == k].mean(0) for k in range(len(names))]))):
-            logits = scale * (images @ (head / np.linalg.norm(head, axis=1, keepdims=True)).T)
-            report = evaluate_readout(tree, logits, prompt_confidence, d, populations, config, controller)
+        heads = {"frozen_text": leaf_text.mean(axis=0),
+                 "cosine_centroid": np.stack([support[old_labels == k].mean(0) for k in range(len(names))])}
+        readout_logits = {name: scale * (images @ (head / np.linalg.norm(head, axis=1, keepdims=True)).T)
+                          for name, head in heads.items()}
+        for name, logits in readout_logits.items():
+            report = evaluate_readout(tree, logits, prompt_confidence, d, populations, config, controller,
+                                      bootstrap, evaluation_groups)
             grid = np.geomspace(*config["inverse_temperature_bounds"], 1001)
             grid_nll = min(loss(logits[d[0]], truth_blocks[0], beta) for beta in grid)
             if report["fitted_dev_nll"] > min(grid_nll, report["native_dev_nll"]) + 1e-12:
@@ -122,6 +167,10 @@ def run(args, config, controller, tree):
             results[model][name] = report
             checks += n_checks
             matched += n_matched
+            if bootstrap is not None:
+                points, changed = check_paired_points(report)
+                paired_checks += points
+                changed_comparisons += changed
             if name == "frozen_text":
                 prompt_results = compare_prompt_templates(tree, prompt_probabilities, logits, populations)
                 results[model]["prompt_template_comparison"] = prompt_results
@@ -129,17 +178,41 @@ def run(args, config, controller, tree):
                     view: {name: {"n": m["n"], "correct": m["leaf_n"] - m["leaf_errors"], "macro_f1": m["macro_f1"]}
                            for name, m in heads.items()}
                     for view, heads in prompt_results["development_rehearsal"].items()}
-    return results, compact, {"membership_sha256": membership, "calibration_constraint_checks": checks,
-                              "historical_conformal_cohort_matches": matched, "temperature_grid_checks": temperature_checks,
-                              "development_groups": sizes[0], "proxy_calibration_groups": sizes[1],
-                              "evaluation_groups": dict(zip(populations["development_rehearsal"][2], sizes[2:]))}
+        if bootstrap is not None:
+            views = populations["development_rehearsal"][2]
+            groups = evaluation_groups["development_rehearsal"]
+            classification[model] = {name: unrestricted_readout_interval(tree, labels, groups[name],
+                                                                         readout_logits["frozen_text"][idx],
+                                                                         readout_logits["cosine_centroid"][idx], bootstrap)
+                                     for name, (idx, labels) in views.items()}
+            prior = info[4]["models"][model]["cells"]["original_support/original_fit"]
+            for readout in heads:
+                counts = {name: panel["correct_leaf_counts"][readout] for name, panel in classification[model].items()}
+                if (counts["first_natural"] + counts["second_natural"] != 192 - prior[readout]["pooled"]["errors"] or
+                        counts["balanced"] != 56 - prior[readout]["balanced"]["errors"]):
+                    raise ArithmeticError("Bootstrap leaf counts differ from the crossed-fit reference")
+    verified = {"membership_sha256": membership, "calibration_constraint_checks": checks,
+                "historical_conformal_cohort_matches": matched, "temperature_grid_checks": temperature_checks,
+                "development_groups": sizes[0], "proxy_calibration_groups": sizes[1],
+                "evaluation_groups": dict(zip(populations["development_rehearsal"][2], sizes[2:]))}
+    paired = None
+    if bootstrap is not None:
+        paired = {"recipe_sha256": config_digest(BOOTSTRAP_RECIPE), "paired_point_estimate_checks": paired_checks,
+                  "fixed_policy_comparisons": paired_checks // len(METRICS),
+                  "fixed_policy_comparisons_with_different_outputs": changed_comparisons,
+                  "unrestricted_readout": classification}
+    return results, compact, verified, paired
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for key in ("pilot", "balanced", "increment", "confirmation", "crossed", "lac-reference", "output"):
         parser.add_argument("--" + key, type=Path, required=True)
+    parser.add_argument("--paired-bootstrap", action="store_true")
+    parser.add_argument("--splits", type=Path, help="Released v1.5 splits for the bootstrap group IDs")
     args = parser.parse_args()
+    if args.paired_bootstrap and args.splits is None:
+        parser.error("--paired-bootstrap requires the released --splits directory")
     args.output.mkdir(parents=True, exist_ok=False)
     start = time.perf_counter()
     summary = {"scope": "Previously used, disjoint HAM development cohorts; no formal calibration or test predictions",
@@ -153,9 +226,16 @@ def main():
             raise ValueError("Frozen taxonomy, policy grid or baseline recipe differs")
         controller = json.loads(CONTROLLER.read_bytes())
         tree = Taxonomy(json.loads(PROMPTS.read_bytes())["parent"])
-        results, compact, verified = run(args, config, controller, tree)
+        bootstrap = json.loads(BOOTSTRAP_RECIPE.read_bytes()) if args.paired_bootstrap else None
+        if bootstrap is not None and bootstrap["protocol"] != base["protocol"]:
+            raise ValueError("Paired bootstrap recipe refers to a different HAM protocol")
+        results, compact, verified, paired = run(args, config, controller, tree, bootstrap)
         summary.update(status="complete", models=compact, **verified)
         (args.output / "details.json").write_text(json.dumps(results, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+        if paired is not None:
+            paired.update({key: summary[key] for key in ("scope", "python", "numpy", "membership_sha256")})
+            paired["seconds"] = round(time.perf_counter() - start, 3)
+            (args.output / "paired_bootstrap.json").write_text(json.dumps(paired, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     except Exception as exc:
         summary.update(status="failed", error=f"{type(exc).__name__}: {exc}")
         raise

@@ -12,6 +12,8 @@ from audit_ham_development_exposure import SEEDS, digest, read_csv, read_split
 from extract_features import BIOMED_SHA256, REVISION, WEIGHT_SHA256, read_inputs
 from ham_extended_baselines import (RECIPE as EXTENDED_RECIPE, compare_prompt_templates, evaluate_readout,
                                     test_metrics, top_level_branches)
+from ham_paired_inference import (RECIPE as BOOTSTRAP_RECIPE, mean_split_differences, paired_intervals,
+                                  unrestricted_readout_interval)
 from selective_core import Taxonomy, policy_actions, select_policy
 
 
@@ -131,7 +133,7 @@ def load_cache(directory, model, audit, manifest, prompts):
     return images, text_embeddings, scale, provenance
 
 
-def fixed_policy_results(tree, calibration, test_groups, test_units, probabilities, controller):
+def fixed_policy_results(tree, calibration, test_groups, test_units, probabilities, controller, bootstrap=None):
     def inputs(rows):
         return [row["label"] for row in rows], [probabilities[row["image_id"]] for row in rows]
 
@@ -147,6 +149,7 @@ def fixed_policy_results(tree, calibration, test_groups, test_units, probabiliti
         best[mode] = winner["name"] if winner else None
     branch = top_level_branches(tree)
     test_results = {}
+    paired = None
     for name, rows in (("analysis_units", test_units), ("group_representatives", test_groups)):
         labels, proba = inputs(rows)
         chosen = {"unrestricted_leaf": [tree.flat(row) for row in proba]}
@@ -159,10 +162,16 @@ def fixed_policy_results(tree, calibration, test_groups, test_units, probabiliti
                 chosen[mode] = [action(row, float(cutoff)) for row in proba]
         test_results[name] = {mode: test_metrics(tree, labels, predictions, branch, mode == "unrestricted_leaf")
                               for mode, predictions in chosen.items()}
-    return {"calibration": trial, "selected": best, "test": test_results}
+        if bootstrap is not None and name == "analysis_units":
+            groups = [row["split_group"] for row in rows]
+            paired = paired_intervals(tree, labels, groups, chosen, [("climbing", "flat")], bootstrap)
+    report = {"calibration": trial, "selected": best, "test": test_results}
+    if paired is not None:
+        report["paired_bootstrap"] = paired
+    return report
 
 
-def evaluate(model, directory, audit, manifest, prompts, tree, cohorts, controller, extended=None):
+def evaluate(model, directory, audit, manifest, prompts, tree, cohorts, controller, extended=None, bootstrap=None):
     import numpy as np
     from ham_dev_pilot import js, softmax
 
@@ -186,6 +195,7 @@ def evaluate(model, directory, audit, manifest, prompts, tree, cohorts, controll
     frozen_text = probabilities(text_logits)
     results = {}
     extension = {}
+    readout_intervals = {}
     if extended is not None:
         prompt_probabilities = softmax(scale * (images @ leaf_text.transpose(0, 2, 1)))
         negative_prompt_js = -js(*prompt_probabilities)
@@ -197,20 +207,59 @@ def evaluate(model, directory, audit, manifest, prompts, tree, cohorts, controll
         centers = np.stack([images[[image_index[row["image_id"]] for row in support[leaf]]].mean(axis=0)
                             for leaf in tree.leaves])
         centroid_logits = scale * (images @ normalize(centers).T)
-        results[seed] = {readout: {name: fixed_policy_results(tree, calibration, test_groups, test_units, scores, controller)
+        results[seed] = {readout: {name: fixed_policy_results(tree, calibration, test_groups, test_units, scores, controller, bootstrap)
                                    for name, (calibration, _, test_groups, test_units) in populations.items()}
                          for readout, scores in (("frozen_text", frozen_text), ("cosine_centroid", probabilities(centroid_logits)))}
+        grouped_tests = None
+        if bootstrap is not None:
+            grouped_tests = {name: {"analysis_units": [row["split_group"] for row in test_units]}
+                             for name, (_, _, _, test_units) in populations.items()}
+            readout_intervals[seed] = {}
+            for name, (_, _, _, test_units) in populations.items():
+                indices, labels = index_rows(test_units)
+                readout_intervals[seed][name] = unrestricted_readout_interval(
+                    tree, labels, grouped_tests[name]["analysis_units"], text_logits[indices], centroid_logits[indices], bootstrap)
         if extended is not None:
             splits = {name: (*index_rows(calibration), {"analysis_units": index_rows(test_units),
                                                        "group_representatives": index_rows(test_groups)})
                       for name, (calibration, _, test_groups, test_units) in populations.items()}
             dev = index_rows(development)
-            extension[seed] = {name: evaluate_readout(tree, logits, negative_prompt_js, dev, splits, extended, controller)
+            extension[seed] = {name: evaluate_readout(tree, logits, negative_prompt_js, dev, splits, extended, controller,
+                                                     bootstrap, grouped_tests)
                                for name, logits in (("frozen_text", text_logits), ("cosine_centroid", centroid_logits))}
             extension[seed]["prompt_template_comparison"] = compare_prompt_templates(tree, prompt_probabilities, text_logits, splits)
     report = {"provenance": provenance, "seeds": results, "evaluation_seconds": round(time.perf_counter() - start, 3)}
     if extended is not None:
         report["extended_baselines"] = extension
+    if bootstrap is not None:
+        report["unrestricted_readout_paired_bootstrap"] = readout_intervals
+        report["paired_mean_across_splits"] = paired_mean_across_splits(results, extension, readout_intervals)
+    return report
+
+
+def paired_mean_across_splits(results, extension, readout_intervals):
+    populations = next(iter(readout_intervals.values()))
+    readouts = next(iter(results.values()))
+    diagnostic = {name: mean_split_differences([panels[name] for panels in readout_intervals.values()])
+                  for name in populations}
+    fixed = {}
+    for readout in readouts:
+        fixed[readout] = {}
+        for name in populations:
+            panels = [split[readout][name]["paired_bootstrap"] for split in results.values()]
+            fixed[readout][name] = mean_split_differences(panels)
+    report = {"split_count": len(results), "unrestricted_readout": diagnostic, "fixed_policies": fixed}
+    if extension:
+        means = {}
+        for readout in readouts:
+            means[readout] = {}
+            for temperature in ("native", "dev_fitted"):
+                evaluated = [split[readout]["temperatures"][temperature]["populations"] for split in extension.values()]
+                means[readout][temperature] = {}
+                for name in populations:
+                    panels = [split[name]["paired_bootstrap"]["analysis_units"] for split in evaluated]
+                    means[readout][temperature][name] = mean_split_differences(panels)
+        report["extended_baselines"] = means
     return report
 
 
@@ -220,6 +269,7 @@ def main():
         parser.add_argument("--" + option, type=Path, required=True)
     parser.add_argument("--inputs-only", action="store_true")
     parser.add_argument("--extended-baselines", action="store_true", help="Include the matched B1–B5 comparisons")
+    parser.add_argument("--paired-bootstrap", action="store_true", help="Include paired intervals using test split groups")
     for model in MODELS:
         parser.add_argument(f"--{model}-cache", type=Path)
     args = parser.parse_args()
@@ -256,8 +306,14 @@ def main():
             report["extended_recipe_sha256"] = config_digest(EXTENDED_RECIPE)
             report["temperature_development_groups"] = {seed: len(development)
                                                           for seed, (_, _, development) in cohorts.items()}
+        bootstrap = json.loads(BOOTSTRAP_RECIPE.read_bytes()) if args.paired_bootstrap else None
+        if bootstrap is not None:
+            if bootstrap["protocol"] != recipe["protocol"]:
+                raise ValueError("Paired bootstrap recipe refers to a different HAM protocol")
+            report["paired_bootstrap_recipe_sha256"] = config_digest(BOOTSTRAP_RECIPE)
         if not args.inputs_only:
-            report["models"] = {model: evaluate(model, directory, args.audit, manifest, prompts, tree, cohorts, controller, extended)
+            report["models"] = {model: evaluate(model, directory, args.audit, manifest, prompts, tree, cohorts, controller,
+                                                extended, bootstrap)
                                 for model, directory in caches.items()}
         report["status"] = "inputs_validated" if args.inputs_only else "complete"
     except Exception as error:

@@ -5,6 +5,7 @@ from unittest.mock import patch
 
 from evaluate_ham_frozen_baselines import CONTROLLER, evaluate
 from ham_extended_baselines import RECIPE, actions, cutoff_grid, evaluate_lac, top_level_branches
+from ham_paired_inference import RECIPE as BOOTSTRAP_RECIPE
 from selective_core import Taxonomy, conformal_quantile
 
 
@@ -47,12 +48,14 @@ class ExtendedBaselineTest(unittest.TestCase):
         nodes = sorted(prompts["names"])
 
         def rows(prefix, labels):
-            return [{"image_id": f"{prefix}-{i}", "label": label} for i, label in enumerate(labels)]
+            return [{"image_id": f"{prefix}-{i}", "split_group": f"{prefix}-{i}", "label": label}
+                    for i, label in enumerate(labels)]
 
         support = {leaf: rows(leaf, [leaf]) for leaf in self.tree.leaves}
         dev = rows("dev", ["a", "b", "c"] * 6)
         cal = rows("cal", ["a", "b", "c"] * 44)
         test = rows("test", ["a", "b"])
+        test[1]["split_group"] = test[0]["split_group"]
         training = [row for group in support.values() for row in group]
         manifest = training + dev + cal + test
         cohorts = {"synthetic": (support, {"all": (cal, cal, test[:1], test)}, dev)}
@@ -60,9 +63,11 @@ class ExtendedBaselineTest(unittest.TestCase):
         images = basis[[nodes.index(row["label"]) for row in manifest]]
         controller = json.loads(CONTROLLER.read_bytes())
         extension = json.loads(RECIPE.read_bytes())
+        bootstrap = json.loads(BOOTSTRAP_RECIPE.read_bytes())
         with patch("evaluate_ham_frozen_baselines.load_cache", return_value=(images, np.stack([basis, basis]), 20., {})):
             base = evaluate("clip", None, None, manifest, prompts, self.tree, cohorts, controller)
             new = evaluate("clip", None, None, manifest, prompts, self.tree, cohorts, controller, extension)
+            paired = evaluate("clip", None, None, manifest, prompts, self.tree, cohorts, controller, extension, bootstrap)
 
         self.assertEqual(base["seeds"], new["seeds"])
         result = new["extended_baselines"]["synthetic"]
@@ -75,6 +80,12 @@ class ExtendedBaselineTest(unittest.TestCase):
                 self.assertTrue(all(method["selected"] for method in matched["families"].values()))
                 self.assertEqual(matched["lac"]["0.1"]["test"]["analysis_units"]["set_coverage"], 1.)
         self.assertEqual(result["prompt_template_comparison"]["all"]["analysis_units"]["template_1"]["accuracy"], 1.)
+        diagnostic = paired["unrestricted_readout_paired_bootstrap"]["synthetic"]["all"]
+        self.assertEqual((diagnostic["split_groups"], diagnostic["analysis_units"]), (1, 2))
+        self.assertIn("paired_bootstrap", paired["seeds"]["synthetic"]["cosine_centroid"]["all"])
+        comparison = paired["paired_mean_across_splits"]["extended_baselines"]["frozen_text"]["native"]["all"]
+        self.assertEqual(len(comparison), 5)
+        self.assertTrue(all(stats["correct_information_utility"] == 0. for stats in comparison.values()))
 
 
 if __name__ == "__main__":

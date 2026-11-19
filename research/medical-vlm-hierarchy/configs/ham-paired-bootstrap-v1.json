@@ -1,0 +1,13 @@
+{
+  "protocol": "v1.5",
+  "replicates": 2000,
+  "seed": 17043,
+  "interval_percentiles": [2.5, 97.5],
+  "resampling_unit": "HAM split_group, sampled with replacement in sorted group order using NumPy PCG64",
+  "estimand": "analysis-unit-weighted paired difference (candidate minus reference); each sampled group carries all its analysis units",
+  "conditioning": "fixed training support, temperature, calibration thresholds and test cohort; no fit or policy reselection during resampling",
+  "base_contrast": "Climbing versus Flat, selected under the original joint 16-slot calibration grid",
+  "extended_contrasts": "each of the other five method families versus maximum-probability Flat at the same backbone, readout and temperature",
+  "classification_diagnostic": "unrestricted cosine centroid versus frozen text, using native scores",
+  "across_splits": "unweighted mean of the three split point estimates, with intervals reported per split because the test groups overlap"
+}

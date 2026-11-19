@@ -1,0 +1,239 @@
+{
+  "recipe_sha256": "43fb38113d3e42288a1a0bc7072061d05610098c1b6fe3fad142e7a3f9ec0a2e",
+  "paired_point_estimate_checks": 240,
+  "fixed_policy_comparisons": 120,
+  "fixed_policy_comparisons_with_different_outputs": 0,
+  "unrestricted_readout": {
+    "clip": {
+      "first_natural": {
+        "analysis_units": 96,
+        "split_groups": 96,
+        "replicates": 2000,
+        "seed": 17043,
+        "interval_percentiles": [
+          2.5,
+          97.5
+        ],
+        "comparisons": {
+          "cosine_centroid_minus_frozen_text": {
+            "candidate": "cosine_centroid",
+            "reference": "frozen_text",
+            "different_nodes": 73,
+            "metrics": {
+              "correct_information_utility": {
+                "difference": 0.4479166666666667,
+                "interval": [
+                  0.3333333333333333,
+                  0.5625
+                ]
+              },
+              "leaf_coverage": {
+                "difference": 0.0,
+                "interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        },
+        "correct_leaf_counts": {
+          "frozen_text": 7,
+          "cosine_centroid": 50
+        }
+      },
+      "second_natural": {
+        "analysis_units": 96,
+        "split_groups": 96,
+        "replicates": 2000,
+        "seed": 17043,
+        "interval_percentiles": [
+          2.5,
+          97.5
+        ],
+        "comparisons": {
+          "cosine_centroid_minus_frozen_text": {
+            "candidate": "cosine_centroid",
+            "reference": "frozen_text",
+            "different_nodes": 70,
+            "metrics": {
+              "correct_information_utility": {
+                "difference": 0.40625,
+                "interval": [
+                  0.3020833333333333,
+                  0.5104166666666666
+                ]
+              },
+              "leaf_coverage": {
+                "difference": 0.0,
+                "interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        },
+        "correct_leaf_counts": {
+          "frozen_text": 4,
+          "cosine_centroid": 43
+        }
+      },
+      "balanced": {
+        "analysis_units": 56,
+        "split_groups": 56,
+        "replicates": 2000,
+        "seed": 17043,
+        "interval_percentiles": [
+          2.5,
+          97.5
+        ],
+        "comparisons": {
+          "cosine_centroid_minus_frozen_text": {
+            "candidate": "cosine_centroid",
+            "reference": "frozen_text",
+            "different_nodes": 43,
+            "metrics": {
+              "correct_information_utility": {
+                "difference": 0.32142857142857145,
+                "interval": [
+                  0.16071428571428573,
+                  0.48214285714285715
+                ]
+              },
+              "leaf_coverage": {
+                "difference": 0.0,
+                "interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        },
+        "correct_leaf_counts": {
+          "frozen_text": 11,
+          "cosine_centroid": 29
+        }
+      }
+    },
+    "biomedclip": {
+      "first_natural": {
+        "analysis_units": 96,
+        "split_groups": 96,
+        "replicates": 2000,
+        "seed": 17043,
+        "interval_percentiles": [
+          2.5,
+          97.5
+        ],
+        "comparisons": {
+          "cosine_centroid_minus_frozen_text": {
+            "candidate": "cosine_centroid",
+            "reference": "frozen_text",
+            "different_nodes": 82,
+            "metrics": {
+              "correct_information_utility": {
+                "difference": 0.5833333333333334,
+                "interval": [
+                  0.46875,
+                  0.6875
+                ]
+              },
+              "leaf_coverage": {
+                "difference": 0.0,
+                "interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        },
+        "correct_leaf_counts": {
+          "frozen_text": 7,
+          "cosine_centroid": 63
+        }
+      },
+      "second_natural": {
+        "analysis_units": 96,
+        "split_groups": 96,
+        "replicates": 2000,
+        "seed": 17043,
+        "interval_percentiles": [
+          2.5,
+          97.5
+        ],
+        "comparisons": {
+          "cosine_centroid_minus_frozen_text": {
+            "candidate": "cosine_centroid",
+            "reference": "frozen_text",
+            "different_nodes": 83,
+            "metrics": {
+              "correct_information_utility": {
+                "difference": 0.5520833333333334,
+                "interval": [
+                  0.4166666666666667,
+                  0.6770833333333334
+                ]
+              },
+              "leaf_coverage": {
+                "difference": 0.0,
+                "interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        },
+        "correct_leaf_counts": {
+          "frozen_text": 12,
+          "cosine_centroid": 65
+        }
+      },
+      "balanced": {
+        "analysis_units": 56,
+        "split_groups": 56,
+        "replicates": 2000,
+        "seed": 17043,
+        "interval_percentiles": [
+          2.5,
+          97.5
+        ],
+        "comparisons": {
+          "cosine_centroid_minus_frozen_text": {
+            "candidate": "cosine_centroid",
+            "reference": "frozen_text",
+            "different_nodes": 39,
+            "metrics": {
+              "correct_information_utility": {
+                "difference": 0.10714285714285714,
+                "interval": [
+                  -0.03571428571428571,
+                  0.26785714285714285
+                ]
+              },
+              "leaf_coverage": {
+                "difference": 0.0,
+                "interval": [
+                  0.0,
+                  0.0
+                ]
+              }
+            }
+          }
+        },
+        "correct_leaf_counts": {
+          "frozen_text": 16,
+          "cosine_centroid": 22
+        }
+      }
+    }
+  },
+  "scope": "Previously used, disjoint HAM development cohorts; no formal calibration or test predictions",
+  "python": "3.14.7",
+  "numpy": "2.5.4",
+  "membership_sha256": "a4f0c384d1c2e03d6b6134dbd549f6190cced609b0a5670db0cff954c393c5d5",
+  "seconds": 2.414
+}

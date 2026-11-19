@@ -3,6 +3,7 @@ import math
 from collections import Counter
 from pathlib import Path
 
+from ham_paired_inference import paired_intervals
 from selective_core import conformal_quantile, lac_set, select_policy
 
 
@@ -73,7 +74,8 @@ def evaluate_lac(tree, probabilities, labels, quantile, branches):
             "projection": test_metrics(tree, labels, predictions, branches)}
 
 
-def compare_at_temperature(tree, probabilities, signals, development, populations, config, controller):
+def compare_at_temperature(tree, probabilities, signals, development, populations, config, controller,
+                           bootstrap=None, evaluation_groups=None):
     """Split indices use only development rows to set candidate thresholds."""
     branches = top_level_branches(tree)
     grids = {mode: cutoff_grid(scores[development], config["grid_slots_per_family"]) for mode, scores in signals.items()}
@@ -84,6 +86,7 @@ def compare_at_temperature(tree, probabilities, signals, development, population
         calibration = [probabilities[i] for i in cal_indices]
         test = {name: ([probabilities[i] for i in idx], idx, labels) for name, (idx, labels) in views.items()}
         families = {}
+        paired_predictions = {name: {} for name in evaluation_groups[population]} if bootstrap is not None else {}
         for mode, grid in grids.items():
             scores = signals.get(mode, signals[MAX_PROBABILITY])
             candidates = {slot: actions(tree, mode, calibration, scores[cal_indices], cutoff)
@@ -96,6 +99,8 @@ def compare_at_temperature(tree, probabilities, signals, development, population
                 predictions = (actions(tree, mode, rows, scores[indices], grid[picked]) if picked
                                else [tree.root] * len(rows))
                 test_results[name] = test_metrics(tree, labels, predictions, branches)
+                if name in paired_predictions:
+                    paired_predictions[name][mode] = predictions
             audit = {}
             for row in trial["audit"]:
                 metrics = row["metrics"]
@@ -117,10 +122,16 @@ def compare_at_temperature(tree, probabilities, signals, development, population
                                "test": {name: evaluate_lac(tree, rows, labels, quantile, branches)
                                         for name, (rows, _, labels) in test.items()}}
         output[population] = {"calibration_groups": len(cal_labels), "families": families, "lac": lac}
+        if bootstrap is not None:
+            contrasts = [(mode, MAX_PROBABILITY) for mode in families if mode != MAX_PROBABILITY]
+            output[population]["paired_bootstrap"] = {
+                name: paired_intervals(tree, test[name][2], evaluation_groups[population][name], predictions, contrasts, bootstrap)
+                for name, predictions in paired_predictions.items()}
     return output
 
 
-def evaluate_readout(tree, logits, negative_prompt_js, development, populations, config, controller):
+def evaluate_readout(tree, logits, negative_prompt_js, development, populations, config, controller,
+                     bootstrap=None, evaluation_groups=None):
     """Evaluate native and development-fitted temperatures on the same cohorts."""
     import numpy as np
 
@@ -143,7 +154,7 @@ def evaluate_readout(tree, logits, negative_prompt_js, development, populations,
                    "flat_negative_entropy": np.sum(probs * log_probs, axis=1),
                    "flat_negative_prompt_js": negative_prompt_js}
         populations_result = compare_at_temperature(tree, [dict(zip(tree.leaves, row)) for row in probs], signals,
-                                                     dev_indices, populations, config, controller)
+                                                     dev_indices, populations, config, controller, bootstrap, evaluation_groups)
         for population, (_, _, views) in populations.items():
             reliability = {}
             for view, (indices, labels) in views.items():
