@@ -1,4 +1,4 @@
-"""Validate HAM v1.5 inputs and evaluate fixed leaf, Flat and Climbing baselines."""
+"""Validate HAM v1.5 inputs and evaluate frozen-backbone baselines."""
 import argparse
 import hashlib
 import json
@@ -10,6 +10,8 @@ from pathlib import Path
 
 from audit_ham_development_exposure import SEEDS, digest, read_csv, read_split
 from extract_features import BIOMED_SHA256, REVISION, WEIGHT_SHA256, read_inputs
+from ham_extended_baselines import (RECIPE as EXTENDED_RECIPE, compare_prompt_templates, evaluate_readout,
+                                    test_metrics, top_level_branches)
 from selective_core import Taxonomy, policy_actions, select_policy
 
 
@@ -69,7 +71,8 @@ def prepare_cohorts(splits, mask_path, verified_rows, recipe, tree):
                      for role in ("calibration", "test")}
             evaluation[name] = (group_representatives(roles["calibration"]), roles["calibration"],
                                 group_representatives(roles["test"]), roles["test"])
-        cohort[str(seed)] = (support, evaluation)
+        development = group_representatives(row for row in reps if row["split"] == "dev")
+        cohort[str(seed)] = (support, evaluation, development)
     return cohort
 
 
@@ -81,7 +84,7 @@ def describe_cohorts(cohorts):
                    "populations": {name: dict(zip(("calibration_groups", "calibration_analysis_units",
                                                    "test_groups", "test_analysis_units"), map(counts, roles)))
                                    for name, roles in evaluation.items()}}
-            for seed, (support, evaluation) in cohorts.items()}
+            for seed, (support, evaluation, _) in cohorts.items()}
 
 
 def load_cache(directory, model, audit, manifest, prompts):
@@ -128,27 +131,6 @@ def load_cache(directory, model, audit, manifest, prompts):
     return images, text_embeddings, scale, provenance
 
 
-def test_metrics(tree, labels, predictions, branch, unrestricted=False):
-    report = tree.metrics(labels, predictions)
-    errors = Counter(y for y, pred in zip(labels, predictions) if pred != tree.root and branch[y] != branch[pred])
-    for label, metrics in report["per_class"].items():
-        metrics["cross_branch_errors"] = errors[label]
-        metrics["cross_branch_risk"] = errors[label] / metrics["node_n"] if metrics["node_n"] else None
-    report["cross_branch_errors"] = sum(errors.values())
-    report["cross_branch_risk"] = report["cross_branch_errors"] / report["node_n"] if report["node_n"] else None
-    if unrestricted:
-        confusion = Counter(zip(labels, predictions))
-        leaf_f1 = {}
-        for leaf in tree.leaves:
-            denominator = labels.count(leaf) + predictions.count(leaf)
-            leaf_f1[leaf] = 2 * confusion[leaf, leaf] / denominator if denominator else None
-        defined = [score for score in leaf_f1.values() if score is not None]
-        report["leaf_f1"] = leaf_f1
-        report["macro_f1"] = sum(defined) / len(defined)
-        report["accuracy"] = 1 - report["leaf_risk"]
-    return report
-
-
 def fixed_policy_results(tree, calibration, test_groups, test_units, probabilities, controller):
     def inputs(rows):
         return [row["label"] for row in rows], [probabilities[row["image_id"]] for row in rows]
@@ -163,12 +145,7 @@ def fixed_policy_results(tree, calibration, test_groups, test_units, probabiliti
         winner = max(eligible, key=lambda row: (row["metrics"]["correct_information_utility"],
                      row["metrics"]["leaf_coverage"], row["name"]), default=None)
         best[mode] = winner["name"] if winner else None
-    branch = {}
-    for node in tree.parent:
-        ancestor = node
-        while tree.parent[ancestor] != tree.root:
-            ancestor = tree.parent[ancestor]
-        branch[node] = ancestor
+    branch = top_level_branches(tree)
     test_results = {}
     for name, rows in (("analysis_units", test_units), ("group_representatives", test_groups)):
         labels, proba = inputs(rows)
@@ -185,9 +162,9 @@ def fixed_policy_results(tree, calibration, test_groups, test_units, probabiliti
     return {"calibration": trial, "selected": best, "test": test_results}
 
 
-def evaluate(model, directory, audit, manifest, prompts, tree, cohorts, controller):
+def evaluate(model, directory, audit, manifest, prompts, tree, cohorts, controller, extended=None):
     import numpy as np
-    from ham_dev_pilot import softmax
+    from ham_dev_pilot import js, softmax
 
     start = time.perf_counter()
     images, text, scale, provenance = load_cache(directory, model, audit, manifest, prompts)
@@ -200,20 +177,41 @@ def evaluate(model, directory, audit, manifest, prompts, tree, cohorts, controll
             raise ValueError("Cannot normalize zero-length class embeddings")
         return vectors / norms
 
-    def probabilities(centers):
-        scores = softmax(scale * (images @ centers.T))
+    def probabilities(logits):
+        scores = softmax(logits)
         return {key: dict(zip(tree.leaves, scores[i])) for key, i in image_index.items()}
 
-    frozen_text = probabilities(normalize(text.mean(axis=0)[[nodes.index(leaf) for leaf in tree.leaves]]))
+    leaf_text = text[:, [nodes.index(leaf) for leaf in tree.leaves]]
+    text_logits = scale * (images @ normalize(leaf_text.mean(axis=0)).T)
+    frozen_text = probabilities(text_logits)
     results = {}
-    for seed, (support, populations) in cohorts.items():
+    extension = {}
+    if extended is not None:
+        prompt_probabilities = softmax(scale * (images @ leaf_text.transpose(0, 2, 1)))
+        negative_prompt_js = -js(*prompt_probabilities)
+
+    def index_rows(rows):
+        return np.asarray([image_index[row["image_id"]] for row in rows]), [row["label"] for row in rows]
+
+    for seed, (support, populations, development) in cohorts.items():
         centers = np.stack([images[[image_index[row["image_id"]] for row in support[leaf]]].mean(axis=0)
                             for leaf in tree.leaves])
+        centroid_logits = scale * (images @ normalize(centers).T)
         results[seed] = {readout: {name: fixed_policy_results(tree, calibration, test_groups, test_units, scores, controller)
                                    for name, (calibration, _, test_groups, test_units) in populations.items()}
-                         for readout, scores in (("frozen_text", frozen_text),
-                                                 ("cosine_centroid", probabilities(normalize(centers))))}
-    return {"provenance": provenance, "seeds": results, "evaluation_seconds": round(time.perf_counter() - start, 3)}
+                         for readout, scores in (("frozen_text", frozen_text), ("cosine_centroid", probabilities(centroid_logits)))}
+        if extended is not None:
+            splits = {name: (*index_rows(calibration), {"analysis_units": index_rows(test_units),
+                                                       "group_representatives": index_rows(test_groups)})
+                      for name, (calibration, _, test_groups, test_units) in populations.items()}
+            dev = index_rows(development)
+            extension[seed] = {name: evaluate_readout(tree, logits, negative_prompt_js, dev, splits, extended, controller)
+                               for name, logits in (("frozen_text", text_logits), ("cosine_centroid", centroid_logits))}
+            extension[seed]["prompt_template_comparison"] = compare_prompt_templates(tree, prompt_probabilities, text_logits, splits)
+    report = {"provenance": provenance, "seeds": results, "evaluation_seconds": round(time.perf_counter() - start, 3)}
+    if extended is not None:
+        report["extended_baselines"] = extension
+    return report
 
 
 def main():
@@ -221,6 +219,7 @@ def main():
     for option in ("audit", "splits", "exposure", "output"):
         parser.add_argument("--" + option, type=Path, required=True)
     parser.add_argument("--inputs-only", action="store_true")
+    parser.add_argument("--extended-baselines", action="store_true", help="Include the matched B1–B5 comparisons")
     for model in MODELS:
         parser.add_argument(f"--{model}-cache", type=Path)
     args = parser.parse_args()
@@ -250,8 +249,15 @@ def main():
                       controller_sha256=config_digest(CONTROLLER), split_sha256={s: v["sha256"] for s, v in released["splits"].items()},
                       mask_sha256=digest(mask_path), audit_images=len(manifest), cohorts=describe_cohorts(cohorts),
                       risk_scope="Conditional on fixed candidates and iid calibration representatives; HAM patient independence unknown")
+        extended = json.loads(EXTENDED_RECIPE.read_bytes()) if args.extended_baselines else None
+        if extended is not None:
+            if extended["base_recipe_sha256"] != report["recipe_sha256"]:
+                raise ValueError("Extended baseline recipe pins a different base recipe")
+            report["extended_recipe_sha256"] = config_digest(EXTENDED_RECIPE)
+            report["temperature_development_groups"] = {seed: len(development)
+                                                          for seed, (_, _, development) in cohorts.items()}
         if not args.inputs_only:
-            report["models"] = {model: evaluate(model, directory, args.audit, manifest, prompts, tree, cohorts, controller)
+            report["models"] = {model: evaluate(model, directory, args.audit, manifest, prompts, tree, cohorts, controller, extended)
                                 for model, directory in caches.items()}
         report["status"] = "inputs_validated" if args.inputs_only else "complete"
     except Exception as error:

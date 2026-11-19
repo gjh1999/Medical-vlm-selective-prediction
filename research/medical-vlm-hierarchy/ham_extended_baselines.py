@@ -144,5 +144,29 @@ def evaluate_readout(tree, logits, negative_prompt_js, development, populations,
                    "flat_negative_prompt_js": negative_prompt_js}
         populations_result = compare_at_temperature(tree, [dict(zip(tree.leaves, row)) for row in probs], signals,
                                                      dev_indices, populations, config, controller)
+        for population, (_, _, views) in populations.items():
+            reliability = {}
+            for view, (indices, labels) in views.items():
+                target = np.asarray([tree.leaves.index(label) for label in labels])
+                residual = probs[indices].copy()
+                residual[np.arange(len(labels)), target] -= 1
+                brier = np.sum(residual ** 2, axis=1)
+                reliability[view] = {"negative_log_likelihood": loss(logits[indices], target, inverse_temperature),
+                                     "multiclass_brier_sum": float(np.mean(brier))}
+            populations_result[population]["leaf_reliability"] = reliability
         result["temperatures"][name] = {"inverse_temperature": inverse_temperature, "populations": populations_result}
     return result
+
+
+def compare_prompt_templates(tree, prompt_probabilities, ensemble_logits, populations):
+    """Score each fixed template and the embedding ensemble on identical test views."""
+    import numpy as np
+
+    leaves = np.asarray(tree.leaves)
+    branches = top_level_branches(tree)
+    outputs = {f"template_{i}": leaves[probs.argmax(axis=1)] for i, probs in enumerate(prompt_probabilities, 1)}
+    outputs["ensemble"] = leaves[ensemble_logits.argmax(axis=1)]
+    return {name: {view: {head: test_metrics(tree, labels, mode[indices].tolist(), branches, unrestricted=True)
+                          for head, mode in outputs.items()}
+                   for view, (indices, labels) in views.items()}
+            for name, (_, _, views) in populations.items()}

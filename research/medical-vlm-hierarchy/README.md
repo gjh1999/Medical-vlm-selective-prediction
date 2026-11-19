@@ -48,6 +48,8 @@ PAD 每次划分可用 283 个校准组。按 v1.2 的 16 个候选策略计算�
 
 首轮 HAM 评估入口已锁定研究用类别树、两种读出和 Flat / Climbing 阈值。输入验收覆盖全量及三个敏感性队列，校准每组只取一张代表图，测试保留全部分析单元。接入 5080 后先验收双骨干小批次，再提取完整特征并测量留出结果。[输入验收](reports/E01-ham-frozen-inputs-03.json) · [5080 运行说明](5080运行说明.md)
 
+同一入口已加入 B1–B5 的扩展比较。最大概率、margin、负熵、提示分歧、Climbing、两级父类概率各用 16 档候选，另报温度拟合、单提示和 LAC 集合。128 个开发组的模拟校准中，48 次方法选择都未达到双风险约束。第二批 96 个自然开发组上，BiomedCLIP 类中心的名义 90% LAC 集合包含 86 个真值，单节点投影后有 50 个正确非根输出（原始温度）。[扩展开发结果](reports/E01-ham-extended-rehearsal-02.json)
+
 GitHub：`https://github.com/gjh1999/Medical-vlm-selective-prediction.git`。已加入全局项目列表，每天 17:00 执行 WIP 备份；原每 30 分钟项目同步任务保留。较大变更验证后也主动提交推送。任务需要本机开机且注册用户已登录。原图、权重、样本 manifest/split 与 outputs 不入库。
 
 网页由 `python build_plan.py` 从 Markdown 生成，不依赖外部库。以下命令可在当前主机或 5080 主机执行：

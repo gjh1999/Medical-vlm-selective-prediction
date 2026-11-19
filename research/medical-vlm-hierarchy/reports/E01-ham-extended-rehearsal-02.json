@@ -1,0 +1,1171 @@
+{
+  "scope": "Previously used, disjoint HAM development cohorts; no formal calibration or test predictions",
+  "recipe_sha256": "5037ade3924a421d6956fe3316b89febf84c1628fc7edf81f4fd2e88df20a26c",
+  "numpy": "2.5.4",
+  "python": "3.14.7",
+  "status": "complete",
+  "models": {
+    "clip": {
+      "frozen_text": {
+        "development_groups": 128,
+        "native_dev_nll": 2.631608719757784,
+        "fitted_dev_nll": 1.9461363082329195,
+        "temperature_at_bound": true,
+        "temperatures": {
+          "native": {
+            "inverse_temperature": 1.0,
+            "families": {
+              "flat_max_probability": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9640209066438818,
+                "passing_slots": 0
+              },
+              "flat_margin": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.96519550286174,
+                "passing_slots": 0
+              },
+              "flat_negative_entropy": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9572291301527043,
+                "passing_slots": 0
+              },
+              "flat_negative_prompt_js": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9649091062749282,
+                "passing_slots": 0
+              },
+              "climbing": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.7607349781807817,
+                "passing_slots": 0
+              },
+              "two_stage": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.7607349781807817,
+                "passing_slots": 0
+              }
+            },
+            "lac": {
+              "0.05": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 92,
+                  "mean_set_size": 6.5625,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 92,
+                  "mean_set_size": 6.625,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 51,
+                  "mean_set_size": 6.464285714285714,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              },
+              "0.1": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 87,
+                  "mean_set_size": 6.333333333333333,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 91,
+                  "mean_set_size": 6.4375,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 50,
+                  "mean_set_size": 6.232142857142857,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              },
+              "0.2": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 77,
+                  "mean_set_size": 5.677083333333333,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 78,
+                  "mean_set_size": 5.854166666666667,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 46,
+                  "mean_set_size": 5.607142857142857,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              }
+            },
+            "leaf_reliability": {
+              "first_natural": {
+                "negative_log_likelihood": 2.611099406814015,
+                "multiclass_brier_sum": 1.0791431511546599
+              },
+              "second_natural": {
+                "negative_log_likelihood": 2.5950821753937627,
+                "multiclass_brier_sum": 1.084088551042444
+              },
+              "balanced": {
+                "negative_log_likelihood": 2.2139621263104203,
+                "multiclass_brier_sum": 0.921237756596523
+              }
+            }
+          },
+          "dev_fitted": {
+            "inverse_temperature": 0.001,
+            "families": {
+              "flat_max_probability": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9638150884304268,
+                "passing_slots": 0
+              },
+              "flat_margin": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9649091062749282,
+                "passing_slots": 0
+              },
+              "flat_negative_entropy": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9288676871642016,
+                "passing_slots": 0
+              },
+              "flat_negative_prompt_js": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9649091062749282,
+                "passing_slots": 0
+              },
+              "climbing": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.35445205034705274,
+                "passing_slots": 0
+              },
+              "two_stage": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.8836092509829214,
+                "passing_slots": 0
+              }
+            },
+            "lac": {
+              "0.05": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 91,
+                  "mean_set_size": 6.40625,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 93,
+                  "mean_set_size": 6.447916666666667,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 50,
+                  "mean_set_size": 6.196428571428571,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              },
+              "0.1": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 81,
+                  "mean_set_size": 6.0625,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 87,
+                  "mean_set_size": 6.197916666666667,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 49,
+                  "mean_set_size": 6.017857142857143,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              },
+              "0.2": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 63,
+                  "mean_set_size": 5.354166666666667,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 67,
+                  "mean_set_size": 5.416666666666667,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 41,
+                  "mean_set_size": 5.214285714285714,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              }
+            },
+            "leaf_reliability": {
+              "first_natural": {
+                "negative_log_likelihood": 1.9461679875149045,
+                "multiclass_brier_sum": 0.8572165477173028
+              },
+              "second_natural": {
+                "negative_log_likelihood": 1.9461730155709407,
+                "multiclass_brier_sum": 0.8572180057801279
+              },
+              "balanced": {
+                "negative_log_likelihood": 1.945783595695522,
+                "multiclass_brier_sum": 0.8571066831759823
+              }
+            }
+          }
+        }
+      },
+      "prompt_template_comparison": {
+        "first_natural": {
+          "template_1": {
+            "n": 96,
+            "correct": 6,
+            "macro_f1": 0.02065404475043029
+          },
+          "template_2": {
+            "n": 96,
+            "correct": 8,
+            "macro_f1": 0.0815379403794038
+          },
+          "ensemble": {
+            "n": 96,
+            "correct": 7,
+            "macro_f1": 0.09183673469387754
+          }
+        },
+        "second_natural": {
+          "template_1": {
+            "n": 96,
+            "correct": 6,
+            "macro_f1": 0.07414965986394559
+          },
+          "template_2": {
+            "n": 96,
+            "correct": 7,
+            "macro_f1": 0.040993788819875775
+          },
+          "ensemble": {
+            "n": 96,
+            "correct": 4,
+            "macro_f1": 0.03086112493777999
+          }
+        },
+        "balanced": {
+          "template_1": {
+            "n": 56,
+            "correct": 10,
+            "macro_f1": 0.09123649459783913
+          },
+          "template_2": {
+            "n": 56,
+            "correct": 12,
+            "macro_f1": 0.16927960927960925
+          },
+          "ensemble": {
+            "n": 56,
+            "correct": 11,
+            "macro_f1": 0.14042980828695115
+          }
+        }
+      },
+      "cosine_centroid": {
+        "development_groups": 128,
+        "native_dev_nll": 1.5599503003316424,
+        "fitted_dev_nll": 1.5257166492065428,
+        "temperature_at_bound": false,
+        "temperatures": {
+          "native": {
+            "inverse_temperature": 1.0,
+            "families": {
+              "flat_max_probability": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.6278797596065495,
+                "passing_slots": 0
+              },
+              "flat_margin": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.5986081162357377,
+                "passing_slots": 0
+              },
+              "flat_negative_entropy": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.651126893114909,
+                "passing_slots": 0
+              },
+              "flat_negative_prompt_js": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.69684916669732,
+                "passing_slots": 0
+              },
+              "climbing": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.36234388186279365,
+                "passing_slots": 0
+              },
+              "two_stage": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.36234388186279365,
+                "passing_slots": 0
+              }
+            },
+            "lac": {
+              "0.05": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 90,
+                  "mean_set_size": 5.447916666666667,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 91,
+                  "mean_set_size": 5.552083333333333,
+                  "root_outputs": 95,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 55,
+                  "mean_set_size": 5.5,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              },
+              "0.1": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 88,
+                  "mean_set_size": 4.854166666666667,
+                  "root_outputs": 95,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 89,
+                  "mean_set_size": 5.0,
+                  "root_outputs": 94,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 53,
+                  "mean_set_size": 5.089285714285714,
+                  "root_outputs": 55,
+                  "correct_nonroot": 1
+                }
+              },
+              "0.2": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 78,
+                  "mean_set_size": 2.8958333333333335,
+                  "root_outputs": 70,
+                  "correct_nonroot": 21
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 79,
+                  "mean_set_size": 3.1354166666666665,
+                  "root_outputs": 75,
+                  "correct_nonroot": 13
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 44,
+                  "mean_set_size": 3.0714285714285716,
+                  "root_outputs": 46,
+                  "correct_nonroot": 8
+                }
+              }
+            },
+            "leaf_reliability": {
+              "first_natural": {
+                "negative_log_likelihood": 1.5685401782577246,
+                "multiclass_brier_sum": 0.7183715540423492
+              },
+              "second_natural": {
+                "negative_log_likelihood": 1.62411493685939,
+                "multiclass_brier_sum": 0.7712219182484933
+              },
+              "balanced": {
+                "negative_log_likelihood": 1.5486445287499215,
+                "multiclass_brier_sum": 0.6753454276308991
+              }
+            }
+          },
+          "dev_fitted": {
+            "inverse_temperature": 0.7318027939275027,
+            "families": {
+              "flat_max_probability": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.6278797596065495,
+                "passing_slots": 0
+              },
+              "flat_margin": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.5986081162357377,
+                "passing_slots": 0
+              },
+              "flat_negative_entropy": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.6628954939683738,
+                "passing_slots": 0
+              },
+              "flat_negative_prompt_js": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.69684916669732,
+                "passing_slots": 0
+              },
+              "climbing": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.33712219728939874,
+                "passing_slots": 0
+              },
+              "two_stage": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.3332866226501593,
+                "passing_slots": 0
+              }
+            },
+            "lac": {
+              "0.05": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 92,
+                  "mean_set_size": 5.479166666666667,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 91,
+                  "mean_set_size": 5.510416666666667,
+                  "root_outputs": 95,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 55,
+                  "mean_set_size": 5.517857142857143,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              },
+              "0.1": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 89,
+                  "mean_set_size": 4.802083333333333,
+                  "root_outputs": 95,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 90,
+                  "mean_set_size": 5.0,
+                  "root_outputs": 95,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 53,
+                  "mean_set_size": 5.125,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              },
+              "0.2": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 76,
+                  "mean_set_size": 2.78125,
+                  "root_outputs": 67,
+                  "correct_nonroot": 23
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 78,
+                  "mean_set_size": 2.875,
+                  "root_outputs": 71,
+                  "correct_nonroot": 18
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 43,
+                  "mean_set_size": 2.9285714285714284,
+                  "root_outputs": 47,
+                  "correct_nonroot": 7
+                }
+              }
+            },
+            "leaf_reliability": {
+              "first_natural": {
+                "negative_log_likelihood": 1.5198266360048487,
+                "multiclass_brier_sum": 0.7209384424397448
+              },
+              "second_natural": {
+                "negative_log_likelihood": 1.572726943253631,
+                "multiclass_brier_sum": 0.7631231078272753
+              },
+              "balanced": {
+                "negative_log_likelihood": 1.5167367646374112,
+                "multiclass_brier_sum": 0.6806592850924525
+              }
+            }
+          }
+        }
+      }
+    },
+    "biomedclip": {
+      "frozen_text": {
+        "development_groups": 128,
+        "native_dev_nll": 2.6328419187623426,
+        "fitted_dev_nll": 1.9460085633888267,
+        "temperature_at_bound": true,
+        "temperatures": {
+          "native": {
+            "inverse_temperature": 1.0,
+            "families": {
+              "flat_max_probability": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9437937599331412,
+                "passing_slots": 0
+              },
+              "flat_margin": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9539390298568511,
+                "passing_slots": 0
+              },
+              "flat_negative_entropy": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9388038704613895,
+                "passing_slots": 0
+              },
+              "flat_negative_prompt_js": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9483204021760625,
+                "passing_slots": 0
+              },
+              "climbing": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.6783164026492823,
+                "passing_slots": 0
+              },
+              "two_stage": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.6623044545664063,
+                "passing_slots": 0
+              }
+            },
+            "lac": {
+              "0.05": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 90,
+                  "mean_set_size": 6.729166666666667,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 91,
+                  "mean_set_size": 6.760416666666667,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 53,
+                  "mean_set_size": 6.375,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              },
+              "0.1": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 84,
+                  "mean_set_size": 6.229166666666667,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 86,
+                  "mean_set_size": 6.302083333333333,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 52,
+                  "mean_set_size": 5.857142857142857,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              },
+              "0.2": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 71,
+                  "mean_set_size": 5.59375,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 77,
+                  "mean_set_size": 5.770833333333333,
+                  "root_outputs": 95,
+                  "correct_nonroot": 1
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 50,
+                  "mean_set_size": 5.303571428571429,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              }
+            },
+            "leaf_reliability": {
+              "first_natural": {
+                "negative_log_likelihood": 2.877280870029289,
+                "multiclass_brier_sum": 1.0545557408641184
+              },
+              "second_natural": {
+                "negative_log_likelihood": 2.6370815751078336,
+                "multiclass_brier_sum": 0.9917712365962789
+              },
+              "balanced": {
+                "negative_log_likelihood": 2.0426243406319453,
+                "multiclass_brier_sum": 0.8514580721201822
+              }
+            }
+          },
+          "dev_fitted": {
+            "inverse_temperature": 0.001,
+            "families": {
+              "flat_max_probability": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9432645785536957,
+                "passing_slots": 0
+              },
+              "flat_margin": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9495655386294035,
+                "passing_slots": 0
+              },
+              "flat_negative_entropy": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9442652603205148,
+                "passing_slots": 0
+              },
+              "flat_negative_prompt_js": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.9483204021760625,
+                "passing_slots": 0
+              },
+              "climbing": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.6042103903096294,
+                "passing_slots": 0
+              },
+              "two_stage": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.8955625755515602,
+                "passing_slots": 0
+              }
+            },
+            "lac": {
+              "0.05": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 89,
+                  "mean_set_size": 6.666666666666667,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 90,
+                  "mean_set_size": 6.635416666666667,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 53,
+                  "mean_set_size": 6.410714285714286,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              },
+              "0.1": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 82,
+                  "mean_set_size": 6.291666666666667,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 85,
+                  "mean_set_size": 6.270833333333333,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 52,
+                  "mean_set_size": 6.142857142857143,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              },
+              "0.2": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 77,
+                  "mean_set_size": 5.770833333333333,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 78,
+                  "mean_set_size": 5.802083333333333,
+                  "root_outputs": 96,
+                  "correct_nonroot": 0
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 49,
+                  "mean_set_size": 5.571428571428571,
+                  "root_outputs": 56,
+                  "correct_nonroot": 0
+                }
+              }
+            },
+            "leaf_reliability": {
+              "first_natural": {
+                "negative_log_likelihood": 1.9462199851955457,
+                "multiclass_brier_sum": 0.857231329097561
+              },
+              "second_natural": {
+                "negative_log_likelihood": 1.9460159580877991,
+                "multiclass_brier_sum": 0.857173011186151
+              },
+              "balanced": {
+                "negative_log_likelihood": 1.9451408917177333,
+                "multiclass_brier_sum": 0.8569229091642596
+              }
+            }
+          }
+        }
+      },
+      "prompt_template_comparison": {
+        "first_natural": {
+          "template_1": {
+            "n": 96,
+            "correct": 6,
+            "macro_f1": 0.04747116237799468
+          },
+          "template_2": {
+            "n": 96,
+            "correct": 7,
+            "macro_f1": 0.04363124560168895
+          },
+          "ensemble": {
+            "n": 96,
+            "correct": 7,
+            "macro_f1": 0.04915966386554622
+          }
+        },
+        "second_natural": {
+          "template_1": {
+            "n": 96,
+            "correct": 13,
+            "macro_f1": 0.0850420168067227
+          },
+          "template_2": {
+            "n": 96,
+            "correct": 12,
+            "macro_f1": 0.06487535453052694
+          },
+          "ensemble": {
+            "n": 96,
+            "correct": 12,
+            "macro_f1": 0.07131782945736434
+          }
+        },
+        "balanced": {
+          "template_1": {
+            "n": 56,
+            "correct": 17,
+            "macro_f1": 0.2440523536229553
+          },
+          "template_2": {
+            "n": 56,
+            "correct": 13,
+            "macro_f1": 0.19772108843537414
+          },
+          "ensemble": {
+            "n": 56,
+            "correct": 16,
+            "macro_f1": 0.24309513278995806
+          }
+        }
+      },
+      "cosine_centroid": {
+        "development_groups": 128,
+        "native_dev_nll": 1.0479813155745634,
+        "fitted_dev_nll": 1.0463065296975096,
+        "temperature_at_bound": false,
+        "temperatures": {
+          "native": {
+            "inverse_temperature": 1.0,
+            "families": {
+              "flat_max_probability": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.22775909695156962,
+                "passing_slots": 0
+              },
+              "flat_margin": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.2030964017436374,
+                "passing_slots": 0
+              },
+              "flat_negative_entropy": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.24492137718182933,
+                "passing_slots": 0
+              },
+              "flat_negative_prompt_js": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.42766053242248825,
+                "passing_slots": 0
+              },
+              "climbing": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.13875771602392684,
+                "passing_slots": 0
+              },
+              "two_stage": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.13875771602392684,
+                "passing_slots": 0
+              }
+            },
+            "lac": {
+              "0.05": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 94,
+                  "mean_set_size": 3.4583333333333335,
+                  "root_outputs": 78,
+                  "correct_nonroot": 18
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 92,
+                  "mean_set_size": 3.34375,
+                  "root_outputs": 79,
+                  "correct_nonroot": 16
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 51,
+                  "mean_set_size": 3.6607142857142856,
+                  "root_outputs": 46,
+                  "correct_nonroot": 10
+                }
+              },
+              "0.1": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 88,
+                  "mean_set_size": 2.1770833333333335,
+                  "root_outputs": 45,
+                  "correct_nonroot": 49
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 86,
+                  "mean_set_size": 2.0104166666666665,
+                  "root_outputs": 42,
+                  "correct_nonroot": 50
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 49,
+                  "mean_set_size": 2.4464285714285716,
+                  "root_outputs": 34,
+                  "correct_nonroot": 18
+                }
+              },
+              "0.2": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 79,
+                  "mean_set_size": 1.4895833333333333,
+                  "root_outputs": 26,
+                  "correct_nonroot": 61
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 77,
+                  "mean_set_size": 1.40625,
+                  "root_outputs": 17,
+                  "correct_nonroot": 63
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 35,
+                  "mean_set_size": 1.625,
+                  "root_outputs": 18,
+                  "correct_nonroot": 22
+                }
+              }
+            },
+            "leaf_reliability": {
+              "first_natural": {
+                "negative_log_likelihood": 0.9333251977381641,
+                "multiclass_brier_sum": 0.46659760829947333
+              },
+              "second_natural": {
+                "negative_log_likelihood": 0.926274752671997,
+                "multiclass_brier_sum": 0.4681930192302817
+              },
+              "balanced": {
+                "negative_log_likelihood": 1.3170547119974017,
+                "multiclass_brier_sum": 0.661696586821965
+              }
+            }
+          },
+          "dev_fitted": {
+            "inverse_temperature": 1.067236127100152,
+            "families": {
+              "flat_max_probability": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.22775909695156962,
+                "passing_slots": 0
+              },
+              "flat_margin": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.2030964017436374,
+                "passing_slots": 0
+              },
+              "flat_negative_entropy": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.2296674601505122,
+                "passing_slots": 0
+              },
+              "flat_negative_prompt_js": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.42766053242248825,
+                "passing_slots": 0
+              },
+              "climbing": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.14170332347205244,
+                "passing_slots": 0
+              },
+              "two_stage": {
+                "selected": null,
+                "distinct_cutoffs": 16,
+                "minimum_node_upper": 0.14170332347205244,
+                "passing_slots": 0
+              }
+            },
+            "lac": {
+              "0.05": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 94,
+                  "mean_set_size": 3.46875,
+                  "root_outputs": 78,
+                  "correct_nonroot": 18
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 92,
+                  "mean_set_size": 3.3645833333333335,
+                  "root_outputs": 79,
+                  "correct_nonroot": 16
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 52,
+                  "mean_set_size": 3.6964285714285716,
+                  "root_outputs": 46,
+                  "correct_nonroot": 10
+                }
+              },
+              "0.1": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 88,
+                  "mean_set_size": 2.1458333333333335,
+                  "root_outputs": 43,
+                  "correct_nonroot": 51
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 86,
+                  "mean_set_size": 1.9791666666666667,
+                  "root_outputs": 40,
+                  "correct_nonroot": 52
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 49,
+                  "mean_set_size": 2.4464285714285716,
+                  "root_outputs": 34,
+                  "correct_nonroot": 18
+                }
+              },
+              "0.2": {
+                "first_natural": {
+                  "n": 96,
+                  "set_contains_truth": 77,
+                  "mean_set_size": 1.4583333333333333,
+                  "root_outputs": 25,
+                  "correct_nonroot": 60
+                },
+                "second_natural": {
+                  "n": 96,
+                  "set_contains_truth": 77,
+                  "mean_set_size": 1.3958333333333333,
+                  "root_outputs": 17,
+                  "correct_nonroot": 63
+                },
+                "balanced": {
+                  "n": 56,
+                  "set_contains_truth": 35,
+                  "mean_set_size": 1.625,
+                  "root_outputs": 18,
+                  "correct_nonroot": 22
+                }
+              }
+            },
+            "leaf_reliability": {
+              "first_natural": {
+                "negative_log_likelihood": 0.9195616437338913,
+                "multiclass_brier_sum": 0.46202317408277666
+              },
+              "second_natural": {
+                "negative_log_likelihood": 0.9152745080206254,
+                "multiclass_brier_sum": 0.4638642283626419
+              },
+              "balanced": {
+                "negative_log_likelihood": 1.3260888469229966,
+                "multiclass_brier_sum": 0.6677600027488089
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "membership_sha256": "a4f0c384d1c2e03d6b6134dbd549f6190cced609b0a5670db0cff954c393c5d5",
+  "calibration_constraint_checks": 1536,
+  "historical_conformal_cohort_matches": 24,
+  "temperature_grid_checks": 4,
+  "development_groups": 128,
+  "proxy_calibration_groups": 128,
+  "evaluation_groups": {
+    "first_natural": 96,
+    "second_natural": 96,
+    "balanced": 56
+  },
+  "seconds": 2.676
+}
