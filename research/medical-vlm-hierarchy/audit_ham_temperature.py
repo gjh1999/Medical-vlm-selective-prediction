@@ -15,18 +15,27 @@ def loss(logits, targets, beta):
     return float(np.mean(np.log(np.exp(shifted).sum(1))-shifted[np.arange(len(targets)),targets]))
 
 
-def fit_inverse_temperature(logits, targets):
-    """Minimize the convex validation NLL on beta >= 0 using its monotone derivative."""
+def fit_inverse_temperature(logits, targets, bounds=None):
+    """Minimize the convex validation NLL using its monotone derivative."""
     true = logits[np.arange(len(targets)),targets]
     def derivative(beta):
         return float(np.mean((softmax(beta*logits)*logits).sum(1)-true))
-    if derivative(0) >= 0:
-        return 0.
-    if np.all(true==logits.max(1)):
-        raise ValueError("Unbounded inverse-temperature optimum for perfectly ranked fitting labels")
-    lo,hi = 0.,1.
-    while derivative(hi)<0:
-        hi*=2
+    if bounds is None:
+        if derivative(0) >= 0:
+            return 0.
+        if np.all(true==logits.max(1)):
+            raise ValueError("Unbounded inverse-temperature optimum for perfectly ranked fitting labels")
+        lo, hi = 0., 1.
+        while derivative(hi) < 0:
+            hi *= 2
+    else:
+        lo, hi = bounds
+        if not np.isfinite([lo, hi]).all() or not 0 <= lo < hi:
+            raise ValueError("Invalid inverse-temperature bounds")
+        if derivative(lo) >= 0:
+            return lo
+        if derivative(hi) <= 0:
+            return hi
     for _ in range(70):
         mid=(lo+hi)/2
         if derivative(mid)<0:

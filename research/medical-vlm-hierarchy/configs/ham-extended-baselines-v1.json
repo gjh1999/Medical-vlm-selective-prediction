@@ -1,0 +1,15 @@
+{
+  "base_recipe_sha256": "f9eda81a394c492ab55f0bb09a995d63acfee55783ff3622d0a69515aaf30d89",
+  "inverse_temperature_bounds": [0.001, 100.0],
+  "grid_slots_per_family": 16,
+  "cutoff_order": "ascending development scores; one-indexed nearest ranks ceil(j*n/17), j=1..16; keep tied slots",
+  "two_stage": "same maximum-leaf-probability cutoffs as Flat and Climbing; use each cutoff for both the leaf and top-branch gates",
+  "prompt_disagreement": "Jensen-Shannon divergence of the two fixed prompt probability vectors at the native checkpoint scale; accept the current readout's modal leaf at low disagreement",
+  "lac_alphas": [0.05, 0.10, 0.20],
+  "dev_rehearsal": {
+    "temperature_and_cutoffs": "new_fit (128 groups)",
+    "proxy_calibration": "original_fit (128 groups)",
+    "evaluation": ["first_natural (96 groups)", "second_natural (96 groups)", "balanced_evaluation (56 groups)"],
+    "centroid_support": "original_support (56 groups)"
+  }
+}
